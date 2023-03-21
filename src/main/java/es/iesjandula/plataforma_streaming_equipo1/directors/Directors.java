@@ -1,12 +1,15 @@
 package es.iesjandula.plataforma_streaming_equipo1.directors;
 
+import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
+
 public class Directors {
 	//Variables
-	protected String name, lastName, nationality, sex;
+	protected String name, lastName, nationality;
+	protected Genders sex;
     protected int year;
     
     //Constructor
-    public void setDirector(String name, String lastName, int year, String nationality, String sex){
+    public Directors(String name, String lastName, int year, String nationality, Genders sex){
         this.name=name; //Name of director
         this.lastName=lastName; //Last Name of director
         this.year=year; //Year of birth of director
@@ -26,7 +29,7 @@ public class Directors {
         return nationality;
     }
 
-    public String getSex() {
+    public Genders getSex() {
         return sex;
     }
 

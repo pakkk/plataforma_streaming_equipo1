@@ -5,14 +5,7 @@ package es.iesjandula.plataforma_streaming_equipo1.categories;
  */
 
 public class Categories {
-	public enum CategoriesTypes
-	{
-		/*Enum CategoriesTypes
-		 *To have control over the possible categories and their types 
-		 *(Base categories if you like make other , you can add it or use OTHER type)
-		 */
-		COMEDIA,ACCION,TERROR,SUSPENSE,INFANTIL,OTHER
-	}
+
 	/** Attribute - Type */
 	protected CategoriesTypes type;
 	
@@ -41,7 +34,7 @@ public class Categories {
 		{
 			this.minAge=7;
 			this.name="COMEDIA";
-			this.description="La categoria de comedia está dedicada a mayores de 7"
+			this.description="La categoria de comedia esta dedicada a mayores de 7"
 					+ " , momentos de grandes risas te esperan";
 		}
 		/* ACCION */
@@ -49,7 +42,7 @@ public class Categories {
 		{
 			this.minAge=16;
 			this.name="ACCION";
-			this.description="La categoria de comedia está dedicada a mayores de 16,"
+			this.description="La categoria de comedia esta dedicada a mayores de 16,"
 					+ " , momentos de accion intensa te esperan en esta categoria";
 		}
 		/* TERROR */
@@ -57,7 +50,7 @@ public class Categories {
 		{
 			this.minAge=18;
 			this.name="TERROR";	
-			this.description="La categoria de terror está dedicada a mayores de 18"
+			this.description="La categoria de terror esta dedicada a mayores de 18"
 					+ " , momentos de terror intenso te esperan con esta categoria";
 		}
 		/* SUSPENSE */
@@ -65,7 +58,7 @@ public class Categories {
 		{
 			this.minAge=12;
 			this.name="SUSPENSE";	
-			this.description="La categoria de suspense está dedicada a mayores de 12"
+			this.description="La categoria de suspense esta dedicada a mayores de 12"
 					+ " , momentos de tension , suspense y muchos dramas intensos te esperan";
 		}
 		/* INFANTIL */
@@ -73,7 +66,7 @@ public class Categories {
 		{
 			this.minAge=0;
 			this.name="INFANTIL";	
-			this.description="La categoria de infantil está dedicada a todo tipo de publico"
+			this.description="La categoria de infantil esta dedicada a todo tipo de publico"
 					+ " , momentos de aprendijaze , grandes amistades y amigos divertidos"
 					+ "te esperan con esta categoria";
 		}else {
