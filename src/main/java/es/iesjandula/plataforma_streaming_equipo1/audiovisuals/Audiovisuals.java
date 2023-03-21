@@ -51,8 +51,9 @@ public class Audiovisuals {
 	public Categories[] getCateg() {
 		return categ;
 	}
-	public void setCateg(Categories[] categ) {
-		this.categ = categ;
+	public void setCateg(Categories categ) {
+		this.categ=Arrays.copyOf(this.categ,this.categ.length+1);
+		this.categ[this.categ.length-1]=categ;
 	}
 
 	public String getTittle() {
