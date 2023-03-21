@@ -20,9 +20,9 @@ public class movies extends Audiovisuals{
 	 * 
 	 */
 	
-	public movies(Type type, Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
+	public movies(Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
 			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear) {
-		super(type, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
+		super(Type.PELICULA, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
 		// TODO Auto-generated constructor stub
 	}
 	
