@@ -5,7 +5,7 @@ public interface IMenuRecommendations {
 		System.out.println("\n"
 				+ "Menu Recomendaciones:\n"
 				+ "[1] Crear una Recomendacion\n"
-				+ "[2] Buscar uns Recomendacion\n"
+				+ "[2] Buscar una Recomendacion\n"
 				+ "[3] Modificar una Recomendacion\n"
 				+ "[4] Borrar una Recomendacion");
 		

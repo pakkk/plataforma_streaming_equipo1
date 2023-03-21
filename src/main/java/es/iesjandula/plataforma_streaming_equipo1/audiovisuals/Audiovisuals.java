@@ -8,6 +8,7 @@ import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 
 public class Audiovisuals {
 
+	//Variables
 	protected Type type;
 	protected Actors[] actores= new Actors[0]; 
 	protected Categories[] categ = new Categories[0];
@@ -18,6 +19,7 @@ public class Audiovisuals {
 	protected Double duration;
 	protected int creationYear;
 	
+	//Constructor
 	public Audiovisuals(Type type, Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
 			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear) {
 		this.type = type;
@@ -31,6 +33,7 @@ public class Audiovisuals {
 		this.creationYear = creationYear;
 	}
 
+	//Getters and setters
 	public Type getType() {
 		return type;
 	}
@@ -94,6 +97,7 @@ public class Audiovisuals {
 		this.creationYear = creationYear;
 	}
 
+	//ToString
 	@Override
 	public String toString() {
 		return "Audiovisuals [type=" + type + ", actores=" + Arrays.toString(actores) + ", categ="
