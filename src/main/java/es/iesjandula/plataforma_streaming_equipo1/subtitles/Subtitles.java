@@ -9,6 +9,11 @@ public class Subtitles {
 	public Subtitles(AvaliableSubtitles subtitle) {
 		Subtitle = subtitle;
 	}
+
+	@Override
+	public String toString() {
+		return "["+this.Subtitle+"]";
+	}
 	
 	
 }
