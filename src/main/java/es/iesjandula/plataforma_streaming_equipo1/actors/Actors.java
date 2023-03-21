@@ -3,7 +3,7 @@ package es.iesjandula.plataforma_streaming_equipo1.actors;
 import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
 
 public class Actors {
-	//Variables
+	// Variables
 		protected String name, lastName, nationality;
 		protected Genders sex;
 	    protected int year;
