@@ -59,7 +59,7 @@ public class recomendations {
 		this.views += 1;
 	}
 	
-	/* SETTERS AND GETTERS */
+	/* SETTERS AND GETTERS*/
 	
 	
 
