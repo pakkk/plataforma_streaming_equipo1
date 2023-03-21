@@ -119,6 +119,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 						
 						arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length+1);
 						arrayDirectorsGeneral[arrayDirectorsGeneral.length-1]=new Directors(name, apellido, year, nationality, x);
+						Arrays.deepToString(arrayDirectorsGeneral);
 						break;
 					}
 					case 2:{
@@ -130,10 +131,10 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 								+ "[5] Genero \n");
 						int selection1 = new Scanner(System.in).nextInt();
 						if (selection1==1) {
+							System.out.println("Indica el nombre \n");
+							String name=new Scanner(System.in).nextLine();
+							System.out.println("Resultados : \n");
 							for (Directors director:arrayDirectorsGeneral) {
-								System.out.println("Indica el nombre \n");
-								String name=new Scanner(System.in).nextLine();
-								System.out.println("Resultados : \n");
 								if (director.getName().equals(name)) {
 									System.out.println(director);
 								}

@@ -60,7 +60,12 @@ public class Directors {
     
     //Information of director String 
     public String toString() {
-        return "Director: " + " name: " + name + ", lastName: " + lastName + ", nationality: " + nationality + ", sex: " + sex + ", year: " + year;
+        return "Director:\n"
+        		+ "Nombre: "+this.name+"\n"
+        		+ "Apellido: "+this.lastName+"\n"
+        		+ "Nacionalidad: "+this.nationality+"\n"
+        		+ "Genero: "+this.getSex()+"\n"
+        		+ "Año nacimiento: "+this.year+"\n";
     }
     
     
