@@ -9,7 +9,10 @@ public class recomendations {
 	
 	/** Attribute - Type */
 	RecomendationsType type;
-
+	
+	int views;
+	
+	
 	/**
 	 * Constructor of the class
 	 * 
@@ -17,6 +20,7 @@ public class recomendations {
 	 */
 	public recomendations(String recomendations) {
 		this.recomendations = recomendations;
+		this.setViews();
 		
 	}
 	
@@ -45,6 +49,14 @@ public class recomendations {
 
 	public void setType(RecomendationsType type) {
 		this.type = type;
+	}
+
+	public int getViews() {
+		return views;
+	}
+
+	public void setViews() {
+		this.views += 1;
 	}
 	
 	/* SETTERS AND GETTERS */
