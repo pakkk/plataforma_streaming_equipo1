@@ -17,11 +17,32 @@ public class Directors {
         this.sex=sex; //Sex of director
     }  
     //Getters and setters
+    
     public String getName() {
         return name; 
     }
 
-    public String getlastName() {
+    public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
+	public void setSex(Genders sex) {
+		this.sex = sex;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public String getlastName() {
         return lastName;
     }
 
