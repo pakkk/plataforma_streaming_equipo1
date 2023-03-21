@@ -9,7 +9,7 @@ import es.iesjandula.plataforma_streaming_equipo1.categories.Categories;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 
-public class movies extends Audiovisuals{
+public class Movies extends Audiovisuals{
 	protected Recomendations[] recomendationsMovies=new Recomendations[0];
 	
 	
@@ -18,9 +18,10 @@ public class movies extends Audiovisuals{
 	 * 
 	 * @param movies with the movies info
 	 * 
+	 * 
 	 */
 	
-	public movies(Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
+	public Movies(Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
 			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear) {
 		super(Type.PELICULA, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
 		// TODO Auto-generated constructor stub
