@@ -57,16 +57,19 @@ public class Directors {
     public int getYear() {
         return year;
     }
-    
-    //Information of director String 
-    public String toString() {
+
+	@Override
+	public String toString() {
         return "\nDirector:\n"
         		+ "Nombre: "+this.name+"\n"
         		+ "Apellido: "+this.lastName+"\n"
         		+ "Nacionalidad: "+this.nationality+"\n"
         		+ "Genero: "+this.getSex()+"\n"
         		+ "Año nacimiento: "+this.year+"\n";
-    }
+	}
+    
+    //Information of director String 
+    
     
     
 }

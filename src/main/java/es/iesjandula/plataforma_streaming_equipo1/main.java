@@ -78,31 +78,49 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		
 		
 		
+		//OTHER TESTS-------------
+		//Sacar de audiovisuals los directores de PELICULAS
+		Audiovisuals[] audiovisualsArray={move1,serie1};
+		for(Audiovisuals x:audiovisualsArray) {
+			if(x.getType()==Type.PELICULA) {
+				System.out.println(Arrays.toString(x.getDirectors()));
+			}
+		}
+		//Sacar de audiovisuals los directores de SERIES
+		Audiovisuals[] audiovisualsArray2={move1,serie1};
+		for(Audiovisuals x:audiovisualsArray) {
+			if(x.getType()==Type.SERIE) {
+				System.out.println(Arrays.toString(x.getDirectors()));
+			}
+		}
+		//OTHER TESTS-------------
+		
+		
 		//-----------------------MENUS----------------------------------------
 		boolean isRunning=true;
 		while(isRunning){
-			int selection;
+			int firstSelection;
 			IGeneralsMenu.generalMenu();
 			System.out.println("[Otro] Salir...");
 			System.out.print("-> ");
-			selection = new Scanner(System.in).nextInt();
-			if(selection!=1 & selection!=2) {
+			firstSelection = new Scanner(System.in).nextInt();
+			if(firstSelection!=1 & firstSelection!=2) {
 				isRunning=false;
 				break;
 			}
 			
-			String type = selection==1 ? "Peliculas":"Series";
+			Type type = firstSelection==1 ? Type.PELICULA:Type.SERIE;
 			System.out.println("Selecionado: "+type);
 			
 			IGeneralsMenu.generalMenuSelection();
 			System.out.print("-> ");
-			selection = new Scanner(System.in).nextInt();
+			firstSelection = new Scanner(System.in).nextInt();
 			
-			switch(selection) {
+			switch(firstSelection) {
 				case 1:
 				{//DIRECTORS
 					IMenuDirectors.directorMenu();
-					selection = new Scanner(System.in).nextInt();
+					int selection = new Scanner(System.in).nextInt();
 					switch(selection) {
 						case 1:{
 							System.out.println("Dime el nombre del director");
