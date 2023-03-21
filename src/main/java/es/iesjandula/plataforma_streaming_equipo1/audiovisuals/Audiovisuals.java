@@ -44,8 +44,9 @@ public class Audiovisuals {
 	public Actors[] getActores() {
 		return actores;
 	}
-	public void setActores(Actors[] actores) {
-		this.actores = actores;
+	public void setActores(Actors actores) {
+		this.actores=Arrays.copyOf(this.actores,this.actores.length+1);
+		this.actores[this.actores.length-1]=actores;
 	}
 
 	public Categories[] getCateg() {
@@ -73,15 +74,17 @@ public class Audiovisuals {
 	public String[] getAdaptedLenguajes() {
 		return adaptedLenguajes;
 	}
-	public void setAdaptedLenguajes(String[] adaptedLenguajes) {
-		this.adaptedLenguajes = adaptedLenguajes;
+	public void setAdaptedLenguajes(String adaptedLenguajes) {
+		this.adaptedLenguajes=Arrays.copyOf(this.adaptedLenguajes,this.adaptedLenguajes.length+1);
+		this.adaptedLenguajes[this.adaptedLenguajes.length-1]=adaptedLenguajes;
 	}
 
 	public Subtitles[] getAvaliableSubtitles() {
 		return avaliableSubtitles;
 	}
-	public void setAvaliableSubtitles(Subtitles[] avaliableSubtitles) {
-		this.avaliableSubtitles = avaliableSubtitles;
+	public void setAvaliableSubtitles(Subtitles avaliableSubtitles) {
+		this.avaliableSubtitles=Arrays.copyOf(this.avaliableSubtitles,this.avaliableSubtitles.length+1);
+		this.avaliableSubtitles[this.avaliableSubtitles.length-1]=avaliableSubtitles;
 	}
 
 	public Double getDuration() {
