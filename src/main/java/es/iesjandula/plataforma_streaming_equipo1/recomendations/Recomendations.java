@@ -3,7 +3,7 @@ package es.iesjandula.plataforma_streaming_equipo1.recomendations;
  * Class recomendations
  * Stores the recomendations
  */
-public class recomendations {
+public class Recomendations {
 	/** Attribute - recomendations */
 	String recomendations;
 	
@@ -18,7 +18,7 @@ public class recomendations {
 	 * 
 	 * @param recomendations with the recomendations text
 	 */
-	public recomendations(String recomendations) {
+	public Recomendations(String recomendations) {
 		this.recomendations = recomendations;
 		this.setViews();
 		
