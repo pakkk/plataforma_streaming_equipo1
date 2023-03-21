@@ -9,6 +9,7 @@ import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.Audiovisuals;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.Type;
 import es.iesjandula.plataforma_streaming_equipo1.categories.Categories;
+import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 
@@ -26,10 +27,10 @@ public class Series extends Audiovisuals{
 	 * Constructor of the class , use the superClass constructor.
 	 * 
 	 */
-	public Series(Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
+	public Series(Actors[] actores,Directors[] directors, Categories[] categ, String tittle, String originalLenguaje,
 			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear,int nCapitules
 			,int seasons) {
-		super(Type.SERIE, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
+		super(Type.SERIE, directors, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
 		
 		this.nCapitules=nCapitules;
 		this.seasons=seasons;
@@ -42,12 +43,14 @@ public class Series extends Audiovisuals{
 	public String toString() {
 		return "Serie=" + this.type +" "+Arrays.toString(this.actores)+" "
 				+""+Arrays.toString(this.categ)+" "+this.tittle+" "+this.originalLenguaje +" "+Arrays.toString(this.adaptedLenguajes)+" "
-						+ ""+Arrays.toString(this.avaliableSubtitles)+" "+ this.duration+" "+this.creationYear+" "+this.seasons+" "+this.nCapitules;
+						+ ""+Arrays.toString(this.avaliableSubtitles)+" "+ this.duration+" "+this.creationYear+" "+this.seasons+" "+this.nCapitules+" "+Arrays.toString(directors);
 	}
 
 
 
 	/* SETTERS AND GETTERS */
+	
+	
 	public int getnCapitules() {
 		return nCapitules;
 	}

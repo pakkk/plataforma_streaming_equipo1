@@ -4,12 +4,14 @@ import java.util.Arrays;
 
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
 import es.iesjandula.plataforma_streaming_equipo1.categories.Categories;
+import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 
 public class Audiovisuals {
 
 	//Variables
 	protected Type type;
+	protected Directors[] directors= new Directors[0];
 	protected Actors[] actores= new Actors[0]; 
 	protected Categories[] categ = new Categories[0];
 	protected String tittle;
@@ -20,9 +22,10 @@ public class Audiovisuals {
 	protected int creationYear;
 	
 	//Constructor
-	public Audiovisuals(Type type, Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
+	public Audiovisuals(Type type,Directors[] directors, Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
 			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear) {
 		this.type = type;
+		this.directors=directors;
 		this.actores = actores;
 		this.categ = categ;
 		this.tittle = tittle;
@@ -39,6 +42,16 @@ public class Audiovisuals {
 	}
 	public void setType(Type type) {
 		this.type = type;
+	}
+
+	
+	public Directors[] getDirectors() {
+		return directors;
+	}
+
+	public void setDirectors(Directors directors) {
+		this.directors=Arrays.copyOf(this.directors,this.directors.length+1);
+		this.directors[this.directors.length-1]=directors;
 	}
 
 	public Actors[] getActores() {
@@ -108,7 +121,7 @@ public class Audiovisuals {
 				+ Arrays.toString(categ) + ", tittle=" + tittle + ", originalLenguaje=" + originalLenguaje
 				+ ", adaptedLenguajes=" + Arrays.toString(adaptedLenguajes) + ", avaliableSubtitles="
 				+ Arrays.toString(avaliableSubtitles) + ", duration=" + duration + ", creationYear=" + creationYear
-				+ "]";
+				+ "]"+Arrays.toString(directors);
 	}
 	
 	

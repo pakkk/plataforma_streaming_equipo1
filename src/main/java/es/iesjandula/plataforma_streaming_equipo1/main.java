@@ -24,6 +24,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		
 		Categories categoria1 = new Categories(CategoriesTypes.ACCION);
 		Categories[] arrayCategories1 = {categoria1};
+		Categories[] arrayCategoriesGeneral = {categoria1};
 		//----------------testing Caterories Class----------------------------
 		
 		
@@ -32,6 +33,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		Directors director1 = new Directors("Manuel","Perez",1980,"Spain",Genders.MAN);
 		Directors director2 = new Directors("Luis","Molina",1950,"Englans",Genders.MAN);
 		Directors[] arrayDirectors1 = {director1,director2};
+		Directors[] arrayDirectorsGeneral = {director1,director2};
 		
 		//----------------testing Directors Class----------------------------
 		
@@ -40,6 +42,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		//----------------testing Actors Class----------------------------
 		Actors actor1 = new Actors("Pepe","Gonzales", "Spain",Genders.MAN,1990);
 		Actors[] arrayActors1 = {actor1};
+		Actors[] arrayActorsGeneral = {actor1};
 		
 		//----------------testing Actors Class----------------------------
 		
@@ -48,6 +51,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		Subtitles subtitle1 = new Subtitles(AvaliableSubtitles.ES);
 		Subtitles subtitle2 = new Subtitles(AvaliableSubtitles.EN);
 		Subtitles[] arraySubtitles1 = {subtitle1,subtitle2};
+		Subtitles[] arraySubtitlesGeneral = {subtitle1,subtitle2};
 		//----------------testing Subtitles Class----------------------------
 		
 		
@@ -61,8 +65,8 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		
 		//----------------testing Audiovisuals Class----------------------------
 		
-		Movies move1 = new Movies(arrayActors1,arrayCategories1,"Los 300","English",arrayAdaptedLanguages1,arraySubtitles1,145.0,2013);
-		Series serie1 = new Series(arrayActors1,arrayCategories1,"Hora de aventuras","English",arrayAdaptedLanguages1,arraySubtitles1,25.0,2010,100,10);
+		Movies move1 = new Movies(arrayActors1,arrayDirectors1,arrayCategories1,"Los 300","English",arrayAdaptedLanguages1,arraySubtitles1,145.0,2013);
+		Series serie1 = new Series(arrayActors1,arrayDirectors1,arrayCategories1,"Hora de aventuras","English",arrayAdaptedLanguages1,arraySubtitles1,25.0,2010,100,10);
 
 		System.out.println(move1);
 		System.out.println("\n\n\n"+serie1);
