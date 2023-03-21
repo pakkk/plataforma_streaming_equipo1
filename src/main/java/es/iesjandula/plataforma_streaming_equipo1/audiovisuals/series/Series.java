@@ -26,10 +26,10 @@ public class Series extends Audiovisuals{
 	 * Constructor of the class , use the superClass constructor.
 	 * 
 	 */
-	public Series(Type type, Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
+	public Series(Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
 			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear,int nCapitules
 			,int seasons) {
-		super(type, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
+		super(Type.SERIE, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
 		
 		this.nCapitules=nCapitules;
 		this.seasons=seasons;
