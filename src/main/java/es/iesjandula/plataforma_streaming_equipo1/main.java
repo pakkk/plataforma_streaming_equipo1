@@ -19,7 +19,7 @@ import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecommendations{
 
 	public static void main(String[] args) {
-		//Main de inicio
+		//Main de inicio 
 		
 		//----------------testing Caterories Class----------------------------
 		
