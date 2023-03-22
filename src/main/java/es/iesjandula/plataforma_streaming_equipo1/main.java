@@ -37,7 +37,6 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		Directors director4 = new Directors("Maria","Molina",1950,"Englans",Genders.WOMAN);
 		
 		Directors[] arrayDirectors1 = {director1,director2};
-		Directors[] arrayDirectors2 = {director2,director3,director4};
 		Directors[] arrayDirectorsGeneral = {director1,director2,director3,director4};
 		
 		//----------------testing Directors Class----------------------------
@@ -71,7 +70,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		//----------------testing Audiovisuals Class----------------------------
 		
 		Movies move1 = new Movies(arrayActors1,arrayDirectors1,arrayCategories1,"Los 300","English",arrayAdaptedLanguages1,arraySubtitles1,145.0,2013);
-		Series serie1 = new Series(arrayActors1,arrayDirectors2,arrayCategories1,"Hora de aventuras","English",arrayAdaptedLanguages1,arraySubtitles1,25.0,2010,100,10);
+		Series serie1 = new Series(arrayActors1,arrayDirectors1,arrayCategories1,"Hora de aventuras","English",arrayAdaptedLanguages1,arraySubtitles1,25.0,2010,100,10);
 
 		//System.out.println(move1);
 		//System.out.println("\n\n\n"+serie1);
@@ -82,15 +81,13 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		//OTHER TESTS-------------
 		//Sacar de audiovisuals los directores de PELICULAS
 		Audiovisuals[] audiovisualsArray={move1,serie1};
-		
-		System.out.println("Arrays Peliculas");
 		for(Audiovisuals x:audiovisualsArray) {
 			if(x.getType()==Type.PELICULA) {
 				System.out.println(Arrays.toString(x.getDirectors()));
 			}
 		}
 		//Sacar de audiovisuals los directores de SERIES
-		System.out.println("Array Seires");
+		Audiovisuals[] audiovisualsArray2={move1,serie1};
 		for(Audiovisuals x:audiovisualsArray) {
 			if(x.getType()==Type.SERIE) {
 				System.out.println(Arrays.toString(x.getDirectors()));
@@ -165,137 +162,37 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 								System.out.println("Indica el nombre \n");
 								String name=new Scanner(System.in).nextLine();
 								System.out.println("Resultados : \n");
-								
-								
-								/*
 								for (Directors director:arrayDirectorsGeneral) {
 									if (director.getName().equals(name)) {
 										System.out.println(director);
 									}
 								}
-								*/
-								//BUSCAR EN PELICULAS
-								if(type==Type.PELICULA) {
-									for(Audiovisuals x:audiovisualsArray) {
-										if(x.getType()==Type.PELICULA) {
-											//System.out.println(Arrays.toString(x.getDirectors()));
-											for (Directors director:x.getDirectors()) {
-												if (director.getName().equals(name)) {
-													System.out.println(director);
-													System.out.println(x.getTittle());
-												}
-											}
-										}
-									}
-								//BUSCAR EN PELICULAS
-								}else if(type==Type.SERIE) {
-									for(Audiovisuals x:audiovisualsArray) {
-										if(x.getType()==Type.SERIE) {
-											//System.out.println(Arrays.toString(x.getDirectors()));
-											for (Directors director:x.getDirectors()) {
-												if (director.getName().equals(name)) {
-													System.out.println(director);
-													System.out.println(x.getTittle());
-												}
-											}
-										}
-									}
-									
-								}
-	
-								
 							}else if (selection1==2) {
 								System.out.println("Indica el Apellido \n");
 								String apellido=new Scanner(System.in).nextLine();
 								System.out.println("Resultados : \n");
-								
-								if(type==Type.PELICULA) {
-									for(Audiovisuals x:audiovisualsArray) {
-										if(x.getType()==Type.PELICULA) {
-											//System.out.println(Arrays.toString(x.getDirectors()));
-											for (Directors director:x.getDirectors()) {
-												if (director.getlastName().equals(apellido)) {
-													System.out.println(director);
-													System.out.println(x.getTittle());
-												}
-											}
-										}
+								for (Directors director:arrayDirectorsGeneral) {
+									if (director.getlastName().equals(apellido)) {
+										System.out.println(director);
 									}
-								//BUSCAR EN PELICULAS
-								}else if(type==Type.SERIE) {
-									for(Audiovisuals x:audiovisualsArray) {
-										if(x.getType()==Type.SERIE) {
-											//System.out.println(Arrays.toString(x.getDirectors()));
-											for (Directors director:x.getDirectors()) {
-												if (director.getlastName().equals(apellido)) {
-													System.out.println(director);
-													System.out.println(x.getTittle());
-												}
-											}
-										}
-									}
-									
 								}
 							}else if (selection1==3) {
 								System.out.println("Indica el Año de Nacimiento \n");
 								int year=new Scanner(System.in).nextInt();
 								System.out.println("Resultados : \n");
-								if(type==Type.PELICULA) {
-									for(Audiovisuals x:audiovisualsArray) {
-										if(x.getType()==Type.PELICULA) {
-											//System.out.println(Arrays.toString(x.getDirectors()));
-											for (Directors director:x.getDirectors()) {
-												if (director.getYear()==year) {
-													System.out.println(director);
-													System.out.println(x.getTittle());
-												}
-											}
-										}
-									}
-								//BUSCAR EN PELICULAS
-								}else if(type==Type.SERIE) {
-									for(Audiovisuals x:audiovisualsArray) {
-										if(x.getType()==Type.SERIE) {
-											//System.out.println(Arrays.toString(x.getDirectors()));
-											for (Directors director:x.getDirectors()) {
-												if (director.getYear()==year) {
-													System.out.println(director);
-													System.out.println(x.getTittle());
-												}
-											}
-										}
+								for (Directors director:arrayDirectorsGeneral) {
+									if (director.getYear()==year) {
+										System.out.println(director);
 									}
 								}
 							}else if (selection1==4) {
 								System.out.println("Indica la Nacionalidad \n");
 								String nacionalidad=new Scanner(System.in).nextLine();
 								System.out.println("Resultados : \n");
-								if(type==Type.PELICULA) {
-									for(Audiovisuals x:audiovisualsArray) {
-										if(x.getType()==Type.PELICULA) {
-											//System.out.println(Arrays.toString(x.getDirectors()));
-											for (Directors director:x.getDirectors()) {
-												if (director.getNationality().equals(nacionalidad)) {
-													System.out.println(director);
-													System.out.println(x.getTittle());
-												}
-											}
-										}
+								for (Directors director:arrayDirectorsGeneral) {
+									if (director.getNationality().equals(nacionalidad)) {
+										System.out.println(director);
 									}
-								//BUSCAR EN PELICULAS
-								}else if(type==Type.SERIE) {
-									for(Audiovisuals x:audiovisualsArray) {
-										if(x.getType()==Type.SERIE) {
-											//System.out.println(Arrays.toString(x.getDirectors()));
-											for (Directors director:x.getDirectors()) {
-												if (director.getNationality().equals(nacionalidad)) {
-													System.out.println(director);
-													System.out.println(x.getTittle());
-												}
-											}
-										}
-									}
-									
 								}
 							}else {
 								System.out.println("Indica el genero \n"
@@ -311,35 +208,15 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 								}else {
 									x=x.OTHER;
 								}
-								if(type==Type.PELICULA) {
-									for(Audiovisuals x1:audiovisualsArray) {
-										if(x1.getType()==Type.PELICULA) {
-											//System.out.println(Arrays.toString(x.getDirectors()));
-											for (Directors director:x1.getDirectors()) {
-												if (director.getSex()==x) {
-													System.out.println(director);
-													System.out.println(x1.getTittle());
-												}
-											}
-										}
-									}
-								//BUSCAR EN PELICULAS
-								}else if(type==Type.SERIE) {
-									for(Audiovisuals x1:audiovisualsArray) {
-										if(x1.getType()==Type.SERIE) {
-											//System.out.println(Arrays.toString(x.getDirectors()));
-											for (Directors director:x1.getDirectors()) {
-												if (director.getSex()==x) {
-													System.out.println(director);
-													System.out.println(x1.getTittle());
-												}
-											}
-										}
+								for (Directors director:arrayDirectorsGeneral) {
+									System.out.println("Resultados : \n");
+									if (director.getSex().equals(x)) {
+										System.out.println(director);
 									}
 								}
 							}
 							break;
-						}//------------FALTA POR ACTUALIZAR ARRAYS DESDE AQUI!!!!!----------------------------------
+						}
 						case 3:{
 							System.out.println("Selecciona metodo de busqueda para modificar el director: \n"
 									+ "[1] Nombre \n"
