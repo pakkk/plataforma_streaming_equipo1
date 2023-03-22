@@ -19,7 +19,7 @@ public class Recomendations {
 	 */
 	public Recomendations(String recomendations,RecomendationsType Type) {
 		this.recomendations = recomendations;
-		this.type=type;
+		this.type=Type;
 		this.setViews();
 		
 	}
