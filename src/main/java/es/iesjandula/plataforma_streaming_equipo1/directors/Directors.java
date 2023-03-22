@@ -65,7 +65,7 @@ public class Directors {
         		+ "Apellido: "+this.lastName+"\n"
         		+ "Nacionalidad: "+this.nationality+"\n"
         		+ "Genero: "+this.getSex()+"\n"
-        		+ "Año nacimiento: "+this.year+"\n";
+        		+ "Anyo nacimiento: "+this.year+"\n";
 	}
     
     //Information of director String 
