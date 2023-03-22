@@ -10,7 +10,6 @@ public class Recomendations {
 	/** Attribute - Type */
 	RecomendationsType type;
 	
-	int views;
 	
 	
 	/**
@@ -20,14 +19,11 @@ public class Recomendations {
 	public Recomendations(String recomendations,RecomendationsType Type) {
 		this.recomendations = recomendations;
 		this.type=Type;
-		this.setViews();
-		
 	}
 	
 	public Recomendations(String recomendations) {
 		this.recomendations = recomendations;
 		this.type=RecomendationsType.NEUTRAL;
-		this.setViews();
 		
 	}
 	
@@ -56,14 +52,6 @@ public class Recomendations {
 
 	public void setType(RecomendationsType type) {
 		this.type = type;
-	}
-
-	public int getViews() {
-		return views;
-	}
-
-	public void setViews() {
-		this.views += 1;
 	}
 	
 	/* SETTERS AND GETTERS*/

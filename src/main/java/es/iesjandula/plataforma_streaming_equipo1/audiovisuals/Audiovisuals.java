@@ -20,6 +20,7 @@ public class Audiovisuals {
 	protected Subtitles[] avaliableSubtitles = new Subtitles[0];
 	protected Double duration;
 	protected int creationYear;
+	protected int views;
 	
 	//Constructor
 	public Audiovisuals(Type type,Directors[] directors, Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
@@ -34,12 +35,23 @@ public class Audiovisuals {
 		this.avaliableSubtitles = avaliableSubtitles;
 		this.duration = duration;
 		this.creationYear = creationYear;
+		this.views=0;
 	}
 
 	//Getters and setters
+	
+	
 	public Type getType() {
 		return type;
 	}
+	public int getViews() {
+		return views;
+	}
+
+	public void setViews(int views) {
+		this.views = views;
+	}
+
 	public void setType(Type type) {
 		this.type = type;
 	}
@@ -121,7 +133,7 @@ public class Audiovisuals {
 				+ Arrays.toString(categ) + ", tittle=" + tittle + ", originalLenguaje=" + originalLenguaje
 				+ ", adaptedLenguajes=" + Arrays.toString(adaptedLenguajes) + ", avaliableSubtitles="
 				+ Arrays.toString(avaliableSubtitles) + ", duration=" + duration + ", creationYear=" + creationYear
-				+ "]"+Arrays.toString(directors);
+				+ "]"+Arrays.toString(directors)+" views: "+this.views;
 	}
 	
 	
