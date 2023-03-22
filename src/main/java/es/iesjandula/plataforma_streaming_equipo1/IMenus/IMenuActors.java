@@ -4,10 +4,10 @@ public interface IMenuActors {
 	public static void actorMenu() {
 		System.out.println("\n"
 				+ "Menu Actores:\n"
-				+ "[1] Dar de alta un Actores\n"
-				+ "[2] Buscar un Actores\n"
-				+ "[3] Modificar un Actores\n"
-				+ "[4] Borrar un Actores");
+				+ "[1] Dar de alta un Actor\n"
+				+ "[2] Buscar un Actor\n"
+				+ "[3] Modificar un Actor\n"
+				+ "[4] Borrar un Actor");
 		
 	}
 }

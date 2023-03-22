@@ -14,12 +14,19 @@ public class Recomendations {
 	
 	
 	/**
-	 * Constructor of the class
-	 * 
-	 * @param recomendations with the recomendations text
+	 * Constructors of the class
+
 	 */
+	public Recomendations(String recomendations,RecomendationsType Type) {
+		this.recomendations = recomendations;
+		this.type=type;
+		this.setViews();
+		
+	}
+	
 	public Recomendations(String recomendations) {
 		this.recomendations = recomendations;
+		this.type=RecomendationsType.NEUTRAL;
 		this.setViews();
 		
 	}

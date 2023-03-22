@@ -13,635 +13,793 @@ import es.iesjandula.plataforma_streaming_equipo1.categories.Categories;
 import es.iesjandula.plataforma_streaming_equipo1.categories.CategoriesTypes;
 import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
+import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
+import es.iesjandula.plataforma_streaming_equipo1.recomendations.RecomendationsType;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.AvaliableSubtitles;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 
-public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecommendations{
 
+
+public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecommendations{
+	public static void clearScreen() {
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		
+	}
 	public static void main(String[] args) {
 		//Main de inicio 
 		
-		//----------------testing Caterories Class----------------------------
+		//----------------BASE OBJECTS---Caterories Class----------------------------
 		
 		Categories categoria1 = new Categories(CategoriesTypes.ACCION);
+		Categories categoria2 = new Categories(CategoriesTypes.COMEDIA);
+		Categories categoria3 = new Categories(CategoriesTypes.TERROR);
+		Categories categoria4 = new Categories(CategoriesTypes.SUSPENSE);
 		Categories[] arrayCategories1 = {categoria1};
-		Categories[] arrayCategoriesGeneral = {categoria1};
+		Categories[] arrayCategoriesGeneral = {categoria1,categoria2,categoria3,categoria4};
 		//----------------testing Caterories Class----------------------------
 		
 		
 		
-		//----------------testing Directors Class----------------------------
+		//-----------------BASE OBJECTS-- Directors Class----------------------------
 		Directors director1 = new Directors("Manuel","Perez",1980,"Spain",Genders.MAN);
-		Directors director2 = new Directors("Luis","Molina",1950,"Englans",Genders.MAN);
-		Directors director3 = new Directors("Sancho","Molina",1950,"Englans",Genders.MAN);
-		Directors director4 = new Directors("Maria","Molina",1950,"Englans",Genders.WOMAN);
+		Directors director2 = new Directors("Luis","Molina",1953,"England",Genders.MAN);
+		Directors director3 = new Directors("Sancho","Perez",1952,"EEUU",Genders.MAN);
+		Directors director4 = new Directors("Maria","Molina",1934,"Mexico",Genders.WOMAN);
+		Directors director5 = new Directors("Sara","Sanchez",1989,"Poland",Genders.WOMAN);
+		Directors director6 = new Directors("Fernanda","Rosa",1999,"Ukrain",Genders.WOMAN);
 		
 		Directors[] arrayDirectors1 = {director1,director2};
-		Directors[] arrayDirectorsGeneral = {director1,director2,director3,director4};
+		Directors[] arrayDirectorsGeneral = {director1,director2,director3,director4,director5,director6};
 		
-		//----------------testing Directors Class----------------------------
+		//----------------BASE OBJECTS-- Directors Class----------------------------
 		
 		
 		
-		//----------------testing Actors Class----------------------------
+		//----------------BASE OBJECTS-- Actors Class----------------------------
 		Actors actor1 = new Actors("Pepe","Gonzales", "Spain",Genders.MAN,1990);
+		Actors actor2 = new Actors("Arturo","Benitez", "England",Genders.MAN,1990);
+		Actors actor3 = new Actors("Nelson","Martinez", "EEUU",Genders.MAN,1990);
+		Actors actor4 = new Actors("Persiman","Letsen", "Polan",Genders.MAN,1990);
+		Actors actor5 = new Actors("Julia","Rous", "Ukrain",Genders.MAN,1990);
+		Actors actor6 = new Actors("Sofia","Hernandez", "Africa",Genders.MAN,1990);
 		Actors[] arrayActors1 = {actor1};
-		Actors[] arrayActorsGeneral = {actor1};
+		Actors[] arrayActorsGeneral = {actor1,actor2,actor3,actor4,actor5,actor6};
 		
-		//----------------testing Actors Class----------------------------
+		//----------------BASE OBJECTS-- Actors Class----------------------------
 		
 		
-		//----------------testing Subtitles Class----------------------------
-		Subtitles subtitle1 = new Subtitles(AvaliableSubtitles.ES);
-		Subtitles subtitle2 = new Subtitles(AvaliableSubtitles.EN);
+		//-----------------BASE OBJECTS-- Subtitles Class----------------------------
+		Subtitles subtitle1 = new Subtitles(AvaliableSubtitles.EN);
+		Subtitles subtitle2 = new Subtitles(AvaliableSubtitles.ES);
+		Subtitles subtitle3 = new Subtitles(AvaliableSubtitles.DE);
+		Subtitles subtitle4 = new Subtitles(AvaliableSubtitles.RU);
+		Subtitles subtitle5 = new Subtitles(AvaliableSubtitles.IT);
+		Subtitles subtitle6 = new Subtitles(AvaliableSubtitles.CH);
+
 		Subtitles[] arraySubtitles1 = {subtitle1,subtitle2};
-		Subtitles[] arraySubtitlesGeneral = {subtitle1,subtitle2};
-		//----------------testing Subtitles Class----------------------------
+		Subtitles[] arraySubtitlesGeneral = {subtitle1,subtitle2,subtitle3,subtitle4,subtitle5,subtitle6};
+		//-----------------BASE OBJECTS-- Subtitles Class----------------------------
 		
 		
-		/*
-		 * 	public Audiovisuals(Type type, Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
-			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear) 
-		 * 
-		 */
 		
-		String[] arrayAdaptedLanguages1= {"Spanish"};
+		//-----------------BASE OBJECTS-- Recomendations Class----------------------------
+		Recomendations reco1 = new Recomendations("Buena peli me gusto",RecomendationsType.POSITIVE);
+		Recomendations reco2 = new Recomendations("No me gusto",RecomendationsType.NEGATIVE);
+		Recomendations reco3 = new Recomendations("Bueno ni mal ni bien");
+		Recomendations reco4 = new Recomendations("FENOMENAL !!!!!",RecomendationsType.POSITIVE);
+		Recomendations reco5 = new Recomendations("Una basura...",RecomendationsType.NEGATIVE);
 		
-		//----------------testing Audiovisuals Class----------------------------
+		Recomendations[] arrayRecomendationsGeneral= {reco1,reco2,reco3,reco4,reco5};
+		//-----------------BASE OBJECTS-- Recomendations Class----------------------------
+		
+		
+		//Array with AdaptedLanguages
+		String[] arrayAdaptedLanguages1= {"Spanish","English"};
+		
+		//----------------BASE OBJECTS--Movies Class----------------------------
 		
 		Movies move1 = new Movies(arrayActors1,arrayDirectors1,arrayCategories1,"Los 300","English",arrayAdaptedLanguages1,arraySubtitles1,145.0,2013);
+		Movies[] arrayMoviesGenereal1= {move1};
+		//----------------BASE OBJECTS--Movies Class----------------------------
+		
+		
+		
+		//----------------BASE OBJECTS--Series Class----------------------------
 		Series serie1 = new Series(arrayActors1,arrayDirectors1,arrayCategories1,"Hora de aventuras","English",arrayAdaptedLanguages1,arraySubtitles1,25.0,2010,100,10);
-
-		//System.out.println(move1);
-		//System.out.println("\n\n\n"+serie1);
-		//----------------testing Audiovisuals Class----------------------------
+		Series[] arraySeriesGeneral= {serie1}; 
+		//----------------BASE OBJECTS--Series Class----------------------------
 		
 		
-		
-		//OTHER TESTS-------------
+		//------------OTHER TESTS-------------
+		/*
+		//Testing Area.....
+		 
 		//Sacar de audiovisuals los directores de PELICULAS
 		Audiovisuals[] audiovisualsArray={move1,serie1};
 		for(Audiovisuals x:audiovisualsArray) {
 			if(x.getType()==Type.PELICULA) {
-				System.out.println(Arrays.toString(x.getDirectors()));
+				//System.out.println(Arrays.toString(x.getDirectors()));
 			}
 		}
 		//Sacar de audiovisuals los directores de SERIES
 		Audiovisuals[] audiovisualsArray2={move1,serie1};
 		for(Audiovisuals x:audiovisualsArray) {
 			if(x.getType()==Type.SERIE) {
-				System.out.println(Arrays.toString(x.getDirectors()));
+				//System.out.println(Arrays.toString(x.getDirectors()));
 			}
 		}
-		//OTHER TESTS-------------
+		*/
+		
+		//------------OTHER TESTS-------------
+		
 		
 		
 		//-----------------------MENUS----------------------------------------
+		
+		//boolean for the main Loop
 		boolean isRunning=true;
+		
+		//------MAIN--LOOP-------
 		while(isRunning){
 			int firstSelection;
 			IGeneralsMenu.generalMenu();
-			System.out.println("[Otro] Salir...");
 			System.out.print("-> ");
-			firstSelection = new Scanner(System.in).nextInt();
-			if(firstSelection!=1 & firstSelection!=2) {
-				isRunning=false;
-				break;
-			}
-			
-			Type type = firstSelection==1 ? Type.PELICULA:Type.SERIE;
-			System.out.println("Selecionado: "+type);
-			
-			IGeneralsMenu.generalMenuSelection();
-			System.out.print("-> ");
+			//Principal selection
 			firstSelection = new Scanner(System.in).nextInt();
 			
 			switch(firstSelection) {
-				case 1:
-				{//DIRECTORS
-					IMenuDirectors.directorMenu();
-					int selection = new Scanner(System.in).nextInt();
-					switch(selection) {
-						case 1:{
-							System.out.println("Dime el nombre del director");
-							String name=new Scanner(System.in).nextLine();
-							System.out.println("Dime el apellido del director");
-							String apellido=new Scanner(System.in).nextLine();
-							System.out.println("Dime la nacionalidad del director");
-							String nationality=new Scanner(System.in).nextLine();
-							System.out.println("Selecciona el sexo del director: \n"
-									+ "[1] Man \n"
-									+ "[2] Woman \n"
-									+ "[3] Other \n");
-							int gender = new Scanner(System.in).nextInt();
-							Genders x=Genders.OTHER;
-							if (gender==1) {
-								x=x.MAN;
-							}else if (gender==2){
-								x=x.WOMAN;
-							}else {
-								x=x.OTHER;
+				case 1:{
+					//-------------OPTIONS MENU CASE-------------
+					clearScreen();
+					IGeneralsMenu.optionsGeneralMenu();
+					System.out.print("-> ");
+					//Getting the Main menu selection
+					int optionSelection = new Scanner(System.in).nextInt();
+					
+					switch(optionSelection) {
+						case 1:
+						{//----------DIRECTORS OPTIONS--------------
+							clearScreen();
+							IMenuDirectors.directorMenu();
+							int selection = new Scanner(System.in).nextInt();
+							switch(selection) {
+								case 1:{
+									System.out.println("Dime el nombre del director");
+									String name=new Scanner(System.in).nextLine();
+									clearScreen();
+									System.out.println("Dime el apellido del director");
+									String apellido=new Scanner(System.in).nextLine();
+									clearScreen();
+									System.out.println("Dime la nacionalidad del director");
+									String nationality=new Scanner(System.in).nextLine();
+									clearScreen();
+									System.out.println("Selecciona el sexo del director: \n"
+											+ "[1] Man \n"
+											+ "[2] Woman \n"
+											+ "[3] Other \n");
+									int gender = new Scanner(System.in).nextInt();
+									clearScreen();
+									Genders x=Genders.OTHER;
+									if (gender==1) {
+										x=x.MAN;
+									}else if (gender==2){
+										x=x.WOMAN;
+									}else {
+										x=x.OTHER;
+									}
+									System.out.println("Dime el año de nacimiento del director");
+									int year=new Scanner(System.in).nextInt();
+									clearScreen();
+									
+									arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length+1);
+									arrayDirectorsGeneral[arrayDirectorsGeneral.length-1]=new Directors(name, apellido, year, nationality, x);
+									System.out.println(arrayDirectorsGeneral[arrayDirectorsGeneral.length-1]);
+									break;
+								}
+								case 2:{
+									clearScreen();
+									System.out.println("Selecciona el metodo de busqueda: \n"
+											+ "[1] Nombre \n"
+											+ "[2] Apellido \n"
+											+ "[3] Año de nacimiento \n"
+											+ "[4] Nacionalidad \n"
+											+ "[5] Genero \n");
+									int selection1 = new Scanner(System.in).nextInt();
+									clearScreen();
+									if (selection1==1) {
+										System.out.println("Indica el nombre \n");
+										String name=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getName().equals(name)) {
+												System.out.println(director);
+											}
+										}
+									}else if (selection1==2) {
+										System.out.println("Indica el Apellido \n");
+										String apellido=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getlastName().equals(apellido)) {
+												System.out.println(director);
+											}
+										}
+									}else if (selection1==3) {
+										System.out.println("Indica el Año de Nacimiento \n");
+										int year=new Scanner(System.in).nextInt();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getYear()==year) {
+												System.out.println(director);
+											}
+										}
+									}else if (selection1==4) {
+										System.out.println("Indica la Nacionalidad \n");
+										String nacionalidad=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getNationality().equals(nacionalidad)) {
+												System.out.println(director);
+											}
+										}
+									}else {
+										System.out.println("Indica el genero \n"
+												+ "[1] Man \n"
+												+ "[2] Woman \n"
+												+ "[3] Other \n");
+										int gender = new Scanner(System.in).nextInt();
+										clearScreen();
+										Genders x=Genders.OTHER;
+										if (gender==1) {
+											x=x.MAN;
+										}else if (gender==2){
+											x=x.WOMAN;
+										}else {
+											x=x.OTHER;
+										}
+										for (Directors director:arrayDirectorsGeneral) {
+											System.out.println("Resultados : \n");
+											if (director.getSex().equals(x)) {
+												System.out.println(director);
+											}
+										}
+									}
+									break;
+								}
+								case 3:{
+									clearScreen();
+									System.out.println("Selecciona metodo de busqueda para modificar el director: \n"
+											+ "[1] Nombre \n"
+											+ "[2] Apellido \n"
+											+ "[3] Año de nacimiento \n"
+											+ "[4] Nacionalidad \n"
+											+ "[5] Genero \n");
+									int selection1 = new Scanner(System.in).nextInt();
+									clearScreen();
+									if (selection1==1) {
+										System.out.println("Indica el nombre \n");
+										String name=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getName().equals(name)) {
+												System.out.println("Encontrado: ");
+												System.out.println(director);
+												System.out.println("Selecciona que dato deseas cambiar de el director: \n"
+														+ "[1] Nombre \n"
+														+ "[2] Apellido \n"
+														+ "[3] Año de nacimiento \n"
+														+ "[4] Nacionalidad \n"
+														+ "[5] Genero \n");
+												int selection2 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection2==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setName(name1);
+												}else if (selection2==2) {
+													System.out.println("Dime apellido ");
+													String lastName1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setLastName(lastName1);
+												}else if (selection2==3) {
+													System.out.println("Dime año de nacimiento: ");
+													int year=new Scanner(System.in).nextInt();
+													clearScreen(); 
+													director.setYear(year);
+												}else if (selection2==4) {
+													System.out.println("Dime Nacionalidad ");
+													String nationality=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setNationality(nationality);
+												}else {
+													System.out.println("Indica el genero \n"
+															+ "[1] Man \n"
+															+ "[2] Woman \n"
+															+ "[3] Other \n");
+													int gender = new Scanner(System.in).nextInt();
+													clearScreen();
+													Genders x=Genders.OTHER;
+													if (gender==1) {
+														x=x.MAN;
+													}else if (gender==2){
+														x=x.WOMAN;
+													}else {
+														x=x.OTHER;
+													}
+													director.setSex(x);
+												}
+											}
+										}
+									}else if (selection1==2) {
+										System.out.println("Indica el apellido \n");
+										String apellido=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getlastName().equals(apellido)) {
+												System.out.println("Encontrado: ");
+												System.out.println(director);
+												System.out.println("Selecciona que dato deseas cambiar de el director: \n"
+														+ "[1] Nombre \n"
+														+ "[2] Apellido \n"
+														+ "[3] Año de nacimiento \n"
+														+ "[4] Nacionalidad \n"
+														+ "[5] Genero \n");
+												int selection2 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection2==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setName(name1);
+												}else if (selection2==2) {
+													System.out.println("Dime apellido ");
+													String lastName1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setLastName(lastName1);
+												}else if (selection2==3) {
+													System.out.println("Dime año de nacimiento: ");
+													int year=new Scanner(System.in).nextInt(); 
+													clearScreen();
+													director.setYear(year);
+												}else if (selection2==4) {
+													System.out.println("Dime Nacionalidad ");
+													String nationality=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setNationality(nationality);
+												}else {
+													System.out.println("Indica el genero \n"
+															+ "[1] Man \n"
+															+ "[2] Woman \n"
+															+ "[3] Other \n");
+													int gender = new Scanner(System.in).nextInt();
+													clearScreen();
+													Genders x=Genders.OTHER;
+													if (gender==1) {
+														x=x.MAN;
+													}else if (gender==2){
+														x=x.WOMAN;
+													}else {
+														x=x.OTHER;
+													}
+													director.setSex(x);
+												}
+											}
+										}
+									}else if (selection1==3) {
+										System.out.println("Indica el año de nacimiento \n");
+										int nacimiento=new Scanner(System.in).nextInt();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getYear()==nacimiento) {
+												System.out.println("Encontrado: ");
+												System.out.println(director);
+												System.out.println("Selecciona que dato deseas cambiar de el director: \n"
+														+ "[1] Nombre \n"
+														+ "[2] Apellido \n"
+														+ "[3] Año de nacimiento \n"
+														+ "[4] Nacionalidad \n"
+														+ "[5] Genero \n");
+												int selection2 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection2==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setName(name1);
+												}else if (selection2==2) {
+													System.out.println("Dime apellido ");
+													String lastName1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setLastName(lastName1);
+												}else if (selection2==3) {
+													System.out.println("Dime año de nacimiento: ");
+													int year=new Scanner(System.in).nextInt();
+													clearScreen(); 
+													director.setYear(year);
+												}else if (selection2==4) {
+													System.out.println("Dime Nacionalidad ");
+													String nationality=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setNationality(nationality);
+												}else {
+													System.out.println("Indica el genero \n"
+															+ "[1] Man \n"
+															+ "[2] Woman \n"
+															+ "[3] Other \n");
+													int gender = new Scanner(System.in).nextInt();
+													clearScreen();
+													Genders x=Genders.OTHER;
+													if (gender==1) {
+														x=x.MAN;
+													}else if (gender==2){
+														x=x.WOMAN;
+													}else {
+														x=x.OTHER;
+													}
+													director.setSex(x);
+												}
+											}
+										}
+									}else if (selection1==4) {
+										System.out.println("Indica la nacionalidad \n");
+										String nacionalidad=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getNationality().equals(nacionalidad)) {
+												System.out.println("Encontrado: ");
+												System.out.println(director);
+												System.out.println("Selecciona que dato deseas cambiar de el director: \n"
+														+ "[1] Nombre \n"
+														+ "[2] Apellido \n"
+														+ "[3] Año de nacimiento \n"
+														+ "[4] Nacionalidad \n"
+														+ "[5] Genero \n");
+												int selection2 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection2==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setName(name1);
+												}else if (selection2==2) {
+													System.out.println("Dime apellido ");
+													String lastName1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setLastName(lastName1);
+												}else if (selection2==3) {
+													System.out.println("Dime año de nacimiento: ");
+													int year=new Scanner(System.in).nextInt(); 
+													clearScreen();
+													director.setYear(year);
+												}else if (selection2==4) {
+													System.out.println("Dime Nacionalidad ");
+													String nationality=new Scanner(System.in).nextLine();
+													clearScreen(); 
+													director.setNationality(nationality);
+												}else {
+													System.out.println("Indica el genero \n"
+															+ "[1] Man \n"
+															+ "[2] Woman \n"
+															+ "[3] Other \n");
+													int gender = new Scanner(System.in).nextInt();
+													clearScreen();
+													Genders x=Genders.OTHER;
+													if (gender==1) {
+														x=x.MAN;
+													}else if (gender==2){
+														x=x.WOMAN;
+													}else {
+														x=x.OTHER;
+													}
+													director.setSex(x);
+												}
+											}
+										}
+									}else {
+										System.out.println("Indica el genero \n"
+												+ "[1] Man \n"
+												+ "[2] Woman \n"
+												+ "[3] Other \n");
+										int gender = new Scanner(System.in).nextInt();
+										clearScreen();
+										Genders x=Genders.OTHER;
+										if (gender==1) {
+											x=x.MAN;
+										}else if (gender==2){
+											x=x.WOMAN;
+										}else {
+											x=x.OTHER;
+										}
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getSex().equals(x)) {
+												System.out.println("Encontrado: ");
+												System.out.println(director);
+												System.out.println("Selecciona que dato deseas cambiar de el director: \n"
+														+ "[1] Nombre \n"
+														+ "[2] Apellido \n"
+														+ "[3] Año de nacimiento \n"
+														+ "[4] Nacionalidad \n"
+														+ "[5] Genero \n");
+												int selection2 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection2==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setName(name1);
+												}else if (selection2==2) {
+													System.out.println("Dime apellido ");
+													String lastName1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setLastName(lastName1);
+												}else if (selection2==3) {
+													System.out.println("Dime año de nacimiento: ");
+													int year=new Scanner(System.in).nextInt(); 
+													clearScreen();
+													director.setYear(year);
+												}else if (selection2==4) {
+													System.out.println("Dime Nacionalidad ");
+													String nationality=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													director.setNationality(nationality);
+												}else {
+													System.out.println("Indica el genero \n"
+															+ "[1] Man \n"
+															+ "[2] Woman \n"
+															+ "[3] Other \n");
+													int gender1 = new Scanner(System.in).nextInt();
+													clearScreen();
+													Genders x1=Genders.OTHER;
+													if (gender1==1) {
+														x1=x1.MAN;
+													}else if (gender1==2){
+														x1=x1.WOMAN;
+													}else {
+														x1=x1.OTHER;
+													}
+													director.setSex(x1);
+												}
+											}
+										}
+									}
+									break;
+								}
+								case 4:{
+									int cont=0;
+									System.out.println("Selecciona el metodo de busqueda para borrar: \n"
+											+ "[1] Nombre \n"
+											+ "[2] Apellido \n"
+											+ "[3] Año de nacimiento \n"
+											+ "[4] Nacionalidad \n"
+											+ "[5] Genero \n");
+									int selection1 = new Scanner(System.in).nextInt();
+									clearScreen();
+									if (selection1==1) {
+										System.out.println("Indica el nombre \n");
+										String name=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getName().equals(name)) {
+												System.out.println(director);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayDirectorsGeneral.length;i++) {
+													if(cont==i) {
+														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
+													}else {
+													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
+													}
+												}
+												
+												arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayDirectorsGeneral));
+										cont=0;
+									}else if (selection1==2) {
+										System.out.println("Indica el Apellido \n");
+										String apellido=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getlastName().equals(apellido)) {
+												System.out.println(director);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayDirectorsGeneral.length;i++) {
+													if(cont==i) {
+														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
+													}else {
+													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
+													}
+												}
+												
+												arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayDirectorsGeneral));
+										cont=0;
+									}else if (selection1==3) {
+										System.out.println("Indica el año de nacimiento \n");
+										int year=new Scanner(System.in).nextInt();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getYear()==year) {
+												System.out.println(director);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayDirectorsGeneral.length;i++) {
+													if(cont==i) {
+														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
+													}else {
+													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
+													}
+												}
+												
+												arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayDirectorsGeneral));
+										cont=0;
+									}else if (selection1==4) {
+										System.out.println("Indica Nacionalidad \n");
+										String nacionalidad=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getNationality().equals(nacionalidad)) {
+												System.out.println(director);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayDirectorsGeneral.length;i++) {
+													if(cont==i) {
+														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
+													}else {
+													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
+													}
+												}
+												
+												arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayDirectorsGeneral));
+										cont=0;
+									}else {
+										System.out.println("Indica el genero \n"
+												+ "[1] Man \n"
+												+ "[2] Woman \n"
+												+ "[3] Other \n");
+										int gender = new Scanner(System.in).nextInt();
+										clearScreen();
+										Genders x=Genders.OTHER;
+										if (gender==1) {
+											x=x.MAN;
+										}else if (gender==2){
+											x=x.WOMAN;
+										}else {
+											x=x.OTHER;
+										}
+										System.out.println("Resultados : \n");
+										for (Directors director:arrayDirectorsGeneral) {
+											if (director.getSex().equals(x)) {
+												System.out.println(director);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayDirectorsGeneral.length;i++) {
+													if(cont==i) {
+														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
+													}else {
+													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
+													}
+												}
+												
+												arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayDirectorsGeneral));
+										cont=0;
+									}
+								}
+									
 							}
-							System.out.println("Dime el año de nacimiento del director");
-							int year=new Scanner(System.in).nextInt();
+							break;
+							//----------DIRECTORS OPTIONS--------------
+						}
+						
+						
+						case 2:
+						{//----------ACTORS-OPTIONS--------------
+							clearScreen();
+							IMenuActors.actorMenu();
+							break;
 							
-							arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length+1);
-							arrayDirectorsGeneral[arrayDirectorsGeneral.length-1]=new Directors(name, apellido, year, nationality, x);
-							System.out.println(Arrays.toString(arrayDirectorsGeneral));
+							
+						}//----------ACTORS-OPTIONS--------------
+						
+						case 3:
+						{//----------RECOMENDATIONS-OPTIONS--------------
+							clearScreen();
+							IMenuRecommendations.recommendationMenu();
+							break;
+						}//----------RECOMENDATIONS-OPTIONS--------------
+						
+						
+						case 4:
+						{//----------CATEGORIES-OPTIONS--------------
+							clearScreen();
+							IMenuCategories.categoriesMenu();
+							break;
+						}//----------CATEGORIES-OPTIONS--------------
+						
+						
+						case 5:
+						{//----------MOVIES-SERIES-OPTIONS--------------
+							clearScreen();
+							IGeneralsMenu.selectMovieSerie();
+							int selected = new Scanner(System.in).nextInt();
+							if(selected==1) {
+								//---SERIES SELECTED---
+								clearScreen();
+								IMenuSeries.seriesMenu();
+								
+								
+							}else {
+								//---MOVIES SELECTED---
+								clearScreen();
+								IMenuMovies.moviesMenu();
+								
+								
+							}
+							break;
+						}//----------MOVIES-SERIES-OPTIONS--------------
+						
+						
+						default:{
+							System.out.println("Opcion desconocida");
 							break;
 						}
-						case 2:{
-							System.out.println("Selecciona el metodo de busqueda: \n"
-									+ "[1] Nombre \n"
-									+ "[2] Apellido \n"
-									+ "[3] Año de nacimiento \n"
-									+ "[4] Nacionalidad \n"
-									+ "[5] Genero \n");
-							int selection1 = new Scanner(System.in).nextInt();
-							if (selection1==1) {
-								System.out.println("Indica el nombre \n");
-								String name=new Scanner(System.in).nextLine();
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getName().equals(name)) {
-										System.out.println(director);
-									}
-								}
-							}else if (selection1==2) {
-								System.out.println("Indica el Apellido \n");
-								String apellido=new Scanner(System.in).nextLine();
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getlastName().equals(apellido)) {
-										System.out.println(director);
-									}
-								}
-							}else if (selection1==3) {
-								System.out.println("Indica el Año de Nacimiento \n");
-								int year=new Scanner(System.in).nextInt();
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getYear()==year) {
-										System.out.println(director);
-									}
-								}
-							}else if (selection1==4) {
-								System.out.println("Indica la Nacionalidad \n");
-								String nacionalidad=new Scanner(System.in).nextLine();
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getNationality().equals(nacionalidad)) {
-										System.out.println(director);
-									}
-								}
-							}else {
-								System.out.println("Indica el genero \n"
-										+ "[1] Man \n"
-										+ "[2] Woman \n"
-										+ "[3] Other \n");
-								int gender = new Scanner(System.in).nextInt();
-								Genders x=Genders.OTHER;
-								if (gender==1) {
-									x=x.MAN;
-								}else if (gender==2){
-									x=x.WOMAN;
-								}else {
-									x=x.OTHER;
-								}
-								for (Directors director:arrayDirectorsGeneral) {
-									System.out.println("Resultados : \n");
-									if (director.getSex().equals(x)) {
-										System.out.println(director);
-									}
-								}
-							}
-							break;
-						}
-						case 3:{
-							System.out.println("Selecciona metodo de busqueda para modificar el director: \n"
-									+ "[1] Nombre \n"
-									+ "[2] Apellido \n"
-									+ "[3] Año de nacimiento \n"
-									+ "[4] Nacionalidad \n"
-									+ "[5] Genero \n");
-							int selection1 = new Scanner(System.in).nextInt();
-							if (selection1==1) {
-								System.out.println("Indica el nombre \n");
-								String name=new Scanner(System.in).nextLine();
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getName().equals(name)) {
-										System.out.println("Encontrado: ");
-										System.out.println(director);
-										System.out.println("Selecciona que dato deseas cambiar de el director: \n"
-												+ "[1] Nombre \n"
-												+ "[2] Apellido \n"
-												+ "[3] Año de nacimiento \n"
-												+ "[4] Nacionalidad \n"
-												+ "[5] Genero \n");
-										int selection2 = new Scanner(System.in).nextInt();
-										if (selection2==1) {
-											System.out.println("Dime nombre ");
-											String name1=new Scanner(System.in).nextLine(); 
-											director.setName(name1);
-										}else if (selection2==2) {
-											System.out.println("Dime apellido ");
-											String lastName1=new Scanner(System.in).nextLine(); 
-											director.setLastName(lastName1);
-										}else if (selection2==3) {
-											System.out.println("Dime año de nacimiento: ");
-											int year=new Scanner(System.in).nextInt(); 
-											director.setYear(year);
-										}else if (selection2==4) {
-											System.out.println("Dime Nacionalidad ");
-											String nationality=new Scanner(System.in).nextLine(); 
-											director.setNationality(nationality);
-										}else {
-											System.out.println("Indica el genero \n"
-													+ "[1] Man \n"
-													+ "[2] Woman \n"
-													+ "[3] Other \n");
-											int gender = new Scanner(System.in).nextInt();
-											Genders x=Genders.OTHER;
-											if (gender==1) {
-												x=x.MAN;
-											}else if (gender==2){
-												x=x.WOMAN;
-											}else {
-												x=x.OTHER;
-											}
-											director.setSex(x);
-										}
-									}
-								}
-							}else if (selection1==2) {
-								System.out.println("Indica el apellido \n");
-								String apellido=new Scanner(System.in).nextLine();
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getlastName().equals(apellido)) {
-										System.out.println("Encontrado: ");
-										System.out.println(director);
-										System.out.println("Selecciona que dato deseas cambiar de el director: \n"
-												+ "[1] Nombre \n"
-												+ "[2] Apellido \n"
-												+ "[3] Año de nacimiento \n"
-												+ "[4] Nacionalidad \n"
-												+ "[5] Genero \n");
-										int selection2 = new Scanner(System.in).nextInt();
-										if (selection2==1) {
-											System.out.println("Dime nombre ");
-											String name1=new Scanner(System.in).nextLine(); 
-											director.setName(name1);
-										}else if (selection2==2) {
-											System.out.println("Dime apellido ");
-											String lastName1=new Scanner(System.in).nextLine(); 
-											director.setLastName(lastName1);
-										}else if (selection2==3) {
-											System.out.println("Dime año de nacimiento: ");
-											int year=new Scanner(System.in).nextInt(); 
-											director.setYear(year);
-										}else if (selection2==4) {
-											System.out.println("Dime Nacionalidad ");
-											String nationality=new Scanner(System.in).nextLine(); 
-											director.setNationality(nationality);
-										}else {
-											System.out.println("Indica el genero \n"
-													+ "[1] Man \n"
-													+ "[2] Woman \n"
-													+ "[3] Other \n");
-											int gender = new Scanner(System.in).nextInt();
-											Genders x=Genders.OTHER;
-											if (gender==1) {
-												x=x.MAN;
-											}else if (gender==2){
-												x=x.WOMAN;
-											}else {
-												x=x.OTHER;
-											}
-											director.setSex(x);
-										}
-									}
-								}
-							}else if (selection1==3) {
-								System.out.println("Indica el año de nacimiento \n");
-								int nacimiento=new Scanner(System.in).nextInt();
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getYear()==nacimiento) {
-										System.out.println("Encontrado: ");
-										System.out.println(director);
-										System.out.println("Selecciona que dato deseas cambiar de el director: \n"
-												+ "[1] Nombre \n"
-												+ "[2] Apellido \n"
-												+ "[3] Año de nacimiento \n"
-												+ "[4] Nacionalidad \n"
-												+ "[5] Genero \n");
-										int selection2 = new Scanner(System.in).nextInt();
-										if (selection2==1) {
-											System.out.println("Dime nombre ");
-											String name1=new Scanner(System.in).nextLine(); 
-											director.setName(name1);
-										}else if (selection2==2) {
-											System.out.println("Dime apellido ");
-											String lastName1=new Scanner(System.in).nextLine(); 
-											director.setLastName(lastName1);
-										}else if (selection2==3) {
-											System.out.println("Dime año de nacimiento: ");
-											int year=new Scanner(System.in).nextInt(); 
-											director.setYear(year);
-										}else if (selection2==4) {
-											System.out.println("Dime Nacionalidad ");
-											String nationality=new Scanner(System.in).nextLine(); 
-											director.setNationality(nationality);
-										}else {
-											System.out.println("Indica el genero \n"
-													+ "[1] Man \n"
-													+ "[2] Woman \n"
-													+ "[3] Other \n");
-											int gender = new Scanner(System.in).nextInt();
-											Genders x=Genders.OTHER;
-											if (gender==1) {
-												x=x.MAN;
-											}else if (gender==2){
-												x=x.WOMAN;
-											}else {
-												x=x.OTHER;
-											}
-											director.setSex(x);
-										}
-									}
-								}
-							}else if (selection1==4) {
-								System.out.println("Indica la nacionalidad \n");
-								String nacionalidad=new Scanner(System.in).nextLine();
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getNationality().equals(nacionalidad)) {
-										System.out.println("Encontrado: ");
-										System.out.println(director);
-										System.out.println("Selecciona que dato deseas cambiar de el director: \n"
-												+ "[1] Nombre \n"
-												+ "[2] Apellido \n"
-												+ "[3] Año de nacimiento \n"
-												+ "[4] Nacionalidad \n"
-												+ "[5] Genero \n");
-										int selection2 = new Scanner(System.in).nextInt();
-										if (selection2==1) {
-											System.out.println("Dime nombre ");
-											String name1=new Scanner(System.in).nextLine(); 
-											director.setName(name1);
-										}else if (selection2==2) {
-											System.out.println("Dime apellido ");
-											String lastName1=new Scanner(System.in).nextLine(); 
-											director.setLastName(lastName1);
-										}else if (selection2==3) {
-											System.out.println("Dime año de nacimiento: ");
-											int year=new Scanner(System.in).nextInt(); 
-											director.setYear(year);
-										}else if (selection2==4) {
-											System.out.println("Dime Nacionalidad ");
-											String nationality=new Scanner(System.in).nextLine(); 
-											director.setNationality(nationality);
-										}else {
-											System.out.println("Indica el genero \n"
-													+ "[1] Man \n"
-													+ "[2] Woman \n"
-													+ "[3] Other \n");
-											int gender = new Scanner(System.in).nextInt();
-											Genders x=Genders.OTHER;
-											if (gender==1) {
-												x=x.MAN;
-											}else if (gender==2){
-												x=x.WOMAN;
-											}else {
-												x=x.OTHER;
-											}
-											director.setSex(x);
-										}
-									}
-								}
-							}else {
-								System.out.println("Indica el genero \n"
-										+ "[1] Man \n"
-										+ "[2] Woman \n"
-										+ "[3] Other \n");
-								int gender = new Scanner(System.in).nextInt();
-								Genders x=Genders.OTHER;
-								if (gender==1) {
-									x=x.MAN;
-								}else if (gender==2){
-									x=x.WOMAN;
-								}else {
-									x=x.OTHER;
-								}
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getSex().equals(x)) {
-										System.out.println("Encontrado: ");
-										System.out.println(director);
-										System.out.println("Selecciona que dato deseas cambiar de el director: \n"
-												+ "[1] Nombre \n"
-												+ "[2] Apellido \n"
-												+ "[3] Año de nacimiento \n"
-												+ "[4] Nacionalidad \n"
-												+ "[5] Genero \n");
-										int selection2 = new Scanner(System.in).nextInt();
-										if (selection2==1) {
-											System.out.println("Dime nombre ");
-											String name1=new Scanner(System.in).nextLine(); 
-											director.setName(name1);
-										}else if (selection2==2) {
-											System.out.println("Dime apellido ");
-											String lastName1=new Scanner(System.in).nextLine(); 
-											director.setLastName(lastName1);
-										}else if (selection2==3) {
-											System.out.println("Dime año de nacimiento: ");
-											int year=new Scanner(System.in).nextInt(); 
-											director.setYear(year);
-										}else if (selection2==4) {
-											System.out.println("Dime Nacionalidad ");
-											String nationality=new Scanner(System.in).nextLine(); 
-											director.setNationality(nationality);
-										}else {
-											System.out.println("Indica el genero \n"
-													+ "[1] Man \n"
-													+ "[2] Woman \n"
-													+ "[3] Other \n");
-											int gender1 = new Scanner(System.in).nextInt();
-											Genders x1=Genders.OTHER;
-											if (gender1==1) {
-												x1=x1.MAN;
-											}else if (gender1==2){
-												x1=x1.WOMAN;
-											}else {
-												x1=x1.OTHER;
-											}
-											director.setSex(x1);
-										}
-									}
-								}
-							}
-							
-						}
-						case 4:{
-							int cont=0;
-							System.out.println("Selecciona el metodo de busqueda para borrar: \n"
-									+ "[1] Nombre \n"
-									+ "[2] Apellido \n"
-									+ "[3] Año de nacimiento \n"
-									+ "[4] Nacionalidad \n"
-									+ "[5] Genero \n");
-							int selection1 = new Scanner(System.in).nextInt();
-							if (selection1==1) {
-								System.out.println("Indica el nombre \n");
-								String name=new Scanner(System.in).nextLine();
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getName().equals(name)) {
-										System.out.println(director);
-										System.out.println("Posicion "+cont);
-										
-										for(int i=0;i<arrayDirectorsGeneral.length;i++) {
-											if(cont==i) {
-												arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
-											}else {
-											arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
-											}
-										}
-										
-										arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
-									}
-									cont+=1;
-								}
-								System.out.println(Arrays.toString(arrayDirectorsGeneral));
-								cont=0;
-							}else if (selection1==2) {
-								System.out.println("Indica el Apellido \n");
-								String apellido=new Scanner(System.in).nextLine();
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getlastName().equals(apellido)) {
-										System.out.println(director);
-										System.out.println("Posicion "+cont);
-										
-										for(int i=0;i<arrayDirectorsGeneral.length;i++) {
-											if(cont==i) {
-												arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
-											}else {
-											arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
-											}
-										}
-										
-										arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
-									}
-									cont+=1;
-								}
-								System.out.println(Arrays.toString(arrayDirectorsGeneral));
-								cont=0;
-							}else if (selection1==3) {
-								System.out.println("Indica el año de nacimiento \n");
-								int year=new Scanner(System.in).nextInt();
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getYear()==year) {
-										System.out.println(director);
-										System.out.println("Posicion "+cont);
-										
-										for(int i=0;i<arrayDirectorsGeneral.length;i++) {
-											if(cont==i) {
-												arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
-											}else {
-											arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
-											}
-										}
-										
-										arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
-									}
-									cont+=1;
-								}
-								System.out.println(Arrays.toString(arrayDirectorsGeneral));
-								cont=0;
-							}else if (selection1==4) {
-								System.out.println("Indica Nacionalidad \n");
-								String nacionalidad=new Scanner(System.in).nextLine();
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getNationality().equals(nacionalidad)) {
-										System.out.println(director);
-										System.out.println("Posicion "+cont);
-										
-										for(int i=0;i<arrayDirectorsGeneral.length;i++) {
-											if(cont==i) {
-												arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
-											}else {
-											arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
-											}
-										}
-										
-										arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
-									}
-									cont+=1;
-								}
-								System.out.println(Arrays.toString(arrayDirectorsGeneral));
-								cont=0;
-							}else {
-								System.out.println("Indica el genero \n"
-										+ "[1] Man \n"
-										+ "[2] Woman \n"
-										+ "[3] Other \n");
-								int gender = new Scanner(System.in).nextInt();
-								Genders x=Genders.OTHER;
-								if (gender==1) {
-									x=x.MAN;
-								}else if (gender==2){
-									x=x.WOMAN;
-								}else {
-									x=x.OTHER;
-								}
-								System.out.println("Resultados : \n");
-								for (Directors director:arrayDirectorsGeneral) {
-									if (director.getSex().equals(x)) {
-										System.out.println(director);
-										System.out.println("Posicion "+cont);
-										
-										for(int i=0;i<arrayDirectorsGeneral.length;i++) {
-											if(cont==i) {
-												arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
-											}else {
-											arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
-											}
-										}
-										
-										arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
-									}
-									cont+=1;
-								}
-								System.out.println(Arrays.toString(arrayDirectorsGeneral));
-								cont=0;
-							}
-						}
-							
 					}
 					break;
 				}
-				case 2:
-				{//ACTORS
-					IMenuActors.actorMenu();
+				case 2:{
+					//---------INFORMATIONS AND STADISTIC MENU-------
+					
 					break;
 				}
-				case 3:
-				{//RECOMMENDATIONS
-					IMenuRecommendations.recommendationMenu();
+				case 3:{
+					//-----------VIEW SERIES OR MOVIES MENU------------
+					
 					break;
 				}
+				
+				//SELECTION 4 (OR OTHERS)...
 				default:{
-					isRunning=false;
+					//----------EXIT SELECTED MENU FOR EXIT----------
+					System.out.println("Saliendo del programa...");
+					isRunning=false;//Stop the main loop, boolean false.
 					break;
 				}
+				
 			}
+			
 		}
-		//-----------------------MENUS----------------------------------------
 	}
 
 }
