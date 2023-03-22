@@ -737,6 +737,262 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 						{//----------RECOMENDATIONS-OPTIONS--------------
 							clearScreen();
 							IMenuRecommendations.recommendationMenu();
+							//String recomendations,RecomendationsType Type
+							
+							int selection = new Scanner(System.in).nextInt();
+							switch(selection) {
+								case 1:{
+									//-------------CREATE-RECOMENDATION-----------------
+									System.out.println("Texto de la Recomandacion:");
+									String texto=new Scanner(System.in).nextLine();
+									clearScreen();
+									System.out.println("Tipo de recomendacion:\n"
+											+ "[1] Positiva\n"
+											+ "[2] Negativa\n"
+											+ "[3] Neutral\n");
+									int recomendationType=new Scanner(System.in).nextInt();
+									RecomendationsType x;
+									if (recomendationType==1) {
+										x=RecomendationsType.POSITIVE;
+									}else if (recomendationType==2) {
+										x=RecomendationsType.NEGATIVE;
+									}else {
+										x=RecomendationsType.NEUTRAL;
+									}
+									
+									clearScreen();
+
+									arrayRecomendationsGeneral=Arrays.copyOf(arrayRecomendationsGeneral, arrayRecomendationsGeneral.length+1);
+									arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1]=new Recomendations(texto,x);
+									System.out.println(arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1]);
+									break;
+									//-------------CREATE-RECOMENDATION-----------------
+								}
+								case 2:{
+									//-------------SEARCH-RECOMENDATIONS-----------------
+									clearScreen();
+									System.out.println("Selecciona el metodo de busqueda: \n"
+											+ "[1] Texto \n"
+											+ "[2] Tipo (Positiva,Negativa,Neutral) \n");
+									int selection1 = new Scanner(System.in).nextInt();
+									clearScreen();
+									if (selection1==1) {
+										//--SARCH-BY-TEXT--
+										System.out.println("Indica el texto \n");
+										String texto=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Recomendations recomendation:arrayRecomendationsGeneral) {
+											if (recomendation.getRecomendations().contains(texto)) {
+												System.out.println(recomendation);
+											}
+										}
+										//--SARCH-BY-TEXT--
+										
+									}else if (selection1==2) {
+										//--SARCH-BY-TYPE--
+										System.out.println("Tipo de recomendacion:\n"
+												+ "[1] Positiva\n"
+												+ "[2] Negativa\n"
+												+ "[3] Neutral\n");
+										int recomendationType=new Scanner(System.in).nextInt();
+										RecomendationsType x;
+										if (recomendationType==1) {
+											x=RecomendationsType.POSITIVE;
+										}else if (recomendationType==2) {
+											x=RecomendationsType.NEGATIVE;
+										}else {
+											x=RecomendationsType.NEUTRAL;
+										}
+										
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Recomendations recomendation:arrayRecomendationsGeneral) {
+											if (recomendation.getType().equals(x)) {
+												System.out.println(recomendation);
+											}
+										}
+									}//--SARCH-BY-TYPE--
+									
+									break;
+									
+									//-------------SEARCH-RECOMENDATIONS-----------------
+								}
+								case 3:{
+									//-------------MODIFY-RECOMENDATION-----------------
+									clearScreen();
+									System.out.println("Selecciona el metodo de busqueda para modificar: \n"
+											+ "[1] Texto \n"
+											+ "[2] Tipo (Positiva,Negativa,Neutral) \n");
+									int selection1 = new Scanner(System.in).nextInt();
+									clearScreen();
+									if (selection1==1) {
+										//--MODIFY-BY-TEXT--
+										System.out.println("Indica el texto \n");
+										String texto=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Recomendations recomendation:arrayRecomendationsGeneral) {
+											if (recomendation.getRecomendations().contains(texto)) {
+												System.out.println(recomendation);
+												System.out.println("Indique que quiere cambiar:\n"
+														+ "[1] Texto\n"
+														+ "[2] Tipo(Positiva,Negativa,Neutra)");
+												int selection2 = new Scanner(System.in).nextInt();
+												if(selection2==1) {
+													System.out.println("Indique nuevo texto:\n");
+													recomendation.setRecomendations(new Scanner(System.in).nextLine());
+												}else {
+													System.out.println("Nuevo Tipo de recomendacion:\n"
+															+ "[1] Positiva\n"
+															+ "[2] Negativa\n"
+															+ "[3] Neutral\n");
+													int recomendationType=new Scanner(System.in).nextInt();
+													RecomendationsType x;
+													if (recomendationType==1) {
+														x=RecomendationsType.POSITIVE;
+													}else if (recomendationType==2) {
+														x=RecomendationsType.NEGATIVE;
+													}else {
+														x=RecomendationsType.NEUTRAL;
+													}
+													recomendation.setType(x);
+												}
+											}
+										}
+										//--MODIFY-BY-TEXT--
+										
+									}else if (selection1==2) {
+										//--MODIFY-BY-TYPE--
+										System.out.println("Indique Tipo de recomendacion:\n"
+												+ "[1] Positiva\n"
+												+ "[2] Negativa\n"
+												+ "[3] Neutral\n");
+										int recomendationType=new Scanner(System.in).nextInt();
+										RecomendationsType x;
+										if (recomendationType==1) {
+											x=RecomendationsType.POSITIVE;
+										}else if (recomendationType==2) {
+											x=RecomendationsType.NEGATIVE;
+										}else {
+											x=RecomendationsType.NEUTRAL;
+										}
+										
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Recomendations recomendation:arrayRecomendationsGeneral) {
+											if (recomendation.getType().equals(x)) {
+												System.out.println(recomendation);
+												System.out.println("Indique que quiere cambiar:\n"
+														+ "[1] Texto\n"
+														+ "[2] Tipo(Positiva,Negativa,Neutra)");
+												int selection2 = new Scanner(System.in).nextInt();
+												if(selection2==1) {
+													System.out.println("Indique nuevo texto:\n");
+													recomendation.setRecomendations(new Scanner(System.in).nextLine());
+												}else {
+													System.out.println("Nuevo Tipo de recomendacion:\n"
+															+ "[1] Positiva\n"
+															+ "[2] Negativa\n"
+															+ "[3] Neutral\n");
+													int recomendationType2=new Scanner(System.in).nextInt();
+													RecomendationsType x2;
+													if (recomendationType2==1) {
+														x2=RecomendationsType.POSITIVE;
+													}else if (recomendationType2==2) {
+														x2=RecomendationsType.NEGATIVE;
+													}else {
+														x2=RecomendationsType.NEUTRAL;
+													}
+													recomendation.setType(x2);
+												}
+											}
+										}
+									}//--MODIFY-BY-TYPE--
+									
+									break;
+								}
+								case 4:{
+									//-------------SEARCH-RECOMENDATIONS-----------------
+									clearScreen();
+									System.out.println("Selecciona el metodo de busqueda para borrar: \n"
+											+ "[1] Texto \n"
+											+ "[2] Tipo (Positiva,Negativa,Neutral) \n");
+									int selection1 = new Scanner(System.in).nextInt();
+									clearScreen();
+									int cont=0;
+									if (selection1==1) {
+										//--DELETE-BY-TEXT--
+										System.out.println("Indica el texto \n");
+										String texto=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Recomendations recomendation:arrayRecomendationsGeneral) {
+											if (recomendation.getRecomendations().contains(texto)) {
+												System.out.println("Borrada:\n"+recomendation+"\n");
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayRecomendationsGeneral.length;i++) {
+													if(cont==i) {
+														arrayRecomendationsGeneral[i]=arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1];
+													}else {
+														arrayRecomendationsGeneral[i]=arrayRecomendationsGeneral[i];
+													}
+												}
+												
+												arrayRecomendationsGeneral=Arrays.copyOf(arrayRecomendationsGeneral, arrayRecomendationsGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayRecomendationsGeneral));
+										cont=0;
+										//--DELETE-BY-TEXT--
+										
+									}else if (selection1==2) {
+										//--DELETE-BY-TYPE--
+										System.out.println("Tipo de recomendacion:\n"
+												+ "[1] Positiva\n"
+												+ "[2] Negativa\n"
+												+ "[3] Neutral\n");
+										int recomendationType=new Scanner(System.in).nextInt();
+										RecomendationsType x;
+										if (recomendationType==1) {
+											x=RecomendationsType.POSITIVE;
+										}else if (recomendationType==2) {
+											x=RecomendationsType.NEGATIVE;
+										}else {
+											x=RecomendationsType.NEUTRAL;
+										}
+										
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Recomendations recomendation:arrayRecomendationsGeneral) {
+											if (recomendation.getType().equals(x)) {
+												System.out.println("Borrada:\n"+recomendation+"\n");
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayRecomendationsGeneral.length;i++) {
+													if(cont==i) {
+														arrayRecomendationsGeneral[i]=arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1];
+													}else {
+														arrayRecomendationsGeneral[i]=arrayRecomendationsGeneral[i];
+													}
+												}
+												
+												arrayRecomendationsGeneral=Arrays.copyOf(arrayRecomendationsGeneral, arrayRecomendationsGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayRecomendationsGeneral));
+										cont=0;
+									}//--DELETE-BY-TYPE--
+									
+									break;
+									
+									//-------------SEARCH-RECOMENDATIONS-----------------
+								}
+									
+							}
 							break;
 						}//----------RECOMENDATIONS-OPTIONS--------------
 						
