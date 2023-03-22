@@ -5,16 +5,16 @@ import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
 public class Directors {
 	//Variables
 	protected String name, lastName, nationality;
-	protected Genders sex;
+	protected Genders gender;
     protected int year;
     
     //Constructor
-    public Directors(String name, String lastName, int year, String nationality, Genders sex){
+    public Directors(String name, String lastName, int year, String nationality, Genders gender){
         this.name=name; //Name of director
         this.lastName=lastName; //Last Name of director
         this.year=year; //Year of birth of director
         this.nationality=nationality; //Nationality of director
-        this.sex=sex; //Sex of director
+        this.gender=gender; //Sex of director
     }  
     //Getters and setters
     
@@ -34,8 +34,8 @@ public class Directors {
 		this.nationality = nationality;
 	}
 
-	public void setSex(Genders sex) {
-		this.sex = sex;
+	public void setGender(Genders gender) {
+		this.gender = gender;
 	}
 
 	public void setYear(int year) {
@@ -50,8 +50,8 @@ public class Directors {
         return nationality;
     }
 
-    public Genders getSex() {
-        return sex;
+    public Genders getGender() {
+        return gender;
     }
 
     public int getYear() {
@@ -64,7 +64,7 @@ public class Directors {
         		+ "Nombre: "+this.name+"\n"
         		+ "Apellido: "+this.lastName+"\n"
         		+ "Nacionalidad: "+this.nationality+"\n"
-        		+ "Genero: "+this.getSex()+"\n"
+        		+ "Genero: "+this.getGender()+"\n"
         		+ "Año nacimiento: "+this.year+"\n";
 	}
     

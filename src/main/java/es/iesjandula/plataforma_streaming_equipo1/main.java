@@ -261,9 +261,9 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										}else {
 											x=x.OTHER;
 										}
+										System.out.println("Resultados : \n");
 										for (Directors director:arrayDirectorsGeneral) {
-											System.out.println("Resultados : \n");
-											if (director.getSex().equals(x)) {
+											if (director.getGender().equals(x)) {
 												System.out.println(director);
 											}
 										}
@@ -332,7 +332,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													}else {
 														x=x.OTHER;
 													}
-													director.setSex(x);
+													director.setGender(x);
 												}
 											}
 										}
@@ -388,7 +388,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													}else {
 														x=x.OTHER;
 													}
-													director.setSex(x);
+													director.setGender(x);
 												}
 											}
 										}
@@ -444,7 +444,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													}else {
 														x=x.OTHER;
 													}
-													director.setSex(x);
+													director.setGender(x);
 												}
 											}
 										}
@@ -500,7 +500,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													}else {
 														x=x.OTHER;
 													}
-													director.setSex(x);
+													director.setGender(x);
 												}
 											}
 										}
@@ -521,7 +521,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										}
 										System.out.println("Resultados : \n");
 										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getSex().equals(x)) {
+											if (director.getGender().equals(x)) {
 												System.out.println("Encontrado: ");
 												System.out.println(director);
 												System.out.println("Selecciona que dato deseas cambiar de el director: \n"
@@ -567,7 +567,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													}else {
 														x1=x1.OTHER;
 													}
-													director.setSex(x1);
+													director.setGender(x1);
 												}
 											}
 										}
@@ -697,7 +697,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										}
 										System.out.println("Resultados : \n");
 										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getSex().equals(x)) {
+											if (director.getGender().equals(x)) {
 												System.out.println(director);
 												System.out.println("Posicion "+cont);
 												
