@@ -1,7 +1,10 @@
 package es.iesjandula.plataforma_streaming_equipo1.IMenus;
 
-public interface IMenuCategories {
-	public static void categoriesMenu() {
+public interface IMenuCategories 
+{
+	public static void categoriesMenu()
+	{
+		//Menu text display
 		System.out.println("\n"
 				+ "Menu Categorias:\n"
 				+ "[1] Dar de alta una categoria\n"

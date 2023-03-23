@@ -20,55 +20,66 @@ public class Directors {
     //Getters and setters
     
     public String getName() 
+    //get the name
     {
         return name; 
     }
 
     public void setName(String name) 
+    //Set the name
     {
 		this.name = name;
 	}
 
 	public void setLastName(String lastName) 
+	//Set the last name
 	{
 		this.lastName = lastName;
 	}
 
 	public void setNationality(String nationality) 
+	//Set the nationality
 	{
 		this.nationality = nationality;
 	}
 
-	public void setGender(Genders gender) 
+	public void setGender(Genders gender)
+	//Set the gender
 	{
 		this.gender = gender;
 	}
 
 	public void setYear(int year) 
+	//Set the year
 	{
 		this.year = year;
 	}
 
 	public String getlastName() 
+	//Get the last name
 	{
         return lastName;
     }
 
     public String getNationality() 
+    //Get the nationality
     {
         return nationality;
     }
 
     public Genders getGender() 
+    //Get the gender
     {
         return gender;
     }
 
     public int getYear() 
+    // Get the year
     {
         return year;
     }
 
+    //toString method , for print the attributes
 	@Override
 	public String toString() 
 	{
@@ -79,9 +90,5 @@ public class Directors {
         		+ "Genero: "+this.getGender()+"\n"
         		+ "Año nacimiento: "+this.year+"\n";
 	}
-    
-    //Information of director String 
-    
-    
-    
+     
 }

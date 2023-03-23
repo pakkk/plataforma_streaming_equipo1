@@ -9,8 +9,11 @@ import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
 import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
-
-public class Movies extends Audiovisuals{
+/*
+ * Movies class , store the movies
+ */
+public class Movies extends Audiovisuals
+{
 	protected Recomendations[] recomendationsMovies=new Recomendations[0];
 	
 	
@@ -23,18 +26,21 @@ public class Movies extends Audiovisuals{
 	 */
 	
 	public Movies(Actors[] actores,Directors[] directors, Categorie[] categ, String tittle, String originalLenguaje,
-			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear) {
+			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear) 
+	{//Calls to the pather constructor.
 		super(Type.PELICULA, directors, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	
 	/* SETTERS AND GETTERS*/
-	public Recomendations[] getRecomendationsMovies() {
+	public Recomendations[] getRecomendationsMovies() 
+	{	//Get recomendations
 		return recomendationsMovies;
 	}
 
-	public void setRecomendationsMovies(Recomendations recomendationsMovies) {
+	public void setRecomendationsMovies(Recomendations recomendationsMovies) 
+	{	//Set Recomendation
 		this.recomendationsMovies = Arrays.copyOf(this.recomendationsMovies,this.recomendationsMovies.length+1);
 		this.recomendationsMovies[this.recomendationsMovies.length-1]=recomendationsMovies;
 		
@@ -43,10 +49,11 @@ public class Movies extends Audiovisuals{
 
 
 	@Override
-	public String toString() {
-		return "movies [Movies=" + this.type +" "+Arrays.toString(this.actores)+" "
-				+""+Arrays.toString(this.categ)+" "+this.tittle+" "+this.originalLenguaje +" "+Arrays.toString(this.adaptedLenguajes)+" "
-						+ ""+Arrays.toString(this.avaliableSubtitles)+" "+ this.duration+" "+this.creationYear+"]"+" "+Arrays.toString(directors);
+	public String toString() 
+	{	//toString method for print attributes
+		return "movies [Movies=" +type +" "+Arrays.toString(actores)+" "
+		+""+Arrays.toString(categ)+" "+title+" "+originalLanguage +" "+Arrays.toString(adaptedLanguages)+" "
+		+ ""+Arrays.toString(avaliableSubtitles)+" "+ duration+" "+creationYear+"]"+" "+Arrays.toString(directors);
 	}
 	
 	

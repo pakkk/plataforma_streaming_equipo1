@@ -1,7 +1,9 @@
 package es.iesjandula.plataforma_streaming_equipo1.IMenus;
 
-public interface IGeneralsMenu {
-	public static void generalMenu() {
+public interface IGeneralsMenu 
+{
+	public static void generalMenu() 
+	{
 		System.out.println("\n"
 				+ "Menu General de plataforma streaming:\n"
 				+ "[1] Opciones\n"
@@ -10,7 +12,8 @@ public interface IGeneralsMenu {
 				+ "[Otro] Salir...");
 		
 	}
-	public static void optionsGeneralMenu() {
+	public static void optionsGeneralMenu() 
+	{
 		System.out.println("\n"
 				+ "Menu de Opciones (Seleccion):\n"
 				+ "[1] Opciones Directores\n"
@@ -22,7 +25,8 @@ public interface IGeneralsMenu {
 		
 		
 	}
-	public static void selectMovieSerie() {
+	public static void selectMovieSerie() 
+	{
 		System.out.println("\n"
 				+ "Selecciona Opciones de Series o Peliculas\n"
 				+ "[1] Opciones Series\n"

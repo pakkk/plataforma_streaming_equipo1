@@ -18,18 +18,20 @@ import es.iesjandula.plataforma_streaming_equipo1.recomendations.RecomendationsT
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.AvaliableSubtitles;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 
-
+/*
+ * The main class
+ */
 
 public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecommendations
 {
 	public static void clearScreen() 
-	{
+	{	//Method for clear the screen
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		
 	}
 	public static void main(String[] args) 
 	{
-		//Main de inicio 
+		//Main  
 		
 		//----------------BASE OBJECTS---Caterories Class----------------------------
 		

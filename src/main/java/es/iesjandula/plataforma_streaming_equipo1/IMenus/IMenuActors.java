@@ -1,7 +1,10 @@
 package es.iesjandula.plataforma_streaming_equipo1.IMenus;
 
-public interface IMenuActors {
-	public static void actorMenu() {
+public interface IMenuActors 
+{
+	public static void actorMenu() 
+	{
+		//Menu text display
 		System.out.println("\n"
 				+ "Menu Actores:\n"
 				+ "[1] Dar de alta un Actor\n"

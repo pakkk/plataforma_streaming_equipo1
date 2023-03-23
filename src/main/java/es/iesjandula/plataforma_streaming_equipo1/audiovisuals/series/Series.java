@@ -29,7 +29,8 @@ public class Series extends Audiovisuals{
 	 */
 	public Series(Actors[] actores,Directors[] directors, Categorie[] categ, String tittle, String originalLenguaje,
 			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear,int nCapitules
-			,int seasons) {
+			,int seasons) 
+	{
 		super(Type.SERIE, directors, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
 		
 		this.nCapitules=nCapitules;
@@ -38,12 +39,13 @@ public class Series extends Audiovisuals{
 	}
 	
 	
-	
+	//toString method for print the attributes
 	@Override
-	public String toString() {
-		return "Serie=" + this.type +" "+Arrays.toString(this.actores)+" "
-				+""+Arrays.toString(this.categ)+" "+this.tittle+" "+this.originalLenguaje +" "+Arrays.toString(this.adaptedLenguajes)+" "
-						+ ""+Arrays.toString(this.avaliableSubtitles)+" "+ this.duration+" "+this.creationYear+" "+this.seasons+" "+this.nCapitules+" "+Arrays.toString(directors);
+	public String toString() 
+	{
+		return "Serie=" + type +" "+Arrays.toString(actores)+" "
+		+""+Arrays.toString(categ)+" "+title+" "+originalLanguage +" "+Arrays.toString(adaptedLanguages)+" "
+		+ ""+Arrays.toString(avaliableSubtitles)+" "+duration+" "+creationYear+" "+seasons+" "+nCapitules+" "+Arrays.toString(directors);
 	}
 
 
@@ -51,27 +53,39 @@ public class Series extends Audiovisuals{
 	/* SETTERS AND GETTERS */
 	
 	
-	public int getnCapitules() {
+	public int getnCapitules() 
+	{
+		//Get the number of capitules
 		return nCapitules;
 	}
 
-	public void setnCapitules(int nCapitules) {
+	public void setnCapitules(int nCapitules) 
+	{
+		//Set the number of capitules
 		this.nCapitules = nCapitules;
 	}
 
-	public int getSeasons() {
+	public int getSeasons() 
+	{
+		//Get the seasons
 		return seasons;
 	}
 
-	public void setSeasons(int seasons) {
+	public void setSeasons(int seasons) 
+	{
+		//Set the seasons
 		this.seasons = seasons;
 	}
 
-	public Recomendations[] getRecomendationsSerie() {
+	public Recomendations[] getRecomendationsSerie() 
+	{
+		//Get the recomendations array
 		return recomendationsSerie;
 	}
 
-	public void setRecomendationsSerie(Recomendations recomendationsSerie) {
+	public void setRecomendationsSerie(Recomendations recomendationsSerie) 
+	{
+		//Set recomendation 
 		this.recomendationsSerie=Arrays.copyOf(this.recomendationsSerie,this.recomendationsSerie.length+1);
 		this.recomendationsSerie[this.recomendationsSerie.length-1]=recomendationsSerie;
 	}

@@ -1,7 +1,9 @@
 package es.iesjandula.plataforma_streaming_equipo1.IMenus;
 
 public interface IMenuSeries {
-	public static void seriesMenu() {
+	public static void seriesMenu() 
+	{
+		//Menu text display
 		System.out.println("\n"
 				+ "Menu Series:\n"
 				+ "[1] Dar de alta una Serie\n"

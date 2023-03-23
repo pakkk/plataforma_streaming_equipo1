@@ -1,7 +1,10 @@
 package es.iesjandula.plataforma_streaming_equipo1.IMenus;
 
-public interface IMenuDirectors {
-	public static void directorMenu() {
+public interface IMenuDirectors 
+{
+	public static void directorMenu() 
+	{
+		//Menu text display
 		System.out.println("\n"
 				+ "Menu Directores:\n"
 				+ "[1] Dar de alta un director\n"

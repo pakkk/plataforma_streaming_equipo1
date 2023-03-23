@@ -6,7 +6,9 @@ import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
 import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
 import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
-
+/*
+ * Audiovisuals class , store the audiovisuals
+ */
 public class Audiovisuals {
 
 	//Variables
