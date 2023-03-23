@@ -30,11 +30,12 @@ public class Subtitles
 		this.subtitle = subtitle;
 	}
 
-
+	
+	//toString method to print subtitles
 	@Override
 	public String toString() 
 	{
-		return "["+this.subtitle+"]";
+		return "["+subtitle+"]";
 	}
 	
 	
