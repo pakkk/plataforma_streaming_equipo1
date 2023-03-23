@@ -1,7 +1,7 @@
 package es.iesjandula.plataforma_streaming_equipo1.actors;
 
 import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
-
+// Class acotrs, store the actors
 public class Actors 
 {
 	// Variables
