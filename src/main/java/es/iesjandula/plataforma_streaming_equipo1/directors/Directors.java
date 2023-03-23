@@ -84,11 +84,11 @@ public class Directors {
 	public String toString() 
 	{
         return "\nDirector:\n"
-        		+ "Nombre: "+this.name+"\n"
-        		+ "Apellido: "+this.lastName+"\n"
-        		+ "Nacionalidad: "+this.nationality+"\n"
-        		+ "Genero: "+this.getGender()+"\n"
-        		+ "Año nacimiento: "+this.year+"\n";
+        + "Nombre: "+name+"\n"
+        + "Apellido: "+lastName+"\n"
+        + "Nacionalidad: "+nationality+"\n"
+        + "Genero: "+getGender()+"\n"
+        + "Año nacimiento: "+year+"\n";
 	}
      
 }
