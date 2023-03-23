@@ -1585,6 +1585,28 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 						}//----------MOVIES-SERIES-OPTIONS--------------
 						
 						
+						case 6:
+						{//----------SUBTITLES-OPTIONS--------------
+							clearScreen();
+							IMenuSubtitles.subtitlesMenu();
+							int selected = new Scanner(System.in).nextInt();
+							if(selected==1) {
+								//---SERIES SELECTED---
+								clearScreen();
+								IMenuSeries.seriesMenu();
+								
+								
+							}else {
+								//---MOVIES SELECTED---
+								clearScreen();
+								IMenuMovies.moviesMenu();
+								
+								
+							}
+							break;
+						}//----------SUBTITLES-OPTIONS--------------
+						
+						
 						default:{
 							System.out.println("Opcion desconocida");
 							break;
