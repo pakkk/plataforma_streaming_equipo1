@@ -46,7 +46,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		Categorie categoria4 = new Categorie(CategorieTypes.SUSPENSE);
 		Categorie[] arrayCategories1 = {categoria1};
 		Categorie[] arrayCategoriesGeneral = {categoria1,categoria2,categoria3,categoria4};
-		//----------------testing Caterories Class----------------------------
+		//----------------BASE OBJECTS---CATEGORIE CLASS----------------------------
 		
 		
 		
