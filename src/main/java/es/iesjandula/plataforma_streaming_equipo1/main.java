@@ -143,7 +143,8 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		boolean isRunning=true;
 		
 		//------MAIN--LOOP-------
-		while(isRunning){
+		while(isRunning)
+		{
 			int firstSelection;
 			IGeneralsMenu.generalMenu();
 			System.out.print("-> ");
@@ -152,7 +153,8 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 			
 			switch(firstSelection) 
 			{
-				case 1:{
+				case 1:
+				{
 					//-------------OPTIONS MENU CASE-------------
 					clearScreen();
 					IGeneralsMenu.optionsGeneralMenu();
@@ -167,8 +169,10 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 							clearScreen();
 							IMenuDirectors.directorMenu();
 							int selection = new Scanner(System.in).nextInt();
-							switch(selection) {
-								case 1:{
+							switch(selection) 
+							{
+								case 1:
+								{
 									System.out.println("Dime el nombre del director");
 									String name=new Scanner(System.in).nextLine();
 									clearScreen();
