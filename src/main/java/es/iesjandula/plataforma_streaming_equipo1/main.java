@@ -20,12 +20,15 @@ import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 
 
 
-public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecommendations{
-	public static void clearScreen() {
+public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecommendations
+{
+	public static void clearScreen() 
+	{
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		//Main de inicio 
 		
 		//----------------BASE OBJECTS---Caterories Class----------------------------
@@ -147,7 +150,8 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 			//Principal selection
 			firstSelection = new Scanner(System.in).nextInt();
 			
-			switch(firstSelection) {
+			switch(firstSelection) 
+			{
 				case 1:{
 					//-------------OPTIONS MENU CASE-------------
 					clearScreen();
@@ -156,7 +160,8 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 					//Getting the Main menu selection
 					int optionSelection = new Scanner(System.in).nextInt();
 					
-					switch(optionSelection) {
+					switch(optionSelection) 
+					{
 						case 1:
 						{//----------DIRECTORS OPTIONS--------------
 							clearScreen();
@@ -180,11 +185,16 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 									int gender = new Scanner(System.in).nextInt();
 									clearScreen();
 									Genders x=Genders.OTHER;
-									if (gender==1) {
+									if (gender==1)
+									{
 										x=x.MAN;
-									}else if (gender==2){
+									}
+									else if (gender==2)
+									{
 										x=x.WOMAN;
-									}else {
+									}
+									else 
+									{
 										x=x.OTHER;
 									}
 									System.out.println("Dime el año de nacimiento del director");
@@ -196,7 +206,8 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 									System.out.println(arrayDirectorsGeneral[arrayDirectorsGeneral.length-1]);
 									break;
 								}
-								case 2:{
+								case 2:
+								{
 									clearScreen();
 									System.out.println("Selecciona el metodo de busqueda: \n"
 											+ "[1] Nombre \n"
@@ -206,47 +217,64 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 											+ "[5] Genero \n");
 									int selection1 = new Scanner(System.in).nextInt();
 									clearScreen();
-									if (selection1==1) {
+									if (selection1==1) 
+									{
 										System.out.println("Indica el nombre \n");
 										String name=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getName().equals(name)) {
+										for (Directors director:arrayDirectorsGeneral) 
+										{
+											if (director.getName().equals(name)) 
+											{
 												System.out.println(director);
 											}
 										}
-									}else if (selection1==2) {
+									}
+									else if (selection1==2) 
+									{
 										System.out.println("Indica el Apellido \n");
 										String apellido=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getLastName().equals(apellido)) {
+										for (Directors director:arrayDirectorsGeneral) 
+										{
+											if (director.getlastName().equals(apellido)) 
+											{
 												System.out.println(director);
 											}
 										}
-									}else if (selection1==3) {
+									}
+									else if (selection1==3) 
+									{
 										System.out.println("Indica el Año de Nacimiento \n");
 										int year=new Scanner(System.in).nextInt();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getYear()==year) {
+										for (Directors director:arrayDirectorsGeneral) 
+										{
+											if (director.getYear()==year) 
+											{
 												System.out.println(director);
 											}
 										}
-									}else if (selection1==4) {
+									}
+									else if (selection1==4) 
+									{
 										System.out.println("Indica la Nacionalidad \n");
 										String nacionalidad=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getNationality().equals(nacionalidad)) {
+										for (Directors director:arrayDirectorsGeneral)
+										{
+											if (director.getNationality().equals(nacionalidad)) 
+											{
 												System.out.println(director);
 											}
 										}
-									}else {
+									}
+									else 
+									{
 										System.out.println("Indica el genero \n"
 												+ "[1] Man \n"
 												+ "[2] Woman \n"
@@ -254,23 +282,31 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										int gender = new Scanner(System.in).nextInt();
 										clearScreen();
 										Genders x=Genders.OTHER;
-										if (gender==1) {
+										if (gender==1)
+										{
 											x=x.MAN;
-										}else if (gender==2){
+										}
+										else if (gender==2)
+										{
 											x=x.WOMAN;
-										}else {
+										}
+										else 
+										{
 											x=x.OTHER;
 										}
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getGender().equals(x)) {
+										for (Directors director:arrayDirectorsGeneral)
+										{
+											if (director.getGender().equals(x)) 
+											{
 												System.out.println(director);
 											}
 										}
 									}
 									break;
 								}
-								case 3:{
+								case 3:
+								{
 									clearScreen();
 									System.out.println("Selecciona metodo de busqueda para modificar el director: \n"
 											+ "[1] Nombre \n"
@@ -280,13 +316,16 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 											+ "[5] Genero \n");
 									int selection1 = new Scanner(System.in).nextInt();
 									clearScreen();
-									if (selection1==1) {
+									if (selection1==1) 
+									{
 										System.out.println("Indica el nombre \n");
 										String name=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getName().equals(name)) {
+										for (Directors director:arrayDirectorsGeneral) 
+										{
+											if (director.getName().equals(name)) 
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(director);
 												System.out.println("Selecciona que dato deseas cambiar de el director: \n"
@@ -297,27 +336,36 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 														+ "[5] Genero \n");
 												int selection2 = new Scanner(System.in).nextInt();
 												clearScreen();
-												if (selection2==1) {
+												if (selection2==1) 
+												{
 													System.out.println("Dime nombre ");
 													String name1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setName(name1);
-												}else if (selection2==2) {
+												}
+												else if (selection2==2) 
+												{
 													System.out.println("Dime apellido ");
 													String lastName1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setLastName(lastName1);
-												}else if (selection2==3) {
+												}
+												else if (selection2==3)
+												{
 													System.out.println("Dime año de nacimiento: ");
 													int year=new Scanner(System.in).nextInt();
 													clearScreen(); 
 													director.setYear(year);
-												}else if (selection2==4) {
+												}
+												else if (selection2==4) 
+												{
 													System.out.println("Dime Nacionalidad ");
 													String nationality=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setNationality(nationality);
-												}else {
+												}
+												else 
+												{
 													System.out.println("Indica el genero \n"
 															+ "[1] Man \n"
 															+ "[2] Woman \n"
@@ -325,24 +373,33 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													int gender = new Scanner(System.in).nextInt();
 													clearScreen();
 													Genders x=Genders.OTHER;
-													if (gender==1) {
+													if (gender==1) 
+													{
 														x=x.MAN;
-													}else if (gender==2){
+													}
+													else if (gender==2)
+													{
 														x=x.WOMAN;
-													}else {
+													}
+													else 
+													{
 														x=x.OTHER;
 													}
 													director.setGender(x);
 												}
 											}
 										}
-									}else if (selection1==2) {
+									}
+									else if (selection1==2)
+									{
 										System.out.println("Indica el apellido \n");
 										String apellido=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getLastName().equals(apellido)) {
+										for (Directors director:arrayDirectorsGeneral) 
+										{
+											if (director.getlastName().equals(apellido)) 
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(director);
 												System.out.println("Selecciona que dato deseas cambiar de el director: \n"
@@ -353,27 +410,36 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 														+ "[5] Genero \n");
 												int selection2 = new Scanner(System.in).nextInt();
 												clearScreen();
-												if (selection2==1) {
+												if (selection2==1) 
+												{
 													System.out.println("Dime nombre ");
 													String name1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setName(name1);
-												}else if (selection2==2) {
+												}
+												else if (selection2==2)
+												{
 													System.out.println("Dime apellido ");
 													String lastName1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setLastName(lastName1);
-												}else if (selection2==3) {
+												}
+												else if (selection2==3) 
+												{
 													System.out.println("Dime año de nacimiento: ");
 													int year=new Scanner(System.in).nextInt(); 
 													clearScreen();
 													director.setYear(year);
-												}else if (selection2==4) {
+												}
+												else if (selection2==4) 
+												{
 													System.out.println("Dime Nacionalidad ");
 													String nationality=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setNationality(nationality);
-												}else {
+												}
+												else 
+												{
 													System.out.println("Indica el genero \n"
 															+ "[1] Man \n"
 															+ "[2] Woman \n"
@@ -381,24 +447,33 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													int gender = new Scanner(System.in).nextInt();
 													clearScreen();
 													Genders x=Genders.OTHER;
-													if (gender==1) {
+													if (gender==1) 
+													{
 														x=x.MAN;
-													}else if (gender==2){
+													}
+													else if (gender==2)
+													{
 														x=x.WOMAN;
-													}else {
+													}
+													else 
+													{
 														x=x.OTHER;
 													}
 													director.setGender(x);
 												}
 											}
 										}
-									}else if (selection1==3) {
+									}
+									else if (selection1==3) 
+									{
 										System.out.println("Indica el año de nacimiento \n");
 										int nacimiento=new Scanner(System.in).nextInt();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getYear()==nacimiento) {
+										for (Directors director:arrayDirectorsGeneral)
+										{
+											if (director.getYear()==nacimiento) 
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(director);
 												System.out.println("Selecciona que dato deseas cambiar de el director: \n"
@@ -409,27 +484,36 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 														+ "[5] Genero \n");
 												int selection2 = new Scanner(System.in).nextInt();
 												clearScreen();
-												if (selection2==1) {
+												if (selection2==1)
+												{
 													System.out.println("Dime nombre ");
 													String name1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setName(name1);
-												}else if (selection2==2) {
+												}
+												else if (selection2==2)
+												{
 													System.out.println("Dime apellido ");
 													String lastName1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setLastName(lastName1);
-												}else if (selection2==3) {
+												}
+												else if (selection2==3) 
+												{
 													System.out.println("Dime año de nacimiento: ");
 													int year=new Scanner(System.in).nextInt();
 													clearScreen(); 
 													director.setYear(year);
-												}else if (selection2==4) {
+												}
+												else if (selection2==4) 
+												{
 													System.out.println("Dime Nacionalidad ");
 													String nationality=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setNationality(nationality);
-												}else {
+												}
+												else
+												{
 													System.out.println("Indica el genero \n"
 															+ "[1] Man \n"
 															+ "[2] Woman \n"
@@ -437,24 +521,33 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													int gender = new Scanner(System.in).nextInt();
 													clearScreen();
 													Genders x=Genders.OTHER;
-													if (gender==1) {
+													if (gender==1) 
+													{
 														x=x.MAN;
-													}else if (gender==2){
+													}
+													else if (gender==2)
+													{
 														x=x.WOMAN;
-													}else {
+													}
+													else 
+													{
 														x=x.OTHER;
 													}
 													director.setGender(x);
 												}
 											}
 										}
-									}else if (selection1==4) {
+									}
+									else if (selection1==4) 
+									{
 										System.out.println("Indica la nacionalidad \n");
 										String nacionalidad=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getNationality().equals(nacionalidad)) {
+										for (Directors director:arrayDirectorsGeneral)
+										{
+											if (director.getNationality().equals(nacionalidad))
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(director);
 												System.out.println("Selecciona que dato deseas cambiar de el director: \n"
@@ -465,27 +558,36 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 														+ "[5] Genero \n");
 												int selection2 = new Scanner(System.in).nextInt();
 												clearScreen();
-												if (selection2==1) {
+												if (selection2==1) 
+												{
 													System.out.println("Dime nombre ");
 													String name1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setName(name1);
-												}else if (selection2==2) {
+												}
+												else if (selection2==2) 
+												{
 													System.out.println("Dime apellido ");
 													String lastName1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setLastName(lastName1);
-												}else if (selection2==3) {
+												}
+												else if (selection2==3) 
+												{
 													System.out.println("Dime año de nacimiento: ");
 													int year=new Scanner(System.in).nextInt(); 
 													clearScreen();
 													director.setYear(year);
-												}else if (selection2==4) {
+												}
+												else if (selection2==4)
+												{
 													System.out.println("Dime Nacionalidad ");
 													String nationality=new Scanner(System.in).nextLine();
 													clearScreen(); 
 													director.setNationality(nationality);
-												}else {
+												}
+												else 
+												{
 													System.out.println("Indica el genero \n"
 															+ "[1] Man \n"
 															+ "[2] Woman \n"
@@ -493,18 +595,25 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													int gender = new Scanner(System.in).nextInt();
 													clearScreen();
 													Genders x=Genders.OTHER;
-													if (gender==1) {
+													if (gender==1) 
+													{
 														x=x.MAN;
-													}else if (gender==2){
+													}
+													else if (gender==2)
+													{
 														x=x.WOMAN;
-													}else {
+													}
+													else 
+													{
 														x=x.OTHER;
 													}
 													director.setGender(x);
 												}
 											}
 										}
-									}else {
+									}
+									else
+									{
 										System.out.println("Indica el genero \n"
 												+ "[1] Man \n"
 												+ "[2] Woman \n"
@@ -512,16 +621,23 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										int gender = new Scanner(System.in).nextInt();
 										clearScreen();
 										Genders x=Genders.OTHER;
-										if (gender==1) {
+										if (gender==1)
+										{
 											x=x.MAN;
-										}else if (gender==2){
+										}
+										else if (gender==2)
+										{
 											x=x.WOMAN;
-										}else {
+										}
+										else 
+										{
 											x=x.OTHER;
 										}
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getGender().equals(x)) {
+										for (Directors director:arrayDirectorsGeneral)
+										{
+											if (director.getGender().equals(x))
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(director);
 												System.out.println("Selecciona que dato deseas cambiar de el director: \n"
@@ -532,27 +648,36 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 														+ "[5] Genero \n");
 												int selection2 = new Scanner(System.in).nextInt();
 												clearScreen();
-												if (selection2==1) {
+												if (selection2==1) 
+												{
 													System.out.println("Dime nombre ");
 													String name1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setName(name1);
-												}else if (selection2==2) {
+												}
+												else if (selection2==2) 
+												{
 													System.out.println("Dime apellido ");
 													String lastName1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setLastName(lastName1);
-												}else if (selection2==3) {
+												}
+												else if (selection2==3) 
+												{
 													System.out.println("Dime año de nacimiento: ");
 													int year=new Scanner(System.in).nextInt(); 
 													clearScreen();
 													director.setYear(year);
-												}else if (selection2==4) {
+												}
+												else if (selection2==4) 
+												{
 													System.out.println("Dime Nacionalidad ");
 													String nationality=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													director.setNationality(nationality);
-												}else {
+												}
+												else 
+												{
 													System.out.println("Indica el genero \n"
 															+ "[1] Man \n"
 															+ "[2] Woman \n"
@@ -560,11 +685,16 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													int gender1 = new Scanner(System.in).nextInt();
 													clearScreen();
 													Genders x1=Genders.OTHER;
-													if (gender1==1) {
+													if (gender1==1) 
+													{
 														x1=x1.MAN;
-													}else if (gender1==2){
+													}
+													else if (gender1==2)
+													{
 														x1=x1.WOMAN;
-													}else {
+													}
+													else 
+													{
 														x1=x1.OTHER;
 													}
 													director.setGender(x1);
@@ -574,7 +704,8 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 									}
 									break;
 								}
-								case 4:{
+								case 4:
+								{
 									int cont=0;
 									System.out.println("Selecciona el metodo de busqueda para borrar: \n"
 											+ "[1] Nombre \n"
@@ -584,20 +715,27 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 											+ "[5] Genero \n");
 									int selection1 = new Scanner(System.in).nextInt();
 									clearScreen();
-									if (selection1==1) {
+									if (selection1==1) 
+									{
 										System.out.println("Indica el nombre \n");
 										String name=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getName().equals(name)) {
+										for (Directors director:arrayDirectorsGeneral) 
+										{
+											if (director.getName().equals(name)) 
+											{
 												System.out.println(director);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayDirectorsGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayDirectorsGeneral.length;i++) 
+												{
+													if(cont==i) 
+													{
 														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
 													}
 												}
@@ -608,20 +746,28 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										}
 										System.out.println(Arrays.toString(arrayDirectorsGeneral));
 										cont=0;
-									}else if (selection1==2) {
+									}
+									else if (selection1==2)
+									{
 										System.out.println("Indica el Apellido \n");
 										String apellido=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getLastName().equals(apellido)) {
+										for (Directors director:arrayDirectorsGeneral) 
+										{
+											if (director.getlastName().equals(apellido)) 
+											{
 												System.out.println(director);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayDirectorsGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayDirectorsGeneral.length;i++) 
+												{
+													if(cont==i)
+													{
 														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
 													}
 												}
@@ -632,20 +778,28 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										}
 										System.out.println(Arrays.toString(arrayDirectorsGeneral));
 										cont=0;
-									}else if (selection1==3) {
+									}
+									else if (selection1==3) 
+									{
 										System.out.println("Indica el año de nacimiento \n");
 										int year=new Scanner(System.in).nextInt();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getYear()==year) {
+										for (Directors director:arrayDirectorsGeneral) 
+										{
+											if (director.getYear()==year) 
+											{
 												System.out.println(director);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayDirectorsGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayDirectorsGeneral.length;i++) 
+												{
+													if(cont==i) 
+													{
 														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
 													}
 												}
@@ -656,20 +810,28 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										}
 										System.out.println(Arrays.toString(arrayDirectorsGeneral));
 										cont=0;
-									}else if (selection1==4) {
+									}
+									else if (selection1==4) 
+									{
 										System.out.println("Indica Nacionalidad \n");
 										String nacionalidad=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getNationality().equals(nacionalidad)) {
+										for (Directors director:arrayDirectorsGeneral)
+										{
+											if (director.getNationality().equals(nacionalidad)) 
+											{
 												System.out.println(director);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayDirectorsGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayDirectorsGeneral.length;i++) 
+												{
+													if(cont==i) 
+													{
 														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
 													}
 												}
@@ -680,7 +842,9 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										}
 										System.out.println(Arrays.toString(arrayDirectorsGeneral));
 										cont=0;
-									}else {
+									}
+									else
+									{
 										System.out.println("Indica el genero \n"
 												+ "[1] Man \n"
 												+ "[2] Woman \n"
@@ -688,23 +852,34 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										int gender = new Scanner(System.in).nextInt();
 										clearScreen();
 										Genders x=Genders.OTHER;
-										if (gender==1) {
+										if (gender==1) 
+										{
 											x=x.MAN;
-										}else if (gender==2){
+										}
+										else if (gender==2)
+										{
 											x=x.WOMAN;
-										}else {
+										}
+										else 
+										{
 											x=x.OTHER;
 										}
 										System.out.println("Resultados : \n");
-										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getGender().equals(x)) {
+										for (Directors director:arrayDirectorsGeneral)
+										{
+											if (director.getGender().equals(x)) 
+											{
 												System.out.println(director);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayDirectorsGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayDirectorsGeneral.length;i++)
+												{
+													if(cont==i) 
+													{
 														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
 													}
 												}
@@ -729,8 +904,11 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 							clearScreen();
 							IMenuActors.actorMenu();
 							int selection = new Scanner(System.in).nextInt();
-							switch(selection) {
-								case 1:{
+							switch(selection) 
+							{
+								case 1:
+								{
+
 									System.out.println("Dime el nombre del actor");
 									String name=new Scanner(System.in).nextLine();
 									clearScreen();
@@ -747,11 +925,16 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 									int gender = new Scanner(System.in).nextInt();
 									clearScreen();
 									Genders x=Genders.OTHER;
-									if (gender==1) {
+									if (gender==1)
+									{
 										x=x.MAN;
-									}else if (gender==2){
+									}
+									else if (gender==2)
+									{
 										x=x.WOMAN;
-									}else {
+									}
+									else 
+									{
 										x=x.OTHER;
 									}
 									System.out.println("Dime el año de nacimiento del actor");
@@ -763,7 +946,8 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 									System.out.println(arrayActorsGeneral[arrayActorsGeneral.length-1]);
 									break;
 								}
-								case 2:{
+								case 2:
+								{
 									clearScreen();
 									System.out.println("Selecciona el metodo de busqueda: \n"
 											+ "[1] Nombre \n"
@@ -773,47 +957,64 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 											+ "[5] Genero \n");
 									int selection1 = new Scanner(System.in).nextInt();
 									clearScreen();
-									if (selection1==1) {
+									if (selection1==1) 
+									{
 										System.out.println("Indica el nombre \n");
 										String name=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getName().equals(name)) {
+										for (Actors actor:arrayActorsGeneral) 
+										{
+											if (actor.getName().equals(name)) 
+											{
 												System.out.println(actor);
 											}
 										}
-									}else if (selection1==2) {
+									}
+									else if (selection1==2) 
+									{
 										System.out.println("Indica el Apellido \n");
 										String apellido=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getLastName().equals(apellido)) {
+										for (Actors actor:arrayActorsGeneral) 
+										{
+											if (actor.getLastName().equals(apellido)) 
+											{
 												System.out.println(actor);
 											}
 										}
-									}else if (selection1==3) {
+									}
+									else if (selection1==3) 
+									{
 										System.out.println("Indica el Año de Nacimiento \n");
 										int year=new Scanner(System.in).nextInt();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getYear()==year) {
+										for (Actors actor:arrayActorsGeneral)
+										{
+											if (actor.getYear()==year) 
+											{
 												System.out.println(actor);
 											}
 										}
-									}else if (selection1==4) {
+									}
+									else if (selection1==4) 
+									{
 										System.out.println("Indica la Nacionalidad \n");
 										String nacionalidad=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getNationality().equals(nacionalidad)) {
+										for (Actors actor:arrayActorsGeneral) 
+										{
+											if (actor.getNationality().equals(nacionalidad)) 
+											{
 												System.out.println(actor);
 											}
 										}
-									}else {
+									}
+									else 
+									{
 										System.out.println("Indica el genero \n"
 												+ "[1] Man \n"
 												+ "[2] Woman \n"
@@ -821,23 +1022,31 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										int gender = new Scanner(System.in).nextInt();
 										clearScreen();
 										Genders x=Genders.OTHER;
-										if (gender==1) {
+										if (gender==1) 
+										{
 											x=x.MAN;
-										}else if (gender==2){
+										}
+										else if (gender==2)
+										{
 											x=x.WOMAN;
-										}else {
+										}
+										else 
+										{
 											x=x.OTHER;
 										}
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getGender().equals(x)) {
+										for (Actors actor:arrayActorsGeneral)
+										{
+											if (actor.getGender().equals(x)) 
+											{
 												System.out.println(actor);
 											}
 										}
 									}
 									break;
 								}
-								case 3:{
+								case 3:
+								{
 									clearScreen();
 									System.out.println("Selecciona metodo de busqueda para modificar el actor: \n"
 											+ "[1] Nombre \n"
@@ -847,13 +1056,16 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 											+ "[5] Genero \n");
 									int selection1 = new Scanner(System.in).nextInt();
 									clearScreen();
-									if (selection1==1) {
+									if (selection1==1) 
+									{
 										System.out.println("Indica el nombre \n");
 										String name=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getName().equals(name)) {
+										for (Actors actor:arrayActorsGeneral) 
+										{
+											if (actor.getName().equals(name))
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(actor);
 												System.out.println("Selecciona que dato deseas cambiar del actor: \n"
@@ -864,27 +1076,36 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 														+ "[5] Genero \n");
 												int selection2 = new Scanner(System.in).nextInt();
 												clearScreen();
-												if (selection2==1) {
+												if (selection2==1)
+												{
 													System.out.println("Dime nombre ");
 													String name1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setName(name1);
-												}else if (selection2==2) {
+												}
+												else if (selection2==2) 
+												{
 													System.out.println("Dime apellido ");
 													String lastName1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setLastName(lastName1);
-												}else if (selection2==3) {
+												}
+												else if (selection2==3) 
+												{
 													System.out.println("Dime año de nacimiento: ");
 													int year=new Scanner(System.in).nextInt();
 													clearScreen(); 
 													actor.setYear(year);
-												}else if (selection2==4) {
+												}
+												else if (selection2==4) 
+												{
 													System.out.println("Dime Nacionalidad ");
 													String nationality=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setNationality(nationality);
-												}else {
+												}
+												else 
+												{
 													System.out.println("Indica el genero \n"
 															+ "[1] Man \n"
 															+ "[2] Woman \n"
@@ -892,24 +1113,33 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													int gender = new Scanner(System.in).nextInt();
 													clearScreen();
 													Genders x=Genders.OTHER;
-													if (gender==1) {
+													if (gender==1)
+													{
 														x=x.MAN;
-													}else if (gender==2){
+													}
+													else if (gender==2)
+													{
 														x=x.WOMAN;
-													}else {
+													}
+													else
+													{
 														x=x.OTHER;
 													}
 													actor.setGender(x);
 												}
 											}
 										}
-									}else if (selection1==2) {
+									}
+									else if (selection1==2) 
+									{
 										System.out.println("Indica el apellido \n");
 										String apellido=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getLastName().equals(apellido)) {
+										for (Actors actor:arrayActorsGeneral) 
+										{
+											if (actor.getLastName().equals(apellido)) 
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(actor);
 												System.out.println("Selecciona que dato deseas cambiar de el actor: \n"
@@ -920,27 +1150,36 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 														+ "[5] Genero \n");
 												int selection2 = new Scanner(System.in).nextInt();
 												clearScreen();
-												if (selection2==1) {
+												if (selection2==1)
+												{
 													System.out.println("Dime nombre ");
 													String name1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setName(name1);
-												}else if (selection2==2) {
+												}
+												else if (selection2==2)
+												{
 													System.out.println("Dime apellido ");
 													String lastName1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setLastName(lastName1);
-												}else if (selection2==3) {
+												}
+												else if (selection2==3) 
+												{
 													System.out.println("Dime año de nacimiento: ");
 													int year=new Scanner(System.in).nextInt(); 
 													clearScreen();
 													actor.setYear(year);
-												}else if (selection2==4) {
+												}
+												else if (selection2==4) 
+												{
 													System.out.println("Dime Nacionalidad ");
 													String nationality=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setNationality(nationality);
-												}else {
+												}
+												else 
+												{
 													System.out.println("Indica el genero \n"
 															+ "[1] Man \n"
 															+ "[2] Woman \n"
@@ -948,24 +1187,33 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													int gender = new Scanner(System.in).nextInt();
 													clearScreen();
 													Genders x=Genders.OTHER;
-													if (gender==1) {
+													if (gender==1) 
+													{
 														x=x.MAN;
-													}else if (gender==2){
+													}
+													else if (gender==2)
+													{
 														x=x.WOMAN;
-													}else {
+													}
+													else 
+													{
 														x=x.OTHER;
 													}
 													actor.setGender(x);
 												}
 											}
 										}
-									}else if (selection1==3) {
+									}
+									else if (selection1==3) 
+									{
 										System.out.println("Indica el año de nacimiento \n");
 										int nacimiento=new Scanner(System.in).nextInt();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getYear()==nacimiento) {
+										for (Actors actor:arrayActorsGeneral) 
+										{
+											if (actor.getYear()==nacimiento) 
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(actor);
 												System.out.println("Selecciona que dato deseas cambiar de el actor: \n"
@@ -976,27 +1224,36 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 														+ "[5] Genero \n");
 												int selection2 = new Scanner(System.in).nextInt();
 												clearScreen();
-												if (selection2==1) {
+												if (selection2==1) 
+												{
 													System.out.println("Dime nombre ");
 													String name1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setName(name1);
-												}else if (selection2==2) {
+												}
+												else if (selection2==2) 
+												{
 													System.out.println("Dime apellido ");
 													String lastName1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setLastName(lastName1);
-												}else if (selection2==3) {
+												}
+												else if (selection2==3)
+												{
 													System.out.println("Dime año de nacimiento: ");
 													int year=new Scanner(System.in).nextInt();
 													clearScreen(); 
 													actor.setYear(year);
-												}else if (selection2==4) {
+												}
+												else if (selection2==4) 
+												{
 													System.out.println("Dime Nacionalidad ");
 													String nationality=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setNationality(nationality);
-												}else {
+												}
+												else 
+												{
 													System.out.println("Indica el genero \n"
 															+ "[1] Man \n"
 															+ "[2] Woman \n"
@@ -1004,24 +1261,33 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													int gender = new Scanner(System.in).nextInt();
 													clearScreen();
 													Genders x=Genders.OTHER;
-													if (gender==1) {
+													if (gender==1) 
+													{
 														x=x.MAN;
-													}else if (gender==2){
+													}
+													else if (gender==2)
+													{
 														x=x.WOMAN;
-													}else {
+													}
+													else 
+													{
 														x=x.OTHER;
 													}
 													actor.setGender(x);
 												}
 											}
 										}
-									}else if (selection1==4) {
+									}
+									else if (selection1==4) 
+									{
 										System.out.println("Indica la nacionalidad \n");
 										String nacionalidad=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getNationality().equals(nacionalidad)) {
+										for (Actors actor:arrayActorsGeneral) 
+										{
+											if (actor.getNationality().equals(nacionalidad))
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(actor);
 												System.out.println("Selecciona que dato deseas cambiar de el actor: \n"
@@ -1032,27 +1298,36 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 														+ "[5] Genero \n");
 												int selection2 = new Scanner(System.in).nextInt();
 												clearScreen();
-												if (selection2==1) {
+												if (selection2==1) 
+												{
 													System.out.println("Dime nombre ");
 													String name1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setName(name1);
-												}else if (selection2==2) {
+												}
+												else if (selection2==2) 
+												{
 													System.out.println("Dime apellido ");
 													String lastName1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setLastName(lastName1);
-												}else if (selection2==3) {
+												}
+												else if (selection2==3)
+												{
 													System.out.println("Dime año de nacimiento: ");
 													int year=new Scanner(System.in).nextInt(); 
 													clearScreen();
 													actor.setYear(year);
-												}else if (selection2==4) {
+												}
+												else if (selection2==4) 
+												{
 													System.out.println("Dime Nacionalidad ");
 													String nationality=new Scanner(System.in).nextLine();
 													clearScreen(); 
 													actor.setNationality(nationality);
-												}else {
+												}
+												else 
+												{
 													System.out.println("Indica el genero \n"
 															+ "[1] Man \n"
 															+ "[2] Woman \n"
@@ -1060,18 +1335,25 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													int gender = new Scanner(System.in).nextInt();
 													clearScreen();
 													Genders x=Genders.OTHER;
-													if (gender==1) {
+													if (gender==1)
+													{
 														x=x.MAN;
-													}else if (gender==2){
+													}
+													else if (gender==2)
+													{
 														x=x.WOMAN;
-													}else {
+													}
+													else 
+													{
 														x=x.OTHER;
 													}
 													actor.setGender(x);
 												}
 											}
 										}
-									}else {
+									}
+									else 
+									{
 										System.out.println("Indica el genero \n"
 												+ "[1] Man \n"
 												+ "[2] Woman \n"
@@ -1079,16 +1361,23 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										int gender = new Scanner(System.in).nextInt();
 										clearScreen();
 										Genders x=Genders.OTHER;
-										if (gender==1) {
+										if (gender==1) 
+										{
 											x=x.MAN;
-										}else if (gender==2){
+										}
+										else if (gender==2)
+										{
 											x=x.WOMAN;
-										}else {
+										}
+										else 
+										{
 											x=x.OTHER;
 										}
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getGender().equals(x)) {
+										for (Actors actor:arrayActorsGeneral) 
+										{
+											if (actor.getGender().equals(x)) 
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(actor);
 												System.out.println("Selecciona que dato deseas cambiar de el actor: \n"
@@ -1099,27 +1388,36 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 														+ "[5] Genero \n");
 												int selection2 = new Scanner(System.in).nextInt();
 												clearScreen();
-												if (selection2==1) {
+												if (selection2==1) 
+												{
 													System.out.println("Dime nombre ");
 													String name1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setName(name1);
-												}else if (selection2==2) {
+												}
+												else if (selection2==2) 
+												{
 													System.out.println("Dime apellido ");
 													String lastName1=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setLastName(lastName1);
-												}else if (selection2==3) {
+												}
+												else if (selection2==3) 
+												{
 													System.out.println("Dime año de nacimiento: ");
 													int year=new Scanner(System.in).nextInt(); 
 													clearScreen();
 													actor.setYear(year);
-												}else if (selection2==4) {
+												}
+												else if (selection2==4) 
+												{
 													System.out.println("Dime Nacionalidad ");
 													String nationality=new Scanner(System.in).nextLine(); 
 													clearScreen();
 													actor.setNationality(nationality);
-												}else {
+												}
+												else 
+												{
 													System.out.println("Indica el genero \n"
 															+ "[1] Man \n"
 															+ "[2] Woman \n"
@@ -1127,11 +1425,16 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 													int gender1 = new Scanner(System.in).nextInt();
 													clearScreen();
 													Genders x1=Genders.OTHER;
-													if (gender1==1) {
+													if (gender1==1) 
+													{
 														x1=x1.MAN;
-													}else if (gender1==2){
+													}
+													else if (gender1==2)
+													{
 														x1=x1.WOMAN;
-													}else {
+													}
+													else 
+													{
 														x1=x1.OTHER;
 													}
 													actor.setGender(x1);
@@ -1141,7 +1444,8 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 									}
 									break;
 								}
-								case 4:{
+								case 4:
+								{
 									int cont=0;
 									System.out.println("Selecciona el metodo de busqueda para borrar: \n"
 											+ "[1] Nombre \n"
@@ -1151,20 +1455,27 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 											+ "[5] Genero \n");
 									int selection1 = new Scanner(System.in).nextInt();
 									clearScreen();
-									if (selection1==1) {
+									if (selection1==1)
+									{
 										System.out.println("Indica el nombre \n");
 										String name=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getName().equals(name)) {
+										for (Actors actor:arrayActorsGeneral) 
+										{
+											if (actor.getName().equals(name))
+											{
 												System.out.println(actor);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayActorsGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayActorsGeneral.length;i++) 
+												{
+													if(cont==i) 
+													{
 														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 													arrayActorsGeneral[i]=arrayActorsGeneral[i];
 													}
 												}
@@ -1175,44 +1486,58 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										}
 										System.out.println(Arrays.toString(arrayActorsGeneral));
 										cont=0;
-									}else if (selection1==2) {
+									}
+									else if (selection1==2) 
+									{
 										System.out.println("Indica el Apellido \n");
 										String apellido=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getLastName().equals(apellido)) {
+										for (Actors actor:arrayActorsGeneral) 
+										{
+											if (actor.getLastName().equals(apellido)) 
+											{
 												System.out.println(actor);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayActorsGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayActorsGeneral.length;i++) 
+												{
+													if(cont==i) 
+													{
 														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 													arrayActorsGeneral[i]=arrayActorsGeneral[i];
 													}
 												}
-												
 												arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length-1);
 											}
 											cont+=1;
 										}
 										System.out.println(Arrays.toString(arrayActorsGeneral));
 										cont=0;
-									}else if (selection1==3) {
+									}
+									else if (selection1==3)
+									{
 										System.out.println("Indica el año de nacimiento \n");
 										int year=new Scanner(System.in).nextInt();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
+										for (Actors actor:arrayActorsGeneral)
+										{
 											if (actor.getYear()==year) {
 												System.out.println(actor);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayActorsGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayActorsGeneral.length;i++) 
+												{
+													if(cont==i) 
+													{
 														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
-													}else {
+													}
+													else
+													{
 													arrayActorsGeneral[i]=arrayActorsGeneral[i];
 													}
 												}
@@ -1223,20 +1548,28 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										}
 										System.out.println(Arrays.toString(arrayActorsGeneral));
 										cont=0;
-									}else if (selection1==4) {
+									}
+									else if (selection1==4) 
+									{
 										System.out.println("Indica Nacionalidad \n");
 										String nacionalidad=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getNationality().equals(nacionalidad)) {
+										for (Actors actor:arrayActorsGeneral) 
+										{
+											if (actor.getNationality().equals(nacionalidad)) 
+											{
 												System.out.println(actor);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayActorsGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayActorsGeneral.length;i++) 
+												{
+													if(cont==i) 
+													{
 														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
-													}else {
+													}
+													else
+													{
 													arrayActorsGeneral[i]=arrayActorsGeneral[i];
 													}
 												}
@@ -1247,7 +1580,9 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										}
 										System.out.println(Arrays.toString(arrayActorsGeneral));
 										cont=0;
-									}else {
+									}
+									else 
+									{
 										System.out.println("Indica el genero \n"
 												+ "[1] Man \n"
 												+ "[2] Woman \n"
@@ -1255,23 +1590,34 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										int gender = new Scanner(System.in).nextInt();
 										clearScreen();
 										Genders x=Genders.OTHER;
-										if (gender==1) {
+										if (gender==1) 
+										{
 											x=x.MAN;
-										}else if (gender==2){
+										}
+										else if (gender==2)
+										{
 											x=x.WOMAN;
-										}else {
+										}
+										else 
+										{
 											x=x.OTHER;
 										}
 										System.out.println("Resultados : \n");
-										for (Actors actor:arrayActorsGeneral) {
-											if (actor.getGender().equals(x)) {
+										for (Actors actor:arrayActorsGeneral) 
+										{
+											if (actor.getGender().equals(x)) 
+											{
 												System.out.println(actor);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayActorsGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayActorsGeneral.length;i++) 
+												{
+													if(cont==i) 
+													{
 														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 													arrayActorsGeneral[i]=arrayActorsGeneral[i];
 													}
 												}
@@ -1298,8 +1644,10 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 							//String recomendations,RecomendationsType Type
 							
 							int selection = new Scanner(System.in).nextInt();
-							switch(selection) {
-								case 1:{
+							switch(selection) 
+							{
+								case 1:
+								{
 									//-------------CREATE-RECOMENDATION-----------------
 									System.out.println("Texto de la Recomandacion:");
 									String texto=new Scanner(System.in).nextLine();
@@ -1310,14 +1658,19 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 											+ "[3] Neutral\n");
 									int recomendationType=new Scanner(System.in).nextInt();
 									RecomendationsType x;
-									if (recomendationType==1) {
+									if (recomendationType==1) 
+									{
 										x=RecomendationsType.POSITIVE;
-									}else if (recomendationType==2) {
+									}
+									else if (recomendationType==2) 
+									{
 										x=RecomendationsType.NEGATIVE;
-									}else {
+									}
+									else 
+									{
 										x=RecomendationsType.NEUTRAL;
 									}
-									
+		
 									clearScreen();
 
 									arrayRecomendationsGeneral=Arrays.copyOf(arrayRecomendationsGeneral, arrayRecomendationsGeneral.length+1);
@@ -1326,7 +1679,8 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 									break;
 									//-------------CREATE-RECOMENDATION-----------------
 								}
-								case 2:{
+								case 2:
+								{
 									//-------------SEARCH-RECOMENDATIONS-----------------
 									clearScreen();
 									System.out.println("Selecciona el metodo de busqueda: \n"
@@ -1334,20 +1688,25 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 											+ "[2] Tipo (Positiva,Negativa,Neutral) \n");
 									int selection1 = new Scanner(System.in).nextInt();
 									clearScreen();
-									if (selection1==1) {
+									if (selection1==1) 
+									{
 										//--SARCH-BY-TEXT--
 										System.out.println("Indica el texto \n");
 										String texto=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Recomendations recomendation:arrayRecomendationsGeneral) {
-											if (recomendation.getRecomendations().contains(texto)) {
+										for (Recomendations recomendation:arrayRecomendationsGeneral) 
+										{
+											if (recomendation.getRecomendations().contains(texto)) 
+											{
 												System.out.println(recomendation);
 											}
 										}
 										//--SARCH-BY-TEXT--
 										
-									}else if (selection1==2) {
+									}
+									else if (selection1==2) 
+									{
 										//--SARCH-BY-TYPE--
 										System.out.println("Tipo de recomendacion:\n"
 												+ "[1] Positiva\n"
@@ -1355,18 +1714,25 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 												+ "[3] Neutral\n");
 										int recomendationType=new Scanner(System.in).nextInt();
 										RecomendationsType x;
-										if (recomendationType==1) {
+										if (recomendationType==1) 
+										{
 											x=RecomendationsType.POSITIVE;
-										}else if (recomendationType==2) {
+										}
+										else if (recomendationType==2) 
+										{
 											x=RecomendationsType.NEGATIVE;
-										}else {
+										}
+										else 
+										{
 											x=RecomendationsType.NEUTRAL;
 										}
 										
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Recomendations recomendation:arrayRecomendationsGeneral) {
-											if (recomendation.getType().equals(x)) {
+										for (Recomendations recomendation:arrayRecomendationsGeneral) 
+										{
+											if (recomendation.getType().equals(x))
+											{
 												System.out.println(recomendation);
 											}
 										}
@@ -1376,7 +1742,8 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 									
 									//-------------SEARCH-RECOMENDATIONS-----------------
 								}
-								case 3:{
+								case 3:
+								{
 									//-------------MODIFY-RECOMENDATION-----------------
 									clearScreen();
 									System.out.println("Selecciona el metodo de busqueda para modificar: \n"
@@ -1384,34 +1751,45 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 											+ "[2] Tipo (Positiva,Negativa,Neutral) \n");
 									int selection1 = new Scanner(System.in).nextInt();
 									clearScreen();
-									if (selection1==1) {
+									if (selection1==1) 
+									{
 										//--MODIFY-BY-TEXT--
 										System.out.println("Indica el texto \n");
 										String texto=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Recomendations recomendation:arrayRecomendationsGeneral) {
-											if (recomendation.getRecomendations().contains(texto)) {
+										for (Recomendations recomendation:arrayRecomendationsGeneral) 
+										{
+											if (recomendation.getRecomendations().contains(texto)) 
+											{
 												System.out.println(recomendation);
 												System.out.println("Indique que quiere cambiar:\n"
 														+ "[1] Texto\n"
 														+ "[2] Tipo(Positiva,Negativa,Neutra)");
 												int selection2 = new Scanner(System.in).nextInt();
-												if(selection2==1) {
+												if(selection2==1)
+												{
 													System.out.println("Indique nuevo texto:\n");
 													recomendation.setRecomendations(new Scanner(System.in).nextLine());
-												}else {
+												}
+												else
+												{
 													System.out.println("Nuevo Tipo de recomendacion:\n"
 															+ "[1] Positiva\n"
 															+ "[2] Negativa\n"
 															+ "[3] Neutral\n");
 													int recomendationType=new Scanner(System.in).nextInt();
 													RecomendationsType x;
-													if (recomendationType==1) {
+													if (recomendationType==1) 
+													{
 														x=RecomendationsType.POSITIVE;
-													}else if (recomendationType==2) {
+													}
+													else if (recomendationType==2) 
+													{
 														x=RecomendationsType.NEGATIVE;
-													}else {
+													}
+													else
+													{
 														x=RecomendationsType.NEUTRAL;
 													}
 													recomendation.setType(x);
@@ -1420,7 +1798,9 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										}
 										//--MODIFY-BY-TEXT--
 										
-									}else if (selection1==2) {
+									}
+									else if (selection1==2)
+									{
 										//--MODIFY-BY-TYPE--
 										System.out.println("Indique Tipo de recomendacion:\n"
 												+ "[1] Positiva\n"
@@ -1428,38 +1808,53 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 												+ "[3] Neutral\n");
 										int recomendationType=new Scanner(System.in).nextInt();
 										RecomendationsType x;
-										if (recomendationType==1) {
+										if (recomendationType==1) 
+										{
 											x=RecomendationsType.POSITIVE;
-										}else if (recomendationType==2) {
+										}
+										else if (recomendationType==2) 
+										{
 											x=RecomendationsType.NEGATIVE;
-										}else {
+										}
+										else 
+										{
 											x=RecomendationsType.NEUTRAL;
 										}
 										
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Recomendations recomendation:arrayRecomendationsGeneral) {
-											if (recomendation.getType().equals(x)) {
+										for (Recomendations recomendation:arrayRecomendationsGeneral) 
+										{
+											if (recomendation.getType().equals(x))
+											{
 												System.out.println(recomendation);
 												System.out.println("Indique que quiere cambiar:\n"
 														+ "[1] Texto\n"
 														+ "[2] Tipo(Positiva,Negativa,Neutra)");
 												int selection2 = new Scanner(System.in).nextInt();
-												if(selection2==1) {
+												if(selection2==1)
+												{
 													System.out.println("Indique nuevo texto:\n");
 													recomendation.setRecomendations(new Scanner(System.in).nextLine());
-												}else {
+												}
+												else
+												{
 													System.out.println("Nuevo Tipo de recomendacion:\n"
 															+ "[1] Positiva\n"
 															+ "[2] Negativa\n"
 															+ "[3] Neutral\n");
 													int recomendationType2=new Scanner(System.in).nextInt();
 													RecomendationsType x2;
-													if (recomendationType2==1) {
+													if (recomendationType2==1) 
+													{
 														x2=RecomendationsType.POSITIVE;
-													}else if (recomendationType2==2) {
+													}
+													else if (recomendationType2==2) 
+													{
 														x2=RecomendationsType.NEGATIVE;
-													}else {
+													}
+													else 
+													{
 														x2=RecomendationsType.NEUTRAL;
 													}
 													recomendation.setType(x2);
@@ -1470,7 +1865,8 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 									
 									break;
 								}
-								case 4:{
+								case 4:
+								{
 									//-------------SEARCH-RECOMENDATIONS-----------------
 									clearScreen();
 									System.out.println("Selecciona el metodo de busqueda para borrar: \n"
@@ -1479,21 +1875,28 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 									int selection1 = new Scanner(System.in).nextInt();
 									clearScreen();
 									int cont=0;
-									if (selection1==1) {
+									if (selection1==1) 
+									{
 										//--DELETE-BY-TEXT--
 										System.out.println("Indica el texto \n");
 										String texto=new Scanner(System.in).nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Recomendations recomendation:arrayRecomendationsGeneral) {
-											if (recomendation.getRecomendations().contains(texto)) {
+										for (Recomendations recomendation:arrayRecomendationsGeneral) 
+										{
+											if (recomendation.getRecomendations().contains(texto)) 
+											{
 												System.out.println("Borrada:\n"+recomendation+"\n");
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayRecomendationsGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayRecomendationsGeneral.length;i++) 
+												{
+													if(cont==i) 
+													{
 														arrayRecomendationsGeneral[i]=arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 														arrayRecomendationsGeneral[i]=arrayRecomendationsGeneral[i];
 													}
 												}
@@ -1506,7 +1909,9 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										cont=0;
 										//--DELETE-BY-TEXT--
 										
-									}else if (selection1==2) {
+									}
+									else if (selection1==2) 
+									{
 										//--DELETE-BY-TYPE--
 										System.out.println("Tipo de recomendacion:\n"
 												+ "[1] Positiva\n"
@@ -1514,25 +1919,34 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 												+ "[3] Neutral\n");
 										int recomendationType=new Scanner(System.in).nextInt();
 										RecomendationsType x;
-										if (recomendationType==1) {
+										if (recomendationType==1) 
+										{
 											x=RecomendationsType.POSITIVE;
-										}else if (recomendationType==2) {
+										}
+										else if (recomendationType==2) {
 											x=RecomendationsType.NEGATIVE;
-										}else {
+										}
+										else 
+										{
 											x=RecomendationsType.NEUTRAL;
 										}
 										
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Recomendations recomendation:arrayRecomendationsGeneral) {
+										for (Recomendations recomendation:arrayRecomendationsGeneral) 
+										{
 											if (recomendation.getType().equals(x)) {
 												System.out.println("Borrada:\n"+recomendation+"\n");
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayRecomendationsGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayRecomendationsGeneral.length;i++) 
+												{
+													if(cont==i) 
+													{
 														arrayRecomendationsGeneral[i]=arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 														arrayRecomendationsGeneral[i]=arrayRecomendationsGeneral[i];
 													}
 												}
@@ -1568,13 +1982,16 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 							clearScreen();
 							IGeneralsMenu.selectMovieSerie();
 							int selected = new Scanner(System.in).nextInt();
-							if(selected==1) {
+							if(selected==1) 
+							{
 								//---SERIES SELECTED---
 								clearScreen();
 								IMenuSeries.seriesMenu();
 								
 								
-							}else {
+							}
+							else 
+							{
 								//---MOVIES SELECTED---
 								clearScreen();
 								IMenuMovies.moviesMenu();
@@ -1590,13 +2007,16 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 							clearScreen();
 							IMenuSubtitles.subtitlesMenu();
 							int selected = new Scanner(System.in).nextInt();
-							if(selected==1) {
+							if(selected==1) 
+							{
 								//---SERIES SELECTED---
 								clearScreen();
 								IMenuSeries.seriesMenu();
 								
 								
-							}else {
+							}
+							else 
+							{
 								//---MOVIES SELECTED---
 								clearScreen();
 								IMenuMovies.moviesMenu();
@@ -1607,26 +2027,30 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 						}//----------SUBTITLES-OPTIONS--------------
 						
 						
-						default:{
+						default:
+						{
 							System.out.println("Opcion desconocida");
 							break;
 						}
 					}
 					break;
 				}
-				case 2:{
+				case 2:
+				{
 					//---------INFORMATIONS AND STADISTIC MENU-------
 					
 					break;
 				}
-				case 3:{
+				case 3:
+				{
 					//-----------VIEW SERIES OR MOVIES MENU------------
 					
 					break;
 				}
 				
 				//SELECTION 4 (OR OTHERS)...
-				default:{
+				default:
+				{
 					//----------EXIT SELECTED MENU FOR EXIT----------
 					System.out.println("Saliendo del programa...");
 					isRunning=false;//Stop the main loop, boolean false.
