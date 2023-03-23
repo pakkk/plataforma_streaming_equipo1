@@ -121,29 +121,6 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		//----------------BASE OBJECTS--SERIES CLASS----------------------------
 		
 		
-		//------------OTHER TESTS-------------
-		/*
-		//Testing Area.....
-		 
-		//Sacar de audiovisuals los directores de PELICULAS
-		Audiovisuals[] audiovisualsArray={move1,serie1};
-		for(Audiovisuals x:audiovisualsArray) {
-			if(x.getType()==Type.PELICULA) {
-				//System.out.println(Arrays.toString(x.getDirectors()));
-			}
-		}
-		//Sacar de audiovisuals los directores de SERIES
-		Audiovisuals[] audiovisualsArray2={move1,serie1};
-		for(Audiovisuals x:audiovisualsArray) {
-			if(x.getType()==Type.SERIE) {
-				//System.out.println(Arrays.toString(x.getDirectors()));
-			}
-		}
-		*/
-		
-		//------------OTHER TESTS-------------
-		
-		
 		
 		//-----------------------MENUS----------------------------------------
 		
