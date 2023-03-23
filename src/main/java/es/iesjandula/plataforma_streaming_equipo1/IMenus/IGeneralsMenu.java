@@ -17,7 +17,9 @@ public interface IGeneralsMenu {
 				+ "[2] Opciones Actores\n"
 				+ "[3] Opciones Recomendaciones\n"
 				+ "[4] Opciones de Categorias\n"
-				+ "[5] Opciones de Peliculas y Series\n");
+				+ "[5] Opciones de Peliculas y Series\n"
+				+ "[6] Opciones para Subtitulos");
+		
 		
 	}
 	public static void selectMovieSerie() {
