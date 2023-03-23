@@ -1,35 +1,40 @@
 package es.iesjandula.plataforma_streaming_equipo1.subtitles;
 
-public class Subtitles {
+public class Subtitles 
+{
 	
 	//Variables
-	protected AvaliableSubtitles Subtitle;
+	private AvaliableSubtitles subtitle;
 	
 	//Constructor
-	public Subtitles(AvaliableSubtitles subtitle) {
-		Subtitle = subtitle;
+	public Subtitles(AvaliableSubtitles subtitle) 
+	{
+		this.subtitle = subtitle;
 	}
 	
 
 	/**
 	 * @return the subtitle
 	 */
-	public AvaliableSubtitles getSubtitle() {
-		return Subtitle;
+	public AvaliableSubtitles getSubtitle() 
+	{
+		return subtitle;
 	}
 
 
 	/**
 	 * @param subtitle the subtitle to set
 	 */
-	public void setSubtitle(AvaliableSubtitles subtitle) {
-		Subtitle = subtitle;
+	public void setSubtitle(AvaliableSubtitles subtitle) 
+	{
+		this.subtitle = subtitle;
 	}
 
 
 	@Override
-	public String toString() {
-		return "["+this.Subtitle+"]";
+	public String toString() 
+	{
+		return "["+this.subtitle+"]";
 	}
 	
 	
