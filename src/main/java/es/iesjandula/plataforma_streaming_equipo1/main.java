@@ -1559,9 +1559,291 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 						{//----------CATEGORIES-OPTIONS--------------
 							clearScreen();
 							IMenuCategories.categoriesMenu();
+						 {
+							int selection2 = new Scanner(System.in).nextInt();
+							switch(selection2) {
+								case 1:{
+									CategorieTypes x= CategorieTypes.OTHER;
+									Categorie last =new Categorie(x);
+									System.out.println("Dime el nombre de la categoria");
+									String nameCategorie=new Scanner(System.in).nextLine();
+									last.setName(nameCategorie);
+									clearScreen();
+									System.out.println("Dime el tipo de categoria");
+									String tipoCategorie=new Scanner(System.in).nextLine();
+									clearScreen();
+									last.setType(x);
+									System.out.println("Dime una descripción basica");
+									String description=new Scanner(System.in).nextLine();
+									clearScreen();
+									last.setDescription(description);
+									System.out.println("Introduzca edad minima");
+									int minAge = new Scanner(System.in).nextInt();
+									clearScreen();
+									last.setMinAge(minAge);
+									
+									
+									
+									arrayCategoriesGeneral=Arrays.copyOf(arrayCategoriesGeneral, arrayCategoriesGeneral.length+1);
+									arrayCategoriesGeneral[arrayCategoriesGeneral.length-1]=last;
+									System.out.println(arrayCategoriesGeneral[arrayCategoriesGeneral.length-1]);
+									break;
+								}
+								case 2:{
+									clearScreen();
+									System.out.println("Selecciona el metodo de busqueda: \n"
+											+ "[1] Nombre \n"
+											+ "[2] tipo \n"
+											+ "[3] edad minima \n");
+									int selection3 = new Scanner(System.in).nextInt();
+									clearScreen();
+									if (selection3==1) {
+										System.out.println("Indica el nombre \n");
+										String name=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Categorie categorie:arrayCategoriesGeneral) {
+											if (categorie.getName().equals(name)) {
+												System.out.println(categorie);
+											}
+										}
+									}else if (selection3==2) {
+										System.out.println("Indica el Tipo \n");
+										String TypeCategorie=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Categorie categorie:arrayCategoriesGeneral) {
+											if (categorie.getName().equals(TypeCategorie)) {
+												System.out.println(TypeCategorie);
+											}
+										}
+									}else if (selection3==3) {
+										System.out.println("Indica la edad minima \n");
+										int MinAge=new Scanner(System.in).nextInt();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Categorie categorie:arrayCategoriesGeneral) {
+											if (categorie.getName().equals(MinAge)) {
+												System.out.println(MinAge);
+											}
+										}
+									}
+									break;
+								}
+								case 3:{
+									clearScreen();
+									System.out.println("Selecciona metodo de busqueda para modificar la categoria: \n"
+											+ "[1] Nombre \n"
+											+ "[2] edad minima \n"
+											+ "[3] descripcion \n");
+									int selection1 = new Scanner(System.in).nextInt();
+									clearScreen();
+									if (selection1==1) {
+										System.out.println("Indica el nombre \n");
+										String name=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Categorie categorie:arrayCategoriesGeneral) {
+											if (categorie.getName().equals(name)) {
+												System.out.println("Encontrado: ");
+												System.out.println(categorie);
+												System.out.println("Selecciona que dato deseas cambiar de la categoria: \n"
+														+ "[1] Nombre \n"
+														+ "[2] edad minima \n"
+														+ "[3] Descripcion\n");
+												int selection4 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection4==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine();
+													clearScreen();
+													categorie.setName(name1);
+												}else if (selection4==2) {
+													System.out.println("cambiando tipo a otro ");
+													clearScreen();
+													CategorieTypes x= CategorieTypes.OTHER;
+													Categorie last =new Categorie(x);
+													categorie.setType(x);
+												}else if (selection4==3) {
+													System.out.println("Dime edad minima: ");
+													int year=new Scanner(System.in).nextInt();
+													clearScreen();
+													categorie.setMinAge(year);
+												}else {
+													System.out.println("Dime descripcion: ");
+													String desc=new Scanner(System.in).nextLine();
+													clearScreen();
+													categorie.setDescription(desc);
+												}
+											}
+										}
+									}else if (selection1==2) {
+										System.out.println("Indica la edad minima \n");
+										int AgeMin=new Scanner(System.in).nextInt();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Categorie categorie:arrayCategoriesGeneral) {
+											if (categorie.getName().equals(AgeMin)) {
+												System.out.println("Encontrado: ");
+												System.out.println(categorie);
+												System.out.println("Selecciona que dato deseas cambiar de la categoria: \n"
+														+ "[1] Nombre \n"
+														+ "[2] edad minima \n"
+														+ "[3] Descripcion\n");
+												int selection4 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection4==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine();
+													clearScreen();
+													categorie.setName(name1);
+												}else if (selection4==2) {
+													System.out.println("cambiando tipo a otro ");
+													clearScreen();
+													CategorieTypes x= CategorieTypes.OTHER;
+													Categorie last =new Categorie(x);
+													categorie.setType(x);
+												}else if (selection4==3) {
+													System.out.println("Dime edad minima: ");
+													int year=new Scanner(System.in).nextInt();
+													clearScreen();
+													categorie.setMinAge(year);
+												}else {
+													System.out.println("Dime descripcion: ");
+													String desc=new Scanner(System.in).nextLine();
+													clearScreen();
+													categorie.setDescription(desc);
+												}
+												
+											}
+										}
+									}else if (selection1==3) {
+										System.out.println("Indica la descripcion \n");
+										String desc=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Categorie categorie:arrayCategoriesGeneral) {
+											if (categorie.getName().equals(desc)) {
+												System.out.println("Encontrado: ");
+												System.out.println(categorie);
+												System.out.println("Selecciona que dato deseas cambiar de la categoria: \n"
+														+ "[1] Nombre \n"
+														+ "[2] edad minima \n"
+														+ "[3] Descripcion\n");
+												int selection4 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection4==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine();
+													clearScreen();
+													categorie.setName(name1);
+												}else if (selection4==2) {
+													System.out.println("Dime edad minima: ");
+													int year=new Scanner(System.in).nextInt();
+													clearScreen();
+													categorie.setMinAge(year);
+												}else {
+													System.out.println("Dime descripcion: ");
+													String descrip=new Scanner(System.in).nextLine();
+													clearScreen();
+													categorie.setDescription(descrip);
+												}
+												
+											}
+										}
+									}
+									break;
+								}
+								case 4:{
+									int cont=0;
+									System.out.println("Selecciona el metodo de busqueda para borrar: \n"
+											+ "[1] Nombre \n"
+											+ "[2] edad minima \n"
+											+ "[3] Descripcion\n");
+									int selection1 = new Scanner(System.in).nextInt();
+									clearScreen();
+									if (selection1==1) {
+										System.out.println("Indica el nombre \n");
+										String name=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Categorie categorie:arrayCategoriesGeneral) {
+											if (categorie.getName().equals(name)) {
+												System.out.println(categorie);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayCategoriesGeneral.length;i++) {
+													if(cont==i) {
+														arrayCategoriesGeneral[i]=arrayCategoriesGeneral[arrayCategoriesGeneral.length-1];
+													}else {
+													arrayCategoriesGeneral[i]=arrayCategoriesGeneral[i];
+													}
+												}
+												
+												arrayCategoriesGeneral=Arrays.copyOf(arrayCategoriesGeneral, arrayCategoriesGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayCategoriesGeneral));
+										cont=0;
+									}else if (selection1==2) {
+										System.out.println("Indica la edad minima \n");
+										int minAge=new Scanner(System.in).nextInt();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Categorie categorie:arrayCategoriesGeneral) {
+											if (categorie.getName().equals(minAge)) {
+												System.out.println(categorie);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayCategoriesGeneral.length;i++) {
+													if(cont==i) {
+														arrayCategoriesGeneral[i]=arrayCategoriesGeneral[arrayCategoriesGeneral.length-1];
+													}else {
+													arrayCategoriesGeneral[i]=arrayCategoriesGeneral[i];
+													}
+												}
+												
+												arrayCategoriesGeneral=Arrays.copyOf(arrayCategoriesGeneral, arrayCategoriesGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayCategoriesGeneral));
+										cont=0;
+									}else if (selection1==3) {
+										System.out.println("Indica la descripcion \n");
+										String year=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Categorie categorie:arrayCategoriesGeneral) {
+											if (categorie.getName().equals(year)) {
+												System.out.println(categorie);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayCategoriesGeneral.length;i++) {
+													if(cont==i) {
+														arrayCategoriesGeneral[i]=arrayCategoriesGeneral[arrayCategoriesGeneral.length-1];
+													}else {
+													arrayCategoriesGeneral[i]=arrayCategoriesGeneral[i];
+													}
+												}
+												
+												arrayCategoriesGeneral=Arrays.copyOf(arrayCategoriesGeneral, arrayCategoriesGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayCategoriesGeneral));
+										cont=0;
+									}
+								}
+									
+							}
+			
+						
+							
 							break;
 						}//----------CATEGORIES-OPTIONS--------------
-						
+					}
 						
 						case 5:
 						{//----------MOVIES-SERIES-OPTIONS--------------

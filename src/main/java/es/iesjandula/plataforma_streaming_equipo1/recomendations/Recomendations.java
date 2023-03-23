@@ -3,12 +3,13 @@ package es.iesjandula.plataforma_streaming_equipo1.recomendations;
  * Class recomendations
  * Stores the recomendations
  */
-public class Recomendations {
+public class Recomendations 
+{
 	/** Attribute - recomendations */
-	String recomendations;
+	protected String recomendations;
 	
 	/** Attribute - Type */
-	RecomendationsType type;
+	protected RecomendationsType type;
 	
 	
 	
@@ -16,12 +17,14 @@ public class Recomendations {
 	 * Constructors of the class
 
 	 */
-	public Recomendations(String recomendations,RecomendationsType Type) {
+	public Recomendations(String recomendations,RecomendationsType Type) 
+	{
 		this.recomendations = recomendations;
 		this.type=Type;
 	}
 	
-	public Recomendations(String recomendations) {
+	public Recomendations(String recomendations)
+	{
 		this.recomendations = recomendations;
 		this.type=RecomendationsType.NEUTRAL;
 		
@@ -30,27 +33,33 @@ public class Recomendations {
 	/* ToString method , for print the recomendations*/
 	
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "RECOMENDACIONES:\n"+this.recomendations+"\n"
 				+ "TIPO: "+this.type;
 	}
 
 	
 	/* SETTERS AND GETTERS */
-	public String getRecomendations() {
-		return recomendations;
+	public String getRecomendations() 
+	{
+		return this.recomendations;
 	}
 
-	public void setRecomendations(String recomendations) {
+	public void setRecomendations(String recomendations) 
+	{
 		this.recomendations = recomendations;
 	
 	}
 	
-	public RecomendationsType getType() {
-		return type;
+	public RecomendationsType getType() 
+	{
+		return this.type;
+		
 	}
 
-	public void setType(RecomendationsType type) {
+	public void setType(RecomendationsType type) 
+	{
 		this.type = type;
 	}
 	
