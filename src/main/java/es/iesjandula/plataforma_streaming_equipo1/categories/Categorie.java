@@ -4,19 +4,20 @@ package es.iesjandula.plataforma_streaming_equipo1.categories;
  * Stores the categories
  */
 
-public class Categorie {
+public class Categorie 
+{
 
 	/** Attribute - Type */
-	protected CategorieTypes type;
+	private CategorieTypes type;
 	
 	/** Attribute - name */
-	protected String name;
+	private String name;
 	
 	/** Attribute - description */
-	protected String description;
+	private String description;
 	
 	/** Attribute - minAge */
-	protected int minAge;
+	private int minAge;
 	
 	/**
 	 * Constructor of the class
@@ -32,56 +33,65 @@ public class Categorie {
 	/* ToString method , for print the Category (object)*/
 	
 	@Override
-	public String toString() {
-		return "Nombre : "+this.name+"\nTipo Categoria: "+this.type+"\nEdad Minima: "+this.minAge+"\nDescripcion: "+this.description;
+	public String toString() 
+	{
+		return "Nombre : "+name+"\nTipo Categoria: "+type+"\nEdad Minima: "+minAge+"\nDescripcion: "+description;
 	}
 	
 	/* SETTERS AND GETTERS */
 	
-	public CategorieTypes getType() {
-		//Setter
+	public CategorieTypes getType() 
+	{
+		//Get the type
 		return type;
 	}
 
-	public void setType(CategorieTypes type) {
-		//Setter
+	public void setType(CategorieTypes type) 
+	{
+		//Set the type
 		this.type = type;
 	}
 
-	public String getName() {
-		//Getter
+	public String getName() 
+	{
+		//Get the name
 		return name;
 	}
 
-	public void setName(String name) {
-		//Setter
+	public void setName(String name) 
+	{
+		//Set Name
 		this.name = name;
 	}
 
-	public String getDescription() {
-		//Getter
+	public String getDescription() 
+	{
+		//Get description
 		return description;
 	}
 
-	public void setDescription(String description) {
-		//Setter
+	public void setDescription(String description) 
+	{
+		//Set description
 		this.description = description;
 	}
 
-	public int getMinAge() {
-		//Getter
+	public int getMinAge() 
+	{
+		//Get min age
 		return minAge;
 	}
 
-	public void setMinAge(int minAge) {
-		//Setter
+	public void setMinAge(int minAge) 
+	{
+		//Set min age
 		this.minAge = minAge;
 	}
 	
 	/* SETTERS AND GETTERS */
 	
 	
-	//-----VALIDATION-METHODS-----
+	//-----VALIDATION-METHOD-----
 		public void validateCategorieType(CategorieTypes type) 
 		//Validate the type of categorie enum type , and set the default attributes.
 		{
@@ -89,48 +99,49 @@ public class Categorie {
 			/* COMEDIA */
 			if(type.equals(CategorieTypes.COMEDIA))
 			{	//Default attributes
-				this.minAge=7;
-				this.name="COMEDIA";
-				this.description="La categoria de comedia esta dedicada a mayores de 7"
+				minAge=7;
+				name="COMEDIA";
+				description="La categoria de comedia esta dedicada a mayores de 7"
 						+ " , momentos de grandes risas te esperan";
 			}
 			/* ACCION */
 			else if(type.equals(CategorieTypes.ACCION))
 			{	//Default attributes
-				this.minAge=16;
-				this.name="ACCION";
-				this.description="La categoria de comedia esta dedicada a mayores de 16,"
+				minAge=16;
+				name="ACCION";
+				description="La categoria de comedia esta dedicada a mayores de 16,"
 						+ " , momentos de accion intensa te esperan en esta categoria";
 			}
 			/* TERROR */
 			else if(type.equals(CategorieTypes.TERROR))
 			{	//Default attributes
-				this.minAge=18;
-				this.name="TERROR";	
-				this.description="La categoria de terror esta dedicada a mayores de 18"
+				minAge=18;
+				name="TERROR";	
+				description="La categoria de terror esta dedicada a mayores de 18"
 						+ " , momentos de terror intenso te esperan con esta categoria";
 			}
 			/* SUSPENSE */
 			else if(type.equals(CategorieTypes.SUSPENSE))
 			{	//Default attributes
-				this.minAge=12;
-				this.name="SUSPENSE";	
-				this.description="La categoria de suspense esta dedicada a mayores de 12"
+				minAge=12;
+				name="SUSPENSE";	
+				description="La categoria de suspense esta dedicada a mayores de 12"
 						+ " , momentos de tension , suspense y muchos dramas intensos te esperan";
 			}
 			/* INFANTIL */
 			else if(type.equals(CategorieTypes.INFANTIL))
 			{	//Default attributes
-				this.minAge=0;
-				this.name="INFANTIL";	
-				this.description="La categoria de infantil esta dedicada a todo tipo de publico"
+				minAge=0;
+				name="INFANTIL";	
+				description="La categoria de infantil esta dedicada a todo tipo de publico"
 						+ " , momentos de aprendijaze , grandes amistades y amigos divertidos"
 						+ "te esperan con esta categoria";
 				
-			}else {	//Default attributes
-				this.minAge=0;//Default to 0
-				this.name="Otro";
-				this.description="Falta Descripcion";
+			}else 
+			{	//Default attributes
+				minAge=0;//Default to 0
+				name="Otro";
+				description="Falta Descripcion";
 			}
 		}
 }
