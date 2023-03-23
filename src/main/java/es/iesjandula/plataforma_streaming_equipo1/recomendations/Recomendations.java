@@ -9,6 +9,7 @@ public class Recomendations
 	protected String recomendations;
 	
 	/** Attribute - Type */
+	
 	protected RecomendationsType type;
 	
 	

@@ -1845,6 +1845,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 															+ "[3] Neutral\n");
 													int recomendationType2=new Scanner(System.in).nextInt();
 													RecomendationsType x2;
+													
 													if (recomendationType2==1) 
 													{
 														x2=RecomendationsType.POSITIVE;
