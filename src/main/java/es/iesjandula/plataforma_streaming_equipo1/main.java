@@ -22,7 +22,7 @@ import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
  * The main class
  */
 
-public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecommendations
+public class main
 {
 	public static void clearScreen() 
 	{	//Method for clear the screen
