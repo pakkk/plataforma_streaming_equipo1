@@ -222,7 +222,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										clearScreen();
 										System.out.println("Resultados : \n");
 										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getlastName().equals(apellido)) {
+											if (director.getLastName().equals(apellido)) {
 												System.out.println(director);
 											}
 										}
@@ -342,7 +342,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										clearScreen();
 										System.out.println("Resultados : \n");
 										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getlastName().equals(apellido)) {
+											if (director.getLastName().equals(apellido)) {
 												System.out.println("Encontrado: ");
 												System.out.println(director);
 												System.out.println("Selecciona que dato deseas cambiar de el director: \n"
@@ -614,7 +614,7 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 										clearScreen();
 										System.out.println("Resultados : \n");
 										for (Directors director:arrayDirectorsGeneral) {
-											if (director.getlastName().equals(apellido)) {
+											if (director.getLastName().equals(apellido)) {
 												System.out.println(director);
 												System.out.println("Posicion "+cont);
 												
@@ -728,6 +728,564 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 						{//----------ACTORS-OPTIONS--------------
 							clearScreen();
 							IMenuActors.actorMenu();
+							int selection = new Scanner(System.in).nextInt();
+							switch(selection) {
+								case 1:{
+									System.out.println("Dime el nombre del actor");
+									String name=new Scanner(System.in).nextLine();
+									clearScreen();
+									System.out.println("Dime el apellido del actor");
+									String apellido=new Scanner(System.in).nextLine();
+									clearScreen();
+									System.out.println("Dime la nacionalidad del actor");
+									String nationality=new Scanner(System.in).nextLine();
+									clearScreen();
+									System.out.println("Selecciona el sexo del actor: \n"
+											+ "[1] Man \n"
+											+ "[2] Woman \n"
+											+ "[3] Other \n");
+									int gender = new Scanner(System.in).nextInt();
+									clearScreen();
+									Genders x=Genders.OTHER;
+									if (gender==1) {
+										x=x.MAN;
+									}else if (gender==2){
+										x=x.WOMAN;
+									}else {
+										x=x.OTHER;
+									}
+									System.out.println("Dime el año de nacimiento del actor");
+									int year=new Scanner(System.in).nextInt();
+									clearScreen();
+									
+									arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length+1);
+									arrayActorsGeneral[arrayActorsGeneral.length-1]=new Actors(name, apellido, nationality, x, year);
+									System.out.println(arrayActorsGeneral[arrayActorsGeneral.length-1]);
+									break;
+								}
+								case 2:{
+									clearScreen();
+									System.out.println("Selecciona el metodo de busqueda: \n"
+											+ "[1] Nombre \n"
+											+ "[2] Apellido \n"
+											+ "[3] Año de nacimiento \n"
+											+ "[4] Nacionalidad \n"
+											+ "[5] Genero \n");
+									int selection1 = new Scanner(System.in).nextInt();
+									clearScreen();
+									if (selection1==1) {
+										System.out.println("Indica el nombre \n");
+										String name=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getName().equals(name)) {
+												System.out.println(actor);
+											}
+										}
+									}else if (selection1==2) {
+										System.out.println("Indica el Apellido \n");
+										String apellido=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getLastName().equals(apellido)) {
+												System.out.println(actor);
+											}
+										}
+									}else if (selection1==3) {
+										System.out.println("Indica el Año de Nacimiento \n");
+										int year=new Scanner(System.in).nextInt();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getYear()==year) {
+												System.out.println(actor);
+											}
+										}
+									}else if (selection1==4) {
+										System.out.println("Indica la Nacionalidad \n");
+										String nacionalidad=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getNationality().equals(nacionalidad)) {
+												System.out.println(actor);
+											}
+										}
+									}else {
+										System.out.println("Indica el genero \n"
+												+ "[1] Man \n"
+												+ "[2] Woman \n"
+												+ "[3] Other \n");
+										int gender = new Scanner(System.in).nextInt();
+										clearScreen();
+										Genders x=Genders.OTHER;
+										if (gender==1) {
+											x=x.MAN;
+										}else if (gender==2){
+											x=x.WOMAN;
+										}else {
+											x=x.OTHER;
+										}
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getGender().equals(x)) {
+												System.out.println(actor);
+											}
+										}
+									}
+									break;
+								}
+								case 3:{
+									clearScreen();
+									System.out.println("Selecciona metodo de busqueda para modificar el actor: \n"
+											+ "[1] Nombre \n"
+											+ "[2] Apellido \n"
+											+ "[3] Año de nacimiento \n"
+											+ "[4] Nacionalidad \n"
+											+ "[5] Genero \n");
+									int selection1 = new Scanner(System.in).nextInt();
+									clearScreen();
+									if (selection1==1) {
+										System.out.println("Indica el nombre \n");
+										String name=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getName().equals(name)) {
+												System.out.println("Encontrado: ");
+												System.out.println(actor);
+												System.out.println("Selecciona que dato deseas cambiar del actor: \n"
+														+ "[1] Nombre \n"
+														+ "[2] Apellido \n"
+														+ "[3] Año de nacimiento \n"
+														+ "[4] Nacionalidad \n"
+														+ "[5] Genero \n");
+												int selection2 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection2==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setName(name1);
+												}else if (selection2==2) {
+													System.out.println("Dime apellido ");
+													String lastName1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setLastName(lastName1);
+												}else if (selection2==3) {
+													System.out.println("Dime año de nacimiento: ");
+													int year=new Scanner(System.in).nextInt();
+													clearScreen(); 
+													actor.setYear(year);
+												}else if (selection2==4) {
+													System.out.println("Dime Nacionalidad ");
+													String nationality=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setNationality(nationality);
+												}else {
+													System.out.println("Indica el genero \n"
+															+ "[1] Man \n"
+															+ "[2] Woman \n"
+															+ "[3] Other \n");
+													int gender = new Scanner(System.in).nextInt();
+													clearScreen();
+													Genders x=Genders.OTHER;
+													if (gender==1) {
+														x=x.MAN;
+													}else if (gender==2){
+														x=x.WOMAN;
+													}else {
+														x=x.OTHER;
+													}
+													actor.setGender(x);
+												}
+											}
+										}
+									}else if (selection1==2) {
+										System.out.println("Indica el apellido \n");
+										String apellido=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getLastName().equals(apellido)) {
+												System.out.println("Encontrado: ");
+												System.out.println(actor);
+												System.out.println("Selecciona que dato deseas cambiar de el actor: \n"
+														+ "[1] Nombre \n"
+														+ "[2] Apellido \n"
+														+ "[3] Año de nacimiento \n"
+														+ "[4] Nacionalidad \n"
+														+ "[5] Genero \n");
+												int selection2 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection2==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setName(name1);
+												}else if (selection2==2) {
+													System.out.println("Dime apellido ");
+													String lastName1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setLastName(lastName1);
+												}else if (selection2==3) {
+													System.out.println("Dime año de nacimiento: ");
+													int year=new Scanner(System.in).nextInt(); 
+													clearScreen();
+													actor.setYear(year);
+												}else if (selection2==4) {
+													System.out.println("Dime Nacionalidad ");
+													String nationality=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setNationality(nationality);
+												}else {
+													System.out.println("Indica el genero \n"
+															+ "[1] Man \n"
+															+ "[2] Woman \n"
+															+ "[3] Other \n");
+													int gender = new Scanner(System.in).nextInt();
+													clearScreen();
+													Genders x=Genders.OTHER;
+													if (gender==1) {
+														x=x.MAN;
+													}else if (gender==2){
+														x=x.WOMAN;
+													}else {
+														x=x.OTHER;
+													}
+													actor.setGender(x);
+												}
+											}
+										}
+									}else if (selection1==3) {
+										System.out.println("Indica el año de nacimiento \n");
+										int nacimiento=new Scanner(System.in).nextInt();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getYear()==nacimiento) {
+												System.out.println("Encontrado: ");
+												System.out.println(actor);
+												System.out.println("Selecciona que dato deseas cambiar de el actor: \n"
+														+ "[1] Nombre \n"
+														+ "[2] Apellido \n"
+														+ "[3] Año de nacimiento \n"
+														+ "[4] Nacionalidad \n"
+														+ "[5] Genero \n");
+												int selection2 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection2==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setName(name1);
+												}else if (selection2==2) {
+													System.out.println("Dime apellido ");
+													String lastName1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setLastName(lastName1);
+												}else if (selection2==3) {
+													System.out.println("Dime año de nacimiento: ");
+													int year=new Scanner(System.in).nextInt();
+													clearScreen(); 
+													actor.setYear(year);
+												}else if (selection2==4) {
+													System.out.println("Dime Nacionalidad ");
+													String nationality=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setNationality(nationality);
+												}else {
+													System.out.println("Indica el genero \n"
+															+ "[1] Man \n"
+															+ "[2] Woman \n"
+															+ "[3] Other \n");
+													int gender = new Scanner(System.in).nextInt();
+													clearScreen();
+													Genders x=Genders.OTHER;
+													if (gender==1) {
+														x=x.MAN;
+													}else if (gender==2){
+														x=x.WOMAN;
+													}else {
+														x=x.OTHER;
+													}
+													actor.setGender(x);
+												}
+											}
+										}
+									}else if (selection1==4) {
+										System.out.println("Indica la nacionalidad \n");
+										String nacionalidad=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getNationality().equals(nacionalidad)) {
+												System.out.println("Encontrado: ");
+												System.out.println(actor);
+												System.out.println("Selecciona que dato deseas cambiar de el actor: \n"
+														+ "[1] Nombre \n"
+														+ "[2] Apellido \n"
+														+ "[3] Año de nacimiento \n"
+														+ "[4] Nacionalidad \n"
+														+ "[5] Genero \n");
+												int selection2 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection2==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setName(name1);
+												}else if (selection2==2) {
+													System.out.println("Dime apellido ");
+													String lastName1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setLastName(lastName1);
+												}else if (selection2==3) {
+													System.out.println("Dime año de nacimiento: ");
+													int year=new Scanner(System.in).nextInt(); 
+													clearScreen();
+													actor.setYear(year);
+												}else if (selection2==4) {
+													System.out.println("Dime Nacionalidad ");
+													String nationality=new Scanner(System.in).nextLine();
+													clearScreen(); 
+													actor.setNationality(nationality);
+												}else {
+													System.out.println("Indica el genero \n"
+															+ "[1] Man \n"
+															+ "[2] Woman \n"
+															+ "[3] Other \n");
+													int gender = new Scanner(System.in).nextInt();
+													clearScreen();
+													Genders x=Genders.OTHER;
+													if (gender==1) {
+														x=x.MAN;
+													}else if (gender==2){
+														x=x.WOMAN;
+													}else {
+														x=x.OTHER;
+													}
+													actor.setGender(x);
+												}
+											}
+										}
+									}else {
+										System.out.println("Indica el genero \n"
+												+ "[1] Man \n"
+												+ "[2] Woman \n"
+												+ "[3] Other \n");
+										int gender = new Scanner(System.in).nextInt();
+										clearScreen();
+										Genders x=Genders.OTHER;
+										if (gender==1) {
+											x=x.MAN;
+										}else if (gender==2){
+											x=x.WOMAN;
+										}else {
+											x=x.OTHER;
+										}
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getGender().equals(x)) {
+												System.out.println("Encontrado: ");
+												System.out.println(actor);
+												System.out.println("Selecciona que dato deseas cambiar de el actor: \n"
+														+ "[1] Nombre \n"
+														+ "[2] Apellido \n"
+														+ "[3] Año de nacimiento \n"
+														+ "[4] Nacionalidad \n"
+														+ "[5] Genero \n");
+												int selection2 = new Scanner(System.in).nextInt();
+												clearScreen();
+												if (selection2==1) {
+													System.out.println("Dime nombre ");
+													String name1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setName(name1);
+												}else if (selection2==2) {
+													System.out.println("Dime apellido ");
+													String lastName1=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setLastName(lastName1);
+												}else if (selection2==3) {
+													System.out.println("Dime año de nacimiento: ");
+													int year=new Scanner(System.in).nextInt(); 
+													clearScreen();
+													actor.setYear(year);
+												}else if (selection2==4) {
+													System.out.println("Dime Nacionalidad ");
+													String nationality=new Scanner(System.in).nextLine(); 
+													clearScreen();
+													actor.setNationality(nationality);
+												}else {
+													System.out.println("Indica el genero \n"
+															+ "[1] Man \n"
+															+ "[2] Woman \n"
+															+ "[3] Other \n");
+													int gender1 = new Scanner(System.in).nextInt();
+													clearScreen();
+													Genders x1=Genders.OTHER;
+													if (gender1==1) {
+														x1=x1.MAN;
+													}else if (gender1==2){
+														x1=x1.WOMAN;
+													}else {
+														x1=x1.OTHER;
+													}
+													actor.setGender(x1);
+												}
+											}
+										}
+									}
+									break;
+								}
+								case 4:{
+									int cont=0;
+									System.out.println("Selecciona el metodo de busqueda para borrar: \n"
+											+ "[1] Nombre \n"
+											+ "[2] Apellido \n"
+											+ "[3] Año de nacimiento \n"
+											+ "[4] Nacionalidad \n"
+											+ "[5] Genero \n");
+									int selection1 = new Scanner(System.in).nextInt();
+									clearScreen();
+									if (selection1==1) {
+										System.out.println("Indica el nombre \n");
+										String name=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getName().equals(name)) {
+												System.out.println(actor);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayActorsGeneral.length;i++) {
+													if(cont==i) {
+														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
+													}else {
+													arrayActorsGeneral[i]=arrayActorsGeneral[i];
+													}
+												}
+												
+												arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayActorsGeneral));
+										cont=0;
+									}else if (selection1==2) {
+										System.out.println("Indica el Apellido \n");
+										String apellido=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getLastName().equals(apellido)) {
+												System.out.println(actor);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayActorsGeneral.length;i++) {
+													if(cont==i) {
+														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
+													}else {
+													arrayActorsGeneral[i]=arrayActorsGeneral[i];
+													}
+												}
+												
+												arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayActorsGeneral));
+										cont=0;
+									}else if (selection1==3) {
+										System.out.println("Indica el año de nacimiento \n");
+										int year=new Scanner(System.in).nextInt();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getYear()==year) {
+												System.out.println(actor);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayActorsGeneral.length;i++) {
+													if(cont==i) {
+														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
+													}else {
+													arrayActorsGeneral[i]=arrayActorsGeneral[i];
+													}
+												}
+												
+												arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayActorsGeneral));
+										cont=0;
+									}else if (selection1==4) {
+										System.out.println("Indica Nacionalidad \n");
+										String nacionalidad=new Scanner(System.in).nextLine();
+										clearScreen();
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getNationality().equals(nacionalidad)) {
+												System.out.println(actor);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayActorsGeneral.length;i++) {
+													if(cont==i) {
+														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
+													}else {
+													arrayActorsGeneral[i]=arrayActorsGeneral[i];
+													}
+												}
+												
+												arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayActorsGeneral));
+										cont=0;
+									}else {
+										System.out.println("Indica el genero \n"
+												+ "[1] Man \n"
+												+ "[2] Woman \n"
+												+ "[3] Other \n");
+										int gender = new Scanner(System.in).nextInt();
+										clearScreen();
+										Genders x=Genders.OTHER;
+										if (gender==1) {
+											x=x.MAN;
+										}else if (gender==2){
+											x=x.WOMAN;
+										}else {
+											x=x.OTHER;
+										}
+										System.out.println("Resultados : \n");
+										for (Actors actor:arrayActorsGeneral) {
+											if (actor.getGender().equals(x)) {
+												System.out.println(actor);
+												System.out.println("Posicion "+cont);
+												
+												for(int i=0;i<arrayActorsGeneral.length;i++) {
+													if(cont==i) {
+														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
+													}else {
+													arrayActorsGeneral[i]=arrayActorsGeneral[i];
+													}
+												}
+												
+												arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length-1);
+											}
+											cont+=1;
+										}
+										System.out.println(Arrays.toString(arrayActorsGeneral));
+										cont=0;
+									}
+								}
+									
+							}
 							break;
 							
 							

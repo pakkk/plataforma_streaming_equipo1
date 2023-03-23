@@ -42,7 +42,7 @@ public class Directors {
 		this.year = year;
 	}
 
-	public String getlastName() {
+	public String getLastName() {
         return lastName;
     }
 

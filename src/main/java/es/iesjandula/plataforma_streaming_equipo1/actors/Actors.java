@@ -5,20 +5,20 @@ import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
 public class Actors {
 	// Variables
 		protected String name, lastName, nationality;
-		protected Genders sex;
+		protected Genders gender;
 	    protected int year;
-		public Actors(String name, String lastName, String nationality, Genders sex, int year) {
+		public Actors(String name, String lastName, String nationality, Genders gender, int year) {
 			super();
 			this.name = name;
 			this.lastName = lastName;
 			this.nationality = nationality;
-			this.sex = sex;
+			this.gender = gender;
 			this.year = year;
 		}
 		
 		@Override
 		public String toString() {
-			return "Actors [name=" + name + ", lastName=" + lastName + ", nationality=" + nationality + ", sex=" + sex
+			return "Actors [name=" + name + ", lastName=" + lastName + ", nationality=" + nationality + ", gender=" + gender
 					+ ", year=" + year + "]";
 		}
 
@@ -40,11 +40,11 @@ public class Actors {
 		public void setNationality(String nationality) {
 			this.nationality = nationality;
 		}
-		public Genders getSex() {
-			return sex;
+		public Genders getGender() {
+			return gender;
 		}
-		public void setSex(Genders sex) {
-			this.sex = sex;
+		public void setGender(Genders sex) {
+			this.gender = sex;
 		}
 		public int getYear() {
 			return year;
