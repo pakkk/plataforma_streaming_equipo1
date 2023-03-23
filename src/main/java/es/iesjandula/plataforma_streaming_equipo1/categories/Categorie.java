@@ -130,7 +130,7 @@ public class Categorie
 			}
 			/* INFANTIL */
 			else if(type.equals(CategorieTypes.INFANTIL))
-			{	//Default attributes
+			{	//Default attributes 
 				minAge=0;
 				name="INFANTIL";	
 				description="La categoria de infantil esta dedicada a todo tipo de publico"
