@@ -1,6 +1,6 @@
 package es.iesjandula.plataforma_streaming_equipo1.categories;
 
-public enum CategoriesTypes
+public enum CategorieTypes
 {
 	/*Enum CategoriesTypes
 	 *To have control over the possible categories and their types 

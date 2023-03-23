@@ -3,7 +3,7 @@ package es.iesjandula.plataforma_streaming_equipo1.audiovisuals;
 import java.util.Arrays;
 
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
-import es.iesjandula.plataforma_streaming_equipo1.categories.Categories;
+import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
 import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 
@@ -13,7 +13,7 @@ public class Audiovisuals {
 	protected Type type;
 	protected Directors[] directors= new Directors[0];
 	protected Actors[] actores= new Actors[0]; 
-	protected Categories[] categ = new Categories[0];
+	protected Categorie[] categ = new Categorie[0];
 	protected String tittle;
 	protected String originalLenguaje;
 	protected String[] adaptedLenguajes = new String[0];
@@ -23,7 +23,7 @@ public class Audiovisuals {
 	protected int views;
 	
 	//Constructor
-	public Audiovisuals(Type type,Directors[] directors, Actors[] actores, Categories[] categ, String tittle, String originalLenguaje,
+	public Audiovisuals(Type type,Directors[] directors, Actors[] actores, Categorie[] categ, String tittle, String originalLenguaje,
 			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear) {
 		this.type = type;
 		this.directors=directors;
@@ -74,10 +74,10 @@ public class Audiovisuals {
 		this.actores[this.actores.length-1]=actores;
 	}
 
-	public Categories[] getCateg() {
+	public Categorie[] getCateg() {
 		return categ;
 	}
-	public void setCateg(Categories categ) {
+	public void setCateg(Categorie categ) {
 		this.categ=Arrays.copyOf(this.categ,this.categ.length+1);
 		this.categ[this.categ.length-1]=categ;
 	}

@@ -8,7 +8,7 @@ import java.util.Arrays;
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.Audiovisuals;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.Type;
-import es.iesjandula.plataforma_streaming_equipo1.categories.Categories;
+import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
 import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
@@ -27,7 +27,7 @@ public class Series extends Audiovisuals{
 	 * Constructor of the class , use the superClass constructor.
 	 * 
 	 */
-	public Series(Actors[] actores,Directors[] directors, Categories[] categ, String tittle, String originalLenguaje,
+	public Series(Actors[] actores,Directors[] directors, Categorie[] categ, String tittle, String originalLenguaje,
 			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear,int nCapitules
 			,int seasons) {
 		super(Type.SERIE, directors, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);

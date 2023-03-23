@@ -9,8 +9,8 @@ import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.Audiovisuals;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.Type;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.Movies;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.Series;
-import es.iesjandula.plataforma_streaming_equipo1.categories.Categories;
-import es.iesjandula.plataforma_streaming_equipo1.categories.CategoriesTypes;
+import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
+import es.iesjandula.plataforma_streaming_equipo1.categories.CategorieTypes;
 import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
@@ -30,12 +30,12 @@ public class main implements IGeneralsMenu,IMenuActors,IMenuDirectors,IMenuRecom
 		
 		//----------------BASE OBJECTS---Caterories Class----------------------------
 		
-		Categories categoria1 = new Categories(CategoriesTypes.ACCION);
-		Categories categoria2 = new Categories(CategoriesTypes.COMEDIA);
-		Categories categoria3 = new Categories(CategoriesTypes.TERROR);
-		Categories categoria4 = new Categories(CategoriesTypes.SUSPENSE);
-		Categories[] arrayCategories1 = {categoria1};
-		Categories[] arrayCategoriesGeneral = {categoria1,categoria2,categoria3,categoria4};
+		Categorie categoria1 = new Categorie(CategorieTypes.ACCION);
+		Categorie categoria2 = new Categorie(CategorieTypes.COMEDIA);
+		Categorie categoria3 = new Categorie(CategorieTypes.TERROR);
+		Categorie categoria4 = new Categorie(CategorieTypes.SUSPENSE);
+		Categorie[] arrayCategories1 = {categoria1};
+		Categorie[] arrayCategoriesGeneral = {categoria1,categoria2,categoria3,categoria4};
 		//----------------testing Caterories Class----------------------------
 		
 		

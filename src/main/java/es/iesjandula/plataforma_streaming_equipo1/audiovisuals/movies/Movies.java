@@ -5,7 +5,7 @@ import java.util.Arrays;
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.Audiovisuals;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.Type;
-import es.iesjandula.plataforma_streaming_equipo1.categories.Categories;
+import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
 import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
@@ -22,7 +22,7 @@ public class Movies extends Audiovisuals{
 	 * 
 	 */
 	
-	public Movies(Actors[] actores,Directors[] directors, Categories[] categ, String tittle, String originalLenguaje,
+	public Movies(Actors[] actores,Directors[] directors, Categorie[] categ, String tittle, String originalLenguaje,
 			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear) {
 		super(Type.PELICULA, directors, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
 		// TODO Auto-generated constructor stub
