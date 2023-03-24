@@ -6,10 +6,10 @@ public interface IMenuMovies
 	{
 		//Menu text display
 		System.out.println("\n"
-				+ "Menu Peliculas:\n"
-				+ "[1] Dar de alta una Pelicula\n"
-				+ "[2] Buscar una Pelicula\n"
-				+ "[3] Modificar una Pelicula\n"
-				+ "[4] Borrar una Pelicula");
+				+ "Movie Menu:\n"
+				+ "[1] Add a movie\n"
+				+ "[2] Search a movie\n"
+				+ "[3] Modify a movie\n"
+				+ "[4] Delete a movie");
 	}
 }

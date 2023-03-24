@@ -6,11 +6,11 @@ public interface IMenuRecommendations
 	{
 		//Menu text display
 		System.out.println("\n"
-				+ "Menu Recomendaciones:\n"
-				+ "[1] Crear una Recomendacion\n"
-				+ "[2] Buscar una Recomendacion\n"
-				+ "[3] Modificar una Recomendacion\n"
-				+ "[4] Borrar una Recomendacion");
+				+ "Recomendations Menu:\n"
+				+ "[1] Add a recomendation\n"
+				+ "[2] Search a recomendation\n"
+				+ "[3] Modify a recomendation\n"
+				+ "[4] Delete a recomendation");
 		
 	}
 }

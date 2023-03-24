@@ -5,32 +5,32 @@ public interface IGeneralsMenu
 	public static void generalMenu() 
 	{
 		System.out.println("\n"
-				+ "Menu General de plataforma streaming:\n"
-				+ "[1] Opciones\n"
-				+ "[2] Estadisticas e informacion\n"
-				+ "[3] Ver series o peliculas\n"
-				+ "[Otro] Salir...");
+				+ "General menu for the streaming platform:\n"
+				+ "[1] Options\n"
+				+ "[2] Statistics and information\n"
+				+ "[3] Movies and series\n"
+				+ "[Other] Exit...");
 		
 	}
 	public static void optionsGeneralMenu() 
 	{
 		System.out.println("\n"
-				+ "Menu de Opciones (Seleccion):\n"
-				+ "[1] Opciones Directores\n"
-				+ "[2] Opciones Actores\n"
-				+ "[3] Opciones Recomendaciones\n"
-				+ "[4] Opciones de Categorias\n"
-				+ "[5] Opciones de Peliculas y Series\n"
-				+ "[6] Opciones para Subtitulos");
+				+ "Options menu (Selection):\n"
+				+ "[1] Director Options\n"
+				+ "[2] Actor Options\n"
+				+ "[3] Recomendation Options\n"
+				+ "[4] Categorie Options\n"
+				+ "[5] Options of movies and series\n"
+				+ "[6] Options for subtitles");
 		
 		
 	}
 	public static void selectMovieSerie() 
 	{
 		System.out.println("\n"
-				+ "Selecciona Opciones de Series o Peliculas\n"
-				+ "[1] Opciones Series\n"
-				+ "[2] Opciones Peliculas\n");
+				+ "Select options of movies or series\n"
+				+ "[1] Serie options\n"
+				+ "[2] Movie options\n");
 		
 	}
 }

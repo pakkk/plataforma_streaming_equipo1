@@ -6,11 +6,11 @@ public interface IMenuDirectors
 	{
 		//Menu text display
 		System.out.println("\n"
-				+ "Menu Directores:\n"
-				+ "[1] Dar de alta un director\n"
-				+ "[2] Buscar un director\n"
-				+ "[3] Modificar un director\n"
-				+ "[4] Borrar un director");
+				+ "Directors Menu:\n"
+				+ "[1] Add a director\n"
+				+ "[2] Search a director\n"
+				+ "[3] Modify a director\n"
+				+ "[4] Delete a director");
 		
 	}
 }

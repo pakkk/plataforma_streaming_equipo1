@@ -6,9 +6,9 @@ public interface IMenuSubtitles
 	{
 		//Menu text display
 		System.out.println("\n"
-				+ "Menu Subtitulos:\n"
-				+ "[1] Buscar Pelicula\n"
-				+ "[2] Buscar Subtitulos\n");
+				+"Subtitle Menu:\n"
+				+"[1] Search for a Movie\n"
+				+"[2] Search for Subtitles\n");
 	}
 }
 

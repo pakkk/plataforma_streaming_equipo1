@@ -6,11 +6,11 @@ public interface IMenuCategories
 	{
 		//Menu text display
 		System.out.println("\n"
-				+ "Menu Categorias:\n"
-				+ "[1] Dar de alta una categoria\n"
-				+ "[2] Buscar una categoria\n"
-				+ "[3] Modificar una categoria\n"
-				+ "[4] Borrar una categoria");
+				+ "Categories Menu:\n"
+				+ "[1] Add a categorie\n"
+				+ "[2] Search a categorie\n"
+				+ "[3] Modify a categorie\n"
+				+ "[4] Delete a categorie");
 		
 	}
 }

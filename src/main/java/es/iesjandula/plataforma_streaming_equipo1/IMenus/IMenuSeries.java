@@ -5,10 +5,10 @@ public interface IMenuSeries {
 	{
 		//Menu text display
 		System.out.println("\n"
-				+ "Menu Series:\n"
-				+ "[1] Dar de alta una Serie\n"
-				+ "[2] Buscar una Serie\n"
-				+ "[3] Modificar una Serie\n"
-				+ "[4] Borrar una Serie");
+				+"Series Menu:\n"
+				+"[1] Register a Series\n"
+				+"[2] Search for a Series\n"
+				+"[3] Modify a Series\n"
+				+"[4] Delete a Series");
 	}
 }

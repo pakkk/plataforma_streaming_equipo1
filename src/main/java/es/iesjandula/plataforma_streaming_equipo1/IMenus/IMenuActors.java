@@ -6,11 +6,11 @@ public interface IMenuActors
 	{
 		//Menu text display
 		System.out.println("\n"
-				+ "Menu Actores:\n"
-				+ "[1] Dar de alta un Actor\n"
-				+ "[2] Buscar un Actor\n"
-				+ "[3] Modificar un Actor\n"
-				+ "[4] Borrar un Actor");
+				+ "Actors Menu:\n"
+				+ "[1] Add an Actor\n"
+				+ "[2] Search an Actor\n"
+				+ "[3] Modify an Actor\n"
+				+ "[4] Delete an Actor");
 		
 	}
 }
