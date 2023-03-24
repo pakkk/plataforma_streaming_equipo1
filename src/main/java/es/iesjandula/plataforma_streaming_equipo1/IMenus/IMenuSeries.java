@@ -1,6 +1,7 @@
 package es.iesjandula.plataforma_streaming_equipo1.IMenus;
 
-public interface IMenuSeries {
+public interface IMenuSeries 
+{
 	public static void seriesMenu() 
 	{
 		//Menu text display

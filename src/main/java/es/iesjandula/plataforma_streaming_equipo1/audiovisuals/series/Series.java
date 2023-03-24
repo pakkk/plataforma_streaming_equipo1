@@ -13,7 +13,8 @@ import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 
-public class Series extends Audiovisuals{
+public class Series extends Audiovisuals
+{
 	/** Attribute - nCapitules */
 	protected int nCapitules;
 	

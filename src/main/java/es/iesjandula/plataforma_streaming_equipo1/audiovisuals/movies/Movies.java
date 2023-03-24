@@ -27,7 +27,8 @@ public class Movies extends Audiovisuals
 	
 	public Movies(Actors[] actores,Directors[] directors, Categorie[] categ, String tittle, String originalLenguaje,
 			String[] adaptedLenguajes, Subtitles[] avaliableSubtitles, Double duration, int creationYear) 
-	{//Calls to the pather constructor.
+	{
+		//Calls to the pather constructor.
 		super(Type.PELICULA, directors, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
 		
 	}
@@ -35,12 +36,14 @@ public class Movies extends Audiovisuals
 	
 	/* SETTERS AND GETTERS*/
 	public Recomendations[] getRecomendationsMovies() 
-	{	//Get recomendations
+	{	
+		//Get recomendations
 		return recomendationsMovies;
 	}
 
 	public void setRecomendationsMovies(Recomendations recomendationsMovies) 
-	{	//Set Recomendation
+	{	
+		//Set Recomendation
 		this.recomendationsMovies = Arrays.copyOf(this.recomendationsMovies,this.recomendationsMovies.length+1);
 		this.recomendationsMovies[this.recomendationsMovies.length-1]=recomendationsMovies;
 		
@@ -50,7 +53,8 @@ public class Movies extends Audiovisuals
 
 	@Override
 	public String toString() 
-	{	//toString method for print attributes
+	{	
+		//toString method for print attributes
 		return "movies [Movies=" +type +" "+Arrays.toString(actores)+" "
 		+""+Arrays.toString(categ)+" "+title+" "+originalLanguage +" "+Arrays.toString(adaptedLanguages)+" "
 		+ ""+Arrays.toString(avaliableSubtitles)+" "+ duration+" "+creationYear+"]"+" "+Arrays.toString(directors);

@@ -9,7 +9,8 @@ import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 /*
  * Audiovisuals class , store the audiovisuals
  */
-public class Audiovisuals {
+public class Audiovisuals 
+{
 
 	//Variables
 	protected Type type;

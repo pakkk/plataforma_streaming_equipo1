@@ -1,6 +1,7 @@
 package es.iesjandula.plataforma_streaming_equipo1.IMenus;
 
-public interface IMenuStatistics {
+public interface IMenuStatistics
+{
 
 	public static void statisticsMenu() 
 	{

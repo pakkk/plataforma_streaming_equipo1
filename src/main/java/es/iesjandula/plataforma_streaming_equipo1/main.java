@@ -1913,7 +1913,8 @@ public class main
 										{
 											x=RecomendationsType.POSITIVE;
 										}
-										else if (recomendationType==2) {
+										else if (recomendationType==2) 
+										{
 											x=RecomendationsType.NEGATIVE;
 										}
 										else 
@@ -1947,7 +1948,8 @@ public class main
 										}
 										System.out.println(Arrays.toString(arrayRecomendationsGeneral));
 										cont=0;
-									}//--DELETE-BY-TYPE--
+									}
+									//--DELETE-BY-TYPE--
 									
 									break;
 									
@@ -1956,17 +1958,21 @@ public class main
 									
 							}
 							break;
-						}//----------RECOMENDATIONS-OPTIONS--------------
+						}
+						//----------RECOMENDATIONS-OPTIONS--------------
 						
 						
 						case 4:
-						{//----------CATEGORIES-OPTIONS--------------
+						{
+							//----------CATEGORIES-OPTIONS--------------
 							clearScreen();
 							IMenuCategories.categoriesMenu();
 						 {
 							int selection2 = sc.nextInt();
-							switch(selection2) {
-								case 1:{
+							switch(selection2) 
+							{
+								case 1:
+								{
 									CategorieTypes x= CategorieTypes.OTHER;
 									Categorie last =new Categorie(x);
 									System.out.println("Dime el nombre de la categoria");
@@ -1993,7 +1999,8 @@ public class main
 									System.out.println(arrayCategoriesGeneral[arrayCategoriesGeneral.length-1]);
 									break;
 								}
-								case 2:{
+								case 2:
+								{
 									clearScreen();
 									System.out.println("Selecciona el metodo de busqueda: \n"
 											+ "[1] Nombre \n"
@@ -2001,17 +2008,22 @@ public class main
 											+ "[3] edad minima \n");
 									int selection3 = sc.nextInt();
 									clearScreen();
-									if (selection3==1) {
+									if (selection3==1) 
+									{
 										System.out.println("Indica el nombre \n");
 										String name=sc2.nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Categorie categorie:arrayCategoriesGeneral) {
-											if (categorie.getName().equals(name)) {
+										for (Categorie categorie:arrayCategoriesGeneral) 
+										{
+											if (categorie.getName().equals(name)) 
+											{
 												System.out.println(categorie);
 											}
 										}
-									}else if (selection3==2) {
+									}
+									else if (selection3==2) 
+									{
 										System.out.println("Indica el Tipo \n");
 										String TypeCategorie=sc2.nextLine();
 										clearScreen();
@@ -2021,7 +2033,9 @@ public class main
 												System.out.println(TypeCategorie);
 											}
 										}
-									}else if (selection3==3) {
+									}
+									else if (selection3==3) 
+									{
 										System.out.println("Indica la edad minima \n");
 										int MinAge=sc.nextInt();
 										clearScreen();
@@ -2034,7 +2048,8 @@ public class main
 									}
 									break;
 								}
-								case 3:{
+								case 3:
+								{
 									clearScreen();
 									System.out.println("Selecciona metodo de busqueda para modificar la categoria: \n"
 											+ "[1] Nombre \n"
@@ -2042,13 +2057,16 @@ public class main
 											+ "[3] descripcion \n");
 									int selection1 = sc.nextInt();
 									clearScreen();
-									if (selection1==1) {
+									if (selection1==1)
+									{
 										System.out.println("Indica el nombre \n");
 										String name=sc2.nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Categorie categorie:arrayCategoriesGeneral) {
-											if (categorie.getName().equals(name)) {
+										for (Categorie categorie:arrayCategoriesGeneral) 
+										{
+											if (categorie.getName().equals(name)) 
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(categorie);
 												System.out.println("Selecciona que dato deseas cambiar de la categoria: \n"
@@ -2057,18 +2075,23 @@ public class main
 														+ "[3] Descripcion\n");
 												int selection4 = sc.nextInt();
 												clearScreen();
-												if (selection4==1) {
+												if (selection4==1) 
+												{
 													System.out.println("Dime nombre ");
 													String name1=sc2.nextLine();
 													clearScreen();
 													categorie.setName(name1);
 												
-												}else if (selection4==2) {
+												}
+												else if (selection4==2) 
+												{
 													System.out.println("Dime edad minima: ");
 													int year=sc.nextInt();
 													clearScreen();
 													categorie.setMinAge(year);
-												}else {
+												}
+												else
+												{
 													System.out.println("Dime descripcion: ");
 													String desc=sc2.nextLine();
 													clearScreen();
@@ -2076,13 +2099,17 @@ public class main
 												}
 											}
 										}
-									}else if (selection1==2) {
+									}
+									else if (selection1==2) 
+									{
 										System.out.println("Indica la edad minima \n");
 										int AgeMin=sc.nextInt();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Categorie categorie:arrayCategoriesGeneral) {
-											if (categorie.getName().equals(AgeMin)) {
+										for (Categorie categorie:arrayCategoriesGeneral)
+										{
+											if (categorie.getName().equals(AgeMin)) 
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(categorie);
 												System.out.println("Selecciona que dato deseas cambiar de la categoria: \n"
@@ -2091,23 +2118,30 @@ public class main
 														+ "[3] Descripcion\n");
 												int selection4 = sc.nextInt();
 												clearScreen();
-												if (selection4==1) {
+												if (selection4==1) 
+												{
 													System.out.println("Dime nombre ");
 													String name1=sc2.nextLine();
 													clearScreen();
 													categorie.setName(name1);
-												}else if (selection4==2) {
+												}
+												else if (selection4==2) 
+												{
 													System.out.println("cambiando tipo a otro ");
 													clearScreen();
 													CategorieTypes x= CategorieTypes.OTHER;
 													Categorie last =new Categorie(x);
 													categorie.setType(x);
-												}else if (selection4==3) {
+												}
+												else if (selection4==3) 
+												{
 													System.out.println("Dime edad minima: ");
 													int year=sc.nextInt();
 													clearScreen();
 													categorie.setMinAge(year);
-												}else {
+												}
+												else
+												{
 													System.out.println("Dime descripcion: ");
 													String desc=sc2.nextLine();
 													clearScreen();
@@ -2116,13 +2150,17 @@ public class main
 												
 											}
 										}
-									}else if (selection1==3) {
+									}
+									else if (selection1==3)
+									{
 										System.out.println("Indica la descripcion \n");
 										String desc=sc2.nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Categorie categorie:arrayCategoriesGeneral) {
-											if (categorie.getName().equals(desc)) {
+										for (Categorie categorie:arrayCategoriesGeneral)
+										{
+											if (categorie.getName().equals(desc)) 
+											{
 												System.out.println("Encontrado: ");
 												System.out.println(categorie);
 												System.out.println("Selecciona que dato deseas cambiar de la categoria: \n"
@@ -2131,17 +2169,22 @@ public class main
 														+ "[3] Descripcion\n");
 												int selection4 = sc.nextInt();
 												clearScreen();
-												if (selection4==1) {
+												if (selection4==1) 
+												{
 													System.out.println("Dime nombre ");
 													String name1=sc2.nextLine();
 													clearScreen();
 													categorie.setName(name1);
-												}else if (selection4==2) {
+												}
+												else if (selection4==2) 
+												{
 													System.out.println("Dime edad minima: ");
 													int year=sc.nextInt();
 													clearScreen();
 													categorie.setMinAge(year);
-												}else {
+												}
+												else 
+												{
 													System.out.println("Dime descripcion: ");
 													String descrip=sc2.nextLine();
 													clearScreen();
@@ -2153,7 +2196,8 @@ public class main
 									}
 									break;
 								}
-								case 4:{
+								case 4:
+								{
 									int cont=0;
 									System.out.println("Selecciona el metodo de busqueda para borrar: \n"
 											+ "[1] Nombre \n"
@@ -2161,20 +2205,27 @@ public class main
 											+ "[3] Descripcion\n");
 									int selection1 = sc.nextInt();
 									clearScreen();
-									if (selection1==1) {
+									if (selection1==1) 
+									{
 										System.out.println("Indica el nombre \n");
 										String name=sc2.nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Categorie categorie:arrayCategoriesGeneral) {
-											if (categorie.getName().equals(name)) {
+										for (Categorie categorie:arrayCategoriesGeneral) 
+										{
+											if (categorie.getName().equals(name)) 
+											{
 												System.out.println(categorie);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayCategoriesGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayCategoriesGeneral.length;i++)
+												{
+													if(cont==i) 
+													{
 														arrayCategoriesGeneral[i]=arrayCategoriesGeneral[arrayCategoriesGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 													arrayCategoriesGeneral[i]=arrayCategoriesGeneral[i];
 													}
 												}
@@ -2185,20 +2236,28 @@ public class main
 										}
 										
 										cont=0;
-									}else if (selection1==2) {
+									}
+									else if (selection1==2) 
+									{
 										System.out.println("Indica la edad minima \n");
 										int minAge=sc.nextInt();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Categorie categorie:arrayCategoriesGeneral) {
-											if (categorie.getMinAge()==minAge) {
+										for (Categorie categorie:arrayCategoriesGeneral) 
+										{
+											if (categorie.getMinAge()==minAge) 
+											{
 												System.out.println(categorie);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayCategoriesGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayCategoriesGeneral.length;i++) 
+												{
+													if(cont==i) 
+													{
 														arrayCategoriesGeneral[i]=arrayCategoriesGeneral[arrayCategoriesGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 													arrayCategoriesGeneral[i]=arrayCategoriesGeneral[i];
 													}
 												}
@@ -2209,20 +2268,27 @@ public class main
 										}
 									
 										cont=0;
-									}else if (selection1==3) {
+									}
+									else if (selection1==3) 
+									{
 										System.out.println("Indica la descripcion \n");
 										String year=sc2.nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Categorie categorie:arrayCategoriesGeneral) {
+										for (Categorie categorie:arrayCategoriesGeneral) 
+										{
 											if (categorie.getName().equals(year)) {
 												System.out.println(categorie);
 												System.out.println("Posicion "+cont);
 												
-												for(int i=0;i<arrayCategoriesGeneral.length;i++) {
-													if(cont==i) {
+												for(int i=0;i<arrayCategoriesGeneral.length;i++) 
+												{
+													if(cont==i) 
+													{
 														arrayCategoriesGeneral[i]=arrayCategoriesGeneral[arrayCategoriesGeneral.length-1];
-													}else {
+													}
+													else 
+													{
 													arrayCategoriesGeneral[i]=arrayCategoriesGeneral[i];
 													}
 												}
@@ -2241,11 +2307,13 @@ public class main
 						
 							
 							break;
-						}//----------CATEGORIES-OPTIONS--------------
+						}
+						 //----------CATEGORIES-OPTIONS--------------
 					}
 						
 						case 5:
-						{//----------MOVIES-SERIES-OPTIONS--------------
+						{
+							//----------MOVIES-SERIES-OPTIONS--------------
 							clearScreen();
 							IGeneralsMenu.selectMovieSerie();
 							int selected = sc.nextInt();
@@ -2266,11 +2334,13 @@ public class main
 								
 							}
 							break;
-						}//----------MOVIES-SERIES-OPTIONS--------------
+						}
+						//----------MOVIES-SERIES-OPTIONS--------------
 						
 						
 						case 6:
-						{//----------SUBTITLES-OPTIONS--------------
+						{
+							//----------SUBTITLES-OPTIONS--------------
 							clearScreen();
 							IMenuSubtitles.subtitlesMenu();
 							int selected = sc.nextInt();
@@ -2291,7 +2361,8 @@ public class main
 								
 							}
 							break;
-						}//----------SUBTITLES-OPTIONS--------------
+						}
+						//----------SUBTITLES-OPTIONS--------------
 						
 						
 						default:

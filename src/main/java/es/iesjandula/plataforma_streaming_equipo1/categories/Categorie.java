@@ -98,7 +98,8 @@ public class Categorie
 			/* Every description and min age on every Type */
 			/* COMEDIA */
 			if(type.equals(CategorieTypes.COMEDIA))
-			{	//Default attributes
+			{	
+				//Default attributes
 				minAge=7;
 				name="COMEDIA";
 				description="La categoria de comedia esta dedicada a mayores de 7"
@@ -106,7 +107,8 @@ public class Categorie
 			}
 			/* ACCION */
 			else if(type.equals(CategorieTypes.ACCION))
-			{	//Default attributes
+			{	
+				//Default attributes
 				minAge=16;
 				name="ACCION";
 				description="La categoria de comedia esta dedicada a mayores de 16,"
@@ -114,7 +116,8 @@ public class Categorie
 			}
 			/* TERROR */
 			else if(type.equals(CategorieTypes.TERROR))
-			{	//Default attributes
+			{	
+				//Default attributes
 				minAge=18;
 				name="TERROR";	
 				description="La categoria de terror esta dedicada a mayores de 18"
@@ -122,7 +125,8 @@ public class Categorie
 			}
 			/* SUSPENSE */
 			else if(type.equals(CategorieTypes.SUSPENSE))
-			{	//Default attributes
+			{	
+				//Default attributes
 				minAge=12;
 				name="SUSPENSE";	
 				description="La categoria de suspense esta dedicada a mayores de 12"
@@ -130,15 +134,18 @@ public class Categorie
 			}
 			/* INFANTIL */
 			else if(type.equals(CategorieTypes.INFANTIL))
-			{	//Default attributes 
+			{	
+				//Default attributes 
 				minAge=0;
 				name="INFANTIL";	
 				description="La categoria de infantil esta dedicada a todo tipo de publico"
 						+ " , momentos de aprendijaze , grandes amistades y amigos divertidos"
 						+ "te esperan con esta categoria";
 				
-			}else 
-			{	//Default attributes
+			}
+			else 
+			{	
+				//Default attributes
 				minAge=0;//Default to 0
 				name="Otro";
 				description="Falta Descripcion";

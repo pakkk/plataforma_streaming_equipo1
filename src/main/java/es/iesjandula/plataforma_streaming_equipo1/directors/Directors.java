@@ -2,7 +2,8 @@ package es.iesjandula.plataforma_streaming_equipo1.directors;
 
 import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
 
-public class Directors {
+public class Directors 
+{
 	//Variables
 	private String name, lastName, nationality;
 	private Genders gender;
