@@ -111,7 +111,7 @@ public class main
 		//----------------BASE OBJECTS--MOVIES CLASS----------------------------
 		
 		Movies move1 = new Movies(arrayActors1,arrayDirectors1,arrayCategories1,"Los 300","English",arrayAdaptedLanguages1,arraySubtitles1,145.0,2013);
-		Movies[] arrayMoviesGenereal1= {move1};
+		Movies[] arrayMoviesGeneral= {move1};
 		//----------------BASE OBJECTS--MOVIES CLASS----------------------------		
 		
 		
@@ -2305,7 +2305,17 @@ public class main
 				case 2:
 				{
 					//---------INFORMATIONS AND STADISTIC MENU-------
-					
+					IMenuStatistics.statisticsMenu();
+					int statisticsSelection = sc.nextInt();
+				
+						if (statisticsSelection==1) 
+						{
+						System.out.print(arraySeriesGeneral.length-1);
+						}
+						else if(statisticsSelection==2)
+						{
+						System.out.print(arrayMoviesGeneral.length-1);
+						}
 					break;
 				}
 				case 3:
