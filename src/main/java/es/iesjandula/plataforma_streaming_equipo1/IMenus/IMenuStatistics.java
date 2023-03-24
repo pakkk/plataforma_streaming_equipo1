@@ -4,6 +4,7 @@ public interface IMenuStatistics {
 
 	public static void statisticsMenu() 
 	{
+		
 		System.out.println("\n"
 				+"Series Menu:\n"
 				+"[1] Statistics of  Series\n"

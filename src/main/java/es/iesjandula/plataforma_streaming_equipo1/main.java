@@ -2304,9 +2304,11 @@ public class main
 				}
 				case 2:
 				{
+					
 					//---------INFORMATIONS AND STADISTIC MENU-------
 					IMenuStatistics.statisticsMenu();
 					int statisticsSelection = sc.nextInt();
+					
 				
 						if (statisticsSelection==1) 
 						{
