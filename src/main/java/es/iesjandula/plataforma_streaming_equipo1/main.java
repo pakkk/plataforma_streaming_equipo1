@@ -2027,8 +2027,8 @@ public class main
 										clearScreen();
 										System.out.println("Resultados : \n");
 										for (Categorie categorie:arrayCategoriesGeneral) {
-											if (categorie.getName().equals(MinAge)) {
-												System.out.println(MinAge);
+											if (categorie.getMinAge()==(MinAge)) {
+												System.out.println(categorie);
 											}
 										}
 									}
@@ -2062,13 +2062,8 @@ public class main
 													String name1=sc2.nextLine();
 													clearScreen();
 													categorie.setName(name1);
+												
 												}else if (selection4==2) {
-													System.out.println("cambiando tipo a otro ");
-													clearScreen();
-													CategorieTypes x= CategorieTypes.OTHER;
-													Categorie last =new Categorie(x);
-													categorie.setType(x);
-												}else if (selection4==3) {
 													System.out.println("Dime edad minima: ");
 													int year=sc.nextInt();
 													clearScreen();
@@ -2188,7 +2183,7 @@ public class main
 											}
 											cont+=1;
 										}
-										System.out.println(Arrays.toString(arrayCategoriesGeneral));
+										
 										cont=0;
 									}else if (selection1==2) {
 										System.out.println("Indica la edad minima \n");
@@ -2196,7 +2191,7 @@ public class main
 										clearScreen();
 										System.out.println("Resultados : \n");
 										for (Categorie categorie:arrayCategoriesGeneral) {
-											if (categorie.getName().equals(minAge)) {
+											if (categorie.getMinAge()==minAge) {
 												System.out.println(categorie);
 												System.out.println("Posicion "+cont);
 												
@@ -2212,7 +2207,7 @@ public class main
 											}
 											cont+=1;
 										}
-										System.out.println(Arrays.toString(arrayCategoriesGeneral));
+									
 										cont=0;
 									}else if (selection1==3) {
 										System.out.println("Indica la descripcion \n");
@@ -2236,7 +2231,7 @@ public class main
 											}
 											cont+=1;
 										}
-										System.out.println(Arrays.toString(arrayCategoriesGeneral));
+										
 										cont=0;
 									}
 								}
