@@ -2581,7 +2581,7 @@ public class Launcher
 										System.out.println("Selecciona la Duracion Total (Tiempo en minutos): ");
 										double minutosTiempoDuracion=0;
 										minutosTiempoDuracion=scanner.nextDouble();
-										
+//_---------------------------------------------------------------------------------------										
 										clearScreen();
 										System.out.println("Selecciona el anyo de creacion: ");
 										int anyoCreacion=9999;
@@ -3177,27 +3177,177 @@ public class Launcher
 												}
 												else if(selectedOption==7) 
 												{
-													
+													boolean cancelled=false;
+													clearScreen();
+													System.out.println("Selecciona la nueva Duracion Total (Tiempo en minutos) (-2 para cancelar): ");
+													double minutosTiempoDuracion=0;
+													minutosTiempoDuracion=scanner.nextDouble();
+													if(minutosTiempoDuracion==-2) 
+													{
+														cancelled=true;
+														System.out.println("Operacion cancelada");
+													}
+													if(!cancelled) 
+													{
+														serie.setDuration(minutosTiempoDuracion);
+													}
 												}
 												else if(selectedOption==8) 
 												{
-													
+													boolean cancelled=false;
+													clearScreen();
+													System.out.println("Selecciona el anyo de creacion (-2 para cancelar): ");
+													int anyoCreacion=9999;
+													anyoCreacion=scanner.nextInt();
+													if(anyoCreacion==-2)
+													{
+														cancelled=true;
+														System.out.println("Operacion cancelada");
+													}
+													if(!cancelled) 
+													{
+														serie.setCreationYear(serieIdCont);
+													}
 												}
 												else if(selectedOption==9) 
 												{
-													
+													clearScreen();
+													System.out.println("Selecciona los nuevos Subtitulos: ");
+													boolean cancelled=false;
+													int subtitulo=2;
+													int subtitlesCont=0;
+													Subtitles[] subtitulosArray= new Subtitles[0];
+													while(subtitulo>=1&subtitulo<=7) 
+													{
+														System.out.println("Selecciona subtitulo para añadir: (-2 para cancelar)\n"
+																+ "[1] ES\n"
+																+ "[2] EN\n"
+																+ "[3] DE\n"
+																+ "[4] RU\n"
+																+ "[5] IT\n"
+																+ "[6] CH\n"
+																+ "[7] OTHER\n"
+																+ "[Other] END...");
+														subtitulo=scanner.nextInt();
+														if(subtitulo==-2) {
+															cancelled=true;
+															System.out.println("Operacion cancelada");
+															break;
+														}
+														switch(subtitulo) 
+															{
+															case 1:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.ES);
+																break;
+															}
+															case 2:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.EN);
+																break;
+															}
+															case 3:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.DE);
+																break;
+															}
+															case 4:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.RU);
+																break;
+															}
+															case 5:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.IT);
+																break;
+															}
+															case 6:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.CH);
+																break;
+															}
+															case 7:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
+																break;
+															}
+															default:
+															{
+																break;
+															}
+														}
+														System.out.println("Subtitles added : "+subtitlesCont);
+													}
+													if(!cancelled)
+													{
+														serie.setAvaliableSubtitles(subtitulosArray);
+													}
 												}
 												else if(selectedOption==10) 
 												{
-													
+													clearScreen();
+													boolean cancelled=false;
+													System.out.println("Selecciona nuevo numero de capitulos: (-2 para cancelar) ");
+													int numeroCapitulos=0;
+													numeroCapitulos=scanner.nextInt();
+													if(numeroCapitulos==-2) 
+													{
+														System.out.println("Opereacion cancelada");
+														cancelled=true;
+													}
+													if(!cancelled)
+													{
+														serie.setnCapitules(numeroCapitulos);
+													}
 												}
 												else if(selectedOption==11) 
 												{
-													
+													boolean cancelled=false;
+													clearScreen();
+													System.out.println("Selecciona numero de temporadas: ");
+													int numeroTemporadas=0;
+													numeroTemporadas=scanner.nextInt();
+													if(numeroTemporadas==-2) 
+													{
+														cancelled=true;
+														System.out.println("Operacion cancelada");
+													}
+													if(!cancelled)
+													{
+														serie.setSeasons(numeroTemporadas);
+													}
+
 												}
 												else if(selectedOption==12) 
 												{
-													
+													System.out.println("Advertencia , cambiar un ID puede poner en peligro el sistema\n"
+													+ "*Cambialo solo si realmente sabes lo que estas haciendo...");
+													System.out.println("Indique nuevo ID de Serie: (-2 para cancelar)");
+													int newSerieId=scanner.nextInt();
+													boolean cancelled=false;
+													if(newSerieId==-2) 
+													{
+														cancelled=true;
+														System.out.println("Operacion cancelada");
+													}
+													if(!cancelled) 
+													{
+														serie.setSerieId(newSerieId);
+													}
 												}
 											}
 										}
@@ -3209,6 +3359,53 @@ public class Launcher
 										{
 											System.out.println("No se encontro ninguna serie con el ID aportado...");
 										}
+										break;
+									}
+									case 4:
+									{
+										int positionCont=0;
+										boolean cancelled=false;
+										System.out.println("Advertencia , borrar una serie no puede revertirse , hazlo si sabes lo que estas haciendo.");
+										System.out.println("Indique ID de Serie para borrar (-2 para cancelar)");
+										int deleteSerieId=scanner.nextInt();
+										if(deleteSerieId==-2) 
+										{
+											cancelled=true;
+											System.out.println("Operacion cancelada");
+										}
+										if(!cancelled) 
+										{
+											for(Series serie:arraySeriesGeneral) 
+											{
+												if(serie.getSerieId()==deleteSerieId) {
+													System.out.println("Serie encontrada: ("+serie.getTitle()+")\n"
+															+ "-Desea borrar la Serie ?\n"
+															+ "[1] Si seguro\n"
+															+ "[2] No..");
+													int finalDecision = scanner.nextInt();
+													if(finalDecision==2) 
+													{
+														System.out.println("Abortando operacion");
+													}
+													else 
+													{
+														System.out.println(serie.getTitle());
+														for(int i =0;i<arraySeriesGeneral.length;i++) 
+														{
+															if(i==positionCont) 
+															{
+																arraySeriesGeneral[i]=arraySeriesGeneral[arraySeriesGeneral.length-1];
+																arraySeriesGeneral=Arrays.copyOf(arraySeriesGeneral, arraySeriesGeneral.length-1);
+															}
+														}
+														System.out.println("Se borro correctamente...");
+													}
+													
+												}
+												positionCont++;
+											}
+										}
+										break;
 									}
 									//----------SERIE OPTIONS--------------
 								}	
