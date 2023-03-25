@@ -35,7 +35,7 @@ public class Subtitles
 	@Override
 	public String toString() 
 	{
-		return "["+subtitle+"]";
+		return ""+this.subtitle+"";
 	}
 	
 	

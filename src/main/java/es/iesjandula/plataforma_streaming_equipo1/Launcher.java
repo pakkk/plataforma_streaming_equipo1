@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 import es.iesjandula.plataforma_streaming_equipo1.IMenus.*;
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
+import es.iesjandula.plataforma_streaming_equipo1.adaptedlanguages.AdaptedLanguages;
+import es.iesjandula.plataforma_streaming_equipo1.adaptedlanguages.AvaliableAdaptedLanguages;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.Audiovisuals;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.Type;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.Movies;
@@ -39,11 +41,12 @@ public class Launcher
 		//Main  
 		
 		//----------------BASE OBJECTS---CATEGORIE CLASS----------------------------
-		
-		Categorie categoria1 = new Categorie(CategorieTypes.ACCION);
-		Categorie categoria2 = new Categorie(CategorieTypes.COMEDIA);
-		Categorie categoria3 = new Categorie(CategorieTypes.TERROR);
-		Categorie categoria4 = new Categorie(CategorieTypes.SUSPENSE);
+		int categorieIdCont=0;
+		Categorie categoria1 = new Categorie(CategorieTypes.ACCION,categorieIdCont++);
+		Categorie categoria2 = new Categorie(CategorieTypes.COMEDIA,categorieIdCont++);
+		Categorie categoria3 = new Categorie(CategorieTypes.TERROR,categorieIdCont++);
+		Categorie categoria4 = new Categorie(CategorieTypes.SUSPENSE,categorieIdCont++);
+		Categorie categoria5 = new Categorie(CategorieTypes.INFANTIL,categorieIdCont++);
 		Categorie[] arrayCategories1 = {categoria1};
 		Categorie[] arrayCategoriesGeneral = {categoria1,categoria2,categoria3,categoria4};
 		//----------------BASE OBJECTS---CATEGORIE CLASS----------------------------
@@ -51,12 +54,14 @@ public class Launcher
 		
 		
 		//-----------------BASE OBJECTS-- DIRECTORS CLASS----------------------------
-		Directors director1 = new Directors("Manuel","Perez",1980,"Spain",Genders.MAN);
-		Directors director2 = new Directors("Luis","Molina",1953,"England",Genders.MAN);
-		Directors director3 = new Directors("Sancho","Perez",1952,"EEUU",Genders.MAN);
-		Directors director4 = new Directors("Maria","Molina",1934,"Mexico",Genders.WOMAN);
-		Directors director5 = new Directors("Sara","Sanchez",1989,"Poland",Genders.WOMAN);
-		Directors director6 = new Directors("Fernanda","Rosa",1999,"Ukrain",Genders.WOMAN);
+		int directorIdCont=0;
+		
+		Directors director1 = new Directors("Manuel","Perez",1980,"Spain",Genders.MAN,directorIdCont++);
+		Directors director2 = new Directors("Luis","Molina",1953,"England",Genders.MAN,directorIdCont++);
+		Directors director3 = new Directors("Sancho","Perez",1952,"EEUU",Genders.MAN,directorIdCont++);
+		Directors director4 = new Directors("Maria","Molina",1934,"Mexico",Genders.WOMAN,directorIdCont++);
+		Directors director5 = new Directors("Sara","Sanchez",1989,"Poland",Genders.WOMAN,directorIdCont++);
+		Directors director6 = new Directors("Fernanda","Rosa",1999,"Ukrain",Genders.WOMAN,directorIdCont++);
 		
 		Directors[] arrayDirectors1 = {director1,director2};
 		Directors[] arrayDirectorsGeneral = {director1,director2,director3,director4,director5,director6};
@@ -66,12 +71,13 @@ public class Launcher
 		
 		
 		//----------------BASE OBJECTS-- ACTORS CLASS----------------------------
-		Actors actor1 = new Actors("Pepe","Gonzales", "Spain",Genders.MAN,1990);
-		Actors actor2 = new Actors("Arturo","Benitez", "England",Genders.MAN,1990);
-		Actors actor3 = new Actors("Nelson","Martinez", "EEUU",Genders.MAN,1990);
-		Actors actor4 = new Actors("Persiman","Letsen", "Polan",Genders.MAN,1990);
-		Actors actor5 = new Actors("Julia","Rous", "Ukrain",Genders.WOMAN,1990);
-		Actors actor6 = new Actors("Sofia","Hernandez", "Africa",Genders.WOMAN,1990);
+		int actorIdCont=0;
+		Actors actor1 = new Actors("Pepe","Gonzales", "Spain",Genders.MAN,1990,actorIdCont++);
+		Actors actor2 = new Actors("Arturo","Benitez", "England",Genders.MAN,1990,actorIdCont++);
+		Actors actor3 = new Actors("Nelson","Martinez", "EEUU",Genders.MAN,1990,actorIdCont++);
+		Actors actor4 = new Actors("Persiman","Letsen", "Polan",Genders.MAN,1990,actorIdCont++);
+		Actors actor5 = new Actors("Julia","Rous", "Ukrain",Genders.WOMAN,1990,actorIdCont++);
+		Actors actor6 = new Actors("Sofia","Hernandez", "Africa",Genders.WOMAN,1990,actorIdCont++);
 		Actors[] arrayActors1 = {actor1};
 		Actors[] arrayActorsGeneral = {actor1,actor2,actor3,actor4,actor5,actor6};
 		
@@ -104,19 +110,27 @@ public class Launcher
 		
 		
 		//Array with AdaptedLanguages
-		String[] arrayAdaptedLanguages1= {"Spanish","English"};
-		
+		AdaptedLanguages adaptLang1 = new AdaptedLanguages(AvaliableAdaptedLanguages.EN);
+		AdaptedLanguages adaptLang2 = new AdaptedLanguages(AvaliableAdaptedLanguages.ES);
+		AdaptedLanguages adaptLang3 = new AdaptedLanguages(AvaliableAdaptedLanguages.DE);
+		AdaptedLanguages adaptLang4 = new AdaptedLanguages(AvaliableAdaptedLanguages.RU);
+		AdaptedLanguages adaptLang5 = new AdaptedLanguages(AvaliableAdaptedLanguages.IT);
+		AdaptedLanguages adaptLang6 = new AdaptedLanguages(AvaliableAdaptedLanguages.CH);
+
+		AdaptedLanguages[] arrayAdaptedLanguages1 = {adaptLang1,adaptLang2};
+		AdaptedLanguages[] arrayAdaptedLanguagesGeneral = {adaptLang1,adaptLang2,adaptLang3,adaptLang4,adaptLang5,adaptLang6};
 		
 		
 		//----------------BASE OBJECTS--MOVIES CLASS----------------------------
-		
-		Movies move1 = new Movies(arrayActors1,arrayDirectors1,arrayCategories1,"Los 300","English",arrayAdaptedLanguages1,arraySubtitles1,145.0,2013);
-		Movies[] arrayMoviesGeneral= {move1};
+		int movieId=0;
+		Movies movie1 = new Movies(arrayActors1,arrayDirectors1,arrayCategories1,"Los 300","English",arrayAdaptedLanguages1,arraySubtitles1,145.0,2013,movieId++);
+		Movies[] arrayMoviesGeneral= {movie1};
 		//----------------BASE OBJECTS--MOVIES CLASS----------------------------		
 		
 		
 		//----------------BASE OBJECTS--SERIES CLASS----------------------------
-		Series serie1 = new Series(arrayActors1,arrayDirectors1,arrayCategories1,"Hora de aventuras","English",arrayAdaptedLanguages1,arraySubtitles1,25.0,2010,100,10);
+		int serieIdCont=0;
+		Series serie1 = new Series(arrayActors1,arrayDirectors1,arrayCategories1,"Hora de aventuras","English",arrayAdaptedLanguages1,arraySubtitles1,25.0,2010,100,10,serieIdCont++);
 		Series[] arraySeriesGeneral= {serie1}; 
 		//----------------BASE OBJECTS--SERIES CLASS----------------------------
 		
@@ -191,7 +205,7 @@ public class Launcher
 									clearScreen();
 									
 									arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length+1);
-									arrayDirectorsGeneral[arrayDirectorsGeneral.length-1]=new Directors(name, apellido, year, nationality, x);
+									arrayDirectorsGeneral[arrayDirectorsGeneral.length-1]=new Directors(name, apellido, year, nationality, x,directorIdCont++);
 									System.out.println(arrayDirectorsGeneral[arrayDirectorsGeneral.length-1]);
 									break;
 								}
@@ -228,7 +242,7 @@ public class Launcher
 										System.out.println("Resultados : \n");
 										for (Directors director:arrayDirectorsGeneral) 
 										{
-											if (director.getlastName().equals(apellido)) 
+											if (director.getLastName().equals(apellido)) 
 											{
 												System.out.println(director);
 											}
@@ -387,7 +401,7 @@ public class Launcher
 										System.out.println("Resultados : \n");
 										for (Directors director:arrayDirectorsGeneral) 
 										{
-											if (director.getlastName().equals(apellido)) 
+											if (director.getLastName().equals(apellido)) 
 											{
 												System.out.println("Encontrado: ");
 												System.out.println(director);
@@ -744,7 +758,7 @@ public class Launcher
 										System.out.println("Resultados : \n");
 										for (Directors director:arrayDirectorsGeneral) 
 										{
-											if (director.getlastName().equals(apellido)) 
+											if (director.getLastName().equals(apellido)) 
 											{
 												System.out.println(director);
 												System.out.println("Posicion "+cont);
@@ -931,7 +945,7 @@ public class Launcher
 									clearScreen();
 									
 									arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length+1);
-									arrayActorsGeneral[arrayActorsGeneral.length-1]=new Actors(name, apellido, nationality, x, year);
+									arrayActorsGeneral[arrayActorsGeneral.length-1]=new Actors(name, apellido, nationality, x, year,actorIdCont++);
 									System.out.println(arrayActorsGeneral[arrayActorsGeneral.length-1]);
 									break;
 								}
@@ -1974,7 +1988,7 @@ public class Launcher
 								case 1:
 								{
 									CategorieTypes x= CategorieTypes.OTHER;
-									Categorie last =new Categorie(x);
+									Categorie last =new Categorie(x,categorieIdCont++);
 									System.out.println("Dime el nombre de la categoria");
 									String nameCategorie=scanner2.nextLine();
 									last.setName(nameCategorie);
@@ -2130,7 +2144,7 @@ public class Launcher
 													System.out.println("cambiando tipo a otro ");
 													clearScreen();
 													CategorieTypes x= CategorieTypes.OTHER;
-													Categorie last =new Categorie(x);
+													Categorie last =new Categorie(x,categorieIdCont++);
 													categorie.setType(x);
 												}
 												else if (selection4==3) 
@@ -2319,11 +2333,885 @@ public class Launcher
 							int selected = scanner.nextInt();
 							if(selected==1) 
 							{
-								//---SERIES SELECTED---
+								//---SERIES SELECTED OPTIONS---
+								clearScreen();
+								IMenuSeries.seriesMenu();
+								//----------SERIE OPTIONS--------------
 								clearScreen();
 								IMenuSeries.seriesMenu();
 								
-								
+								int selection = scanner.nextInt();
+								switch(selection) 
+								{
+									case 1:
+									{//--------SERIE--REGISTER------
+										
+										System.out.println("Dime el titulo de la Serie"); 
+										String title="Undefined";
+										title=scanner2.nextLine();
+										clearScreen();
+										
+										int directorIdInsert = 0;
+										int directorCountResult=0;
+										Directors[] arrayOfDirectors= new Directors[0];
+										while(directorIdInsert>=0) 
+										{
+											System.out.println("Dime las Id de los Directores (-1 para terminar): ");
+											directorIdInsert=scanner.nextInt();
+											clearScreen();
+											if(directorIdInsert>=0) 
+											{
+												for(Directors director:arrayDirectorsGeneral) 
+												{
+													if(director.getDirectorId()==directorIdInsert) 
+													{
+														directorCountResult++;
+														arrayOfDirectors=Arrays.copyOf(arrayOfDirectors,arrayOfDirectors.length+1);
+														arrayOfDirectors[arrayOfDirectors.length-1]=director;
+													}
+												}
+											}
+											System.out.println("Directores encontrados para add: "+directorCountResult);
+										}
+										
+										clearScreen();
+										int categoryIdInsert = 0;
+										int categoryCountResult = 0;
+										Categorie[] arrayOfCategories= new Categorie[0];
+										while(categoryIdInsert>=0) 
+										{
+											System.out.println("Dime las Ids de las Categories (-1 para terminar): ");
+											categoryIdInsert=scanner.nextInt();
+											clearScreen();
+											
+											if(categoryIdInsert>=0) 
+											{
+												for(Categorie category:arrayCategoriesGeneral) 
+												{
+													if(category.getCategorieID()==categoryIdInsert) 
+													{
+														categoryCountResult++;
+														arrayOfCategories=Arrays.copyOf(arrayOfCategories,arrayOfCategories.length+1);
+														arrayOfCategories[arrayOfCategories.length-1]=category;
+													}
+												}
+											}
+											System.out.println("Categories encontrados para add: "+categoryCountResult);
+										}
+										
+										int actorIdInsert = 0;
+										int actorCountResult = 0;
+										Actors[] arrayOfActors= new Actors[0];
+										while(actorIdInsert>=0) 
+										{
+											System.out.println("Dime las Id de los Actores (-1 para terminar): ");
+											actorIdInsert=scanner.nextInt();
+											clearScreen();
+											if(actorIdInsert>=0) 
+											{
+												for(Actors actor:arrayActorsGeneral) 
+												{
+													if(actor.getActorId()==actorIdInsert) 
+													{
+														actorCountResult++;
+														arrayOfActors=Arrays.copyOf(arrayOfActors,arrayOfActors.length+1);
+														arrayOfActors[arrayOfActors.length-1]=actor;
+													}
+												}
+											}
+											System.out.println("Actors encontrados para add: "+actorCountResult);
+										}
+										
+										System.out.println("Escribe el lenguaje Original: ");
+										String originalLenguage=scanner2.nextLine();
+										clearScreen();
+										
+										int adaptedLang=1;
+										int adaptedLangCont=0;
+										AdaptedLanguages[] adaptedLanguagesArray= new AdaptedLanguages[0];
+										
+										while(adaptedLang>=1&adaptedLang<=7) 
+										{
+											System.out.println("Selecciona los Lenguajes adaptados: \n"
+													+ "[1] ES\n"
+													+ "[2] EN\n"
+													+ "[3] DE\n"
+													+ "[4] RU\n"
+													+ "[5] IT\n"
+													+ "[6] CH\n"
+													+ "[7] OTHER\n"
+													+ "[Other] END...");
+											adaptedLang=scanner.nextInt();
+											switch(adaptedLang) 
+											{
+												case 1:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.ES);
+													break;
+												}
+												case 2:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.EN);
+													break;
+												}
+												case 3:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.DE);
+													break;
+												}
+												case 4:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.RU);
+													break;
+												}
+												case 5:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.IT);
+													break;
+												}
+												case 6:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.CH);
+													break;
+												}
+												case 7:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.OTHER);
+													break;
+												}
+												default:
+												{
+													break;
+												}
+											}
+											System.out.println("Adapted Languages added: "+adaptedLangCont);
+										}
+										
+										clearScreen();
+										System.out.println("Selecciona los Subtitulos: ");
+										
+										int subtitulo=2;
+										int subtitlesCont=0;
+										Subtitles[] subtitulosArray= new Subtitles[0];
+										while(subtitulo>=1&subtitulo<=7) 
+										{
+											System.out.println("Selecciona subtitulo para añadir: \n"
+													+ "[1] ES\n"
+													+ "[2] EN\n"
+													+ "[3] DE\n"
+													+ "[4] RU\n"
+													+ "[5] IT\n"
+													+ "[6] CH\n"
+													+ "[7] OTHER\n"
+													+ "[Other] END...");
+											subtitulo=scanner.nextInt();
+											switch(subtitulo) 
+												{
+												case 1:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.ES);
+													break;
+												}
+												case 2:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.EN);
+													break;
+												}
+												case 3:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.DE);
+													break;
+												}
+												case 4:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.RU);
+													break;
+												}
+												case 5:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.IT);
+													break;
+												}
+												case 6:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.CH);
+													break;
+												}
+												case 7:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
+													break;
+												}
+												default:
+												{
+													break;
+												}
+											}
+											System.out.println("Subtitles added : "+subtitlesCont);
+										}
+										clearScreen();
+										System.out.println("Selecciona la Duracion Total (Tiempo en minutos): ");
+										double minutosTiempoDuracion=0;
+										minutosTiempoDuracion=scanner.nextDouble();
+										
+										clearScreen();
+										System.out.println("Selecciona el anyo de creacion: ");
+										int anyoCreacion=9999;
+										anyoCreacion=scanner.nextInt();
+										
+										clearScreen();
+										System.out.println("Selecciona numero de capitulos: ");
+										int numeroCapitulos=0;
+										numeroCapitulos=scanner.nextInt();
+										
+										clearScreen();
+										System.out.println("Selecciona numero de temporadas: ");
+										int numeroTemporadas=0;
+										numeroTemporadas=scanner.nextInt();
+										clearScreen();
+
+										arraySeriesGeneral=Arrays.copyOf(arraySeriesGeneral, arraySeriesGeneral.length+1);
+										arraySeriesGeneral[arraySeriesGeneral.length-1]=new Series(arrayOfActors,arrayOfDirectors,arrayOfCategories,title,originalLenguage,adaptedLanguagesArray,subtitulosArray,minutosTiempoDuracion,anyoCreacion,numeroCapitulos,numeroTemporadas,serieIdCont++);
+										System.out.println(arraySeriesGeneral[arraySeriesGeneral.length-1]);
+										
+										break;
+										//--------SERIE--REGISTER------
+									}
+									case 2:
+									{
+										//--------SERIE--SEARCH------
+										clearScreen();
+										System.out.println("Selecciona el metodo de busqueda: \n"
+												+ "[1] Actores \n"
+												+ "[2] Directores \n"
+												+ "[3] Titulo \n"
+												+ "[4] Lenguaje Original \n"
+												+ "[5] Lenguaje Adaptado\n"
+												+ "[6] Categorias \n"
+												+ "[7] Duracion\n"
+												+ "[8] Creation Year\n"
+												+ "[9] Subtitulo\n"
+												+ "[10] Numero Capitulos\n"
+												+ "[11] Numero Temporadas\n"
+												+ "[12] Id de Serie\n");
+										int selection1 = scanner.nextInt();
+										clearScreen();
+										if (selection1==1) 
+										{//---------Search By Actor (ID)------------
+											int seriesContResults=0;
+											System.out.println("Indica el Id del actor \n");
+											int actorId=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Series serie:arraySeriesGeneral) 
+											{
+												for(Actors actor : serie.getActores()) {
+													if(actor.getActorId()==actorId) {
+														seriesContResults++;
+														System.out.println(serie);
+													}
+													
+												}
+											}
+											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+										}
+										else if (selection1==2) 
+										{//---------Search By Director (ID)------------
+											int seriesContResults=0;
+											System.out.println("Indica el Id del Director \n");
+											int directorId=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Series serie:arraySeriesGeneral) 
+											{
+												for(Directors director : serie.getDirectors()) {
+													if(director.getDirectorId()==directorId) {
+														seriesContResults++;
+														System.out.println(serie);
+													}
+													
+												}
+											}
+											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+										}
+										else if (selection1==3) 
+										{//---------Search By Title (ID)------------
+											int seriesContResults=0;
+											System.out.println("Indica titulo o parte del mismo: \n");
+											String titleSearch=scanner2.nextLine();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Series serie:arraySeriesGeneral) 
+											{
+												if(serie.getTitle().contains(titleSearch)) {
+													seriesContResults++;
+													System.out.println(serie);
+												}
+											}
+											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+										}
+										else if (selection1==4) 
+										{//---------Search By Original Language (ID)------------
+											int seriesContResults=0;
+											System.out.println("Indica Lenguage Original o parte del mismo: \n");
+											String origLanguageSearch=scanner2.nextLine();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Series serie:arraySeriesGeneral) 
+											{
+												if(serie.getOriginalLanguage().contains(origLanguageSearch)) {
+													seriesContResults++;
+													System.out.println(serie);
+												}
+											}
+											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+										}
+										else if (selection1==5) 
+										{//---------Search By Adapted Language (ID)------------
+											int seriesContResults=0;
+											System.out.println("Selecciona el Lenguaje adaptado: \n"
+													+ "[1] ES\n"
+													+ "[2] EN\n"
+													+ "[3] DE\n"
+													+ "[4] RU\n"
+													+ "[5] IT\n"
+													+ "[6] CH\n"
+													+ "[Other] Other");
+											int adaptedLanguageSelectionSearch=scanner.nextInt();
+											clearScreen();
+											AvaliableAdaptedLanguages adaptedSearch=null;
+											if(adaptedLanguageSelectionSearch==1) 
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.ES;
+											}
+											else if(adaptedLanguageSelectionSearch==2) 
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.EN;
+											}
+											else if(adaptedLanguageSelectionSearch==3) 
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.DE;
+											}
+											else if(adaptedLanguageSelectionSearch==4) 
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.RU;
+											}
+											else if(adaptedLanguageSelectionSearch==5) 
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.IT;
+											}
+											else if(adaptedLanguageSelectionSearch==6) 
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.CH;
+											}
+											else
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.OTHER;
+											}
+											System.out.println("Resultados : \n");
+											for (Series serie:arraySeriesGeneral) 
+											{
+												for(AdaptedLanguages adapted : serie.getAdaptedLanguages()) {
+													if(adapted.getAdaptedLang()==adaptedSearch) {
+														seriesContResults++;
+														System.out.println(serie);
+													}
+													
+												}
+											}
+											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+										}
+										else if (selection1==6) 
+										{//---------Search By Category (ID)------------
+											//---HAY QUE ANYADIR QUE BUSQUE POR LAS CATEGORIAS POR DEFECTO TAMBIEN---
+											int seriesContResults=0;
+											System.out.println("Indica el Id de la Categoria \n");
+											int categoryId=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Series serie:arraySeriesGeneral) 
+											{
+												for(Categorie category : serie.getCateg()) {
+													if(category.getCategorieID()==categoryId) {
+														seriesContResults++;
+														System.out.println(serie);
+													}
+													
+												}
+											}
+											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+										}
+										else if (selection1==7) 
+										{//---------Search By Duration------------
+											int seriesContResults=0;
+											System.out.println("Indica Duracion total: \n");
+											double durationTotalTime=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Series serie:arraySeriesGeneral) 
+											{
+												if(serie.getDuration()==durationTotalTime) 
+												{
+													seriesContResults++;
+													System.out.println(serie);
+												}
+											}
+											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+										}
+										else if (selection1==8) 
+										{//---------Search By Creation Year------------
+											int seriesContResults=0;
+											System.out.println("Indica Duracion total: \n");
+											int creationYear=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Series serie:arraySeriesGeneral) 
+											{
+												if(serie.getCreationYear()==creationYear) 
+												{
+													seriesContResults++;
+													System.out.println(serie);
+												}
+											}
+											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+										}
+										else if (selection1==9) 
+										{//---------Search By Subtitles------------
+											int seriesContResults=0;
+											System.out.println("Selecciona subtitulo para la busqueda: \n"
+													+ "[1] ES\n"
+													+ "[2] EN\n"
+													+ "[3] DE\n"
+													+ "[4] RU\n"
+													+ "[5] IT\n"
+													+ "[6] CH\n"
+													+ "[7] OTHER\n"
+													+ "[Other] END...");
+											int subtitleSearch=scanner.nextInt();
+											AvaliableSubtitles subtitleToFind=null;
+											clearScreen();
+											if(subtitleSearch==1) 
+											{
+												subtitleToFind=AvaliableSubtitles.ES;
+											}
+											else if(subtitleSearch==2) 
+											{
+												subtitleToFind=AvaliableSubtitles.EN;
+											}
+											else if(subtitleSearch==3) 
+											{
+												subtitleToFind=AvaliableSubtitles.DE;
+											}
+											else if(subtitleSearch==4) 
+											{
+												subtitleToFind=AvaliableSubtitles.RU;
+											}
+											else if(subtitleSearch==5) 
+											{
+												subtitleToFind=AvaliableSubtitles.IT;
+											}
+											else if(subtitleSearch==6) 
+											{
+												subtitleToFind=AvaliableSubtitles.CH;
+											}
+											else
+											{
+												subtitleToFind=AvaliableSubtitles.OTHER;
+											}
+											System.out.println("Resultados : \n");
+											for (Series serie:arraySeriesGeneral) 
+											{
+												for(Subtitles subtitle : serie.getAvaliableSubtitles()) {
+													if(subtitle.getSubtitle()==subtitleToFind) {
+														seriesContResults++;
+														System.out.println(serie);
+													}
+													
+												}
+											}
+											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+										}
+										else if (selection1==10) 
+										{//---------Search By total capitule number (ID)------------
+											int seriesContResults=0;
+											System.out.println("Indica numero de capitulos \n");
+											int numberOfCapitules=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Series serie:arraySeriesGeneral) 
+											{
+												if(serie.getnCapitules()==numberOfCapitules) 
+												{
+													seriesContResults++;
+													System.out.println(serie);
+												}
+											}
+											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+										}
+										else if (selection1==11) 
+										{//---------Search By total seasons (ID)------------
+											int seriesContResults=0;
+											System.out.println("Indica numero de temporadas \n");
+											int numberOfSeasons=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Series serie:arraySeriesGeneral) 
+											{
+												if(serie.getSeasons()==numberOfSeasons) 
+												{
+													seriesContResults++;
+													System.out.println(serie);
+												}
+											}
+											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+										}
+										else if (selection1==12) 
+										{//---------Search By Serie ID------------
+											int seriesContResults=0;
+											System.out.println("Indica el Id de la Serie \n");
+											int serieId=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Series serie:arraySeriesGeneral) 
+											{
+												if(serie.getSerieId()==serieId) 
+												{
+													seriesContResults++;
+													System.out.println(serie);
+												}
+											}
+											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+										}
+										break;
+									}
+									case 3:
+									{
+										
+										System.out.println("Indica Id de Serie para modificar: ");
+										int selectedSerieId=scanner.nextInt();
+										boolean positiveResult=false;
+										for(Series serie : arraySeriesGeneral) 
+										{
+											if(serie.getSerieId()==selectedSerieId) {
+												positiveResult=true;
+												System.out.println("Serie encontrada \n ("+serie.getTitle()+")");
+												System.out.println("Indique que desea modificar... \n"
+														+ "[1] Actores \n"
+														+ "[2] Directores \n"
+														+ "[3] Titulo \n"
+														+ "[4] Lenguaje Original \n"
+														+ "[5] Lenguaje Adaptado\n"
+														+ "[6] Categorias \n"
+														+ "[7] Duracion\n"
+														+ "[8] Creation Year\n"
+														+ "[9] Subtitulo\n"
+														+ "[10] Numero Capitulos\n"
+														+ "[11] Numero Temporadas\n"
+														+ "[12] Id de Serie (No recomendable)\n");
+												int selectedOption=scanner.nextInt();
+												if(selectedOption==1) 
+												{//-------------MODIFY---ACTORS-------------
+													boolean cancelled=false;
+													int actorIdInsert = 0;
+													int actorCountResult = 0;
+													Actors[] arrayOfActors= new Actors[0];
+													while(actorIdInsert>=0) 
+													{
+														System.out.println("Dime las Id de los nuevos Actores (-1 para terminar) (-2 Para cancelar): ");
+														actorIdInsert=scanner.nextInt();
+														clearScreen();
+														if(actorIdInsert>=0) 
+														{
+															for(Actors actor:arrayActorsGeneral) 
+															{
+																if(actor.getActorId()==actorIdInsert) 
+																{
+																	actorCountResult++;
+																	arrayOfActors=Arrays.copyOf(arrayOfActors,arrayOfActors.length+1);
+																	arrayOfActors[arrayOfActors.length-1]=actor;
+																}
+															}
+														}
+														else if(actorIdInsert==-2) 
+														{
+															cancelled=true;
+															System.out.println("Cancelado");
+															break;
+														}
+														System.out.println("Actors encontrados para add: "+actorCountResult);
+													}
+													if(!cancelled) 
+													{
+														serie.setActores(arrayOfActors);
+													}
+													//-------------MODIFY---ACTORS-------------
+												}
+												else if(selectedOption==2) 
+												{//-------------MODIFY---DIRECTORS-------------
+													boolean cancelled=false;
+													int directorIdInsert = 0;
+													int directorCountResult=0;
+													Directors[] arrayOfDirectors= new Directors[0];
+													while(directorIdInsert>=0) 
+													{
+														System.out.println("Dime las Id de los nuevos Directores (-1 para terminar) (-2 Para cancelar): ");
+														directorIdInsert=scanner.nextInt();
+														clearScreen();
+														if(directorIdInsert>=0) 
+														{
+															for(Directors director:arrayDirectorsGeneral) 
+															{
+																if(director.getDirectorId()==directorIdInsert) 
+																{
+																	directorCountResult++;
+																	arrayOfDirectors=Arrays.copyOf(arrayOfDirectors,arrayOfDirectors.length+1);
+																	arrayOfDirectors[arrayOfDirectors.length-1]=director;
+																}
+															}
+														}
+														else if(directorIdInsert==-2) 
+														{
+															cancelled=true;
+															System.out.println("Cancelado");
+															break;
+														}
+														System.out.println("Directores encontrados para add: "+directorCountResult);
+													}
+													if(!cancelled) 
+													{
+														serie.setDirectors(arrayOfDirectors);
+													}
+													//-------------MODIFY---DIRECTORS-------------
+												}
+												else if(selectedOption==3) 
+												{//-------------MODIFY---TITLE-------------
+													boolean cancelled=false;
+													System.out.println("Dime el nuevo titulo de la Serie (-2 para cancelar)"); 
+													String title="Undefined-title";
+													title=scanner2.nextLine();
+													clearScreen();
+													if(title.equals("-2")) 
+													{
+														cancelled=true;
+														System.out.println("Operacion cancelada");
+													}
+													if(!cancelled) 
+													{
+														serie.setTitle(title);
+													}
+													//-------------MODIFY---TITLE-------------
+												}
+												else if(selectedOption==4) 
+												{//-------------MODIFY---ORIGINAL-LANGUAGE-------------
+													boolean cancelled=false;
+													System.out.println("Dime el nuevo Lenguaje Original (-2 para cancelar)"); 
+													String orignalLang="Undefined-Original-Lang";
+													orignalLang=scanner2.nextLine();
+													clearScreen();
+													if(orignalLang.equals("-2")) 
+													{
+														cancelled=true;
+														System.out.println("Operacion cancelada");
+													}
+													if(!cancelled) 
+													{
+														serie.setOriginalLanguage(orignalLang);
+													}
+													//-------------MODIFY---ORIGINAL-LANGUAGE-------------
+												}
+												else if(selectedOption==5) 
+												{//-------------MODIFY---ADAPTED-LANGUAGE-------------
+													boolean cancelled=false;
+													int adaptedLang=1;
+													int adaptedLangCont=0;
+													AdaptedLanguages[] adaptedLanguagesArray= new AdaptedLanguages[0];
+													
+													while(adaptedLang>=1&adaptedLang<=7) 
+													{
+														System.out.println("Selecciona los nuevos Lenguajes adaptados: \n"
+																+ "[1] ES\n"
+																+ "[2] EN\n"
+																+ "[3] DE\n"
+																+ "[4] RU\n"
+																+ "[5] IT\n"
+																+ "[6] CH\n"
+																+ "[7] OTHER\n"
+																+ "[Other] END...");
+														adaptedLang=scanner.nextInt();
+														if(adaptedLang==-2)
+														{
+															cancelled=true;
+															System.out.println("Operacion cancelada");
+															break;
+														}
+														switch(adaptedLang) 
+														{
+															case 1:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.ES);
+																break;
+															}
+															case 2:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.EN);
+																break;
+															}
+															case 3:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.DE);
+																break;
+															}
+															case 4:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.RU);
+																break;
+															}
+															case 5:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.IT);
+																break;
+															}
+															case 6:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.CH);
+																break;
+															}
+															case 7:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.OTHER);
+																break;
+															}
+															default:
+															{
+																break;
+															}
+														}
+														System.out.println("Adapted Languages added: "+adaptedLangCont);
+													}
+													
+													if(!cancelled) 
+													{
+														serie.setAdaptedLanguages(adaptedLanguagesArray);
+													}
+													//-------------MODIFY---ADAPTED-LANGUAGE-------------
+												}
+												else if(selectedOption==6) 
+												{
+													clearScreen();
+													boolean cancelled=false;
+													int categoryIdInsert = 0;
+													int categoryCountResult = 0;
+													Categorie[] arrayOfCategories= new Categorie[0];
+													while(categoryIdInsert>=0) 
+													{
+														System.out.println("Dime las Ids de las Categories (-1 para terminar): ");
+														categoryIdInsert=scanner.nextInt();
+														clearScreen();
+														
+														if(categoryIdInsert>=0) 
+														{
+															for(Categorie category:arrayCategoriesGeneral) 
+															{
+																if(category.getCategorieID()==categoryIdInsert) 
+																{
+																	categoryCountResult++;
+																	arrayOfCategories=Arrays.copyOf(arrayOfCategories,arrayOfCategories.length+1);
+																	arrayOfCategories[arrayOfCategories.length-1]=category;
+																}
+															}
+														}
+														System.out.println("Categories encontrados para add: "+categoryCountResult);
+														if(categoryIdInsert==-2) 
+														{
+															cancelled=true;
+															System.out.println("Operacion cancelada");
+															break;
+														}
+													}
+													if(!cancelled) 
+													{
+														serie.setCateg(arrayOfCategories);
+													}
+												}
+												else if(selectedOption==7) 
+												{
+													
+												}
+												else if(selectedOption==8) 
+												{
+													
+												}
+												else if(selectedOption==9) 
+												{
+													
+												}
+												else if(selectedOption==10) 
+												{
+													
+												}
+												else if(selectedOption==11) 
+												{
+													
+												}
+												else if(selectedOption==12) 
+												{
+													
+												}
+											}
+										}
+										if(positiveResult) 
+										{
+											System.out.println("Cambios guardados..");
+										}
+										else 
+										{
+											System.out.println("No se encontro ninguna serie con el ID aportado...");
+										}
+									}
+									//----------SERIE OPTIONS--------------
+								}	
 							}
 							else 
 							{

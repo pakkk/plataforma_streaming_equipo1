@@ -3,6 +3,7 @@ package es.iesjandula.plataforma_streaming_equipo1.audiovisuals;
 import java.util.Arrays;
 
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
+import es.iesjandula.plataforma_streaming_equipo1.adaptedlanguages.AdaptedLanguages;
 import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
 import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
@@ -19,7 +20,7 @@ public class Audiovisuals
 	protected Categorie[] categ = new Categorie[0];
 	protected String title;
 	protected String originalLanguage;
-	protected String[] adaptedLanguages = new String[0];
+	protected AdaptedLanguages[] adaptedLanguages = new AdaptedLanguages[0];
 	protected Subtitles[] avaliableSubtitles = new Subtitles[0];
 	protected Double duration;
 	protected int creationYear;
@@ -27,7 +28,7 @@ public class Audiovisuals
 	
 	//Constructor
 	public Audiovisuals(Type type,Directors[] directors, Actors[] actores, Categorie[] categ, String title, String originalLanguage,
-			String[] adaptedLanguages, Subtitles[] avaliableSubtitles, Double duration, int creationYear) 
+			AdaptedLanguages[] adaptedLanguages, Subtitles[] avaliableSubtitles, Double duration, int creationYear) 
 	{
 		this.type = type;
 		this.directors=directors;
@@ -42,137 +43,6 @@ public class Audiovisuals
 		this.views=0;
 	}
 
-	//Getters and setters
-	
-	
-	public Type getType() 
-	{
-		//Get the type
-		return type;
-	}
-	public int getViews() 
-	{
-		//get the vies
-		return views;
-	}
-
-	public void setViews(int views) 
-	{
-		//set the views
-		this.views = views;
-	}
-
-	public void setType(Type type) 
-	{
-		//Set the type
-		this.type = type;
-	}
-
-	
-	public Directors[] getDirectors() 
-	{
-		//Get the directors array
-		return directors;
-	}
-
-	public void setDirectors(Directors directors) 
-	{
-		//Set director
-		this.directors=Arrays.copyOf(this.directors,this.directors.length+1);
-		this.directors[this.directors.length-1]=directors;
-	}
-
-	public Actors[] getActores() 
-	{
-		//Get the actors Array
-		return actores;
-	}
-	public void setActores(Actors actores) 
-	{
-		//Set actor
-		this.actores=Arrays.copyOf(this.actores,this.actores.length+1);
-		this.actores[this.actores.length-1]=actores;
-	}
-
-	public Categorie[] getCateg() 
-	{
-		//Get the categorie array
-		return categ;
-	}
-	public void setCateg(Categorie categ) 
-	{
-		//Set the gategorie array
-		this.categ=Arrays.copyOf(this.categ,this.categ.length+1);
-		this.categ[this.categ.length-1]=categ;
-	}
-
-	public String gettitle() 
-	{
-		//Get the title
-		return title;
-	}
-	public void settitle(String title) 
-	{
-		//Set the title
-		this.title = title;
-	}
-
-	public String getOriginalLanguage() 
-	{
-		//Get the original language
-		return originalLanguage;
-	}
-	public void setOriginalLanguage(String originalLanguage) 
-	{
-		//Set the original Language
-		this.originalLanguage = originalLanguage;
-	}
-
-	public String[] getAdaptedLanguages() 
-	{
-		//Get the adapted languages
-		return adaptedLanguages;
-	}
-	public void setAdaptedLanguages(String adaptedLanguages) 
-	{
-		//Set adapted language
-		this.adaptedLanguages=Arrays.copyOf(this.adaptedLanguages,this.adaptedLanguages.length+1);
-		this.adaptedLanguages[this.adaptedLanguages.length-1]=adaptedLanguages;
-	}
-
-	public Subtitles[] getAvaliableSubtitles() 
-	{
-		//Get the avaliable subtitles array
-		return avaliableSubtitles;
-	}
-	public void setAvaliableSubtitles(Subtitles avaliableSubtitles) 
-	{
-		//Set avaiable subtitle
-		this.avaliableSubtitles=Arrays.copyOf(this.avaliableSubtitles,this.avaliableSubtitles.length+1);
-		this.avaliableSubtitles[this.avaliableSubtitles.length-1]=avaliableSubtitles;
-	}
-
-	public Double getDuration()
-	{
-		//Get the duration
-		return duration;
-	}
-	public void setDuration(Double duration) 
-	{
-		//Set the duration
-		this.duration = duration;
-	}
-
-	public int getCreationYear() 
-	{
-		//Get the creation year
-		return creationYear;
-	}
-	public void setCreationYear(int creationYear) 
-	{
-		//Set the creation year
-		this.creationYear = creationYear;
-	}
 
 	//ToString for print all attributes
 	@Override
@@ -183,6 +53,163 @@ public class Audiovisuals
 				+ ", adaptedLanguages=" + Arrays.toString(adaptedLanguages) + ", avaliableSubtitles="
 				+ Arrays.toString(avaliableSubtitles) + ", duration=" + duration + ", creationYear=" + creationYear
 				+ "]"+Arrays.toString(directors)+" views: "+views;
+	}
+
+	
+	//Getters and setters
+	
+	/**
+	 * @return the type
+	 */
+	public Type getType() {
+		return this.type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(Type type) {
+		this.type = type;
+	}
+
+	/**
+	 * @return the directors
+	 */
+	public Directors[] getDirectors() {
+		return this.directors;
+	}
+
+	/**
+	 * @param directors the directors to set
+	 */
+	public void setDirectors(Directors[] directors) {
+		this.directors = directors;
+	}
+
+	/**
+	 * @return the actores
+	 */
+	public Actors[] getActores() {
+		return this.actores;
+	}
+
+	/**
+	 * @param actores the actores to set
+	 */
+	public void setActores(Actors[] actores) {
+		this.actores = actores;
+	}
+
+	/**
+	 * @return the categ
+	 */
+	public Categorie[] getCateg() {
+		return this.categ;
+	}
+
+	/**
+	 * @param categ the categ to set
+	 */
+	public void setCateg(Categorie[] categ) {
+		this.categ = categ;
+	}
+
+	/**
+	 * @return the title
+	 */
+	public String getTitle() {
+		return this.title;
+	}
+
+	/**
+	 * @param title the title to set
+	 */
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	/**
+	 * @return the originalLanguage
+	 */
+	public String getOriginalLanguage() {
+		return this.originalLanguage;
+	}
+
+	/**
+	 * @param originalLanguage the originalLanguage to set
+	 */
+	public void setOriginalLanguage(String originalLanguage) {
+		this.originalLanguage = originalLanguage;
+	}
+
+	/**
+	 * @return the adaptedLanguages
+	 */
+	public AdaptedLanguages[] getAdaptedLanguages() {
+		return this.adaptedLanguages;
+	}
+
+	/**
+	 * @param adaptedLanguages the adaptedLanguages to set
+	 */
+	public void setAdaptedLanguages(AdaptedLanguages[] adaptedLanguages) {
+		this.adaptedLanguages = adaptedLanguages;
+	}
+
+	/**
+	 * @return the avaliableSubtitles
+	 */
+	public Subtitles[] getAvaliableSubtitles() {
+		return this.avaliableSubtitles;
+	}
+
+	/**
+	 * @param avaliableSubtitles the avaliableSubtitles to set
+	 */
+	public void setAvaliableSubtitles(Subtitles[] avaliableSubtitles) {
+		this.avaliableSubtitles = avaliableSubtitles;
+	}
+
+	/**
+	 * @return the duration
+	 */
+	public Double getDuration() {
+		return this.duration;
+	}
+
+	/**
+	 * @param duration the duration to set
+	 */
+	public void setDuration(Double duration) {
+		this.duration = duration;
+	}
+
+	/**
+	 * @return the creationYear
+	 */
+	public int getCreationYear() {
+		return this.creationYear;
+	}
+
+	/**
+	 * @param creationYear the creationYear to set
+	 */
+	public void setCreationYear(int creationYear) {
+		this.creationYear = creationYear;
+	}
+
+	/**
+	 * @return the views
+	 */
+	public int getViews() {
+		return this.views;
+	}
+
+	/**
+	 * @param views the views to set
+	 */
+	public void setViews(int views) {
+		this.views = views;
 	}
 	
 	
