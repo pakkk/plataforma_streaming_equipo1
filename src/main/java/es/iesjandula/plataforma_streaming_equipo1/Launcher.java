@@ -78,7 +78,7 @@ public class Launcher
 		Actors actor4 = new Actors("Persiman","Letsen", "Polan",Genders.MAN,1990,actorIdCont++);
 		Actors actor5 = new Actors("Julia","Rous", "Ukrain",Genders.WOMAN,1990,actorIdCont++);
 		Actors actor6 = new Actors("Sofia","Hernandez", "Africa",Genders.WOMAN,1990,actorIdCont++);
-		Actors[] arrayActors1 = {actor1};
+		Actors[] arrayActors1 = {actor1,actor6};
 		Actors[] arrayActorsGeneral = {actor1,actor2,actor3,actor4,actor5,actor6};
 		
 		//----------------BASE OBJECTS-- ACTORS CLASS----------------------------
@@ -4466,15 +4466,101 @@ public class Launcher
 							clearScreen();
 							System.out.println("Select option:\n"
 									+ "[1] Number Of Series\n"
-									+ "[2] Comin son");
+									+ "[2] Information Of Serie , by Category\n"
+									+ "[3] Information Of Serie , by Actors\n"
+									+ "[4] Coming son...");
 							int selectedOption=0;
 							selectedOption=scanner.nextInt();
-							int totalSeriesCont=0;
-							for(Series serie : arraySeriesGeneral) 
-							{
-								totalSeriesCont++;
+							if(selectedOption==1) 
+							{//----NUMBER OF SERIES SELECTED-------
+								int totalSeriesCont=0;
+								for(Series serie : arraySeriesGeneral) 
+								{
+									totalSeriesCont++;
+								}
+								System.out.println("Total Series in the System : "+totalSeriesCont);
 							}
-							System.out.println("Total Series in the System : "+totalSeriesCont);
+							else if(selectedOption==2) 
+							{
+								//---------SERIES BY CATEGORY IDS------------
+								int seriesContResults=0;
+								int[] arrayOfCategoriesId=new int[0];
+								int categoryId=0;
+								while(categoryId>=0) 
+								{
+									System.out.println("Indica las Ids de las Categoria (Genero) (-1 para terminar)\n");
+									categoryId=scanner.nextInt();
+									if(categoryId>=0) 
+									{
+									arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
+									arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
+									}
+								}
+								
+								clearScreen();
+								System.out.println("Resultados : \n");
+								boolean exist=false;
+								for(int categoryIdx: arrayOfCategoriesId) 
+								{
+									exist=false;
+									for (Series serie:arraySeriesGeneral) 
+									{
+										
+										for(Categorie category : serie.getCateg()) {
+											if(category.getCategorieID()==categoryIdx) {
+												seriesContResults++;
+												exist=true;
+												System.out.println(serie);
+											}
+											
+										}
+									}
+									System.out.println("-------Se encontraron: "+seriesContResults+" Series con la categoria id:"+categoryIdx+"-------\n");	
+									seriesContResults=0;//Reset for next Id
+								}
+								
+							}
+							else if(selectedOption==3) 
+							{
+								//---------SERIES BY ACTORS IDS------------
+								int seriesContResults=0;
+								int[] arrayOfActorsId=new int[0];
+								int actorId=0;
+								while(actorId>=0) 
+								{
+									System.out.println("Indica las Ids de los/as Actores (-1 para terminar)\n");
+									actorId=scanner.nextInt();
+									if(actorId>=0) 
+									{
+										arrayOfActorsId=Arrays.copyOf(arrayOfActorsId, arrayOfActorsId.length+1);
+										arrayOfActorsId[arrayOfActorsId.length-1]=actorId;
+									}
+								}
+								
+								clearScreen();
+								System.out.println("Resultados : \n");
+								boolean exist=false;
+								for(int actorIdx: arrayOfActorsId) 
+								{
+									exist=false;
+									for (Series serie:arraySeriesGeneral) 
+									{
+										
+										for(Actors actor : serie.getActores()) {
+											if(actor.getActorId()==actorIdx) {
+												seriesContResults++;
+												exist=true;
+												System.out.println(serie);
+											}
+											
+										}
+									}
+									System.out.println("-------Se encontraron: "+seriesContResults+" Series con el actor de id:"+actorIdx+"-------\n");	
+									seriesContResults=0;//Reset for next Id
+								}
+								
+							}
+							
 							
 						}
 						else if(stadisticsSelection==2)
@@ -4483,40 +4569,253 @@ public class Launcher
 							clearScreen();
 							System.out.println("Select option:\n"
 									+ "[1] Number Of Movies\n"
-									+ "[2] Comin son");
+									+ "[2] Information Of Movie , by Category\n"
+									+ "[3] Information Of Serie , by Actors\n"
+									+ "[4] Coming son...");
 							int selectedOption=0;
 							selectedOption=scanner.nextInt();
-							int totalMoviesCont=0;
-							for(Movies movie : arrayMoviesGeneral) 
+							if(selectedOption==1) 
 							{
-								totalMoviesCont++;
+								int totalMoviesCont=0;
+								for(Movies movie : arrayMoviesGeneral) 
+								{
+									totalMoviesCont++;
+								}
+								clearScreen();
+								System.out.println("Total Movies in the System : "+totalMoviesCont);
 							}
-							clearScreen();
-							System.out.println("Total Movies in the System : "+totalMoviesCont);
+							else if(selectedOption==2) 
+							{
+								//---------MOVIES BY CATEGORY IDS------------
+								int moviesContResults=0;
+								int[] arrayOfCategoriesId=new int[0];
+								int categoryId=0;
+								while(categoryId>=0) 
+								{
+									System.out.println("Indica las Ids de las Categoria (Genero) (-1 para terminar)\n");
+									categoryId=scanner.nextInt();
+									if(categoryId>=0) 
+									{
+									arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
+									arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
+									}
+								}
+								
+								clearScreen();
+								System.out.println("Resultados : \n");
+								boolean exist=false;
+								for(int categoryIdx: arrayOfCategoriesId) 
+								{
+									exist=false;
+									for (Movies movie:arrayMoviesGeneral) 
+									{
+										
+										for(Categorie category : movie.getCateg()) {
+											if(category.getCategorieID()==categoryIdx) {
+												moviesContResults++;
+												exist=true;
+												System.out.println(movie);
+											}
+											
+										}
+									}
+									System.out.println("-------Se encontraron: "+moviesContResults+" Movies con la categoria id:"+categoryIdx+"-------\n");	
+									moviesContResults=0;//Reset for next Id
+								}
+								
+							}
+							else if(selectedOption==3) 
+							{
+								//---------MOVIES BY ACTORS IDS------------
+								int moviesContResults=0;
+								int[] arrayOfActorsId=new int[0];
+								int actorId=0;
+								while(actorId>=0) 
+								{
+									System.out.println("Indica las Ids de los/as Actores (-1 para terminar)\n");
+									actorId=scanner.nextInt();
+									if(actorId>=0) 
+									{
+										arrayOfActorsId=Arrays.copyOf(arrayOfActorsId, arrayOfActorsId.length+1);
+										arrayOfActorsId[arrayOfActorsId.length-1]=actorId;
+									}
+								}
+								
+								clearScreen();
+								System.out.println("Resultados : \n");
+								boolean exist=false;
+								for(int actorIdx: arrayOfActorsId) 
+								{
+									exist=false;
+									for (Movies movie:arrayMoviesGeneral) 
+									{
+										
+										for(Actors actor : movie.getActores()) {
+											if(actor.getActorId()==actorIdx) {
+												moviesContResults++;
+												exist=true;
+												System.out.println(movie);
+											}
+											
+										}
+									}
+									System.out.println("-------Se encontraron: "+moviesContResults+" Movies con el actor de id:"+actorIdx+"-------\n");	
+									moviesContResults=0;//Reset for next Id
+								}
+								
+							}
+							
 						}
 						else if(stadisticsSelection==3)
 						{
 							//--MOVIE--AND SERIES---STADISTICS---------------
 							clearScreen();
 							System.out.println("Select option:\n"
-									+ "[1] Number Of Series and Movies\n"
-									+ "[2] Comin son");
+									+ "[1] Number Of Total Series and Movies\n"
+									+ "[2] Information Of Sereis and Movies , by Categorys\n"
+									+ "[3] Information Of Sereis and Movies , by Actors\n"
+									+ "[4] Coming son...");
 							int selectedOption=0;
 							selectedOption=scanner.nextInt();
-							int totalMoviesCont=0;
-							int totalSeriesCont=0;
-							clearScreen();
-							for(Series serie : arraySeriesGeneral) 
-							{
-								totalSeriesCont++;
+							
+							if(selectedOption==1) 
+							{//--MOVIE--AND SERIES---NUMBERS---------------
+								int totalMoviesCont=0;
+								int totalSeriesCont=0;
+								clearScreen();
+								for(Series serie : arraySeriesGeneral) 
+								{
+									totalSeriesCont++;
+								}
+								System.out.println("Total Series in the System : "+totalSeriesCont);
+								for(Movies movie : arrayMoviesGeneral) 
+								{
+									totalMoviesCont++;
+								}
+								System.out.println("Total Movies in the System : "+totalMoviesCont);
+								System.out.println("Sub-Total : "+(totalSeriesCont+totalMoviesCont)+"");
+							//--MOVIE--AND SERIES---NUMBERS---------------
 							}
-							System.out.println("Total Series in the System : "+totalSeriesCont);
-							for(Movies movie : arrayMoviesGeneral) 
+							else if(selectedOption==2) 
 							{
-								totalMoviesCont++;
+								//---------SERIES AND MOVIES BY CATEGORY IDS------------
+								int seriesContResults=0;
+								int[] arrayOfCategoriesId=new int[0];
+								int categoryId=0;
+								while(categoryId>=0) 
+								{
+									System.out.println("Indica las Ids de las Categoria (Genero) (-1 para terminar)\n");
+									categoryId=scanner.nextInt();
+									if(categoryId>=0) 
+									{
+									arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
+									arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
+									}
+								}
+								
+								clearScreen();
+								System.out.println("Resultados : \n");
+								boolean exist=false;
+								for(int categoryIdx: arrayOfCategoriesId) 
+								{
+									exist=false;
+									for (Series serie:arraySeriesGeneral) 
+									{
+										
+										for(Categorie category : serie.getCateg()) {
+											if(category.getCategorieID()==categoryIdx) {
+												seriesContResults++;
+												exist=true;
+												System.out.println(serie);
+											}
+											
+										}
+									}
+									System.out.println("-------Se encontraron: "+seriesContResults+" Series con la categoria id:"+categoryIdx+"-------\n");	
+									seriesContResults=0;//Reset for next Id
+								}
+								int moviesContResults=0;
+								for(int categoryIdx: arrayOfCategoriesId) 
+								{
+									exist=false;
+									for (Movies movie:arrayMoviesGeneral) 
+									{
+										
+										for(Categorie category : movie.getCateg()) {
+											if(category.getCategorieID()==categoryIdx) {
+												moviesContResults++;
+												exist=true;
+												System.out.println(movie);
+											}
+											
+										}
+									}
+									System.out.println("-------Se encontraron: "+moviesContResults+" Movies con la categoria id:"+categoryIdx+"-------\n");	
+									moviesContResults=0;//Reset for next Id
+								}
+								//---------SERIES AND MOVIES BY CATEGORY IDS------------
 							}
-							System.out.println("Total Movies in the System : "+totalMoviesCont);
-							System.out.println("Sub-Total : "+(totalSeriesCont+totalMoviesCont)+"");
+							else if(selectedOption==3) 
+							{
+								//---------SERIES AND MOVIES BY ACTORS IDS------------
+								int seriesContResults=0;
+								int[] arrayOfActorsId=new int[0];
+								int actorId=0;
+								while(actorId>=0) 
+								{
+									System.out.println("Indica las Ids de las Categoria (Genero) (-1 para terminar)\n");
+									actorId=scanner.nextInt();
+									if(actorId>=0) 
+									{
+										arrayOfActorsId=Arrays.copyOf(arrayOfActorsId, arrayOfActorsId.length+1);
+										arrayOfActorsId[arrayOfActorsId.length-1]=actorId;
+									}
+								}
+								
+								clearScreen();
+								System.out.println("Resultados : \n");
+								boolean exist=false;
+								for(int actorIdx: arrayOfActorsId) 
+								{
+									exist=false;
+									for (Series serie:arraySeriesGeneral) 
+									{
+										
+										for(Actors actor : serie.getActores()) {
+											if(actor.getActorId()==actorIdx) {
+												seriesContResults++;
+												exist=true;
+												System.out.println(serie);
+											}
+											
+										}
+									}
+									System.out.println("-------Se encontraron: "+seriesContResults+" Series con el actor de id:"+actorIdx+"-------\n");	
+									seriesContResults=0;//Reset for next Id
+								}
+								int moviesContResults=0;
+								System.out.println("Resultados : \n");
+								exist=false;
+								for(int actorIdx: arrayOfActorsId) 
+								{
+									exist=false;
+									for (Movies movie:arrayMoviesGeneral) 
+									{
+										
+										for(Actors actor : movie.getActores()) {
+											if(actor.getActorId()==actorIdx) {
+												moviesContResults++;
+												exist=true;
+												System.out.println(movie);
+											}
+											
+										}
+									}
+									System.out.println("-------Se encontraron: "+moviesContResults+" Movies con el actor de id:"+actorIdx+"--------\n");	
+									moviesContResults=0;//Reset for next Id
+								}
+								//---------SERIES AND MOVIES BY ACTORS IDS------------
+							}
 						}
 					break;
 				}
