@@ -6,5 +6,5 @@ public enum CategorieTypes
 	 *To have control over the possible categories and their types 
 	 *(Base categories if you like make other , you can add it or use OTHER type)
 	 */
-	COMEDIA,ACCION,TERROR,SUSPENSE,INFANTIL,OTHER
+	COMEDY,ACTION,TERROR,SUSPENSE,CHILDISH,OTHER
 }

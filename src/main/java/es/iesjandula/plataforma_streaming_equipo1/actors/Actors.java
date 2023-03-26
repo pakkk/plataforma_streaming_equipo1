@@ -26,7 +26,7 @@ public class Actors
 		@Override
 		public String toString() 
 		{
-			return "Actor \n"
+			return "Actors \n"
 			+ "Name: " + this.name + "\n"
 			+ "LastName: " + this.lastName + "\n"
 			+ "Nationality: " + this.nationality + "\n"
@@ -39,84 +39,96 @@ public class Actors
 		/**
 		 * @return the name
 		 */
-		public String getName() {
+		public String getName() 
+		{
 			return this.name;
 		}
 
 		/**
 		 * @param name the name to set
 		 */
-		public void setName(String name) {
+		public void setName(String name) 
+		{
 			this.name = name;
 		}
 
 		/**
 		 * @return the lastName
 		 */
-		public String getLastName() {
+		public String getLastName() 
+		{
 			return this.lastName;
 		}
 
 		/**
 		 * @param lastName the lastName to set
 		 */
-		public void setLastName(String lastName) {
+		public void setLastName(String lastName) 
+		{
 			this.lastName = lastName;
 		}
 
 		/**
 		 * @return the nationality
 		 */
-		public String getNationality() {
+		public String getNationality() 
+		{
 			return this.nationality;
 		}
 
 		/**
 		 * @param nationality the nationality to set
 		 */
-		public void setNationality(String nationality) {
+		public void setNationality(String nationality) 
+		{
 			this.nationality = nationality;
 		}
 
 		/**
 		 * @return the gender
 		 */
-		public Genders getGender() {
+		public Genders getGender() 
+		{
 			return this.gender;
 		}
 
 		/**
 		 * @param gender the gender to set
 		 */
-		public void setGender(Genders gender) {
+		public void setGender(Genders gender)
+		{
 			this.gender = gender;
 		}
 
 		/**
 		 * @return the year
 		 */
-		public int getYear() {
+		public int getYear() 
+		{
 			return this.year;
 		}
 
 		/**
 		 * @param year the year to set
 		 */
-		public void setYear(int year) {
+		public void setYear(int year) 
+		{
 			this.year = year;
 		}
 
 		/**
 		 * @return the actorId
 		 */
-		public int getActorId() {
+		public int getActorId() 
+		{
 			return this.actorId;
 		}
 
 		/**
 		 * @param actorId the actorId to set
 		 */
-		public void setActorId(int actorId) {
+		public void setActorId(int actorId) 
+		{
 			this.actorId = actorId;
 		}
 		

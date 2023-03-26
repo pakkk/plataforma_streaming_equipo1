@@ -30,11 +30,11 @@ public class Directors
 	public String toString() 
 	{
         return "\nDirector:\n"
-        + "Nombre: "+name+"\n"
-        + "Apellido: "+lastName+"\n"
-        + "Nacionalidad: "+nationality+"\n"
-        + "Genero: "+getGender()+"\n"
-        + "Año nacimiento: "+year+"\n"
+        + "Name: "+name+"\n"
+        + "Last Name: "+lastName+"\n"
+        + "Nationality: "+nationality+"\n"
+        + "Gender: "+getGender()+"\n"
+        + "Year of birth: "+year+"\n"
         + "Id-director: "+this.directorId+" \n";
 	}
     //Getters and setters

@@ -19,26 +19,26 @@ public class Series extends Audiovisuals
 	/** Attribute - serieId */
 	private int serieId;
 	
-	/** Attribute - nCapitules */
-	protected int nCapitules;
+	/** Attribute - nChapter */
+	protected int nChapter;
 	
 	/** Attribute - seasons */
 	protected int seasons;
 	
-	/** Attribute - Recomentions */
+	/** Attribute - Recommendation */
 	protected Recomendations recomendationsSerie[]=new Recomendations[0];
 	
 	/*
 	 * Constructor of the class , use the superClass constructor.
 	 * 
 	 */
-	public Series(Actors[] actores,Directors[] directors, Categorie[] categ, String tittle, String originalLenguaje,
-			AdaptedLanguages[] adaptedLenguajes, Subtitles[] avaliableSubtitles, double duration, int creationYear,int nCapitules
+	public Series(Actors[] actors,Directors[] directors, Categorie[] categ, String tittle, String originalLenguaje,
+			AdaptedLanguages[] adaptedLenguajes, Subtitles[] avaliableSubtitles, double duration, int creationYear,int nChapter
 			,int seasons,int serieId) 
 	{
-		super(Type.SERIE, directors, actores, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
+		super(Type.SERIE, directors, actors, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
 
-		this.nCapitules=nCapitules;
+		this.nChapter=nChapter;
 		this.seasons=seasons;
 		this.serieId=serieId;
 		
@@ -51,7 +51,7 @@ public class Series extends Audiovisuals
 	{
 		return "Type: " + this.type +"\n"
 		+ "Actors:\n"
-		+ ""+Arrays.toString(actores)+"\n"
+		+ ""+Arrays.toString(actors)+"\n"
 		+"Categories:\n"
 		+ ""+Arrays.toString(categ)+"\n"
 		+ "Title : "+this.title+"\n"
@@ -63,7 +63,7 @@ public class Series extends Audiovisuals
 		+ "Total Duration Timpe:"+this.duration+"\n"
 		+ "Creation Year: "+this.creationYear+"\n"
 		+ "Total Seasons: "+this.seasons+"\n"
-		+ "Total Capitules: "+this.nCapitules+"\n"
+		+ "Total Capitules: "+this.nChapter+"\n"
 		+ "Directors: \n"
 		+ ""+Arrays.toString(directors)+"\n"
 		+ " Serie id: "+this.serieId+"\n";
@@ -74,16 +74,16 @@ public class Series extends Audiovisuals
 	/* SETTERS AND GETTERS */
 	
 	
-	public int getnCapitules() 
+	public int getnChapter() 
 	{
 		//Get the number of capitules
-		return nCapitules;
+		return nChapter;
 	}
 
-	public void setnCapitules(int nCapitules) 
+	public void setnChapter(int nChapter) 
 	{
-		//Set the number of capitules
-		this.nCapitules = nCapitules;
+		//Set the number of chapter
+		this.nChapter = nChapter;
 	}
 
 	public int getSeasons() 
@@ -100,13 +100,13 @@ public class Series extends Audiovisuals
 
 	public Recomendations[] getRecomendationsSerie() 
 	{
-		//Get the recomendations array
+		//Get the recommendations array
 		return this.recomendationsSerie;
 	}
 
 	public void setRecomendationSerie(Recomendations recomendationsSerie) 
 	{
-		//Set recomendation 
+		//Set recommendation 
 		this.recomendationsSerie=Arrays.copyOf(this.recomendationsSerie,this.recomendationsSerie.length+1);
 		this.recomendationsSerie[this.recomendationsSerie.length-1]=recomendationsSerie;
 	}

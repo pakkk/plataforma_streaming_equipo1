@@ -6,7 +6,7 @@ public class Subtitles
 	//Variables
 	private AvaliableSubtitles subtitle;
 	
-	//Constructor
+	//Constructors
 	public Subtitles(AvaliableSubtitles subtitle) 
 	{
 		this.subtitle = subtitle;

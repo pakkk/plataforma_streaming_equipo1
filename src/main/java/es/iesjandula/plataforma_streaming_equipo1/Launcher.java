@@ -27,7 +27,8 @@ import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 public class Launcher
 {
 	public static void clearScreen() 
-	{	//Method for clear the screen
+	{	
+		//Method for clear the screen
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		
 	}
@@ -42,11 +43,11 @@ public class Launcher
 		
 		//----------------BASE OBJECTS---CATEGORIE CLASS----------------------------
 		int categorieIdCont=0;
-		Categorie categoria1 = new Categorie(CategorieTypes.ACCION,categorieIdCont++);
-		Categorie categoria2 = new Categorie(CategorieTypes.COMEDIA,categorieIdCont++);
+		Categorie categoria1 = new Categorie(CategorieTypes.ACTION,categorieIdCont++);
+		Categorie categoria2 = new Categorie(CategorieTypes.COMEDY,categorieIdCont++);
 		Categorie categoria3 = new Categorie(CategorieTypes.TERROR,categorieIdCont++);
 		Categorie categoria4 = new Categorie(CategorieTypes.SUSPENSE,categorieIdCont++);
-		Categorie categoria5 = new Categorie(CategorieTypes.INFANTIL,categorieIdCont++);
+		Categorie categoria5 = new Categorie(CategorieTypes.CHILDISH,categorieIdCont++);
 		Categorie[] arrayCategories1 = {categoria1};
 		Categorie[] arrayCategoriesGeneral = {categoria1,categoria2,categoria3,categoria4};
 		//----------------BASE OBJECTS---CATEGORIE CLASS----------------------------
@@ -170,7 +171,8 @@ public class Launcher
 					switch(optionSelection) 
 					{
 						case 1:
-						{//----------DIRECTORS OPTIONS--------------
+						{
+							//----------DIRECTORS OPTIONS--------------
 							clearScreen();
 							IMenuDirectors.directorMenu();
 							int selection = scanner.nextInt();
@@ -178,16 +180,16 @@ public class Launcher
 							{
 								case 1:
 								{
-									System.out.println("Dime el nombre del director");
+									System.out.println("Tell me the name of the director");
 									String name=scanner2.nextLine();
 									clearScreen();
-									System.out.println("Dime el apellido del director");
+									System.out.println("Tell me the last name of the director");
 									String apellido=scanner2.nextLine();
 									clearScreen();
-									System.out.println("Dime la nacionalidad del director");
+									System.out.println("Tell me the nationality of the director");
 									String nationality=scanner2.nextLine();
 									clearScreen();
-									System.out.println("Selecciona el sexo del director: \n"
+									System.out.println("Select the gender of the director: \n"
 											+ "[1] Man \n"
 											+ "[2] Woman \n"
 											+ "[3] Other \n");
@@ -206,7 +208,7 @@ public class Launcher
 									{
 										x=Genders.OTHER;
 									}
-									System.out.println("Dime el año de nacimiento del director");
+									System.out.println("Tell me the year of birth of the director:");
 									int year=scanner.nextInt();
 									clearScreen();
 									
@@ -218,20 +220,20 @@ public class Launcher
 								case 2:
 								{
 									clearScreen();
-									System.out.println("Selecciona el metodo de busqueda: \n"
-											+ "[1] Nombre \n"
-											+ "[2] Apellido \n"
-											+ "[3] Año de nacimiento \n"
-											+ "[4] Nacionalidad \n"
-											+ "[5] Genero \n");
+									System.out.println("Select the search method: \n"
+											+ "[1] Name \n"
+											+ "[2] Last Name \n"
+											+ "[3] Year of birth \n"
+											+ "[4] Nationality \n"
+											+ "[5] Gender \n");
 									int selection1 = scanner.nextInt();
 									clearScreen();
 									if (selection1==1) 
 									{
-										System.out.println("Indica el nombre \n");
+										System.out.println("Indicate the name \n");
 										String name=scanner2.nextLine();
 										clearScreen();
-										System.out.println("Resultados : \n");
+										System.out.println("Results : \n");
 										for (Directors director:arrayDirectorsGeneral) 
 										{
 											if (director.getName().equals(name)) 
@@ -242,10 +244,10 @@ public class Launcher
 									}
 									else if (selection1==2) 
 									{
-										System.out.println("Indica el Apellido \n");
+										System.out.println("Indicate the Surname \n");
 										String apellido=scanner2.nextLine();
 										clearScreen();
-										System.out.println("Resultados : \n");
+										System.out.println("Results : \n");
 										for (Directors director:arrayDirectorsGeneral) 
 										{
 											if (director.getLastName().equals(apellido)) 
@@ -1651,7 +1653,7 @@ public class Launcher
 						{//----------RECOMENDATIONS-OPTIONS--------------
 							clearScreen();
 							IMenuRecommendations.recommendationMenu();
-							//String recomendations,RecomendationsType Type
+							//String recommendations,RecomendationsType Type
 							
 							int selection = scanner.nextInt();
 							switch(selection) 
@@ -2164,8 +2166,10 @@ public class Launcher
 										String TypeCategorie=scanner2.nextLine();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Categorie categorie:arrayCategoriesGeneral) {
-											if (categorie.getName().equals(TypeCategorie)) {
+										for (Categorie categorie:arrayCategoriesGeneral) 
+										{
+											if (categorie.getName().equals(TypeCategorie)) 
+											{
 												System.out.println(TypeCategorie);
 											}
 										}
@@ -2176,8 +2180,10 @@ public class Launcher
 										int MinAge=scanner.nextInt();
 										clearScreen();
 										System.out.println("Resultados : \n");
-										for (Categorie categorie:arrayCategoriesGeneral) {
-											if (categorie.getMinAge()==(MinAge)) {
+										for (Categorie categorie:arrayCategoriesGeneral) 
+										{
+											if (categorie.getMinAge()==(MinAge)) 
+											{
 												System.out.println(categorie);
 											}
 										}
@@ -2362,7 +2368,7 @@ public class Launcher
 													}
 													else 
 													{
-													arrayCategoriesGeneral[i]=arrayCategoriesGeneral[i];
+														arrayCategoriesGeneral[i]=arrayCategoriesGeneral[i];
 													}
 												}
 												
@@ -2413,7 +2419,8 @@ public class Launcher
 										System.out.println("Resultados : \n");
 										for (Categorie categorie:arrayCategoriesGeneral) 
 										{
-											if (categorie.getName().equals(year)) {
+											if (categorie.getName().equals(year)) 
+											{
 												System.out.println(categorie);
 												System.out.println("Posicion "+cont);
 												
@@ -2466,7 +2473,8 @@ public class Launcher
 								switch(selection) 
 								{
 									case 1:
-									{//--------SERIE--REGISTER------
+									{
+										//--------SERIE--REGISTER------
 										
 										System.out.println("Dime el titulo de la Serie"); 
 										String title="Undefined";
@@ -2747,7 +2755,8 @@ public class Launcher
 										int selection1 = scanner.nextInt();
 										clearScreen();
 										if (selection1==1) 
-										{//---------Search By Actor (ID)------------
+										{
+											//---------Search By Actor (ID)------------
 											int seriesContResults=0;
 											System.out.println("Indica el Id del actor \n");
 											int actorId=scanner.nextInt();
@@ -2755,8 +2764,10 @@ public class Launcher
 											System.out.println("Resultados : \n");
 											for (Series serie:arraySeriesGeneral) 
 											{
-												for(Actors actor : serie.getActores()) {
-													if(actor.getActorId()==actorId) {
+												for(Actors actor : serie.getActores()) 
+												{
+													if(actor.getActorId()==actorId) 
+													{
 														seriesContResults++;
 														System.out.println(serie);
 													}
@@ -2766,7 +2777,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+seriesContResults+" Series.");
 										}
 										else if (selection1==2) 
-										{//---------Search By Director (ID)------------
+										{
+											//---------Search By Director (ID)------------
 											int seriesContResults=0;
 											System.out.println("Indica el Id del Director \n");
 											int directorId=scanner.nextInt();
@@ -2774,8 +2786,10 @@ public class Launcher
 											System.out.println("Resultados : \n");
 											for (Series serie:arraySeriesGeneral) 
 											{
-												for(Directors director : serie.getDirectors()) {
-													if(director.getDirectorId()==directorId) {
+												for(Directors director : serie.getDirectors()) 
+												{
+													if(director.getDirectorId()==directorId) 
+													{
 														seriesContResults++;
 														System.out.println(serie);
 													}
@@ -2785,7 +2799,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+seriesContResults+" Series.");
 										}
 										else if (selection1==3) 
-										{//---------Search By Title (ID)------------
+										{
+											//---------Search By Title (ID)------------
 											int seriesContResults=0;
 											System.out.println("Indica titulo o parte del mismo: \n");
 											String titleSearch=scanner2.nextLine();
@@ -2801,7 +2816,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+seriesContResults+" Series.");
 										}
 										else if (selection1==4) 
-										{//---------Search By Original Language (ID)------------
+										{
+											//---------Search By Original Language (ID)------------
 											int seriesContResults=0;
 											System.out.println("Indica Lenguage Original o parte del mismo: \n");
 											String origLanguageSearch=scanner2.nextLine();
@@ -2809,7 +2825,8 @@ public class Launcher
 											System.out.println("Resultados : \n");
 											for (Series serie:arraySeriesGeneral) 
 											{
-												if(serie.getOriginalLanguage().contains(origLanguageSearch)) {
+												if(serie.getOriginalLanguage().contains(origLanguageSearch)) 
+												{
 													seriesContResults++;
 													System.out.println(serie);
 												}
@@ -2817,7 +2834,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+seriesContResults+" Series.");
 										}
 										else if (selection1==5) 
-										{//---------Search By Adapted Language (ID)------------
+										{
+											//---------Search By Adapted Language (ID)------------
 											int seriesContResults=0;
 											System.out.println("Selecciona el Lenguaje adaptado: \n"
 													+ "[1] ES\n"
@@ -2872,7 +2890,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+seriesContResults+" Series.");
 										}
 										else if (selection1==6) 
-										{//---------Search By Category (ID)------------
+										{
+											//---------Search By Category (ID)------------
 											//---HAY QUE ANYADIR QUE BUSQUE POR LAS CATEGORIAS POR DEFECTO TAMBIEN---
 											int seriesContResults=0;
 											System.out.println("Indica el Id de la Categoria \n");
@@ -2892,7 +2911,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+seriesContResults+" Series.");
 										}
 										else if (selection1==7) 
-										{//---------Search By Duration------------
+										{
+											//---------Search By Duration------------
 											int seriesContResults=0;
 											System.out.println("Indica Duracion total: \n");
 											double durationTotalTime=scanner.nextInt();
@@ -2909,7 +2929,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+seriesContResults+" Series.");
 										}
 										else if (selection1==8) 
-										{//---------Search By Creation Year------------
+										{
+											//---------Search By Creation Year------------
 											int seriesContResults=0;
 											System.out.println("Indica Duracion total: \n");
 											int creationYear=scanner.nextInt();
@@ -2926,7 +2947,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+seriesContResults+" Series.");
 										}
 										else if (selection1==9) 
-										{//---------Search By Subtitles------------
+										{
+											//---------Search By Subtitles------------
 											int seriesContResults=0;
 											System.out.println("Selecciona subtitulo para la busqueda: \n"
 													+ "[1] ES\n"
@@ -2971,8 +2993,10 @@ public class Launcher
 											System.out.println("Resultados : \n");
 											for (Series serie:arraySeriesGeneral) 
 											{
-												for(Subtitles subtitle : serie.getAvaliableSubtitles()) {
-													if(subtitle.getSubtitle()==subtitleToFind) {
+												for(Subtitles subtitle : serie.getAvaliableSubtitles()) 
+												{
+													if(subtitle.getSubtitle()==subtitleToFind) 
+													{
 														seriesContResults++;
 														System.out.println(serie);
 													}
@@ -2982,7 +3006,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+seriesContResults+" Series.");
 										}
 										else if (selection1==10) 
-										{//---------Search By total capitule number (ID)------------
+										{
+											//---------Search By total capitule number (ID)------------
 											int seriesContResults=0;
 											System.out.println("Indica numero de capitulos \n");
 											int numberOfCapitules=scanner.nextInt();
@@ -2990,7 +3015,7 @@ public class Launcher
 											System.out.println("Resultados : \n");
 											for (Series serie:arraySeriesGeneral) 
 											{
-												if(serie.getnCapitules()==numberOfCapitules) 
+												if(serie.getnChapter()==numberOfCapitules) 
 												{
 													seriesContResults++;
 													System.out.println(serie);
@@ -2999,7 +3024,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+seriesContResults+" Series.");
 										}
 										else if (selection1==11) 
-										{//---------Search By total seasons (ID)------------
+										{
+											//---------Search By total seasons (ID)------------
 											int seriesContResults=0;
 											System.out.println("Indica numero de temporadas \n");
 											int numberOfSeasons=scanner.nextInt();
@@ -3016,7 +3042,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+seriesContResults+" Series.");
 										}
 										else if (selection1==12) 
-										{//---------Search By Serie ID------------
+										{
+											//---------Search By Serie ID------------
 											int seriesContResults=0;
 											System.out.println("Indica el Id de la Serie \n");
 											int serieId=scanner.nextInt();
@@ -3042,7 +3069,8 @@ public class Launcher
 										boolean positiveResult=false;
 										for(Series serie : arraySeriesGeneral) 
 										{
-											if(serie.getSerieId()==selectedSerieId) {
+											if(serie.getSerieId()==selectedSerieId) 
+											{
 												positiveResult=true;
 												System.out.println("Serie encontrada \n ("+serie.getTitle()+")");
 												System.out.println("Indique que desea modificar... \n"
@@ -3060,7 +3088,8 @@ public class Launcher
 														+ "[12] Id de Serie (No recomendable)\n");
 												int selectedOption=scanner.nextInt();
 												if(selectedOption==1) 
-												{//-------------MODIFY---ACTORS-------------
+												{
+													//-------------MODIFY---ACTORS-------------
 													boolean cancelled=false;
 													int actorIdInsert = 0;
 													int actorCountResult = 0;
@@ -3097,7 +3126,8 @@ public class Launcher
 													//-------------MODIFY---ACTORS-------------
 												}
 												else if(selectedOption==2) 
-												{//-------------MODIFY---DIRECTORS-------------
+												{
+													//-------------MODIFY---DIRECTORS-------------
 													boolean cancelled=false;
 													int directorIdInsert = 0;
 													int directorCountResult=0;
@@ -3134,7 +3164,8 @@ public class Launcher
 													//-------------MODIFY---DIRECTORS-------------
 												}
 												else if(selectedOption==3) 
-												{//-------------MODIFY---TITLE-------------
+												{
+													//-------------MODIFY---TITLE-------------
 													boolean cancelled=false;
 													System.out.println("Dime el nuevo titulo de la Serie (-2 para cancelar)"); 
 													String title="Undefined-title";
@@ -3152,7 +3183,8 @@ public class Launcher
 													//-------------MODIFY---TITLE-------------
 												}
 												else if(selectedOption==4) 
-												{//-------------MODIFY---ORIGINAL-LANGUAGE-------------
+												{
+													//-------------MODIFY---ORIGINAL-LANGUAGE-------------
 													boolean cancelled=false;
 													System.out.println("Dime el nuevo Lenguaje Original (-2 para cancelar)"); 
 													String orignalLang="Undefined-Original-Lang";
@@ -3170,7 +3202,8 @@ public class Launcher
 													//-------------MODIFY---ORIGINAL-LANGUAGE-------------
 												}
 												else if(selectedOption==5) 
-												{//-------------MODIFY---ADAPTED-LANGUAGE-------------
+												{
+													//-------------MODIFY---ADAPTED-LANGUAGE-------------
 													boolean cancelled=false;
 													int adaptedLang=1;
 													int adaptedLangCont=0;
@@ -3351,13 +3384,14 @@ public class Launcher
 																+ "[7] OTHER\n"
 																+ "[Other] END...");
 														subtitulo=scanner.nextInt();
-														if(subtitulo==-2) {
+														if(subtitulo==-2) 
+														{
 															cancelled=true;
 															System.out.println("Operacion cancelada");
 															break;
 														}
 														switch(subtitulo) 
-															{
+														{
 															case 1:
 															{
 																subtitlesCont++;
@@ -3433,7 +3467,7 @@ public class Launcher
 													}
 													if(!cancelled)
 													{
-														serie.setnCapitules(numeroCapitulos);
+														serie.setnChapter(serieIdCont);
 													}
 												}
 												else if(selectedOption==11) 
@@ -3499,7 +3533,8 @@ public class Launcher
 										{
 											for(Series serie:arraySeriesGeneral) 
 											{
-												if(serie.getSerieId()==deleteSerieId) {
+												if(serie.getSerieId()==deleteSerieId) 
+												{
 													System.out.println("Serie encontrada: ("+serie.getTitle()+")\n"
 															+ "-Desea borrar la Serie ?\n"
 															+ "[1] Si seguro\n"
@@ -3531,7 +3566,8 @@ public class Launcher
 									}
 									//----------SERIE OPTIONS--------------
 								}	
-							}//---------------------END OF IF SERIES SELECTED---------------------------
+							}
+							//---------------------END OF IF SERIES SELECTED---------------------------
 							else 
 							{
 								//---MOVIES SELECTED OPTIONS---
@@ -3812,7 +3848,8 @@ public class Launcher
 										int selection1 = scanner.nextInt();
 										clearScreen();
 										if (selection1==1) 
-										{//---------Search By Actor (ID)------------
+										{
+											//---------Search By Actor (ID)------------
 											int moviesContResults=0;
 											System.out.println("Indica el Id del actor \n");
 											int actorId=scanner.nextInt();
@@ -3820,8 +3857,10 @@ public class Launcher
 											System.out.println("Resultados : \n");
 											for (Movies movie:arrayMoviesGeneral) 
 											{
-												for(Actors actor : movie.getActores()) {
-													if(actor.getActorId()==actorId) {
+												for(Actors actor : movie.getActores()) 
+												{
+													if(actor.getActorId()==actorId) 
+													{
 														moviesContResults++;
 														System.out.println(movie);
 													}
@@ -3831,7 +3870,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==2) 
-										{//---------Search By Director (ID)------------
+										{
+											//---------Search By Director (ID)------------
 											int moviesContResults=0;
 											System.out.println("Indica el Id del Director \n");
 											int directorId=scanner.nextInt();
@@ -3839,8 +3879,10 @@ public class Launcher
 											System.out.println("Resultados : \n");
 											for (Movies movie:arrayMoviesGeneral) 
 											{
-												for(Directors director : movie.getDirectors()) {
-													if(director.getDirectorId()==directorId) {
+												for(Directors director : movie.getDirectors()) 
+												{
+													if(director.getDirectorId()==directorId) 
+													{
 														moviesContResults++;
 														System.out.println(movie);
 													}
@@ -3850,7 +3892,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==3) 
-										{//---------Search By Title (ID)------------
+										{
+											//---------Search By Title (ID)------------
 											int moviesContResults=0;
 											System.out.println("Indica titulo o parte del mismo: \n");
 											String titleSearch=scanner2.nextLine();
@@ -3858,7 +3901,8 @@ public class Launcher
 											System.out.println("Resultados : \n");
 											for (Movies movie:arrayMoviesGeneral) 
 											{
-												if(movie.getTitle().contains(titleSearch)) {
+												if(movie.getTitle().contains(titleSearch)) 
+												{
 													moviesContResults++;
 													System.out.println(movie);
 												}
@@ -3866,7 +3910,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==4) 
-										{//---------Search By Original Language (ID)------------
+										{
+											//---------Search By Original Language (ID)------------
 											int moviesContResults=0;
 											System.out.println("Indica Lenguage Original o parte del mismo: \n");
 											String origLanguageSearch=scanner2.nextLine();
@@ -3874,7 +3919,8 @@ public class Launcher
 											System.out.println("Resultados : \n");
 											for (Movies movie:arrayMoviesGeneral) 
 											{
-												if(movie.getOriginalLanguage().contains(origLanguageSearch)) {
+												if(movie.getOriginalLanguage().contains(origLanguageSearch)) 
+												{
 													moviesContResults++;
 													System.out.println(movie);
 												}
@@ -3882,7 +3928,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==5) 
-										{//---------Search By Adapted Language (ID)------------
+										{
+											//---------Search By Adapted Language (ID)------------
 											int moviesContResults=0;
 											System.out.println("Selecciona el Lenguaje adaptado: \n"
 													+ "[1] ES\n"
@@ -3926,8 +3973,10 @@ public class Launcher
 											System.out.println("Resultados : \n");
 											for (Movies movie:arrayMoviesGeneral) 
 											{
-												for(AdaptedLanguages adapted : movie.getAdaptedLanguages()) {
-													if(adapted.getAdaptedLang()==adaptedSearch) {
+												for(AdaptedLanguages adapted : movie.getAdaptedLanguages()) 
+												{
+													if(adapted.getAdaptedLang()==adaptedSearch) 
+													{
 														moviesContResults++;
 														System.out.println(movie);
 													}
@@ -3937,7 +3986,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==6) 
-										{//---------Search By Category (ID)------------
+										{
+											//---------Search By Category (ID)------------
 											//---HAY QUE ANYADIR QUE BUSQUE POR LAS CATEGORIAS POR DEFECTO TAMBIEN---
 											int moviesContResults=0;
 											System.out.println("Indica el Id de la Categoria \n");
@@ -3957,7 +4007,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==7) 
-										{//---------Search By Duration------------
+										{
+											//---------Search By Duration------------
 											int moviesContResults=0;
 											System.out.println("Indica Duracion total: \n");
 											double durationTotalTime=scanner.nextInt();
@@ -3974,7 +4025,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==8) 
-										{//---------Search By Creation Year------------
+										{
+											//---------Search By Creation Year------------
 											int moviesContResults=0;
 											System.out.println("Indica Duracion total: \n");
 											int creationYear=scanner.nextInt();
@@ -3991,7 +4043,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==9) 
-										{//---------Search By Subtitles------------
+										{
+											//---------Search By Subtitles------------
 											int moviesContResults=0;
 											System.out.println("Selecciona subtitulo para la busqueda: \n"
 													+ "[1] ES\n"
@@ -4036,8 +4089,10 @@ public class Launcher
 											System.out.println("Resultados : \n");
 											for (Movies movie:arrayMoviesGeneral) 
 											{
-												for(Subtitles subtitle : movie.getAvaliableSubtitles()) {
-													if(subtitle.getSubtitle()==subtitleToFind) {
+												for(Subtitles subtitle : movie.getAvaliableSubtitles()) 
+												{
+													if(subtitle.getSubtitle()==subtitleToFind) 
+													{
 														moviesContResults++;
 														System.out.println(movie);
 													}
@@ -4047,7 +4102,8 @@ public class Launcher
 											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==10) 
-										{//---------Search By movie ID------------
+										{
+											//---------Search By movie ID------------
 											int moviesContResults=0;
 											System.out.println("Indica el Id de la movie \n");
 											int movieId=scanner.nextInt();
@@ -4073,7 +4129,8 @@ public class Launcher
 										boolean positiveResult=false;
 										for(Movies movie : arrayMoviesGeneral) 
 										{
-											if(movie.getMovieId()==selectedMovieId) {
+											if(movie.getMovieId()==selectedMovieId) 
+											{
 												positiveResult=true;
 												System.out.println("movie encontrada \n ("+movie.getTitle()+")");
 												System.out.println("Indique que desea modificar... \n"
@@ -4091,7 +4148,8 @@ public class Launcher
 														+ "[12] Id de movie (No recomendable)\n");
 												int selectedOption=scanner.nextInt();
 												if(selectedOption==1) 
-												{//-------------MODIFY---ACTORS-------------
+												{
+													//-------------MODIFY---ACTORS-------------
 													boolean cancelled=false;
 													int actorIdInsert = 0;
 													int actorCountResult = 0;
@@ -4128,7 +4186,8 @@ public class Launcher
 													//-------------MODIFY---ACTORS-------------
 												}
 												else if(selectedOption==2) 
-												{//-------------MODIFY---DIRECTORS-------------
+												{
+													//-------------MODIFY---DIRECTORS-------------
 													boolean cancelled=false;
 													int directorIdInsert = 0;
 													int directorCountResult=0;
@@ -4165,7 +4224,8 @@ public class Launcher
 													//-------------MODIFY---DIRECTORS-------------
 												}
 												else if(selectedOption==3) 
-												{//-------------MODIFY---TITLE-------------
+												{
+													//-------------MODIFY---TITLE-------------
 													boolean cancelled=false;
 													System.out.println("Dime el nuevo titulo de la movie (-2 para cancelar)"); 
 													String title="Undefined-title";
@@ -4183,7 +4243,8 @@ public class Launcher
 													//-------------MODIFY---TITLE-------------
 												}
 												else if(selectedOption==4) 
-												{//-------------MODIFY---ORIGINAL-LANGUAGE-------------
+												{
+													//-------------MODIFY---ORIGINAL-LANGUAGE-------------
 													boolean cancelled=false;
 													System.out.println("Dime el nuevo Lenguaje Original (-2 para cancelar)"); 
 													String orignalLang="Undefined-Original-Lang";
@@ -4201,7 +4262,8 @@ public class Launcher
 													//-------------MODIFY---ORIGINAL-LANGUAGE-------------
 												}
 												else if(selectedOption==5) 
-												{//-------------MODIFY---ADAPTED-LANGUAGE-------------
+												{
+													//-------------MODIFY---ADAPTED-LANGUAGE-------------
 													boolean cancelled=false;
 													int adaptedLang=1;
 													int adaptedLangCont=0;
@@ -4382,7 +4444,8 @@ public class Launcher
 																+ "[7] OTHER\n"
 																+ "[Other] END...");
 														subtitulo=scanner.nextInt();
-														if(subtitulo==-2) {
+														if(subtitulo==-2) 
+														{
 															cancelled=true;
 															System.out.println("Operacion cancelada");
 															break;
@@ -4502,7 +4565,8 @@ public class Launcher
 										{
 											for(Movies movie:arrayMoviesGeneral) 
 											{
-												if(movie.getMovieId()==deletemovieId) {
+												if(movie.getMovieId()==deletemovieId) 
+												{
 													System.out.println("movie encontrada: ("+movie.getTitle()+")\n"
 															+ "-Desea borrar la movie ?\n"
 															+ "[1] Si seguro\n"
@@ -4534,7 +4598,8 @@ public class Launcher
 									}
 									//----------movie OPTIONS--------------
 								}	
-							}//-----------END OF MOVIES ELSE SELECTED-------------------------
+							}
+							//-----------END OF MOVIES ELSE SELECTED-------------------------
 
 						}
 							break;
@@ -4596,7 +4661,8 @@ public class Launcher
 							int selectedOption=0;
 							selectedOption=scanner.nextInt();
 							if(selectedOption==1) 
-							{//----NUMBER OF SERIES SELECTED-------
+							{
+								//----NUMBER OF SERIES SELECTED-------
 								int totalSeriesCont=0;
 								for(Series serie : arraySeriesGeneral) 
 								{
@@ -4670,8 +4736,10 @@ public class Launcher
 									for (Series serie:arraySeriesGeneral) 
 									{
 										
-										for(Actors actor : serie.getActores()) {
-											if(actor.getActorId()==actorIdx) {
+										for(Actors actor : serie.getActores()) 
+										{
+											if(actor.getActorId()==actorIdx) 
+											{
 												seriesContResults++;
 												exist=true;
 												System.out.println(serie);
@@ -4865,8 +4933,10 @@ public class Launcher
 									for (Movies movie:arrayMoviesGeneral) 
 									{
 										
-										for(Categorie category : movie.getCateg()) {
-											if(category.getCategorieID()==categoryIdx) {
+										for(Categorie category : movie.getCateg()) 
+										{
+											if(category.getCategorieID()==categoryIdx)
+											{
 												moviesContResults++;
 												exist=true;
 												System.out.println(movie);
@@ -4905,8 +4975,10 @@ public class Launcher
 									for (Movies movie:arrayMoviesGeneral) 
 									{
 										
-										for(Actors actor : movie.getActores()) {
-											if(actor.getActorId()==actorIdx) {
+										for(Actors actor : movie.getActores()) 
+										{
+											if(actor.getActorId()==actorIdx) 
+											{
 												moviesContResults++;
 												exist=true;
 												System.out.println(movie);
@@ -4920,7 +4992,8 @@ public class Launcher
 								
 							}
 							else if(selectedOption==4) 
-							{//--------MOST-POPULARS TOP - POSITIVE RECOMENDATIONS----------
+							{
+								//--------MOST-POPULARS TOP - POSITIVE RECOMENDATIONS----------
 								System.out.println("Top Most popular Movies:\n");
 								
 								int[] arrayOfPositiveRecomendations=new int[0];
@@ -5108,8 +5181,10 @@ public class Launcher
 									for (Series serie:arraySeriesGeneral) 
 									{
 										
-										for(Categorie category : serie.getCateg()) {
-											if(category.getCategorieID()==categoryIdx) {
+										for(Categorie category : serie.getCateg()) 
+										{
+											if(category.getCategorieID()==categoryIdx) 
+											{
 												seriesContResults++;
 												exist=true;
 												System.out.println(serie);
@@ -5127,8 +5202,10 @@ public class Launcher
 									for (Movies movie:arrayMoviesGeneral) 
 									{
 										
-										for(Categorie category : movie.getCateg()) {
-											if(category.getCategorieID()==categoryIdx) {
+										for(Categorie category : movie.getCateg()) 
+										{
+											if(category.getCategorieID()==categoryIdx) 
+											{
 												moviesContResults++;
 												exist=true;
 												System.out.println(movie);
@@ -5167,8 +5244,10 @@ public class Launcher
 									for (Series serie:arraySeriesGeneral) 
 									{
 										
-										for(Actors actor : serie.getActores()) {
-											if(actor.getActorId()==actorIdx) {
+										for(Actors actor : serie.getActores()) 
+										{
+											if(actor.getActorId()==actorIdx) 
+											{
 												seriesContResults++;
 												exist=true;
 												System.out.println(serie);
@@ -5203,7 +5282,8 @@ public class Launcher
 								//---------SERIES AND MOVIES BY ACTORS IDS------------
 							}
 							else if(selectedOption==4) 
-							{//--------MOST-POPULARS MOVIES AND SERIES TOP - POSITIVE RECOMENDATIONS----------
+							{
+								//--------MOST-POPULARS MOVIES AND SERIES TOP - POSITIVE RECOMENDATIONS----------
 								System.out.println("Top Most popular Movies and Series:\n");
 								
 								int[] arrayOfPositiveRecomendations=new int[0];
@@ -5321,7 +5401,8 @@ public class Launcher
 								
 							}
 							else if(selectedOption==5) 
-							{//--------MOST-UN-POPULARS MOVIES AND SERIES TOP - POSITIVE RECOMENDATIONS----------
+							{
+								//--------MOST-UN-POPULARS MOVIES AND SERIES TOP - POSITIVE RECOMENDATIONS----------
 								System.out.println("Top Most Unpopular Movies and Series:\n");
 								
 								int[] arrayOfNegativeRecomendations=new int[0];

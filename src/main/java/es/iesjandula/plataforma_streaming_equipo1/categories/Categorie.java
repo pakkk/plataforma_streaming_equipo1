@@ -134,59 +134,66 @@ public class Categorie
 		//Validate the type of categorie enum type , and set the default attributes.
 		{
 			/* Every description and min age on every Type */
-			/* COMEDIA */
-			if(type.equals(CategorieTypes.COMEDIA))
+			
+			/* COMEDY */
+			if(type.equals(CategorieTypes.COMEDY))
 			{	
 				//Default attributes
 				this.minAge=7;
-				this.name="COMEDIA";
-				this.description="La categoria de comedia esta dedicada a mayores de 7"
-						+ " , momentos de grandes risas te esperan";
+				this.name="COMEDY";
+				this.description="\n"
+						+ "The comedy category is dedicated to people over 7"
+						+ ", moments of great laughter await you";
 			}
-			/* ACCION */
-			else if(type.equals(CategorieTypes.ACCION))
+			
+			/* ACTION */
+			else if(type.equals(CategorieTypes.ACTION))
 			{	
 				//Default attributes
 				this.minAge=16;
-				this.name="ACCION";
-				this.description="La categoria de comedia esta dedicada a mayores de 16,"
-						+ " , momentos de accion intensa te esperan en esta categoria";
+				this.name="ACTION";
+				this.description="The comedy category is dedicated to people over 16"
+						+ " ,moments of intense action await you in this category";
 			}
+			
 			/* TERROR */
 			else if(type.equals(CategorieTypes.TERROR))
 			{	
 				//Default attributes
 				this.minAge=18;
 				this.name="TERROR";	
-				this.description="La categoria de terror esta dedicada a mayores de 18"
-						+ " , momentos de terror intenso te esperan con esta categoria";
+				this.description="The horror category is dedicated to people over 18"
+						+ ", moments of intense terror await you with this category ";
 			}
+			
 			/* SUSPENSE */
 			else if(type.equals(CategorieTypes.SUSPENSE))
 			{	
 				//Default attributes
 				this.minAge=12;
 				this.name="SUSPENSE";	
-				this.description="La categoria de suspense esta dedicada a mayores de 12"
-						+ " , momentos de tension , suspense y muchos dramas intensos te esperan";
+				this.description="The suspense category is dedicated to people over 12"
+						+ " , moments of tension , suspense and many intense dramas await you";
 			}
-			/* INFANTIL */
-			else if(type.equals(CategorieTypes.INFANTIL))
+			
+			/* CHILDISH */
+			else if(type.equals(CategorieTypes.CHILDISH))
 			{	
 				//Default attributes 
 				this.minAge=0;
-				this.name="INFANTIL";	
-				this.description="La categoria de infantil esta dedicada a todo tipo de publico"
-						+ " , momentos de aprendijaze , grandes amistades y amigos divertidos"
-						+ "te esperan con esta categoria";
+				this.name="CHILDISH";	
+				this.description= "The children's category is dedicated to all types of public"
+						+ ", learning moments, great friendships and fun friends"
+						+ "they wait for you with this category";
 				
 			}
+			
 			else 
 			{	
 				//Default attributes
 				this.minAge=0;//Default to 0
-				this.name="Otro";
-				this.description="Falta Descripcion";
+				this.name="Other";
+				this.description="Missing Description";
 			}
 		}
 }

@@ -18,21 +18,21 @@ public class Recomendations
 
 	 */
 	public Recomendations(String recomendations,RecomendationsType Type) 
-	//Recomendation type + description constructor
+	//Recommendation type + description constructor
 	{
 		this.recomendations = recomendations;
 		this.type=Type;
 	}
 	
 	public Recomendations(String recomendations)
-	//Description recomendation only contructor
+	//Description recommendation only constructor
 	{
 		this.recomendations = recomendations;
 		type=RecomendationsType.NEUTRAL;
 		
 	}
 	
-	/* ToString method , for print the recomendations*/
+	/* ToString method , for print the recommendations*/
 	@Override
 	public String toString() 
 	{
@@ -44,30 +44,34 @@ public class Recomendations
 	
 	/* SETTERS AND GETTERS */
 	/**
-	 * @return the recomendations
+	 * @return the recommendations
 	 */
-	public String getRecomendations() {
+	public String getRecomendations() 
+	{
 		return this.recomendations;
 	}
 
 	/**
-	 * @param recomendations the recomendations to set
+	 * @param recomendations the recommendations to set
 	 */
-	public void setRecomendations(String recomendations) {
+	public void setRecomendations(String recomendations) 
+	{
 		this.recomendations = recomendations;
 	}
 
 	/**
 	 * @return the type
 	 */
-	public RecomendationsType getType() {
+	public RecomendationsType getType() 
+	{
 		return this.type;
 	}
 
 	/**
 	 * @param type the type to set
 	 */
-	public void setType(RecomendationsType type) {
+	public void setType(RecomendationsType type) 
+	{
 		this.type = type;
 	}
 

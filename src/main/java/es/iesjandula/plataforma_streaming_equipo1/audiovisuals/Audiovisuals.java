@@ -16,7 +16,7 @@ public class Audiovisuals
 	//Variables
 	protected Type type;
 	protected Directors[] directors= new Directors[0];
-	protected Actors[] actores= new Actors[0]; 
+	protected Actors[] actors= new Actors[0]; 
 	protected Categorie[] categ = new Categorie[0];
 	protected String title;
 	protected String originalLanguage;
@@ -32,7 +32,7 @@ public class Audiovisuals
 	{
 		this.type = type;
 		this.directors=directors;
-		this.actores = actores;
+		this.actors = actores;
 		this.categ = categ;
 		this.title = title;
 		this.originalLanguage = originalLanguage;
@@ -48,7 +48,7 @@ public class Audiovisuals
 	@Override
 	public String toString() 
 	{
-		return "Audiovisuals [type=" + type + ", actores=" + Arrays.toString(actores) + ", categ="
+		return "Audiovisuals [type=" + type + ", actores=" + Arrays.toString(actors) + ", categ="
 				+ Arrays.toString(categ) + ", title=" + title + ", originalLanguage=" + originalLanguage
 				+ ", adaptedLanguages=" + Arrays.toString(adaptedLanguages) + ", avaliableSubtitles="
 				+ Arrays.toString(avaliableSubtitles) + ", duration=" + duration + ", creationYear=" + creationYear
@@ -61,154 +61,176 @@ public class Audiovisuals
 	/**
 	 * @return the type
 	 */
-	public Type getType() {
+	public Type getType() 
+	{
 		return this.type;
 	}
 
 	/**
 	 * @param type the type to set
 	 */
-	public void setType(Type type) {
+	public void setType(Type type) 
+	{
 		this.type = type;
 	}
 
 	/**
 	 * @return the directors
 	 */
-	public Directors[] getDirectors() {
+	public Directors[] getDirectors() 
+	{
 		return this.directors;
 	}
 
 	/**
 	 * @param directors the directors to set
 	 */
-	public void setDirectors(Directors[] directors) {
+	public void setDirectors(Directors[] directors) 
+	{
 		this.directors = directors;
 	}
 
 	/**
-	 * @return the actores
+	 * @return the actors
 	 */
-	public Actors[] getActores() {
-		return this.actores;
+	public Actors[] getActores() 
+	{
+		return this.actors;
 	}
 
 	/**
-	 * @param actores the actores to set
+	 * @param actores the actors to set
 	 */
-	public void setActores(Actors[] actores) {
-		this.actores = actores;
+	public void setActores(Actors[] actores) 
+	{
+		this.actors = actores;
 	}
 
 	/**
 	 * @return the categ
 	 */
-	public Categorie[] getCateg() {
+	public Categorie[] getCateg() 
+	{
 		return this.categ;
 	}
 
 	/**
 	 * @param categ the categ to set
 	 */
-	public void setCateg(Categorie[] categ) {
+	public void setCateg(Categorie[] categ) 
+	{
 		this.categ = categ;
 	}
 
 	/**
 	 * @return the title
 	 */
-	public String getTitle() {
+	public String getTitle() 
+	{
 		return this.title;
 	}
 
 	/**
 	 * @param title the title to set
 	 */
-	public void setTitle(String title) {
+	public void setTitle(String title) 
+	{
 		this.title = title;
 	}
 
 	/**
 	 * @return the originalLanguage
 	 */
-	public String getOriginalLanguage() {
+	public String getOriginalLanguage() 
+	{
 		return this.originalLanguage;
 	}
 
 	/**
 	 * @param originalLanguage the originalLanguage to set
 	 */
-	public void setOriginalLanguage(String originalLanguage) {
+	public void setOriginalLanguage(String originalLanguage) 
+	{
 		this.originalLanguage = originalLanguage;
 	}
 
 	/**
 	 * @return the adaptedLanguages
 	 */
-	public AdaptedLanguages[] getAdaptedLanguages() {
+	public AdaptedLanguages[] getAdaptedLanguages()
+	{
 		return this.adaptedLanguages;
 	}
 
 	/**
 	 * @param adaptedLanguages the adaptedLanguages to set
 	 */
-	public void setAdaptedLanguages(AdaptedLanguages[] adaptedLanguages) {
+	public void setAdaptedLanguages(AdaptedLanguages[] adaptedLanguages) 
+	{
 		this.adaptedLanguages = adaptedLanguages;
 	}
 
 	/**
 	 * @return the avaliableSubtitles
 	 */
-	public Subtitles[] getAvaliableSubtitles() {
+	public Subtitles[] getAvaliableSubtitles()
+	{
 		return this.avaliableSubtitles;
 	}
 
 	/**
 	 * @param avaliableSubtitles the avaliableSubtitles to set
 	 */
-	public void setAvaliableSubtitles(Subtitles[] avaliableSubtitles) {
+	public void setAvaliableSubtitles(Subtitles[] avaliableSubtitles) 
+	{
 		this.avaliableSubtitles = avaliableSubtitles;
 	}
 
 	/**
 	 * @return the duration
 	 */
-	public Double getDuration() {
+	public Double getDuration() 
+	{
 		return this.duration;
 	}
 
 	/**
 	 * @param duration the duration to set
 	 */
-	public void setDuration(Double duration) {
+	public void setDuration(Double duration) 
+	{
 		this.duration = duration;
 	}
 
 	/**
 	 * @return the creationYear
 	 */
-	public int getCreationYear() {
+	public int getCreationYear() 
+	{
 		return this.creationYear;
 	}
 
 	/**
 	 * @param creationYear the creationYear to set
 	 */
-	public void setCreationYear(int creationYear) {
+	public void setCreationYear(int creationYear) 
+	{
 		this.creationYear = creationYear;
 	}
 
 	/**
 	 * @return the views
 	 */
-	public int getViews() {
+	public int getViews() 
+	{
 		return this.views;
 	}
 
 	/**
 	 * @param views the views to set
 	 */
-	public void setViews(int views) {
+	public void setViews(int views) 
+	{
 		this.views = views;
 	}
 	
