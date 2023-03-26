@@ -122,8 +122,8 @@ public class Launcher
 		
 		
 		//----------------BASE OBJECTS--MOVIES CLASS----------------------------
-		int movieId=0;
-		Movies movie1 = new Movies(arrayActors1,arrayDirectors1,arrayCategories1,"Los 300","English",arrayAdaptedLanguages1,arraySubtitles1,145.0,2013,movieId++);
+		int movieIdCont=0;
+		Movies movie1 = new Movies(arrayActors1,arrayDirectors1,arrayCategories1,"Los 300","English",arrayAdaptedLanguages1,arraySubtitles1,145.0,2013,movieIdCont++);
 		Movies[] arrayMoviesGeneral= {movie1};
 		//----------------BASE OBJECTS--MOVIES CLASS----------------------------		
 		
@@ -2581,7 +2581,7 @@ public class Launcher
 										System.out.println("Selecciona la Duracion Total (Tiempo en minutos): ");
 										double minutosTiempoDuracion=0;
 										minutosTiempoDuracion=scanner.nextDouble();
-//_---------------------------------------------------------------------------------------										
+
 										clearScreen();
 										System.out.println("Selecciona el anyo de creacion: ");
 										int anyoCreacion=9999;
@@ -3409,20 +3409,1014 @@ public class Launcher
 									}
 									//----------SERIE OPTIONS--------------
 								}	
-							}
+							}//---------------------END OF IF SERIES SELECTED---------------------------
 							else 
 							{
-								//---MOVIES SELECTED---
+								//---MOVIES SELECTED OPTIONS---
 								clearScreen();
 								IMenuMovies.moviesMenu();
+								//----------MOVIE OPTIONS--------------
 								
-								
-							}
-							break;
+								int selection = scanner.nextInt();
+								switch(selection) 
+								{
+									case 1:
+									{//--------movie--REGISTER------
+										
+										System.out.println("Dime el titulo de la movie"); 
+										String title="Undefined";
+										title=scanner2.nextLine();
+										clearScreen();
+										
+										int directorIdInsert = 0;
+										int directorCountResult=0;
+										Directors[] arrayOfDirectors= new Directors[0];
+										while(directorIdInsert>=0) 
+										{
+											System.out.println("Dime las Id de los Directores (-1 para terminar): ");
+											directorIdInsert=scanner.nextInt();
+											clearScreen();
+											if(directorIdInsert>=0) 
+											{
+												for(Directors director:arrayDirectorsGeneral) 
+												{
+													if(director.getDirectorId()==directorIdInsert) 
+													{
+														directorCountResult++;
+														arrayOfDirectors=Arrays.copyOf(arrayOfDirectors,arrayOfDirectors.length+1);
+														arrayOfDirectors[arrayOfDirectors.length-1]=director;
+													}
+												}
+											}
+											System.out.println("Directores encontrados para add: "+directorCountResult);
+										}
+										
+										clearScreen();
+										int categoryIdInsert = 0;
+										int categoryCountResult = 0;
+										Categorie[] arrayOfCategories= new Categorie[0];
+										while(categoryIdInsert>=0) 
+										{
+											System.out.println("Dime las Ids de las Categories (-1 para terminar): ");
+											categoryIdInsert=scanner.nextInt();
+											clearScreen();
+											
+											if(categoryIdInsert>=0) 
+											{
+												for(Categorie category:arrayCategoriesGeneral) 
+												{
+													if(category.getCategorieID()==categoryIdInsert) 
+													{
+														categoryCountResult++;
+														arrayOfCategories=Arrays.copyOf(arrayOfCategories,arrayOfCategories.length+1);
+														arrayOfCategories[arrayOfCategories.length-1]=category;
+													}
+												}
+											}
+											System.out.println("Categories encontrados para add: "+categoryCountResult);
+										}
+										
+										int actorIdInsert = 0;
+										int actorCountResult = 0;
+										Actors[] arrayOfActors= new Actors[0];
+										while(actorIdInsert>=0) 
+										{
+											System.out.println("Dime las Id de los Actores (-1 para terminar): ");
+											actorIdInsert=scanner.nextInt();
+											clearScreen();
+											if(actorIdInsert>=0) 
+											{
+												for(Actors actor:arrayActorsGeneral) 
+												{
+													if(actor.getActorId()==actorIdInsert) 
+													{
+														actorCountResult++;
+														arrayOfActors=Arrays.copyOf(arrayOfActors,arrayOfActors.length+1);
+														arrayOfActors[arrayOfActors.length-1]=actor;
+													}
+												}
+											}
+											System.out.println("Actors encontrados para add: "+actorCountResult);
+										}
+										
+										System.out.println("Escribe el lenguaje Original: ");
+										String originalLenguage=scanner2.nextLine();
+										clearScreen();
+										
+										int adaptedLang=1;
+										int adaptedLangCont=0;
+										AdaptedLanguages[] adaptedLanguagesArray= new AdaptedLanguages[0];
+										
+										while(adaptedLang>=1&adaptedLang<=7) 
+										{
+											System.out.println("Selecciona los Lenguajes adaptados: \n"
+													+ "[1] ES\n"
+													+ "[2] EN\n"
+													+ "[3] DE\n"
+													+ "[4] RU\n"
+													+ "[5] IT\n"
+													+ "[6] CH\n"
+													+ "[7] OTHER\n"
+													+ "[Other] END...");
+											adaptedLang=scanner.nextInt();
+											switch(adaptedLang) 
+											{
+												case 1:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.ES);
+													break;
+												}
+												case 2:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.EN);
+													break;
+												}
+												case 3:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.DE);
+													break;
+												}
+												case 4:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.RU);
+													break;
+												}
+												case 5:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.IT);
+													break;
+												}
+												case 6:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.CH);
+													break;
+												}
+												case 7:
+												{
+													adaptedLangCont++;
+													adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+													adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.OTHER);
+													break;
+												}
+												default:
+												{
+													break;
+												}
+											}
+											System.out.println("Adapted Languages added: "+adaptedLangCont);
+										}
+										
+										clearScreen();
+										System.out.println("Selecciona los Subtitulos: ");
+										
+										int subtitulo=2;
+										int subtitlesCont=0;
+										Subtitles[] subtitulosArray= new Subtitles[0];
+										while(subtitulo>=1&subtitulo<=7) 
+										{
+											System.out.println("Selecciona subtitulo para añadir: \n"
+													+ "[1] ES\n"
+													+ "[2] EN\n"
+													+ "[3] DE\n"
+													+ "[4] RU\n"
+													+ "[5] IT\n"
+													+ "[6] CH\n"
+													+ "[7] OTHER\n"
+													+ "[Other] END...");
+											subtitulo=scanner.nextInt();
+											switch(subtitulo) 
+												{
+												case 1:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.ES);
+													break;
+												}
+												case 2:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.EN);
+													break;
+												}
+												case 3:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.DE);
+													break;
+												}
+												case 4:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.RU);
+													break;
+												}
+												case 5:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.IT);
+													break;
+												}
+												case 6:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.CH);
+													break;
+												}
+												case 7:
+												{
+													subtitlesCont++;
+													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
+													break;
+												}
+												default:
+												{
+													break;
+												}
+											}
+											System.out.println("Subtitles added : "+subtitlesCont);
+										}
+										clearScreen();
+										System.out.println("Selecciona la Duracion Total (Tiempo en minutos): ");
+										double minutosTiempoDuracion=0;
+										minutosTiempoDuracion=scanner.nextDouble();
+
+										clearScreen();
+										System.out.println("Selecciona el anyo de creacion: ");
+										int anyoCreacion=9999;
+										anyoCreacion=scanner.nextInt();
+										
+
+										arrayMoviesGeneral=Arrays.copyOf(arrayMoviesGeneral, arrayMoviesGeneral.length+1);
+										arrayMoviesGeneral[arrayMoviesGeneral.length-1]=new Movies(arrayOfActors,arrayOfDirectors,arrayOfCategories,title,originalLenguage,adaptedLanguagesArray,subtitulosArray,minutosTiempoDuracion,anyoCreacion,movieIdCont++);
+										System.out.println(arrayMoviesGeneral[arrayMoviesGeneral.length-1]);
+										
+										break;
+										//--------movie--REGISTER------
+									}
+									case 2:
+									{
+										//--------movie--SEARCH------
+										clearScreen();
+										System.out.println("Selecciona el metodo de busqueda: \n"
+												+ "[1] Actores \n"
+												+ "[2] Directores \n"
+												+ "[3] Titulo \n"
+												+ "[4] Lenguaje Original \n"
+												+ "[5] Lenguaje Adaptado\n"
+												+ "[6] Categorias \n"
+												+ "[7] Duracion\n"
+												+ "[8] Creation Year\n"
+												+ "[9] Subtitulo\n"
+												+ "[10] Id de movie\n");
+										int selection1 = scanner.nextInt();
+										clearScreen();
+										if (selection1==1) 
+										{//---------Search By Actor (ID)------------
+											int moviesContResults=0;
+											System.out.println("Indica el Id del actor \n");
+											int actorId=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Movies movie:arrayMoviesGeneral) 
+											{
+												for(Actors actor : movie.getActores()) {
+													if(actor.getActorId()==actorId) {
+														moviesContResults++;
+														System.out.println(movie);
+													}
+													
+												}
+											}
+											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+										}
+										else if (selection1==2) 
+										{//---------Search By Director (ID)------------
+											int moviesContResults=0;
+											System.out.println("Indica el Id del Director \n");
+											int directorId=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Movies movie:arrayMoviesGeneral) 
+											{
+												for(Directors director : movie.getDirectors()) {
+													if(director.getDirectorId()==directorId) {
+														moviesContResults++;
+														System.out.println(movie);
+													}
+													
+												}
+											}
+											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+										}
+										else if (selection1==3) 
+										{//---------Search By Title (ID)------------
+											int moviesContResults=0;
+											System.out.println("Indica titulo o parte del mismo: \n");
+											String titleSearch=scanner2.nextLine();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Movies movie:arrayMoviesGeneral) 
+											{
+												if(movie.getTitle().contains(titleSearch)) {
+													moviesContResults++;
+													System.out.println(movie);
+												}
+											}
+											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+										}
+										else if (selection1==4) 
+										{//---------Search By Original Language (ID)------------
+											int moviesContResults=0;
+											System.out.println("Indica Lenguage Original o parte del mismo: \n");
+											String origLanguageSearch=scanner2.nextLine();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Movies movie:arrayMoviesGeneral) 
+											{
+												if(movie.getOriginalLanguage().contains(origLanguageSearch)) {
+													moviesContResults++;
+													System.out.println(movie);
+												}
+											}
+											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+										}
+										else if (selection1==5) 
+										{//---------Search By Adapted Language (ID)------------
+											int moviesContResults=0;
+											System.out.println("Selecciona el Lenguaje adaptado: \n"
+													+ "[1] ES\n"
+													+ "[2] EN\n"
+													+ "[3] DE\n"
+													+ "[4] RU\n"
+													+ "[5] IT\n"
+													+ "[6] CH\n"
+													+ "[Other] Other");
+											int adaptedLanguageSelectionSearch=scanner.nextInt();
+											clearScreen();
+											AvaliableAdaptedLanguages adaptedSearch=null;
+											if(adaptedLanguageSelectionSearch==1) 
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.ES;
+											}
+											else if(adaptedLanguageSelectionSearch==2) 
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.EN;
+											}
+											else if(adaptedLanguageSelectionSearch==3) 
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.DE;
+											}
+											else if(adaptedLanguageSelectionSearch==4) 
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.RU;
+											}
+											else if(adaptedLanguageSelectionSearch==5) 
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.IT;
+											}
+											else if(adaptedLanguageSelectionSearch==6) 
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.CH;
+											}
+											else
+											{
+												adaptedSearch=AvaliableAdaptedLanguages.OTHER;
+											}
+											System.out.println("Resultados : \n");
+											for (Movies movie:arrayMoviesGeneral) 
+											{
+												for(AdaptedLanguages adapted : movie.getAdaptedLanguages()) {
+													if(adapted.getAdaptedLang()==adaptedSearch) {
+														moviesContResults++;
+														System.out.println(movie);
+													}
+													
+												}
+											}
+											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+										}
+										else if (selection1==6) 
+										{//---------Search By Category (ID)------------
+											//---HAY QUE ANYADIR QUE BUSQUE POR LAS CATEGORIAS POR DEFECTO TAMBIEN---
+											int moviesContResults=0;
+											System.out.println("Indica el Id de la Categoria \n");
+											int categoryId=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Movies movie:arrayMoviesGeneral) 
+											{
+												for(Categorie category : movie.getCateg()) {
+													if(category.getCategorieID()==categoryId) {
+														moviesContResults++;
+														System.out.println(movie);
+													}
+													
+												}
+											}
+											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+										}
+										else if (selection1==7) 
+										{//---------Search By Duration------------
+											int moviesContResults=0;
+											System.out.println("Indica Duracion total: \n");
+											double durationTotalTime=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Movies movie:arrayMoviesGeneral) 
+											{
+												if(movie.getDuration()==durationTotalTime) 
+												{
+													moviesContResults++;
+													System.out.println(movie);
+												}
+											}
+											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+										}
+										else if (selection1==8) 
+										{//---------Search By Creation Year------------
+											int moviesContResults=0;
+											System.out.println("Indica Duracion total: \n");
+											int creationYear=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Movies movie:arrayMoviesGeneral) 
+											{
+												if(movie.getCreationYear()==creationYear) 
+												{
+													moviesContResults++;
+													System.out.println(movie);
+												}
+											}
+											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+										}
+										else if (selection1==9) 
+										{//---------Search By Subtitles------------
+											int moviesContResults=0;
+											System.out.println("Selecciona subtitulo para la busqueda: \n"
+													+ "[1] ES\n"
+													+ "[2] EN\n"
+													+ "[3] DE\n"
+													+ "[4] RU\n"
+													+ "[5] IT\n"
+													+ "[6] CH\n"
+													+ "[7] OTHER\n"
+													+ "[Other] END...");
+											int subtitleSearch=scanner.nextInt();
+											AvaliableSubtitles subtitleToFind=null;
+											clearScreen();
+											if(subtitleSearch==1) 
+											{
+												subtitleToFind=AvaliableSubtitles.ES;
+											}
+											else if(subtitleSearch==2) 
+											{
+												subtitleToFind=AvaliableSubtitles.EN;
+											}
+											else if(subtitleSearch==3) 
+											{
+												subtitleToFind=AvaliableSubtitles.DE;
+											}
+											else if(subtitleSearch==4) 
+											{
+												subtitleToFind=AvaliableSubtitles.RU;
+											}
+											else if(subtitleSearch==5) 
+											{
+												subtitleToFind=AvaliableSubtitles.IT;
+											}
+											else if(subtitleSearch==6) 
+											{
+												subtitleToFind=AvaliableSubtitles.CH;
+											}
+											else
+											{
+												subtitleToFind=AvaliableSubtitles.OTHER;
+											}
+											System.out.println("Resultados : \n");
+											for (Movies movie:arrayMoviesGeneral) 
+											{
+												for(Subtitles subtitle : movie.getAvaliableSubtitles()) {
+													if(subtitle.getSubtitle()==subtitleToFind) {
+														moviesContResults++;
+														System.out.println(movie);
+													}
+													
+												}
+											}
+											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+										}
+										else if (selection1==10) 
+										{//---------Search By movie ID------------
+											int moviesContResults=0;
+											System.out.println("Indica el Id de la movie \n");
+											int movieId=scanner.nextInt();
+											clearScreen();
+											System.out.println("Resultados : \n");
+											for (Movies movie:arrayMoviesGeneral) 
+											{
+												if(movie.getMovieId()==movieId) 
+												{
+													moviesContResults++;
+													System.out.println(movie);
+												}
+											}
+											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+										}
+										break;
+									}
+									case 3:
+									{
+										
+										System.out.println("Indica Id de movie para modificar: ");
+										int selectedMovieId=scanner.nextInt();
+										boolean positiveResult=false;
+										for(Movies movie : arrayMoviesGeneral) 
+										{
+											if(movie.getMovieId()==selectedMovieId) {
+												positiveResult=true;
+												System.out.println("movie encontrada \n ("+movie.getTitle()+")");
+												System.out.println("Indique que desea modificar... \n"
+														+ "[1] Actores \n"
+														+ "[2] Directores \n"
+														+ "[3] Titulo \n"
+														+ "[4] Lenguaje Original \n"
+														+ "[5] Lenguaje Adaptado\n"
+														+ "[6] Categorias \n"
+														+ "[7] Duracion\n"
+														+ "[8] Creation Year\n"
+														+ "[9] Subtitulo\n"
+														+ "[10] Numero Capitulos\n"
+														+ "[11] Numero Temporadas\n"
+														+ "[12] Id de movie (No recomendable)\n");
+												int selectedOption=scanner.nextInt();
+												if(selectedOption==1) 
+												{//-------------MODIFY---ACTORS-------------
+													boolean cancelled=false;
+													int actorIdInsert = 0;
+													int actorCountResult = 0;
+													Actors[] arrayOfActors= new Actors[0];
+													while(actorIdInsert>=0) 
+													{
+														System.out.println("Dime las Id de los nuevos Actores (-1 para terminar) (-2 Para cancelar): ");
+														actorIdInsert=scanner.nextInt();
+														clearScreen();
+														if(actorIdInsert>=0) 
+														{
+															for(Actors actor:arrayActorsGeneral) 
+															{
+																if(actor.getActorId()==actorIdInsert) 
+																{
+																	actorCountResult++;
+																	arrayOfActors=Arrays.copyOf(arrayOfActors,arrayOfActors.length+1);
+																	arrayOfActors[arrayOfActors.length-1]=actor;
+																}
+															}
+														}
+														else if(actorIdInsert==-2) 
+														{
+															cancelled=true;
+															System.out.println("Cancelado");
+															break;
+														}
+														System.out.println("Actors encontrados para add: "+actorCountResult);
+													}
+													if(!cancelled) 
+													{
+														movie.setActores(arrayOfActors);
+													}
+													//-------------MODIFY---ACTORS-------------
+												}
+												else if(selectedOption==2) 
+												{//-------------MODIFY---DIRECTORS-------------
+													boolean cancelled=false;
+													int directorIdInsert = 0;
+													int directorCountResult=0;
+													Directors[] arrayOfDirectors= new Directors[0];
+													while(directorIdInsert>=0) 
+													{
+														System.out.println("Dime las Id de los nuevos Directores (-1 para terminar) (-2 Para cancelar): ");
+														directorIdInsert=scanner.nextInt();
+														clearScreen();
+														if(directorIdInsert>=0) 
+														{
+															for(Directors director:arrayDirectorsGeneral) 
+															{
+																if(director.getDirectorId()==directorIdInsert) 
+																{
+																	directorCountResult++;
+																	arrayOfDirectors=Arrays.copyOf(arrayOfDirectors,arrayOfDirectors.length+1);
+																	arrayOfDirectors[arrayOfDirectors.length-1]=director;
+																}
+															}
+														}
+														else if(directorIdInsert==-2) 
+														{
+															cancelled=true;
+															System.out.println("Cancelado");
+															break;
+														}
+														System.out.println("Directores encontrados para add: "+directorCountResult);
+													}
+													if(!cancelled) 
+													{
+														movie.setDirectors(arrayOfDirectors);
+													}
+													//-------------MODIFY---DIRECTORS-------------
+												}
+												else if(selectedOption==3) 
+												{//-------------MODIFY---TITLE-------------
+													boolean cancelled=false;
+													System.out.println("Dime el nuevo titulo de la movie (-2 para cancelar)"); 
+													String title="Undefined-title";
+													title=scanner2.nextLine();
+													clearScreen();
+													if(title.equals("-2")) 
+													{
+														cancelled=true;
+														System.out.println("Operacion cancelada");
+													}
+													if(!cancelled) 
+													{
+														movie.setTitle(title);
+													}
+													//-------------MODIFY---TITLE-------------
+												}
+												else if(selectedOption==4) 
+												{//-------------MODIFY---ORIGINAL-LANGUAGE-------------
+													boolean cancelled=false;
+													System.out.println("Dime el nuevo Lenguaje Original (-2 para cancelar)"); 
+													String orignalLang="Undefined-Original-Lang";
+													orignalLang=scanner2.nextLine();
+													clearScreen();
+													if(orignalLang.equals("-2")) 
+													{
+														cancelled=true;
+														System.out.println("Operacion cancelada");
+													}
+													if(!cancelled) 
+													{
+														movie.setOriginalLanguage(orignalLang);
+													}
+													//-------------MODIFY---ORIGINAL-LANGUAGE-------------
+												}
+												else if(selectedOption==5) 
+												{//-------------MODIFY---ADAPTED-LANGUAGE-------------
+													boolean cancelled=false;
+													int adaptedLang=1;
+													int adaptedLangCont=0;
+													AdaptedLanguages[] adaptedLanguagesArray= new AdaptedLanguages[0];
+													
+													while(adaptedLang>=1&adaptedLang<=7) 
+													{
+														System.out.println("Selecciona los nuevos Lenguajes adaptados: \n"
+																+ "[1] ES\n"
+																+ "[2] EN\n"
+																+ "[3] DE\n"
+																+ "[4] RU\n"
+																+ "[5] IT\n"
+																+ "[6] CH\n"
+																+ "[7] OTHER\n"
+																+ "[Other] END...");
+														adaptedLang=scanner.nextInt();
+														if(adaptedLang==-2)
+														{
+															cancelled=true;
+															System.out.println("Operacion cancelada");
+															break;
+														}
+														switch(adaptedLang) 
+														{
+															case 1:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.ES);
+																break;
+															}
+															case 2:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.EN);
+																break;
+															}
+															case 3:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.DE);
+																break;
+															}
+															case 4:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.RU);
+																break;
+															}
+															case 5:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.IT);
+																break;
+															}
+															case 6:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.CH);
+																break;
+															}
+															case 7:
+															{
+																adaptedLangCont++;
+																adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+																adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.OTHER);
+																break;
+															}
+															default:
+															{
+																break;
+															}
+														}
+														System.out.println("Adapted Languages added: "+adaptedLangCont);
+													}
+													
+													if(!cancelled) 
+													{
+														movie.setAdaptedLanguages(adaptedLanguagesArray);
+													}
+													//-------------MODIFY---ADAPTED-LANGUAGE-------------
+												}
+												else if(selectedOption==6) 
+												{
+													clearScreen();
+													boolean cancelled=false;
+													int categoryIdInsert = 0;
+													int categoryCountResult = 0;
+													Categorie[] arrayOfCategories= new Categorie[0];
+													while(categoryIdInsert>=0) 
+													{
+														System.out.println("Dime las Ids de las Categories (-1 para terminar): ");
+														categoryIdInsert=scanner.nextInt();
+														clearScreen();
+														
+														if(categoryIdInsert>=0) 
+														{
+															for(Categorie category:arrayCategoriesGeneral) 
+															{
+																if(category.getCategorieID()==categoryIdInsert) 
+																{
+																	categoryCountResult++;
+																	arrayOfCategories=Arrays.copyOf(arrayOfCategories,arrayOfCategories.length+1);
+																	arrayOfCategories[arrayOfCategories.length-1]=category;
+																}
+															}
+														}
+														System.out.println("Categories encontrados para add: "+categoryCountResult);
+														if(categoryIdInsert==-2) 
+														{
+															cancelled=true;
+															System.out.println("Operacion cancelada");
+															break;
+														}
+													}
+													if(!cancelled) 
+													{
+														movie.setCateg(arrayOfCategories);
+													}
+												}
+												else if(selectedOption==7) 
+												{
+													boolean cancelled=false;
+													clearScreen();
+													System.out.println("Selecciona la nueva Duracion Total (Tiempo en minutos) (-2 para cancelar): ");
+													double minutosTiempoDuracion=0;
+													minutosTiempoDuracion=scanner.nextDouble();
+													if(minutosTiempoDuracion==-2) 
+													{
+														cancelled=true;
+														System.out.println("Operacion cancelada");
+													}
+													if(!cancelled) 
+													{
+														movie.setDuration(minutosTiempoDuracion);
+													}
+												}
+												else if(selectedOption==8) 
+												{
+													boolean cancelled=false;
+													clearScreen();
+													System.out.println("Selecciona el anyo de creacion (-2 para cancelar): ");
+													int anyoCreacion=9999;
+													anyoCreacion=scanner.nextInt();
+													if(anyoCreacion==-2)
+													{
+														cancelled=true;
+														System.out.println("Operacion cancelada");
+													}
+													if(!cancelled) 
+													{
+														movie.setCreationYear(movieIdCont);
+													}
+												}
+												else if(selectedOption==9) 
+												{
+													clearScreen();
+													System.out.println("Selecciona los nuevos Subtitulos: ");
+													boolean cancelled=false;
+													int subtitulo=2;
+													int subtitlesCont=0;
+													Subtitles[] subtitulosArray= new Subtitles[0];
+													while(subtitulo>=1&subtitulo<=7) 
+													{
+														System.out.println("Selecciona subtitulo para añadir: (-2 para cancelar)\n"
+																+ "[1] ES\n"
+																+ "[2] EN\n"
+																+ "[3] DE\n"
+																+ "[4] RU\n"
+																+ "[5] IT\n"
+																+ "[6] CH\n"
+																+ "[7] OTHER\n"
+																+ "[Other] END...");
+														subtitulo=scanner.nextInt();
+														if(subtitulo==-2) {
+															cancelled=true;
+															System.out.println("Operacion cancelada");
+															break;
+														}
+														switch(subtitulo) 
+															{
+															case 1:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.ES);
+																break;
+															}
+															case 2:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.EN);
+																break;
+															}
+															case 3:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.DE);
+																break;
+															}
+															case 4:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.RU);
+																break;
+															}
+															case 5:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.IT);
+																break;
+															}
+															case 6:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.CH);
+																break;
+															}
+															case 7:
+															{
+																subtitlesCont++;
+																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
+																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
+																break;
+															}
+															default:
+															{
+																break;
+															}
+														}
+														System.out.println("Subtitles added : "+subtitlesCont);
+													}
+													if(!cancelled)
+													{
+														movie.setAvaliableSubtitles(subtitulosArray);
+													}
+												}
+												else if(selectedOption==10) 
+												{
+												}
+												else if(selectedOption==11) 
+												{
+
+												}
+												else if(selectedOption==12) 
+												{
+													System.out.println("Advertencia , cambiar un ID puede poner en peligro el sistema\n"
+													+ "*Cambialo solo si realmente sabes lo que estas haciendo...");
+													System.out.println("Indique nuevo ID de movie: (-2 para cancelar)");
+													int newMovieId=scanner.nextInt();
+													boolean cancelled=false;
+													if(newMovieId==-2) 
+													{
+														cancelled=true;
+														System.out.println("Operacion cancelada");
+													}
+													if(!cancelled) 
+													{
+														movie.setMovieId(newMovieId);;
+													}
+												}
+											}
+										}
+										if(positiveResult) 
+										{
+											System.out.println("Cambios guardados..");
+										}
+										else 
+										{
+											System.out.println("No se encontro ninguna movie con el ID aportado...");
+										}
+										break;
+									}
+									case 4:
+									{
+										int positionCont=0;
+										boolean cancelled=false;
+										System.out.println("Advertencia , borrar una movie no puede revertirse , hazlo si sabes lo que estas haciendo.");
+										System.out.println("Indique ID de movie para borrar (-2 para cancelar)");
+										int deletemovieId=scanner.nextInt();
+										if(deletemovieId==-2) 
+										{
+											cancelled=true;
+											System.out.println("Operacion cancelada");
+										}
+										if(!cancelled) 
+										{
+											for(Movies movie:arrayMoviesGeneral) 
+											{
+												if(movie.getMovieId()==deletemovieId) {
+													System.out.println("movie encontrada: ("+movie.getTitle()+")\n"
+															+ "-Desea borrar la movie ?\n"
+															+ "[1] Si seguro\n"
+															+ "[2] No..");
+													int finalDecision = scanner.nextInt();
+													if(finalDecision==2) 
+													{
+														System.out.println("Abortando operacion");
+													}
+													else 
+													{
+														System.out.println(movie.getTitle());
+														for(int i =0;i<arrayMoviesGeneral.length;i++) 
+														{
+															if(i==positionCont) 
+															{
+																arrayMoviesGeneral[i]=arrayMoviesGeneral[arrayMoviesGeneral.length-1];
+																arrayMoviesGeneral=Arrays.copyOf(arrayMoviesGeneral, arrayMoviesGeneral.length-1);
+															}
+														}
+														System.out.println("Se borro correctamente...");
+													}
+													
+												}
+												positionCont++;
+											}
+										}
+										break;
+									}
+									//----------movie OPTIONS--------------
+								}	
+							}//-----------END OF MOVIES ELSE SELECTED-------------------------
+
 						}
-						//----------MOVIES-SERIES-OPTIONS--------------
-						
-						
+							break;
+						//----------MOVIES-SERIES-OPTIONS-END--------------
 						case 6:
 						{
 							//----------SUBTITLES-OPTIONS--------------
@@ -3461,18 +4455,68 @@ public class Launcher
 				case 2:
 				{
 					
-					//---------INFORMATIONS AND STADISTIC MENU-------
-					IMenuStatistics.statisticsMenu();
-					int statisticsSelection = scanner.nextInt();
+					//---------INFORMATIONS AND STADISTICS MENU-------
+					IMenuStadistics.stadisticsMenu();
+					int stadisticsSelection = scanner.nextInt();
 					
 				
-						if (statisticsSelection==1) 
+						if (stadisticsSelection==1) 
 						{
-						System.out.print(arraySeriesGeneral.length-1);
+							//--SERIE---STADISTICS---------------
+							clearScreen();
+							System.out.println("Select option:\n"
+									+ "[1] Number Of Series\n"
+									+ "[2] Comin son");
+							int selectedOption=0;
+							selectedOption=scanner.nextInt();
+							int totalSeriesCont=0;
+							for(Series serie : arraySeriesGeneral) 
+							{
+								totalSeriesCont++;
+							}
+							System.out.println("Total Series in the System : "+totalSeriesCont);
+							
 						}
-						else if(statisticsSelection==2)
+						else if(stadisticsSelection==2)
 						{
-						System.out.print(arrayMoviesGeneral.length-1);
+							//--MOVIE---STADISTICS---------------
+							clearScreen();
+							System.out.println("Select option:\n"
+									+ "[1] Number Of Movies\n"
+									+ "[2] Comin son");
+							int selectedOption=0;
+							selectedOption=scanner.nextInt();
+							int totalMoviesCont=0;
+							for(Movies movie : arrayMoviesGeneral) 
+							{
+								totalMoviesCont++;
+							}
+							clearScreen();
+							System.out.println("Total Movies in the System : "+totalMoviesCont);
+						}
+						else if(stadisticsSelection==3)
+						{
+							//--MOVIE--AND SERIES---STADISTICS---------------
+							clearScreen();
+							System.out.println("Select option:\n"
+									+ "[1] Number Of Series and Movies\n"
+									+ "[2] Comin son");
+							int selectedOption=0;
+							selectedOption=scanner.nextInt();
+							int totalMoviesCont=0;
+							int totalSeriesCont=0;
+							clearScreen();
+							for(Series serie : arraySeriesGeneral) 
+							{
+								totalSeriesCont++;
+							}
+							System.out.println("Total Series in the System : "+totalSeriesCont);
+							for(Movies movie : arrayMoviesGeneral) 
+							{
+								totalMoviesCont++;
+							}
+							System.out.println("Total Movies in the System : "+totalMoviesCont);
+							System.out.println("Sub-Total : "+(totalSeriesCont+totalMoviesCont)+"");
 						}
 					break;
 				}

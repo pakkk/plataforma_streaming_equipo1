@@ -8,7 +8,7 @@ public interface IGeneralsMenu
 				+ "General menu for the streaming platform:\n"
 				+ "[1] Options\n"
 				+ "[2] Statistics and information\n"
-				+ "[3] Movies and series\n"
+				+ "[3] View Movies and series\n"
 				+ "[Other] Exit...");
 		
 	}
