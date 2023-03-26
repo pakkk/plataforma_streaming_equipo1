@@ -4608,8 +4608,8 @@ public class Launcher
 									categoryId=scanner.nextInt();
 									if(categoryId>=0) 
 									{
-									arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
-									arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
+										arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
+										arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
 									}
 								}
 								
@@ -4622,8 +4622,10 @@ public class Launcher
 									for (Series serie:arraySeriesGeneral) 
 									{
 										
-										for(Categorie category : serie.getCateg()) {
-											if(category.getCategorieID()==categoryIdx) {
+										for(Categorie category : serie.getCateg()) 
+										{
+											if(category.getCategorieID()==categoryIdx) 
+											{
 												seriesContResults++;
 												exist=true;
 												System.out.println(serie);
@@ -4755,8 +4757,8 @@ public class Launcher
 									categoryId=scanner.nextInt();
 									if(categoryId>=0) 
 									{
-									arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
-									arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
+										arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
+										arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
 									}
 								}
 								
