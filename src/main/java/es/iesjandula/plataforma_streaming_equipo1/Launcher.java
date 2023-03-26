@@ -472,6 +472,7 @@ public class Launcher
 										System.out.println("Indica el año de nacimiento \n");
 										int nacimiento=scanner.nextInt();
 										clearScreen();
+										//d
 										System.out.println("Resultados : \n");
 										for (Directors director:arrayDirectorsGeneral)
 										{
@@ -1675,11 +1676,71 @@ public class Launcher
 									}
 		
 									clearScreen();
-
+									
 									arrayRecomendationsGeneral=Arrays.copyOf(arrayRecomendationsGeneral, arrayRecomendationsGeneral.length+1);
 									arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1]=new Recomendations(texto,x);
 									System.out.println(arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1]);
+									
+									//-------------ADD-RECOMENDATION-TO-SERIE-MOVIE------------------
+									System.out.println("Indique si la recomendacion es para una Serie o Pelicula:\n"
+									+ "[1] Serie\n"
+									+ "[2] Pelicula\n");
+									int selectionType=0;
+									selectionType=scanner.nextInt();
+									
+									if(selectionType==1) 
+									{
+										System.out.println("Indique Id De la Serie: ");
+										int serieSelectedId=0;
+										serieSelectedId=scanner.nextInt();
+										
+										boolean exist=false;
+										for(Series serie:arraySeriesGeneral) 
+										{
+											if(serie.getSerieId()==serieSelectedId) 
+											{
+												exist=true;
+												//ADD THE LAST RECOMENDATION CREATED
+												System.out.println("Serie encontrada: "+serie.getTitle());
+												serie.setRecomendationSerie(arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1]);
+											}
+										}
+										if(!exist) 
+										{
+											System.out.println("No existe la Serie con id: "+serieSelectedId+" , se anulara la recomendacion");
+											//DELETE THE LAST
+											arrayRecomendationsGeneral=Arrays.copyOf(arrayRecomendationsGeneral, arrayRecomendationsGeneral.length-1);
+										}
+									}
+									else if(selectionType==2) 
+									{
+										System.out.println("Indique Id De la Serie: ");
+										int movieSelectedId=0;
+										movieSelectedId=scanner.nextInt();
+										
+										boolean exist=false;
+										for(Movies movie:arrayMoviesGeneral) 
+										{
+											if(movie.getMovieId()==movieSelectedId) 
+											{
+												exist=true;
+												//ADD THE LAST RECOMENDATION CREATED
+												System.out.println("Movie encontrada: "+movie.getTitle());
+												movie.setRecomendationMovies(arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1]);
+											}
+										}
+										if(!exist) 
+										{
+											System.out.println("No existe la Movie con id: "+movieSelectedId+" , se anulara la recomendacion");
+											//DELETE THE LAST
+											arrayRecomendationsGeneral=Arrays.copyOf(arrayRecomendationsGeneral, arrayRecomendationsGeneral.length-1);
+										}
+									}
+									
+									
+									//-------------ADD-RECOMENDATION-TO-SERIE-MOVIE------------------
 									break;
+									
 									//-------------CREATE-RECOMENDATION-----------------
 								}
 								case 2:
@@ -1688,7 +1749,8 @@ public class Launcher
 									clearScreen();
 									System.out.println("Selecciona el metodo de busqueda: \n"
 											+ "[1] Texto \n"
-											+ "[2] Tipo (Positiva,Negativa,Neutral) \n");
+											+ "[2] Tipo (Positiva,Negativa,Neutral) \n"
+											+ "[3] Serie or Movie ID\n");
 									int selection1 = scanner.nextInt();
 									clearScreen();
 									if (selection1==1) 
@@ -1740,9 +1802,63 @@ public class Launcher
 											}
 										}
 									}//--SARCH-BY-TYPE--
+									else if(selection1==3) 
+										//--SEARCH BY - SERIE - MOVIE ID
+									{
+										System.out.println("Indique opcion:\n"
+										+ "[1] Indicar Serie Id\n"
+										+ "[2] Indicar Movie Id\n"
+										+ "");
+										int selectionTypeId=scanner.nextInt();
+										if(selectionTypeId==1) 
+										{
+											System.out.println("Indique Id de Serie: ");
+											int serieIdSelected=scanner.nextInt();
+											
+											boolean exist=false;
+											
+											for(Series serie : arraySeriesGeneral) 
+											{
+												if(serie.getSerieId()==serieIdSelected) 
+												{
+													exist=true;
+													System.out.println("Serie encontrada : "+serie.getTitle());
+													System.out.println("Recomendaciones:\n"
+													+ Arrays.toString(serie.getRecomendationsSerie()));
+												}
+											}
+											if(!exist) 
+											{
+												System.out.println("No se encontro ninguna Serie con el id:"+serieIdSelected);
+											}
+										}
+										else if(selectionTypeId==2) 
+										{
+											System.out.println("Indique Id de Movie: ");
+											int movieIdSelected=scanner.nextInt();
+											
+											boolean exist=false;
+											
+											for(Movies movie : arrayMoviesGeneral) 
+											{
+												if(movie.getMovieId()==movieIdSelected) 
+												{
+													exist=true;
+													System.out.println("Movie encontrada : "+movie.getTitle());
+													System.out.println("Recomendaciones:\n"
+													+ Arrays.toString(movie.getRecomendationsMovies()));
+												}
+											}
+											if(!exist) 
+											{
+												System.out.println("No se encontro ninguna Movie con el id:"+movieIdSelected);
+											}
+										}
+										//--SEARCH BY - SERIE - MOVIE ID
+									}
 									
 									break;
-									
+
 									//-------------SEARCH-RECOMENDATIONS-----------------
 								}
 								case 3:

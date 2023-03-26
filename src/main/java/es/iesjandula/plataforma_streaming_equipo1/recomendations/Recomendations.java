@@ -36,38 +36,42 @@ public class Recomendations
 	@Override
 	public String toString() 
 	{
-		return "RECOMENDACIONES:\n"+recomendations+"\n"
+		return "RECOMENDACIONES:\n"+this.recomendations+"\n"
 		+ "TIPO: "+type;
 	}
 
+
 	
 	/* SETTERS AND GETTERS */
-	public String getRecomendations() 
-	//Get the recomendation
-	{
-		return recomendations;
+	/**
+	 * @return the recomendations
+	 */
+	public String getRecomendations() {
+		return this.recomendations;
 	}
 
-	public void setRecomendations(String recomendations) 
-	//Set the recomendation
-	{
+	/**
+	 * @param recomendations the recomendations to set
+	 */
+	public void setRecomendations(String recomendations) {
 		this.recomendations = recomendations;
-	
-	}
-	
-	public RecomendationsType getType() 
-	//Get recomendation type
-	{
-		return type;
-		
 	}
 
-	public void setType(RecomendationsType type) 
-	//Set recomendation type
-	{
+	/**
+	 * @return the type
+	 */
+	public RecomendationsType getType() {
+		return this.type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(RecomendationsType type) {
 		this.type = type;
 	}
-	
+
+
 	/* SETTERS AND GETTERS*/
 	
 	
