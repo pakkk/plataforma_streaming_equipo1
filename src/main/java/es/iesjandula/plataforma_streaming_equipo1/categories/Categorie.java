@@ -143,8 +143,8 @@ public class Categorie
 			this.minAge=7;
 			this.name="COMEDY";
 			this.description="\n"
-					+ "The comedy category is dedicated to people over 7"
-					+ ", moments of great laughter await you";
+			+ "The comedy category is dedicated to people over 7"
+			+ ", moments of great laughter await you";
 		}
 		
 		/* ACTION */
@@ -154,7 +154,7 @@ public class Categorie
 			this.minAge=16;
 			this.name="ACTION";
 			this.description="The comedy category is dedicated to people over 16"
-					+ " ,moments of intense action await you in this category";
+			+ " ,moments of intense action await you in this category";
 		}
 		
 		/* TERROR */
@@ -164,7 +164,7 @@ public class Categorie
 			this.minAge=18;
 			this.name="TERROR";	
 			this.description="The horror category is dedicated to people over 18"
-					+ ", moments of intense terror await you with this category ";
+			+ ", moments of intense terror await you with this category ";
 		}
 		
 		/* SUSPENSE */
@@ -174,7 +174,7 @@ public class Categorie
 			this.minAge=12;
 			this.name="SUSPENSE";	
 			this.description="The suspense category is dedicated to people over 12"
-					+ " , moments of tension , suspense and many intense dramas await you";
+			+ " , moments of tension , suspense and many intense dramas await you";
 		}
 		
 		/* CHILDISH */
@@ -184,8 +184,8 @@ public class Categorie
 			this.minAge=0;
 			this.name="CHILDISH";	
 			this.description= "The children's category is dedicated to all types of public"
-					+ ", learning moments, great friendships and fun friends"
-					+ "they wait for you with this category";
+			+ ", learning moments, great friendships and fun friends"
+			+ "they wait for you with this category";
 			
 		}
 		
