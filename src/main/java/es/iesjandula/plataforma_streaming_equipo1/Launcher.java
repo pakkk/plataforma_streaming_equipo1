@@ -4584,7 +4584,7 @@ public class Launcher
 									+ "[1] Number Of Series\n"
 									+ "[2] Information Of Serie , by Category\n"
 									+ "[3] Information Of Serie , by Actors\n"
-									+ "[4] Information Of Serie , by Directors");
+									+ "[4] Coming son...");
 							int selectedOption=0;
 							selectedOption=scanner.nextInt();
 							if(selectedOption==1) 
@@ -4608,8 +4608,8 @@ public class Launcher
 									categoryId=scanner.nextInt();
 									if(categoryId>=0) 
 									{
-										arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
-										arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
+									arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
+									arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
 									}
 								}
 								
@@ -4622,10 +4622,8 @@ public class Launcher
 									for (Series serie:arraySeriesGeneral) 
 									{
 										
-										for(Categorie category : serie.getCateg()) 
-										{
-											if(category.getCategorieID()==categoryIdx) 
-											{
+										for(Categorie category : serie.getCateg()) {
+											if(category.getCategorieID()==categoryIdx) {
 												seriesContResults++;
 												exist=true;
 												System.out.println(serie);
@@ -4640,7 +4638,7 @@ public class Launcher
 							}
 							else if(selectedOption==3) 
 							{
-								//---------SERIES BY ACTORS IDS------------
+								//---------SERIES BY ACTORS IDS------------ J
 								int seriesContResults=0;
 								int[] arrayOfActorsId=new int[0];
 								int actorId=0;
@@ -4664,10 +4662,8 @@ public class Launcher
 									for (Series serie:arraySeriesGeneral) 
 									{
 										
-										for(Actors actor : serie.getActores()) 
-										{
-											if(actor.getActorId()==actorIdx) 
-											{
+										for(Actors actor : serie.getActores()) {
+											if(actor.getActorId()==actorIdx) {
 												seriesContResults++;
 												exist=true;
 												System.out.println(serie);
@@ -4680,47 +4676,6 @@ public class Launcher
 								}
 								
 							}
-							else if(selectedOption==4) 
-							{
-								//---------SERIES BY DIRECTORS IDS------------
-								int seriesContResults=0;
-								int[] arrayOfDirectorsId=new int[0];
-								int directorId=0;
-								while(directorId>=0) 
-								{
-									System.out.println("Indica las Ids de los/as Directores (-1 para terminar)\n");
-									directorId=scanner.nextInt();
-									if(directorId>=0) 
-									{
-										arrayOfDirectorsId=Arrays.copyOf(arrayOfDirectorsId, arrayOfDirectorsId.length+1);
-										arrayOfDirectorsId[arrayOfDirectorsId.length-1]=directorId;
-									}
-								}
-								
-								clearScreen();
-								System.out.println("Resultados : \n");
-								boolean exist=false;
-								for(int directorIdx: arrayOfDirectorsId) 
-								{
-									exist=false;
-									for (Series serie:arraySeriesGeneral) 
-									{
-										
-										for(Directors director : serie.getDirectors()) 
-										{
-											if(director.getDirectorId()==directorIdx) 
-											{
-												seriesContResults++;
-												exist=true;
-												System.out.println(serie);
-											}
-											
-										}
-									}
-									System.out.println("-------Se encontraron: "+seriesContResults+" Series con el actor de id:"+directorIdx+"-------\n");	
-									seriesContResults=0;//Reset for next Id
-								}
-							}
 							
 							
 						}
@@ -4731,8 +4686,8 @@ public class Launcher
 							System.out.println("Select option:\n"
 									+ "[1] Number Of Movies\n"
 									+ "[2] Information Of Movie , by Category\n"
-									+ "[3] Information Of Movie , by Actors\n"
-									+ "[4] Information Of Movie , by Directors");
+									+ "[3] Information Of Serie , by Actors\n"
+									+ "[4] Coming son...");
 							int selectedOption=0;
 							selectedOption=scanner.nextInt();
 							if(selectedOption==1) 
@@ -4757,8 +4712,8 @@ public class Launcher
 									categoryId=scanner.nextInt();
 									if(categoryId>=0) 
 									{
-										arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
-										arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
+									arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
+									arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
 									}
 								}
 								
@@ -4771,10 +4726,8 @@ public class Launcher
 									for (Movies movie:arrayMoviesGeneral) 
 									{
 										
-										for(Categorie category : movie.getCateg()) 
-										{
-											if(category.getCategorieID()==categoryIdx) 
-											{
+										for(Categorie category : movie.getCateg()) {
+											if(category.getCategorieID()==categoryIdx) {
 												moviesContResults++;
 												exist=true;
 												System.out.println(movie);
@@ -4813,10 +4766,8 @@ public class Launcher
 									for (Movies movie:arrayMoviesGeneral) 
 									{
 										
-										for(Actors actor : movie.getActores()) 
-										{
-											if(actor.getActorId()==actorIdx) 
-											{
+										for(Actors actor : movie.getActores()) {
+											if(actor.getActorId()==actorIdx) {
 												moviesContResults++;
 												exist=true;
 												System.out.println(movie);
@@ -4829,45 +4780,6 @@ public class Launcher
 								}
 								
 							}
-							else if(selectedOption==4) 
-							{
-								//---------MOVIES BY DIRECTORS IDS------------
-								int moviesContResults=0;
-								int[] arrayOfDirectorsId=new int[0];
-								int directorId=0;
-								while(directorId>=0) 
-								{
-									System.out.println("Indica las Ids de los/as Directores (-1 para terminar)\n");
-									directorId=scanner.nextInt();
-									if(directorId>=0) 
-									{
-										arrayOfDirectorsId=Arrays.copyOf(arrayOfDirectorsId, arrayOfDirectorsId.length+1);
-										arrayOfDirectorsId[arrayOfDirectorsId.length-1]=directorId;
-									}
-								}
-								
-								clearScreen();
-								System.out.println("Resultados : \n");
-								boolean exist=false;
-								for(int directorIdx: arrayOfDirectorsId) 
-								{
-									exist=false;
-									for (Movies movie:arrayMoviesGeneral) 
-									{
-										
-										for(Directors director : movie.getDirectors()) {
-											if(director.getDirectorId()==directorIdx) {
-												moviesContResults++;
-												exist=true;
-												System.out.println(movie);
-											}
-											
-										}
-									}
-									System.out.println("-------Se encontraron: "+moviesContResults+" Movies con el actor de id:"+directorIdx+"-------\n");	
-									moviesContResults=0;//Reset for next Id
-								}
-							}
 							
 						}
 						else if(stadisticsSelection==3)
@@ -4876,9 +4788,9 @@ public class Launcher
 							clearScreen();
 							System.out.println("Select option:\n"
 									+ "[1] Number Of Total Series and Movies\n"
-									+ "[2] Information Of Series and Movies , by Categorys\n"
-									+ "[3] Information Of Series and Movies , by Actors\n"
-									+ "[4] Information Of Series and Movies , by Directors");
+									+ "[2] Information Of Sereis and Movies , by Categorys\n"
+									+ "[3] Information Of Sereis and Movies , by Actors\n"
+									+ "[4] Coming son...");
 							int selectedOption=0;
 							selectedOption=scanner.nextInt();
 							
@@ -5016,67 +4928,6 @@ public class Launcher
 										}
 									}
 									System.out.println("-------Se encontraron: "+moviesContResults+" Movies con el actor de id:"+actorIdx+"--------\n");	
-									moviesContResults=0;//Reset for next Id
-								}
-								//---------SERIES AND MOVIES BY ACTORS IDS------------
-							}
-							else if(selectedOption==4) 
-							{
-								//---------SERIES AND MOVIES BY DIRECTORS IDS------------
-								int seriesContResults=0;
-								int[] arrayOfDirectorsId=new int[0];
-								int directorId=0;
-								while(directorId>=0) 
-								{
-									System.out.println("Indica las Ids de los Directores (-1 para terminar)\n");
-									directorId=scanner.nextInt();
-									if(directorId>=0) 
-									{
-										arrayOfDirectorsId=Arrays.copyOf(arrayOfDirectorsId, arrayOfDirectorsId.length+1);
-										arrayOfDirectorsId[arrayOfDirectorsId.length-1]=directorId;
-									}
-								}
-								
-								clearScreen();
-								System.out.println("Resultados : \n");
-								boolean exist=false;
-								for(int directorIdx: arrayOfDirectorsId) 
-								{
-									exist=false;
-									for (Series serie:arraySeriesGeneral) 
-									{
-										
-										for(Directors director : serie.getDirectors()) {
-											if(director.getDirectorId()==directorIdx) {
-												seriesContResults++;
-												exist=true;
-												System.out.println(serie);
-											}
-											
-										}
-									}
-									System.out.println("-------Se encontraron: "+seriesContResults+" Series con el actor de id:"+directorIdx+"-------\n");	
-									seriesContResults=0;//Reset for next Id
-								}
-								int moviesContResults=0;
-								System.out.println("Resultados : \n");
-								exist=false;
-								for(int directorIdx: arrayOfDirectorsId) 
-								{
-									exist=false;
-									for (Movies movie:arrayMoviesGeneral) 
-									{
-										
-										for(Directors director : movie.getDirectors()) {
-											if(director.getDirectorId()==directorIdx) {
-												moviesContResults++;
-												exist=true;
-												System.out.println(movie);
-											}
-											
-										}
-									}
-									System.out.println("-------Se encontraron: "+moviesContResults+" Movies con el actor de id:"+directorIdx+"--------\n");	
 									moviesContResults=0;//Reset for next Id
 								}
 								//---------SERIES AND MOVIES BY ACTORS IDS------------
