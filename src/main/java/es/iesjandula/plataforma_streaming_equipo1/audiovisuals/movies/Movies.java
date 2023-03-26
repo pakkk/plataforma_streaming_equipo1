@@ -88,9 +88,9 @@ public class Movies extends Audiovisuals
 	public String toString() 
 	{	
 		//toString method for print attributes
-		return "movies [Movies=" +type +" "+Arrays.toString(actors)+" "
-		+""+Arrays.toString(categ)+" "+title+" "+originalLanguage +" "+Arrays.toString(adaptedLanguages)+" "
-		+ ""+Arrays.toString(avaliableSubtitles)+" "+ duration+" "+creationYear+"]"+" "+Arrays.toString(directors)+""
+		return "movies [Movies=" +this.type +" "+Arrays.toString(this.actors)+" "
+		+""+Arrays.toString(this.categ)+" "+this.title+" "+this.originalLanguage +" "+Arrays.toString(this.adaptedLanguages)+" "
+		+ ""+Arrays.toString(this.avaliableSubtitles)+" "+ this.duration+" "+this.creationYear+"]"+" "+Arrays.toString(this.directors)+""
 		+ " id "+this.movieId;
 	}
 

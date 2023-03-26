@@ -1,10 +1,10 @@
 package es.iesjandula.plataforma_streaming_equipo1.actors;
 
 import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
-// Class actors, store the actors
-public class Actors 
-{
-	// Variables
+	// Class actors, store the actors
+	public class Actors 
+	{
+		// Variables
 		private String name, lastName, nationality;
 		private Genders gender;
 		private int year;
@@ -43,7 +43,7 @@ public class Actors
 		{
 			return this.name;
 		}
-
+	
 		/**
 		 * @param name the name to set
 		 */
@@ -51,7 +51,7 @@ public class Actors
 		{
 			this.name = name;
 		}
-
+	
 		/**
 		 * @return the lastName
 		 */
@@ -59,7 +59,7 @@ public class Actors
 		{
 			return this.lastName;
 		}
-
+	
 		/**
 		 * @param lastName the lastName to set
 		 */
@@ -67,7 +67,7 @@ public class Actors
 		{
 			this.lastName = lastName;
 		}
-
+	
 		/**
 		 * @return the nationality
 		 */
@@ -75,7 +75,7 @@ public class Actors
 		{
 			return this.nationality;
 		}
-
+	
 		/**
 		 * @param nationality the nationality to set
 		 */
@@ -83,7 +83,7 @@ public class Actors
 		{
 			this.nationality = nationality;
 		}
-
+	
 		/**
 		 * @return the gender
 		 */
@@ -91,7 +91,7 @@ public class Actors
 		{
 			return this.gender;
 		}
-
+	
 		/**
 		 * @param gender the gender to set
 		 */
@@ -99,7 +99,7 @@ public class Actors
 		{
 			this.gender = gender;
 		}
-
+	
 		/**
 		 * @return the year
 		 */
@@ -107,7 +107,7 @@ public class Actors
 		{
 			return this.year;
 		}
-
+	
 		/**
 		 * @param year the year to set
 		 */
@@ -115,7 +115,7 @@ public class Actors
 		{
 			this.year = year;
 		}
-
+	
 		/**
 		 * @return the actorId
 		 */
@@ -123,7 +123,7 @@ public class Actors
 		{
 			return this.actorId;
 		}
-
+	
 		/**
 		 * @param actorId the actorId to set
 		 */
@@ -134,4 +134,4 @@ public class Actors
 		
 		//SETTERS-GETTERS
 		
-}
+	}

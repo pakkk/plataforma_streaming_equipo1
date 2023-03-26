@@ -127,73 +127,74 @@ public class Categorie
 	{
 		this.minAge = minAge;
 	}
+	
 	/* SETTERS AND GETTERS */
 
-		//-----VALIDATION-METHOD-----
-		public void validateCategorieType(CategorieTypes type) 
-		//Validate the type of categorie enum type , and set the default attributes.
-		{
-			/* Every description and min age on every Type */
-			
-			/* COMEDY */
-			if(type.equals(CategorieTypes.COMEDY))
-			{	
-				//Default attributes
-				this.minAge=7;
-				this.name="COMEDY";
-				this.description="\n"
-						+ "The comedy category is dedicated to people over 7"
-						+ ", moments of great laughter await you";
-			}
-			
-			/* ACTION */
-			else if(type.equals(CategorieTypes.ACTION))
-			{	
-				//Default attributes
-				this.minAge=16;
-				this.name="ACTION";
-				this.description="The comedy category is dedicated to people over 16"
-						+ " ,moments of intense action await you in this category";
-			}
-			
-			/* TERROR */
-			else if(type.equals(CategorieTypes.TERROR))
-			{	
-				//Default attributes
-				this.minAge=18;
-				this.name="TERROR";	
-				this.description="The horror category is dedicated to people over 18"
-						+ ", moments of intense terror await you with this category ";
-			}
-			
-			/* SUSPENSE */
-			else if(type.equals(CategorieTypes.SUSPENSE))
-			{	
-				//Default attributes
-				this.minAge=12;
-				this.name="SUSPENSE";	
-				this.description="The suspense category is dedicated to people over 12"
-						+ " , moments of tension , suspense and many intense dramas await you";
-			}
-			
-			/* CHILDISH */
-			else if(type.equals(CategorieTypes.CHILDISH))
-			{	
-				//Default attributes 
-				this.minAge=0;
-				this.name="CHILDISH";	
-				this.description= "The children's category is dedicated to all types of public"
-						+ ", learning moments, great friendships and fun friends"
-						+ "they wait for you with this category";
-				
-			}
-			
-			else 
-			{	
-				//Default attributes
-				this.minAge=0;//Default to 0
-				this.name="Other";
-				this.description="Missing Description";
-			}
+	//-----VALIDATION-METHOD-----
+	public void validateCategorieType(CategorieTypes type) 
+	//Validate the type of categorie enum type , and set the default attributes.
+	{
+		/* Every description and min age on every Type */
+		
+		/* COMEDY */
+		if(type.equals(CategorieTypes.COMEDY))
+		{	
+			//Default attributes
+			this.minAge=7;
+			this.name="COMEDY";
+			this.description="\n"
+					+ "The comedy category is dedicated to people over 7"
+					+ ", moments of great laughter await you";
 		}
+		
+		/* ACTION */
+		else if(type.equals(CategorieTypes.ACTION))
+		{	
+			//Default attributes
+			this.minAge=16;
+			this.name="ACTION";
+			this.description="The comedy category is dedicated to people over 16"
+					+ " ,moments of intense action await you in this category";
+		}
+		
+		/* TERROR */
+		else if(type.equals(CategorieTypes.TERROR))
+		{	
+			//Default attributes
+			this.minAge=18;
+			this.name="TERROR";	
+			this.description="The horror category is dedicated to people over 18"
+					+ ", moments of intense terror await you with this category ";
+		}
+		
+		/* SUSPENSE */
+		else if(type.equals(CategorieTypes.SUSPENSE))
+		{	
+			//Default attributes
+			this.minAge=12;
+			this.name="SUSPENSE";	
+			this.description="The suspense category is dedicated to people over 12"
+					+ " , moments of tension , suspense and many intense dramas await you";
+		}
+		
+		/* CHILDISH */
+		else if(type.equals(CategorieTypes.CHILDISH))
+		{	
+			//Default attributes 
+			this.minAge=0;
+			this.name="CHILDISH";	
+			this.description= "The children's category is dedicated to all types of public"
+					+ ", learning moments, great friendships and fun friends"
+					+ "they wait for you with this category";
+			
+		}
+		
+		else 
+		{	
+			//Default attributes
+			this.minAge=0;//Default to 0
+			this.name="Other";
+			this.description="Missing Description";
+		}
+	}
 }

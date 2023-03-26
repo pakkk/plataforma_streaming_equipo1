@@ -99,12 +99,20 @@ public class Audiovisuals
 	}
 
 	/**
-	 * @param actores the actors to set
+	 * @return the actors
 	 */
-	public void setActores(Actors[] actores) 
-	{
-		this.actors = actores;
+	public Actors[] getActors() {
+		return this.actors;
 	}
+
+
+	/**
+	 * @param actors the actors to set
+	 */
+	public void setActors(Actors[] actors) {
+		this.actors = actors;
+	}
+
 
 	/**
 	 * @return the categ

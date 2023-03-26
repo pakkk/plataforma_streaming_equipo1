@@ -3121,7 +3121,7 @@ public class Launcher
 													}
 													if(!cancelled) 
 													{
-														serie.setActores(arrayOfActors);
+														serie.setActors(arrayOfActors);
 													}
 													//-------------MODIFY---ACTORS-------------
 												}
@@ -4181,7 +4181,7 @@ public class Launcher
 													}
 													if(!cancelled) 
 													{
-														movie.setActores(arrayOfActors);
+														movie.setActors(arrayOfActors);
 													}
 													//-------------MODIFY---ACTORS-------------
 												}

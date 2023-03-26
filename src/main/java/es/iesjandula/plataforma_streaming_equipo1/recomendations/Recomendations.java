@@ -17,18 +17,18 @@ public class Recomendations
 	 * Constructors of the class
 
 	 */
-	public Recomendations(String recomendations,RecomendationsType Type) 
+	public Recomendations(String recomendations,RecomendationsType type) 
 	//Recommendation type + description constructor
 	{
 		this.recomendations = recomendations;
-		this.type=Type;
+		this.type=type;
 	}
 	
 	public Recomendations(String recomendations)
 	//Description recommendation only constructor
 	{
 		this.recomendations = recomendations;
-		type=RecomendationsType.NEUTRAL;
+		this.type=RecomendationsType.NEUTRAL;
 		
 	}
 	
@@ -37,7 +37,7 @@ public class Recomendations
 	public String toString() 
 	{
 		return "RECOMENDACIONES:\n"+this.recomendations+"\n"
-		+ "TIPO: "+type;
+		+ "TIPO: "+this.type;
 	}
 
 
