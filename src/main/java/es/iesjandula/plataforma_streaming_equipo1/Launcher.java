@@ -4638,7 +4638,7 @@ public class Launcher
 						
 						default:
 						{
-							System.out.println("Unkow Option");
+							System.out.println("Unknow Option");
 							break;
 						}
 					}

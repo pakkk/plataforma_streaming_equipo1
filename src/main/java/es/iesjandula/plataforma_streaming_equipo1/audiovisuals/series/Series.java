@@ -51,9 +51,9 @@ public class Series extends Audiovisuals
 	{
 		return "Type: " + this.type +"\n"
 		+ "Actors:\n"
-		+ ""+Arrays.toString(actors)+"\n"
+		+ ""+Arrays.toString(this.actors)+"\n"
 		+"Categories:\n"
-		+ ""+Arrays.toString(categ)+"\n"
+		+ ""+Arrays.toString(this.categ)+"\n"
 		+ "Title : "+this.title+"\n"
 		+ "Original Language: "+this.originalLanguage+"\n"
 		+ "Adapted Languages:\n"
@@ -65,7 +65,7 @@ public class Series extends Audiovisuals
 		+ "Total Seasons: "+this.seasons+"\n"
 		+ "Total Capitules: "+this.nChapter+"\n"
 		+ "Directors: \n"
-		+ ""+Arrays.toString(directors)+"\n"
+		+ ""+Arrays.toString(this.directors)+"\n"
 		+ " Serie id: "+this.serieId+"\n";
 	}
 
@@ -77,7 +77,7 @@ public class Series extends Audiovisuals
 	public int getnChapter() 
 	{
 		//Get the number of capitules
-		return nChapter;
+		return this.nChapter;
 	}
 
 	public void setnChapter(int nChapter) 
