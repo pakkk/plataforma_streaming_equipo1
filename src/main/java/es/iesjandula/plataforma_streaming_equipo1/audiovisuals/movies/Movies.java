@@ -16,7 +16,7 @@ import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 public class Movies extends Audiovisuals
 {
 	private int movieId;
-	protected Recomendations[] recomendationsMovies=new Recomendations[0];
+	private Recomendations[] recomendationsMovies=new Recomendations[0];
 	
 	
 	/**

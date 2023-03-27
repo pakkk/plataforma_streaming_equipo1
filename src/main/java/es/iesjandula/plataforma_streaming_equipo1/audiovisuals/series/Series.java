@@ -20,13 +20,13 @@ public class Series extends Audiovisuals
 	private int serieId;
 	
 	/** Attribute - nChapter */
-	protected int nChapter;
+	private int nChapter;
 	
 	/** Attribute - seasons */
-	protected int seasons;
+	private int seasons;
 	
 	/** Attribute - Recommendation */
-	protected Recomendations recomendationsSerie[]=new Recomendations[0];
+	private Recomendations recomendationsSerie[]=new Recomendations[0];
 	
 	/*
 	 * Constructor of the class , use the superClass constructor.
