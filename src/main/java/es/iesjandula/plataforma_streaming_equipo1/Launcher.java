@@ -2510,7 +2510,7 @@ public class Launcher
 										Categorie[] arrayOfCategories= new Categorie[0];
 										while(categoryIdInsert>=0) 
 										{
-											System.out.println("Dime las Ids de las Categories (-1 para terminar): ");
+											System.out.println("Write the Id of the Categorie (-1 to cancel): ");
 											categoryIdInsert=scanner.nextInt();
 											clearScreen();
 											
@@ -2526,7 +2526,7 @@ public class Launcher
 													}
 												}
 											}
-											System.out.println("Categories encontrados para add: "+categoryCountResult);
+											System.out.println("Categorie finded to add: "+categoryCountResult);
 										}
 										
 										int actorIdInsert = 0;
@@ -2723,7 +2723,7 @@ public class Launcher
 										numeroCapitulos=scanner.nextInt();
 										
 										clearScreen();
-										System.out.println("Selecciona numero de temporadas: ");
+										System.out.println("Select a number of seasons: ");
 										int numeroTemporadas=0;
 										numeroTemporadas=scanner.nextInt();
 										clearScreen();
@@ -3003,31 +3003,31 @@ public class Launcher
 													
 												}
 											}
-											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+											System.out.println("This series where found: "+seriesContResults);
 										}
 										else if (selection1==10) 
 										{
 											//---------Search By total capitule number (ID)------------
 											int seriesContResults=0;
-											System.out.println("Indicate the numero de capitulos \n");
-											int numberOfCapitules=scanner.nextInt();
+											System.out.println("Indicate the number of chapters \n");
+											int numberOfChapters=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
 											for (Series serie:arraySeriesGeneral) 
 											{
-												if(serie.getnChapter()==numberOfCapitules) 
+												if(serie.getnChapter()==numberOfChapters) 
 												{
 													seriesContResults++;
 													System.out.println(serie);
 												}
 											}
-											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+											System.out.println("This series where found: "+seriesContResults);
 										}
 										else if (selection1==11) 
 										{
 											//---------Search By total seasons (ID)------------
 											int seriesContResults=0;
-											System.out.println("Indicate the numero de temporadas \n");
+											System.out.println("Indicate the number of seasons \n");
 											int numberOfSeasons=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -3039,13 +3039,13 @@ public class Launcher
 													System.out.println(serie);
 												}
 											}
-											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+											System.out.println("This series where found: "+seriesContResults);
 										}
 										else if (selection1==12) 
 										{
 											//---------Search By Serie ID------------
 											int seriesContResults=0;
-											System.out.println("Indicate the el Id de la Serie \n");
+											System.out.println("Indicate the Id de la Serie \n");
 											int serieId=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -3057,14 +3057,14 @@ public class Launcher
 													System.out.println(serie);
 												}
 											}
-											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+											System.out.println("This series where found: "+seriesContResults);
 										}
 										break;
 									}
 									case 3:
 									{
 										
-										System.out.println("Indicate the Id de Serie para modificar: ");
+										System.out.println("Indicate the Id of the Serie to modify: ");
 										int selectedSerieId=scanner.nextInt();
 										boolean positiveResult=false;
 										for(Series serie : arraySeriesGeneral) 
@@ -3072,20 +3072,20 @@ public class Launcher
 											if(serie.getSerieId()==selectedSerieId) 
 											{
 												positiveResult=true;
-												System.out.println("Serie encontrada \n ("+serie.getTitle()+")");
-												System.out.println("Indique que desea modificar... \n"
-														+ "[1] Actores \n"
-														+ "[2] Directores \n"
-														+ "[3] Titulo \n"
-														+ "[4] Lenguaje Original \n"
-														+ "[5] Lenguaje Adaptado\n"
-														+ "[6] categorys \n"
-														+ "[7] Duracion\n"
+												System.out.println("Serie found \n ("+serie.getTitle()+")");
+												System.out.println("Indicate what you whant to modify... \n"
+														+ "[1] Actors \n"
+														+ "[2] Directors \n"
+														+ "[3] Tittle \n"
+														+ "[4] Original Lenguaje \n"
+														+ "[5] Adapted Lenguajes\n"
+														+ "[6] Categories \n"
+														+ "[7] Duration\n"
 														+ "[8] Creation Year\n"
-														+ "[9] Subtitulo\n"
-														+ "[10] Numero Capitulos\n"
-														+ "[11] Numero Temporadas\n"
-														+ "[12] Id de Serie (No recomendable)\n");
+														+ "[9] Subtittle\n"
+														+ "[10] Number Of Chapters\n"
+														+ "[11] Number Of Seasons\n"
+														+ "[12] Id of Serie (Not recomendable)\n");
 												int selectedOption=scanner.nextInt();
 												if(selectedOption==1) 
 												{
@@ -3096,7 +3096,7 @@ public class Launcher
 													Actors[] arrayOfActors= new Actors[0];
 													while(actorIdInsert>=0) 
 													{
-														System.out.println("Dime las Id de los nuevos Actores (-1 para terminar) (-2 Para cancelar): ");
+														System.out.println("Write the Id of the Actor (-1 to finish) (-2 to cancel): ");
 														actorIdInsert=scanner.nextInt();
 														clearScreen();
 														if(actorIdInsert>=0) 
@@ -3114,10 +3114,10 @@ public class Launcher
 														else if(actorIdInsert==-2) 
 														{
 															cancelled=true;
-															System.out.println("Cancelado");
+															System.out.println("Cancelled");
 															break;
 														}
-														System.out.println("Actors encontrados para add: "+actorCountResult);
+														System.out.println("Actors finded to add: "+actorCountResult);
 													}
 													if(!cancelled) 
 													{
@@ -3134,7 +3134,7 @@ public class Launcher
 													Directors[] arrayOfDirectors= new Directors[0];
 													while(directorIdInsert>=0) 
 													{
-														System.out.println("Dime las Id de los nuevos Directores (-1 para terminar) (-2 Para cancelar): ");
+														System.out.println("Write the Id of the Director (-1 to finish) (-2 to cancel): ");
 														directorIdInsert=scanner.nextInt();
 														clearScreen();
 														if(directorIdInsert>=0) 
@@ -3152,10 +3152,10 @@ public class Launcher
 														else if(directorIdInsert==-2) 
 														{
 															cancelled=true;
-															System.out.println("Cancelado");
+															System.out.println("Cancelled");
 															break;
 														}
-														System.out.println("Directores encontrados para add: "+directorCountResult);
+														System.out.println("Directors finded to add: "+directorCountResult);
 													}
 													if(!cancelled) 
 													{
@@ -3167,14 +3167,14 @@ public class Launcher
 												{
 													//-------------MODIFY---TITLE-------------
 													boolean cancelled=false;
-													System.out.println("Dime el nuevo titulo de la Serie (-2 para cancelar)"); 
+													System.out.println("Write the new tittle for the Serie (-2 to cancel)"); 
 													String title="Undefined-title";
 													title=scanner2.nextLine();
 													clearScreen();
 													if(title.equals("-2")) 
 													{
 														cancelled=true;
-														System.out.println("Operacion cancelada");
+														System.out.println("Operation Cancelled");
 													}
 													if(!cancelled) 
 													{
@@ -3186,14 +3186,14 @@ public class Launcher
 												{
 													//-------------MODIFY---ORIGINAL-LANGUAGE-------------
 													boolean cancelled=false;
-													System.out.println("Dime el nuevo Lenguaje Original (-2 para cancelar)"); 
+													System.out.println("Write the new original lenguaje (-2 to cancel)"); 
 													String orignalLang="Undefined-Original-Lang";
 													orignalLang=scanner2.nextLine();
 													clearScreen();
 													if(orignalLang.equals("-2")) 
 													{
 														cancelled=true;
-														System.out.println("Operacion cancelada");
+														System.out.println("Operation Cancelled");
 													}
 													if(!cancelled) 
 													{
@@ -3211,7 +3211,7 @@ public class Launcher
 													
 													while(adaptedLang>=1&adaptedLang<=7) 
 													{
-														System.out.println("Selecciona los nuevos Lenguajes adaptados: \n"
+														System.out.println("Select the new adapted lenguajes: \n"
 																+ "[1] ES\n"
 																+ "[2] EN\n"
 																+ "[3] DE\n"
@@ -3224,7 +3224,7 @@ public class Launcher
 														if(adaptedLang==-2)
 														{
 															cancelled=true;
-															System.out.println("Operacion cancelada");
+															System.out.println("Operation Cancelled");
 															break;
 														}
 														switch(adaptedLang) 
@@ -3301,7 +3301,7 @@ public class Launcher
 													Categorie[] arrayOfCategories= new Categorie[0];
 													while(categoryIdInsert>=0) 
 													{
-														System.out.println("Dime las Ids de las Categories (-1 para terminar): ");
+														System.out.println("Write the Id of the Categorie (-1 to cancel): ");
 														categoryIdInsert=scanner.nextInt();
 														clearScreen();
 														
@@ -3317,11 +3317,11 @@ public class Launcher
 																}
 															}
 														}
-														System.out.println("Categories encontrados para add: "+categoryCountResult);
+														System.out.println("Categorie finded to add: "+categoryCountResult);
 														if(categoryIdInsert==-2) 
 														{
 															cancelled=true;
-															System.out.println("Operacion cancelada");
+															System.out.println("Operation Cancelled");
 															break;
 														}
 													}
@@ -3334,13 +3334,13 @@ public class Launcher
 												{
 													boolean cancelled=false;
 													clearScreen();
-													System.out.println("Selecciona la nueva Duracion Total (Tiempo en minutos) (-2 para cancelar): ");
+													System.out.println("Select the new total duration  (Time in minutes) (-2 to cacel): ");
 													double minutosTiempoDuracion=0;
 													minutosTiempoDuracion=scanner.nextDouble();
 													if(minutosTiempoDuracion==-2) 
 													{
 														cancelled=true;
-														System.out.println("Operacion cancelada");
+														System.out.println("Operation Cancelled");
 													}
 													if(!cancelled) 
 													{
@@ -3351,13 +3351,13 @@ public class Launcher
 												{
 													boolean cancelled=false;
 													clearScreen();
-													System.out.println("Selecciona el anyo de creacion (-2 para cancelar): ");
+													System.out.println("Select the year of creation (-2 to cancel): ");
 													int anyoCreacion=9999;
 													anyoCreacion=scanner.nextInt();
 													if(anyoCreacion==-2)
 													{
 														cancelled=true;
-														System.out.println("Operacion cancelada");
+														System.out.println("Operation Cancelled");
 													}
 													if(!cancelled) 
 													{
@@ -3367,14 +3367,14 @@ public class Launcher
 												else if(selectedOption==9) 
 												{
 													clearScreen();
-													System.out.println("Selecciona los nuevos Subtitulos: ");
+													System.out.println("Select the new Subtitles: ");
 													boolean cancelled=false;
 													int subtitulo=2;
 													int subtitlesCont=0;
 													Subtitles[] subtitulosArray= new Subtitles[0];
 													while(subtitulo>=1&subtitulo<=7) 
 													{
-														System.out.println("Selecciona subtitulo para añadir: (-2 para cancelar)\n"
+														System.out.println("Select a subtitle to add: (-2 to cancel)\n"
 																+ "[1] ES\n"
 																+ "[2] EN\n"
 																+ "[3] DE\n"
@@ -3387,7 +3387,7 @@ public class Launcher
 														if(subtitulo==-2) 
 														{
 															cancelled=true;
-															System.out.println("Operacion cancelada");
+															System.out.println("Operation Cancelled");
 															break;
 														}
 														switch(subtitulo) 
@@ -3457,12 +3457,12 @@ public class Launcher
 												{
 													clearScreen();
 													boolean cancelled=false;
-													System.out.println("Selecciona nuevo numero de capitulos: (-2 para cancelar) ");
+													System.out.println("Select a new number of chapters: (-2 to cancel) ");
 													int numeroCapitulos=0;
 													numeroCapitulos=scanner.nextInt();
 													if(numeroCapitulos==-2) 
 													{
-														System.out.println("Opereacion cancelada");
+														System.out.println("Operation cancelled");
 														cancelled=true;
 													}
 													if(!cancelled)
@@ -3474,13 +3474,13 @@ public class Launcher
 												{
 													boolean cancelled=false;
 													clearScreen();
-													System.out.println("Selecciona numero de temporadas: ");
+													System.out.println("Select a number of seasons: ");
 													int numeroTemporadas=0;
 													numeroTemporadas=scanner.nextInt();
 													if(numeroTemporadas==-2) 
 													{
 														cancelled=true;
-														System.out.println("Operacion cancelada");
+														System.out.println("Operation Cancelled");
 													}
 													if(!cancelled)
 													{
@@ -3490,15 +3490,15 @@ public class Launcher
 												}
 												else if(selectedOption==12) 
 												{
-													System.out.println("Advertencia , cambiar un ID puede poner en peligro el sistema\n"
-													+ "*Cambialo solo si realmente sabes lo que estas haciendo...");
-													System.out.println("Indique nuevo ID de Serie: (-2 para cancelar)");
+													System.out.println("Warning , changing the id could put the sistem in danger\n"
+													+ "*Change it only if you know what you are doing...");
+													System.out.println("Indicate the new id: (-2 to cancel)");
 													int newSerieId=scanner.nextInt();
 													boolean cancelled=false;
 													if(newSerieId==-2) 
 													{
 														cancelled=true;
-														System.out.println("Operacion cancelada");
+														System.out.println("Operation Cancelled");
 													}
 													if(!cancelled) 
 													{
@@ -3509,11 +3509,11 @@ public class Launcher
 										}
 										if(positiveResult) 
 										{
-											System.out.println("Cambios guardados..");
+											System.out.println("Changes Saved..");
 										}
 										else 
 										{
-											System.out.println("No se encontro ninguna serie con el ID aportado...");
+											System.out.println("No series with that id where found...");
 										}
 										break;
 									}
@@ -3521,13 +3521,13 @@ public class Launcher
 									{
 										int positionCont=0;
 										boolean cancelled=false;
-										System.out.println("Advertencia , borrar una serie no puede revertirse , hazlo si sabes lo que estas haciendo.");
-										System.out.println("Indique ID de Serie para borrar (-2 para cancelar)");
+										System.out.println("Warning , deleting a serie cant be fix , do it if you know what you are doing.");
+										System.out.println("Indicate the Id of the serie to delete (-2 to cancel)");
 										int deleteSerieId=scanner.nextInt();
 										if(deleteSerieId==-2) 
 										{
 											cancelled=true;
-											System.out.println("Operacion cancelada");
+											System.out.println("Operation Cancelled");
 										}
 										if(!cancelled) 
 										{
@@ -3535,14 +3535,14 @@ public class Launcher
 											{
 												if(serie.getSerieId()==deleteSerieId) 
 												{
-													System.out.println("Serie encontrada: ("+serie.getTitle()+")\n"
-															+ "-Desea borrar la Serie ?\n"
-															+ "[1] Si seguro\n"
+													System.out.println("Serie finded: ("+serie.getTitle()+")\n"
+															+ "-Do you want to delete it ?\n"
+															+ "[1] Yes\n"
 															+ "[2] No..");
 													int finalDecision = scanner.nextInt();
 													if(finalDecision==2) 
 													{
-														System.out.println("Abortando operacion");
+														System.out.println("Operation Aborted");
 													}
 													else 
 													{
@@ -3555,7 +3555,7 @@ public class Launcher
 																arraySeriesGeneral=Arrays.copyOf(arraySeriesGeneral, arraySeriesGeneral.length-1);
 															}
 														}
-														System.out.println("Se borro correctamente...");
+														System.out.println("Deleted Correctly...");
 													}
 													
 												}
@@ -3581,7 +3581,7 @@ public class Launcher
 									case 1:
 									{//--------movie--REGISTER------
 										
-										System.out.println("Dime el titulo de la movie"); 
+										System.out.println("Write the title of the movie"); 
 										String title="Undefined";
 										title=scanner2.nextLine();
 										clearScreen();
@@ -3591,7 +3591,7 @@ public class Launcher
 										Directors[] arrayOfDirectors= new Directors[0];
 										while(directorIdInsert>=0) 
 										{
-											System.out.println("Dime las Id de los Directores (-1 para terminar): ");
+											System.out.println("Write the id of the Director/s (-1 to finish): ");
 											directorIdInsert=scanner.nextInt();
 											clearScreen();
 											if(directorIdInsert>=0) 
@@ -3606,7 +3606,7 @@ public class Launcher
 													}
 												}
 											}
-											System.out.println("Directores encontrados para add: "+directorCountResult);
+											System.out.println("Directors finded to add: "+directorCountResult);
 										}
 										
 										clearScreen();
@@ -3615,7 +3615,7 @@ public class Launcher
 										Categorie[] arrayOfCategories= new Categorie[0];
 										while(categoryIdInsert>=0) 
 										{
-											System.out.println("Dime las Ids de las Categories (-1 para terminar): ");
+											System.out.println("Write the Id of the Categorie (-1 to cancel): ");
 											categoryIdInsert=scanner.nextInt();
 											clearScreen();
 											
@@ -3631,7 +3631,7 @@ public class Launcher
 													}
 												}
 											}
-											System.out.println("Categories encontrados para add: "+categoryCountResult);
+											System.out.println("Categorie finded to add: "+categoryCountResult);
 										}
 										
 										int actorIdInsert = 0;
@@ -3639,7 +3639,7 @@ public class Launcher
 										Actors[] arrayOfActors= new Actors[0];
 										while(actorIdInsert>=0) 
 										{
-											System.out.println("Dime las Id de los Actores (-1 para terminar): ");
+											System.out.println("Write the id of the actors (-1 to finish): ");
 											actorIdInsert=scanner.nextInt();
 											clearScreen();
 											if(actorIdInsert>=0) 
@@ -3654,10 +3654,10 @@ public class Launcher
 													}
 												}
 											}
-											System.out.println("Actors encontrados para add: "+actorCountResult);
+											System.out.println("Actors finded to add: "+actorCountResult);
 										}
 										
-										System.out.println("Escribe el lenguaje Original: ");
+										System.out.println("Write the original lenguaje: ");
 										String originalLenguage=scanner2.nextLine();
 										clearScreen();
 										
@@ -3667,7 +3667,7 @@ public class Launcher
 										
 										while(adaptedLang>=1&adaptedLang<=7) 
 										{
-											System.out.println("Selecciona los Lenguajes adaptados: \n"
+											System.out.println("Select the adapted lenguajes: \n"
 													+ "[1] ES\n"
 													+ "[2] EN\n"
 													+ "[3] DE\n"
@@ -3737,14 +3737,14 @@ public class Launcher
 										}
 										
 										clearScreen();
-										System.out.println("Selecciona los Subtitulos: ");
+										System.out.println("Select the subtitles: ");
 										
 										int subtitulo=2;
 										int subtitlesCont=0;
 										Subtitles[] subtitulosArray= new Subtitles[0];
 										while(subtitulo>=1&subtitulo<=7) 
 										{
-											System.out.println("Selecciona subtitulo para añadir: \n"
+											System.out.println("Select the subtitles to add: \n"
 													+ "[1] ES\n"
 													+ "[2] EN\n"
 													+ "[3] DE\n"
@@ -3813,12 +3813,12 @@ public class Launcher
 											System.out.println("Subtitles added : "+subtitlesCont);
 										}
 										clearScreen();
-										System.out.println("Selecciona la Duracion Total (Tiempo en minutos): ");
+										System.out.println("Select the total duration (Time in minutes): ");
 										double minutosTiempoDuracion=0;
 										minutosTiempoDuracion=scanner.nextDouble();
 
 										clearScreen();
-										System.out.println("Selecciona el anyo de creacion: ");
+										System.out.println("Select the year of creation: ");
 										int anyoCreacion=9999;
 										anyoCreacion=scanner.nextInt();
 										
@@ -3834,24 +3834,24 @@ public class Launcher
 									{
 										//--------movie--SEARCH------
 										clearScreen();
-										System.out.println("Selecciona el metodo de busqueda: \n"
-												+ "[1] Actores \n"
-												+ "[2] Directores \n"
-												+ "[3] Titulo \n"
-												+ "[4] Lenguaje Original \n"
-												+ "[5] Lenguaje Adaptado\n"
-												+ "[6] categorys \n"
-												+ "[7] Duracion\n"
+										System.out.println("Select the search method: \n"
+												+ "[1] Actors \n"
+												+ "[2] Directors \n"
+												+ "[3] Title \n"
+												+ "[4] Original lenguaje \n"
+												+ "[5] Adapted lenguajes\n"
+												+ "[6] Categories \n"
+												+ "[7] Duration\n"
 												+ "[8] Creation Year\n"
-												+ "[9] Subtitulo\n"
-												+ "[10] Id de movie\n");
+												+ "[9] Subtitle\n"
+												+ "[10] Id of the movie\n");
 										int selection1 = scanner.nextInt();
 										clearScreen();
 										if (selection1==1) 
 										{
 											//---------Search By Actor (ID)------------
 											int moviesContResults=0;
-											System.out.println("Indicate the el Id del actor \n");
+											System.out.println("Indicate the el Id of the actor \n");
 											int actorId=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -3867,13 +3867,13 @@ public class Launcher
 													
 												}
 											}
-											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+											System.out.println("Where finded: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==2) 
 										{
 											//---------Search By Director (ID)------------
 											int moviesContResults=0;
-											System.out.println("Indicate the el Id del Director \n");
+											System.out.println("Indicate the Id of the Director \n");
 											int directorId=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -3889,13 +3889,13 @@ public class Launcher
 													
 												}
 											}
-											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+											System.out.println("Where finded: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==3) 
 										{
 											//---------Search By Title (ID)------------
 											int moviesContResults=0;
-											System.out.println("Indicate the titulo o parte del mismo: \n");
+											System.out.println("Indicate the titulo or part of it: \n");
 											String titleSearch=scanner2.nextLine();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -3907,13 +3907,13 @@ public class Launcher
 													System.out.println(movie);
 												}
 											}
-											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+											System.out.println("Where finded: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==4) 
 										{
 											//---------Search By Original Language (ID)------------
 											int moviesContResults=0;
-											System.out.println("Indicate the Lenguage Original o parte del mismo: \n");
+											System.out.println("Indicate the Lenguage Original or part of it: \n");
 											String origLanguageSearch=scanner2.nextLine();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -3925,13 +3925,13 @@ public class Launcher
 													System.out.println(movie);
 												}
 											}
-											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+											System.out.println("Where finded: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==5) 
 										{
 											//---------Search By Adapted Language (ID)------------
 											int moviesContResults=0;
-											System.out.println("Selecciona el Lenguaje adaptado: \n"
+											System.out.println("Select the Adapted Lenguaje: \n"
 													+ "[1] ES\n"
 													+ "[2] EN\n"
 													+ "[3] DE\n"
@@ -3983,14 +3983,14 @@ public class Launcher
 													
 												}
 											}
-											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+											System.out.println("Where finded: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==6) 
 										{
 											//---------Search By Category (ID)------------
 											//---HAY QUE ANYADIR QUE BUSQUE POR LAS categoryS POR DEFECTO TAMBIEN---
 											int moviesContResults=0;
-											System.out.println("Indicate the el Id de la category \n");
+											System.out.println("Indicate the Id of the categorie \n");
 											int categoryId=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -4234,7 +4234,7 @@ public class Launcher
 													if(title.equals("-2")) 
 													{
 														cancelled=true;
-														System.out.println("Operacion cancelada");
+														System.out.println("Operation Cancelled");
 													}
 													if(!cancelled) 
 													{
@@ -4253,7 +4253,7 @@ public class Launcher
 													if(orignalLang.equals("-2")) 
 													{
 														cancelled=true;
-														System.out.println("Operacion cancelada");
+														System.out.println("Operation Cancelled");
 													}
 													if(!cancelled) 
 													{
@@ -4271,7 +4271,7 @@ public class Launcher
 													
 													while(adaptedLang>=1&adaptedLang<=7) 
 													{
-														System.out.println("Selecciona los nuevos Lenguajes adaptados: \n"
+														System.out.println("Select the new adapted lenguajes: \n"
 																+ "[1] ES\n"
 																+ "[2] EN\n"
 																+ "[3] DE\n"
@@ -4284,7 +4284,7 @@ public class Launcher
 														if(adaptedLang==-2)
 														{
 															cancelled=true;
-															System.out.println("Operacion cancelada");
+															System.out.println("Operation Cancelled");
 															break;
 														}
 														switch(adaptedLang) 
@@ -4361,7 +4361,7 @@ public class Launcher
 													Categorie[] arrayOfCategories= new Categorie[0];
 													while(categoryIdInsert>=0) 
 													{
-														System.out.println("Dime las Ids de las Categories (-1 para terminar): ");
+														System.out.println("Write the Id of the Categorie (-1 to cancel): ");
 														categoryIdInsert=scanner.nextInt();
 														clearScreen();
 														
@@ -4377,11 +4377,11 @@ public class Launcher
 																}
 															}
 														}
-														System.out.println("Categories encontrados para add: "+categoryCountResult);
+														System.out.println("Categorie finded to add: "+categoryCountResult);
 														if(categoryIdInsert==-2) 
 														{
 															cancelled=true;
-															System.out.println("Operacion cancelada");
+															System.out.println("Operation Cancelled");
 															break;
 														}
 													}
@@ -4394,7 +4394,7 @@ public class Launcher
 												{
 													boolean cancelled=false;
 													clearScreen();
-													System.out.println("Selecciona la nueva Duracion Total (Tiempo en minutos) (-2 para cancelar): ");
+													System.out.println("Select the new total duration  (Time in minutes) (-2 to cacel): ");
 													double timeMinutesDuration=0;
 													timeMinutesDuration=scanner.nextDouble();
 													if(timeMinutesDuration==-2) 
