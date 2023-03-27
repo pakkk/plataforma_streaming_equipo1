@@ -3987,7 +3987,7 @@ public class Launcher
 										}
 										else if (selection1==6) 
 										{
-											//---------Search By Category (ID)------------
+											//---------Search By Category (ID)-----------
 											//---HAY QUE ANYADIR QUE BUSQUE POR LAS categoryS POR DEFECTO TAMBIEN---
 											int moviesContResults=0;
 											System.out.println("Indicate the Id of the categorie \n");
