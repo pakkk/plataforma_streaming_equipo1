@@ -179,7 +179,7 @@ public class Launcher
 							switch(selection) 
 							{
 								case 1:
-								{
+								{//--CREATE NEW DIRECTOR------
 									System.out.println("Tell me the name of the director");
 									String name=scanner2.nextLine();
 									clearScreen();
@@ -216,9 +216,11 @@ public class Launcher
 									arrayDirectorsGeneral[arrayDirectorsGeneral.length-1]=new Directors(name, lastName, year, nationality, x,directorIdCont++);
 									System.out.println(arrayDirectorsGeneral[arrayDirectorsGeneral.length-1]);
 									break;
+									//--CREATE NEW DIRECTOR------
 								}
 								case 2:
 								{
+									//-----SEARCH-DIRECTOR-----
 									clearScreen();
 									System.out.println("Select the search method: \n"
 											+ "[1] Name \n"
@@ -315,9 +317,11 @@ public class Launcher
 										}
 									}
 									break;
+									//-----SEARCH-DIRECTOR-----
 								}
 								case 3:
 								{
+									//------MODIFY DIRECTOR---------
 									clearScreen();
 									System.out.println("Select search method to modify the director: \n"
 											+ "[1] Name \n"
@@ -715,6 +719,7 @@ public class Launcher
 										}
 									}
 									break;
+									//------MODIFY DIRECTOR---------
 								}
 								case 4:
 								{
@@ -2140,7 +2145,7 @@ public class Launcher
 								case 2:
 								{
 									clearScreen();
-									System.out.println("Selecciona el metodo de busqueda: \n"
+									System.out.println("Select the search method: \n"
 											+ "[1] Nombre \n"
 											+ "[2] tipo \n"
 											+ "[3] edad minima \n");
@@ -2476,7 +2481,7 @@ public class Launcher
 									{
 										//--------SERIE--REGISTER------
 										
-										System.out.println("Dime el titulo de la Serie"); 
+										System.out.println("Tell me the Title of the Series"); 
 										String title="Undefined";
 										title=scanner2.nextLine();
 										clearScreen();
@@ -2486,7 +2491,7 @@ public class Launcher
 										Directors[] arrayOfDirectors= new Directors[0];
 										while(directorIdInsert>=0) 
 										{
-											System.out.println("Dime las Id de los Directores (-1 para terminar): ");
+											System.out.println("Tell me the Id of the Directors (-1 to finish): ");
 											directorIdInsert=scanner.nextInt();
 											clearScreen();
 											if(directorIdInsert>=0) 
@@ -2501,7 +2506,7 @@ public class Launcher
 													}
 												}
 											}
-											System.out.println("Directores encontrados para add: "+directorCountResult);
+											System.out.println("Directors found for add: "+directorCountResult);
 										}
 										
 										clearScreen();
@@ -2534,7 +2539,7 @@ public class Launcher
 										Actors[] arrayOfActors= new Actors[0];
 										while(actorIdInsert>=0) 
 										{
-											System.out.println("Dime las Id de los Actores (-1 para terminar): ");
+											System.out.println("Tell me the Id of the Actors (-1 to finish): ");
 											actorIdInsert=scanner.nextInt();
 											clearScreen();
 											if(actorIdInsert>=0) 
@@ -2549,10 +2554,10 @@ public class Launcher
 													}
 												}
 											}
-											System.out.println("Actors encontrados para add: "+actorCountResult);
+											System.out.println("Actors found for add: "+actorCountResult);
 										}
 										
-										System.out.println("Escribe el lenguaje Original: ");
+										System.out.println("Write the Original language: ");
 										String originalLenguage=scanner2.nextLine();
 										clearScreen();
 										
@@ -2562,7 +2567,7 @@ public class Launcher
 										
 										while(adaptedLang>=1&adaptedLang<=7) 
 										{
-											System.out.println("Selecciona los Lenguajes adaptados: \n"
+											System.out.println("Select the adapted languages: \n"
 													+ "[1] ES\n"
 													+ "[2] EN\n"
 													+ "[3] DE\n"
@@ -2632,14 +2637,14 @@ public class Launcher
 										}
 										
 										clearScreen();
-										System.out.println("Selecciona los Subtitulos: ");
+										System.out.println("Select the Subtitles: ");
 										
-										int subtitulo=2;
+										int subTitle=2;
 										int subtitlesCont=0;
-										Subtitles[] subtitulosArray= new Subtitles[0];
-										while(subtitulo>=1&subtitulo<=7) 
+										Subtitles[] subTitlesArray= new Subtitles[0];
+										while(subTitle>=1&subTitle<=7) 
 										{
-											System.out.println("Selecciona subtitulo para añadir: \n"
+											System.out.println("Select subtitle to add: \n"
 													+ "[1] ES\n"
 													+ "[2] EN\n"
 													+ "[3] DE\n"
@@ -2648,56 +2653,56 @@ public class Launcher
 													+ "[6] CH\n"
 													+ "[7] OTHER\n"
 													+ "[Other] END...");
-											subtitulo=scanner.nextInt();
-											switch(subtitulo) 
+											subTitle=scanner.nextInt();
+											switch(subTitle) 
 												{
 												case 1:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.ES);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.ES);
 													break;
 												}
 												case 2:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.EN);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.EN);
 													break;
 												}
 												case 3:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.DE);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.DE);
 													break;
 												}
 												case 4:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.RU);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.RU);
 													break;
 												}
 												case 5:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.IT);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.IT);
 													break;
 												}
 												case 6:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.CH);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.CH);
 													break;
 												}
 												case 7:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
 													break;
 												}
 												default:
@@ -2729,7 +2734,7 @@ public class Launcher
 										clearScreen();
 
 										arraySeriesGeneral=Arrays.copyOf(arraySeriesGeneral, arraySeriesGeneral.length+1);
-										arraySeriesGeneral[arraySeriesGeneral.length-1]=new Series(arrayOfActors,arrayOfDirectors,arrayOfCategories,title,originalLenguage,adaptedLanguagesArray,subtitulosArray,minutosTiempoDuracion,anyoCreacion,numeroCapitulos,numeroTemporadas,serieIdCont++);
+										arraySeriesGeneral[arraySeriesGeneral.length-1]=new Series(arrayOfActors,arrayOfDirectors,arrayOfCategories,title,originalLenguage,adaptedLanguagesArray,subTitlesArray,minutosTiempoDuracion,anyoCreacion,numeroCapitulos,numeroTemporadas,serieIdCont++);
 										System.out.println(arraySeriesGeneral[arraySeriesGeneral.length-1]);
 										
 										break;
@@ -2739,16 +2744,16 @@ public class Launcher
 									{
 										//--------SERIE--SEARCH------
 										clearScreen();
-										System.out.println("Selecciona el metodo de busqueda: \n"
-												+ "[1] Actores \n"
+										System.out.println("Select the search method: \n"
+												+ "[1] Actors \n"
 												+ "[2] Directores \n"
-												+ "[3] Titulo \n"
+												+ "[3] Title \n"
 												+ "[4] Lenguaje Original \n"
 												+ "[5] Lenguaje Adaptado\n"
 												+ "[6] Categories \n"
 												+ "[7] Duracion\n"
 												+ "[8] Creation Year\n"
-												+ "[9] Subtitulo\n"
+												+ "[9] SubTitle\n"
 												+ "[10] Numero Capitulos\n"
 												+ "[11] Numero Temporadas\n"
 												+ "[12] Id de Serie\n");
@@ -2758,13 +2763,13 @@ public class Launcher
 										{
 											//---------Search By Actor (ID)------------
 											int seriesContResults=0;
-											System.out.println("Indicate the el Id del actor \n");
+											System.out.println("Indicate the Id del actor \n");
 											int actorId=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
 											for (Series serie:arraySeriesGeneral) 
 											{
-												for(Actors actor : serie.getActores()) 
+												for(Actors actor : serie.getActors()) 
 												{
 													if(actor.getActorId()==actorId) 
 													{
@@ -2774,13 +2779,13 @@ public class Launcher
 													
 												}
 											}
-											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+											System.out.println("Were found: "+seriesContResults+" Series.");
 										}
 										else if (selection1==2) 
 										{
 											//---------Search By Director (ID)------------
 											int seriesContResults=0;
-											System.out.println("Indicate the el Id del Director \n");
+											System.out.println("Indicate the Id del Director \n");
 											int directorId=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -2796,13 +2801,13 @@ public class Launcher
 													
 												}
 											}
-											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+											System.out.println("Were found: "+seriesContResults+" Series.");
 										}
 										else if (selection1==3) 
 										{
 											//---------Search By Title (ID)------------
 											int seriesContResults=0;
-											System.out.println("Indicate the titulo o parte del mismo: \n");
+											System.out.println("Indicate the Title o parte del mismo: \n");
 											String titleSearch=scanner2.nextLine();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -2813,7 +2818,7 @@ public class Launcher
 													System.out.println(serie);
 												}
 											}
-											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+											System.out.println("Were found: "+seriesContResults+" Series.");
 										}
 										else if (selection1==4) 
 										{
@@ -2831,7 +2836,7 @@ public class Launcher
 													System.out.println(serie);
 												}
 											}
-											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+											System.out.println("Were found: "+seriesContResults+" Series.");
 										}
 										else if (selection1==5) 
 										{
@@ -2887,14 +2892,14 @@ public class Launcher
 													
 												}
 											}
-											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+											System.out.println("Were found: "+seriesContResults+" Series.");
 										}
 										else if (selection1==6) 
 										{
 											//---------Search By Category (ID)------------
 											//---HAY QUE ANYADIR QUE BUSQUE POR LAS categoryS POR DEFECTO TAMBIEN---
 											int seriesContResults=0;
-											System.out.println("Indicate the el Id de la category \n");
+											System.out.println("Indicate the Id de la category \n");
 											int categoryId=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -2908,7 +2913,7 @@ public class Launcher
 													
 												}
 											}
-											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+											System.out.println("Were found: "+seriesContResults+" Series.");
 										}
 										else if (selection1==7) 
 										{
@@ -2926,7 +2931,7 @@ public class Launcher
 													System.out.println(serie);
 												}
 											}
-											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+											System.out.println("Were found: "+seriesContResults+" Series.");
 										}
 										else if (selection1==8) 
 										{
@@ -2944,13 +2949,13 @@ public class Launcher
 													System.out.println(serie);
 												}
 											}
-											System.out.println("Se encontraron: "+seriesContResults+" Series.");
+											System.out.println("Were found: "+seriesContResults+" Series.");
 										}
 										else if (selection1==9) 
 										{
 											//---------Search By Subtitles------------
 											int seriesContResults=0;
-											System.out.println("Selecciona subtitulo para la busqueda: \n"
+											System.out.println("Selecciona subTitle para la busqueda: \n"
 													+ "[1] ES\n"
 													+ "[2] EN\n"
 													+ "[3] DE\n"
@@ -3077,8 +3082,8 @@ public class Launcher
 														+ "[1] Actors \n"
 														+ "[2] Directors \n"
 														+ "[3] Tittle \n"
-														+ "[4] Original Lenguaje \n"
-														+ "[5] Adapted Lenguajes\n"
+														+ "[4] Original lenguage \n"
+														+ "[5] Adapted lenguages\n"
 														+ "[6] Categories \n"
 														+ "[7] Duration\n"
 														+ "[8] Creation Year\n"
@@ -3186,7 +3191,7 @@ public class Launcher
 												{
 													//-------------MODIFY---ORIGINAL-LANGUAGE-------------
 													boolean cancelled=false;
-													System.out.println("Write the new original lenguaje (-2 to cancel)"); 
+													System.out.println("Write the new Original lenguage (-2 to cancel)"); 
 													String orignalLang="Undefined-Original-Lang";
 													orignalLang=scanner2.nextLine();
 													clearScreen();
@@ -3211,7 +3216,7 @@ public class Launcher
 													
 													while(adaptedLang>=1&adaptedLang<=7) 
 													{
-														System.out.println("Select the new adapted lenguajes: \n"
+														System.out.println("Select the new Adapted lenguages: \n"
 																+ "[1] ES\n"
 																+ "[2] EN\n"
 																+ "[3] DE\n"
@@ -3369,10 +3374,10 @@ public class Launcher
 													clearScreen();
 													System.out.println("Select the new Subtitles: ");
 													boolean cancelled=false;
-													int subtitulo=2;
+													int subTitle=2;
 													int subtitlesCont=0;
-													Subtitles[] subtitulosArray= new Subtitles[0];
-													while(subtitulo>=1&subtitulo<=7) 
+													Subtitles[] subTitlesArray= new Subtitles[0];
+													while(subTitle>=1&subTitle<=7) 
 													{
 														System.out.println("Select a subtitle to add: (-2 to cancel)\n"
 																+ "[1] ES\n"
@@ -3383,62 +3388,62 @@ public class Launcher
 																+ "[6] CH\n"
 																+ "[7] OTHER\n"
 																+ "[Other] END...");
-														subtitulo=scanner.nextInt();
-														if(subtitulo==-2) 
+														subTitle=scanner.nextInt();
+														if(subTitle==-2) 
 														{
 															cancelled=true;
 															System.out.println("Operation Cancelled");
 															break;
 														}
-														switch(subtitulo) 
+														switch(subTitle) 
 														{
 															case 1:
 															{
 																subtitlesCont++;
-																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.ES);
+																subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+																subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.ES);
 																break;
 															}
 															case 2:
 															{
 																subtitlesCont++;
-																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.EN);
+																subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+																subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.EN);
 																break;
 															}
 															case 3:
 															{
 																subtitlesCont++;
-																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.DE);
+																subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+																subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.DE);
 																break;
 															}
 															case 4:
 															{
 																subtitlesCont++;
-																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.RU);
+																subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+																subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.RU);
 																break;
 															}
 															case 5:
 															{
 																subtitlesCont++;
-																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.IT);
+																subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+																subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.IT);
 																break;
 															}
 															case 6:
 															{
 																subtitlesCont++;
-																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.CH);
+																subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+																subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.CH);
 																break;
 															}
 															case 7:
 															{
 																subtitlesCont++;
-																subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-																subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
+																subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+																subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
 																break;
 															}
 															default:
@@ -3450,7 +3455,7 @@ public class Launcher
 													}
 													if(!cancelled)
 													{
-														serie.setAvaliableSubtitles(subtitulosArray);
+														serie.setAvaliableSubtitles(subTitlesArray);
 													}
 												}
 												else if(selectedOption==10) 
@@ -3657,7 +3662,7 @@ public class Launcher
 											System.out.println("Actors finded to add: "+actorCountResult);
 										}
 										
-										System.out.println("Write the original lenguaje: ");
+										System.out.println("Write the Original lenguage: ");
 										String originalLenguage=scanner2.nextLine();
 										clearScreen();
 										
@@ -3667,7 +3672,7 @@ public class Launcher
 										
 										while(adaptedLang>=1&adaptedLang<=7) 
 										{
-											System.out.println("Select the adapted lenguajes: \n"
+											System.out.println("Select the Adapted lenguages: \n"
 													+ "[1] ES\n"
 													+ "[2] EN\n"
 													+ "[3] DE\n"
@@ -3737,12 +3742,12 @@ public class Launcher
 										}
 										
 										clearScreen();
-										System.out.println("Select the subtitles: ");
+										System.out.println("Select the Subtitles: ");
 										
-										int subtitulo=2;
+										int subTitle=2;
 										int subtitlesCont=0;
-										Subtitles[] subtitulosArray= new Subtitles[0];
-										while(subtitulo>=1&subtitulo<=7) 
+										Subtitles[] subTitlesArray= new Subtitles[0];
+										while(subTitle>=1&subTitle<=7) 
 										{
 											System.out.println("Select the subtitles to add: \n"
 													+ "[1] ES\n"
@@ -3753,56 +3758,56 @@ public class Launcher
 													+ "[6] CH\n"
 													+ "[7] OTHER\n"
 													+ "[Other] END...");
-											subtitulo=scanner.nextInt();
-											switch(subtitulo) 
+											subTitle=scanner.nextInt();
+											switch(subTitle) 
 												{
 												case 1:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.ES);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.ES);
 													break;
 												}
 												case 2:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.EN);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.EN);
 													break;
 												}
 												case 3:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.DE);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.DE);
 													break;
 												}
 												case 4:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.RU);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.RU);
 													break;
 												}
 												case 5:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.IT);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.IT);
 													break;
 												}
 												case 6:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.CH);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.CH);
 													break;
 												}
 												case 7:
 												{
 													subtitlesCont++;
-													subtitulosArray=Arrays.copyOf(subtitulosArray, subtitulosArray.length+1);
-													subtitulosArray[subtitulosArray.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
+													subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+													subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
 													break;
 												}
 												default:
@@ -3824,7 +3829,7 @@ public class Launcher
 										
 
 										arrayMoviesGeneral=Arrays.copyOf(arrayMoviesGeneral, arrayMoviesGeneral.length+1);
-										arrayMoviesGeneral[arrayMoviesGeneral.length-1]=new Movies(arrayOfActors,arrayOfDirectors,arrayOfCategories,title,originalLenguage,adaptedLanguagesArray,subtitulosArray,minutosTiempoDuracion,anyoCreacion,movieIdCont++);
+										arrayMoviesGeneral[arrayMoviesGeneral.length-1]=new Movies(arrayOfActors,arrayOfDirectors,arrayOfCategories,title,originalLenguage,adaptedLanguagesArray,subTitlesArray,minutosTiempoDuracion,anyoCreacion,movieIdCont++);
 										System.out.println(arrayMoviesGeneral[arrayMoviesGeneral.length-1]);
 										
 										break;
@@ -3838,8 +3843,8 @@ public class Launcher
 												+ "[1] Actors \n"
 												+ "[2] Directors \n"
 												+ "[3] Title \n"
-												+ "[4] Original lenguaje \n"
-												+ "[5] Adapted lenguajes\n"
+												+ "[4] Original lenguage \n"
+												+ "[5] Adapted lenguages\n"
 												+ "[6] Categories \n"
 												+ "[7] Duration\n"
 												+ "[8] Creation Year\n"
@@ -3851,13 +3856,13 @@ public class Launcher
 										{
 											//---------Search By Actor (ID)------------
 											int moviesContResults=0;
-											System.out.println("Indicate the el Id of the actor \n");
+											System.out.println("Indicate the Id of the actor \n");
 											int actorId=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
 											for (Movies movie:arrayMoviesGeneral) 
 											{
-												for(Actors actor : movie.getActores()) 
+												for(Actors actor : movie.getActors()) 
 												{
 													if(actor.getActorId()==actorId) 
 													{
@@ -3895,7 +3900,7 @@ public class Launcher
 										{
 											//---------Search By Title (ID)------------
 											int moviesContResults=0;
-											System.out.println("Indicate the titulo or part of it: \n");
+											System.out.println("Indicate the Title or part of it: \n");
 											String titleSearch=scanner2.nextLine();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -3988,7 +3993,7 @@ public class Launcher
 										else if (selection1==6) 
 										{
 											//---------Search By Category (ID)-----------
-											//---HAY QUE ANYADIR QUE BUSQUE POR LAS categoryS POR DEFECTO TAMBIEN---
+											
 											int moviesContResults=0;
 											System.out.println("Indicate the Id of the categorie \n");
 											int categoryId=scanner.nextInt();
@@ -4004,7 +4009,7 @@ public class Launcher
 													
 												}
 											}
-											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+											System.out.println("Were found: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==7) 
 										{
@@ -4022,7 +4027,7 @@ public class Launcher
 													System.out.println(movie);
 												}
 											}
-											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+											System.out.println("Were found: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==8) 
 										{
@@ -4040,13 +4045,13 @@ public class Launcher
 													System.out.println(movie);
 												}
 											}
-											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+											System.out.println("Were found: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==9) 
 										{
 											//---------Search By Subtitles------------
 											int moviesContResults=0;
-											System.out.println("Selecciona subtitulo para la busqueda: \n"
+											System.out.println("Selecciona subTitle para la busqueda: \n"
 													+ "[1] ES\n"
 													+ "[2] EN\n"
 													+ "[3] DE\n"
@@ -4099,13 +4104,13 @@ public class Launcher
 													
 												}
 											}
-											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+											System.out.println("Were found: "+moviesContResults+" Movies.");
 										}
 										else if (selection1==10) 
 										{
 											//---------Search By movie ID------------
 											int moviesContResults=0;
-											System.out.println("Indicate the el Id de la movie \n");
+											System.out.println("Indicate the Id de la movie \n");
 											int movieId=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -4117,7 +4122,7 @@ public class Launcher
 													System.out.println(movie);
 												}
 											}
-											System.out.println("Se encontraron: "+moviesContResults+" Movies.");
+											System.out.println("Were found: "+moviesContResults+" Movies.");
 										}
 										break;
 									}
@@ -4134,15 +4139,15 @@ public class Launcher
 												positiveResult=true;
 												System.out.println("movie encontrada \n ("+movie.getTitle()+")");
 												System.out.println("Indique que desea modificar... \n"
-														+ "[1] Actores \n"
+														+ "[1] Actors \n"
 														+ "[2] Directores \n"
-														+ "[3] Titulo \n"
+														+ "[3] Title \n"
 														+ "[4] Lenguaje Original \n"
 														+ "[5] Lenguaje Adaptado\n"
 														+ "[6] categorys \n"
 														+ "[7] Duracion\n"
 														+ "[8] Creation Year\n"
-														+ "[9] Subtitulo\n"
+														+ "[9] SubTitle\n"
 														+ "[10] Numero Capitulos\n"
 														+ "[11] Numero Temporadas\n"
 														+ "[12] Id de movie (No recomendable)\n");
@@ -4156,7 +4161,7 @@ public class Launcher
 													Actors[] arrayOfActors= new Actors[0];
 													while(actorIdInsert>=0) 
 													{
-														System.out.println("Dime las Id de los nuevos Actores (-1 para terminar) (-2 Para cancelar): ");
+														System.out.println("Dime las Id de los nuevos Actors (-1 para terminar) (-2 Para cancelar): ");
 														actorIdInsert=scanner.nextInt();
 														clearScreen();
 														if(actorIdInsert>=0) 
@@ -4177,7 +4182,7 @@ public class Launcher
 															System.out.println("Cancelado");
 															break;
 														}
-														System.out.println("Actors encontrados para add: "+actorCountResult);
+														System.out.println("Actors found for add: "+actorCountResult);
 													}
 													if(!cancelled) 
 													{
@@ -4215,7 +4220,7 @@ public class Launcher
 															System.out.println("Cancelado");
 															break;
 														}
-														System.out.println("Directores encontrados para add: "+directorCountResult);
+														System.out.println("Directors found for add: "+directorCountResult);
 													}
 													if(!cancelled) 
 													{
@@ -4227,7 +4232,7 @@ public class Launcher
 												{
 													//-------------MODIFY---TITLE-------------
 													boolean cancelled=false;
-													System.out.println("Dime el nuevo titulo de la movie (-2 para cancelar)"); 
+													System.out.println("Tell me the new Title of the movie (-2 to cancel)"); 
 													String title="Undefined-title";
 													title=scanner2.nextLine();
 													clearScreen();
@@ -4246,7 +4251,7 @@ public class Launcher
 												{
 													//-------------MODIFY---ORIGINAL-LANGUAGE-------------
 													boolean cancelled=false;
-													System.out.println("Dime el nuevo Lenguaje Original (-2 para cancelar)"); 
+													System.out.println("Tell me the new Original Language (-2 to cancel)"); 
 													String orignalLang="Undefined-Original-Lang";
 													orignalLang=scanner2.nextLine();
 													clearScreen();
@@ -4271,7 +4276,7 @@ public class Launcher
 													
 													while(adaptedLang>=1&adaptedLang<=7) 
 													{
-														System.out.println("Select the new adapted lenguajes: \n"
+														System.out.println("Select the new Adapted lenguages: \n"
 																+ "[1] ES\n"
 																+ "[2] EN\n"
 																+ "[3] DE\n"
@@ -4718,7 +4723,7 @@ public class Launcher
 								int actorId=0;
 								while(actorId>=0) 
 								{
-									System.out.println("Indicate the las Ids de los/as Actores (-1 para terminar)\n");
+									System.out.println("Indicate the las Ids de los/as Actors (-1 para terminar)\n");
 									actorId=scanner.nextInt();
 									if(actorId>=0) 
 									{
@@ -4736,7 +4741,7 @@ public class Launcher
 									for (Series serie:arraySeriesGeneral) 
 									{
 										
-										for(Actors actor : serie.getActores()) 
+										for(Actors actor : serie.getActors()) 
 										{
 											if(actor.getActorId()==actorIdx) 
 											{
@@ -4975,7 +4980,7 @@ public class Launcher
 									for (Movies movie:arrayMoviesGeneral) 
 									{
 										
-										for(Actors actor : movie.getActores()) 
+										for(Actors actor : movie.getActors()) 
 										{
 											if(actor.getActorId()==actorIdx) 
 											{
@@ -5248,7 +5253,7 @@ public class Launcher
 									for (Series serie:arraySeriesGeneral) 
 									{
 										
-										for(Actors actor : serie.getActores()) 
+										for(Actors actor : serie.getActors()) 
 										{
 											if(actor.getActorId()==actorIdx) 
 											{
@@ -5271,7 +5276,7 @@ public class Launcher
 									for (Movies movie:arrayMoviesGeneral) 
 									{
 										
-										for(Actors actor : movie.getActores()) {
+										for(Actors actor : movie.getActors()) {
 											if(actor.getActorId()==actorIdx) {
 												moviesContResults++;
 												exist=true;
