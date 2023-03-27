@@ -2118,19 +2118,19 @@ public class Launcher
 								{
 									CategorieTypes x= CategorieTypes.OTHER;
 									Categorie last =new Categorie(x,categorieIdCont++);
-									System.out.println("Dime el nombre de la category");
+									System.out.println("Write the name of the categorie");
 									String nameCategorie=scanner2.nextLine();
 									last.setName(nameCategorie);
 									clearScreen();
-									System.out.println("Dime el tipo de category");
+									System.out.println("Write the type of categorie");
 									String tipoCategorie=scanner2.nextLine();
 									clearScreen();
 									last.setType(x);
-									System.out.println("Dime una descripción basica");
+									System.out.println("Write a basic description");
 									String description=scanner2.nextLine();
 									clearScreen();
 									last.setDescription(description);
-									System.out.println("Introduzca edad minima");
+									System.out.println("Introduce minimum age");
 									int minAge = scanner.nextInt();
 									clearScreen();
 									last.setMinAge(minAge);
@@ -2146,14 +2146,14 @@ public class Launcher
 								{
 									clearScreen();
 									System.out.println("Select the search method: \n"
-											+ "[1] Nombre \n"
-											+ "[2] tipo \n"
-											+ "[3] edad minima \n");
+											+ "[1] Name \n"
+											+ "[2] Type \n"
+											+ "[3] Minimum age \n");
 									int selection3 = scanner.nextInt();
 									clearScreen();
 									if (selection3==1) 
 									{
-										System.out.println("Indicate the el nombre \n");
+										System.out.println("Indicate the name \n");
 										String name=scanner2.nextLine();
 										clearScreen();
 										System.out.println("Results: \n");
@@ -2167,7 +2167,7 @@ public class Launcher
 									}
 									else if (selection3==2) 
 									{
-										System.out.println("Indicate the el Tipo \n");
+										System.out.println("Indicate the type \n");
 										String TypeCategorie=scanner2.nextLine();
 										clearScreen();
 										System.out.println("Results: \n");
@@ -2181,7 +2181,7 @@ public class Launcher
 									}
 									else if (selection3==3) 
 									{
-										System.out.println("Indicate the la edad minima \n");
+										System.out.println("Indicate the minimum age \n");
 										int MinAge=scanner.nextInt();
 										clearScreen();
 										System.out.println("Results: \n");
@@ -2206,7 +2206,7 @@ public class Launcher
 									clearScreen();
 									if (selection1==1)
 									{
-										System.out.println("Indicate the el nombre \n");
+										System.out.println("Indicate the name \n");
 										String name=scanner2.nextLine();
 										clearScreen();
 										System.out.println("Results: \n");
@@ -2224,7 +2224,7 @@ public class Launcher
 												clearScreen();
 												if (selection4==1) 
 												{
-													System.out.println("Dime nombre ");
+													System.out.println("Write name ");
 													String name1=scanner2.nextLine();
 													clearScreen();
 													categorie.setName(name1);
@@ -2232,14 +2232,14 @@ public class Launcher
 												}
 												else if (selection4==2) 
 												{
-													System.out.println("Dime edad minima: ");
+													System.out.println("Write minimum age: ");
 													int year=scanner.nextInt();
 													clearScreen();
 													categorie.setMinAge(year);
 												}
 												else
 												{
-													System.out.println("Dime descripcion: ");
+													System.out.println("Write description: ");
 													String desc=scanner2.nextLine();
 													clearScreen();
 													categorie.setDescription(desc);
@@ -2249,7 +2249,7 @@ public class Launcher
 									}
 									else if (selection1==2) 
 									{
-										System.out.println("Indicate the la edad minima \n");
+										System.out.println("Indicate the minimum age \n");
 										int AgeMin=scanner.nextInt();
 										clearScreen();
 										System.out.println("Results: \n");
@@ -2257,24 +2257,24 @@ public class Launcher
 										{
 											if (categorie.getName().equals(AgeMin)) 
 											{
-												System.out.println("Encontrado: ");
+												System.out.println("Found: ");
 												System.out.println(categorie);
-												System.out.println("Selecciona que dato deseas cambiar de la category: \n"
-														+ "[1] Nombre \n"
-														+ "[2] edad minima \n"
-														+ "[3] Descripcion\n");
+												System.out.println("Select the data you whant to change: \n"
+														+ "[1] Name \n"
+														+ "[2] Minimum age \n"
+														+ "[3] Description\n");
 												int selection4 = scanner.nextInt();
 												clearScreen();
 												if (selection4==1) 
 												{
-													System.out.println("Dime nombre ");
+													System.out.println("Write the name ");
 													String name1=scanner2.nextLine();
 													clearScreen();
 													categorie.setName(name1);
 												}
 												else if (selection4==2) 
 												{
-													System.out.println("cambiando tipo a otro ");
+													System.out.println("Change the type ");
 													clearScreen();
 													CategorieTypes x= CategorieTypes.OTHER;
 													Categorie last =new Categorie(x,categorieIdCont++);
@@ -2282,14 +2282,14 @@ public class Launcher
 												}
 												else if (selection4==3) 
 												{
-													System.out.println("Dime edad minima: ");
+													System.out.println("Write the minimum age: ");
 													int year=scanner.nextInt();
 													clearScreen();
 													categorie.setMinAge(year);
 												}
 												else
 												{
-													System.out.println("Dime descripcion: ");
+													System.out.println("Write the descripcion: ");
 													String desc=scanner2.nextLine();
 													clearScreen();
 													categorie.setDescription(desc);
@@ -2300,7 +2300,7 @@ public class Launcher
 									}
 									else if (selection1==3)
 									{
-										System.out.println("Indicate the la descripcion \n");
+										System.out.println("Indicate the description \n");
 										String desc=scanner2.nextLine();
 										clearScreen();
 										System.out.println("Results: \n");
@@ -2308,31 +2308,31 @@ public class Launcher
 										{
 											if (categorie.getName().equals(desc)) 
 											{
-												System.out.println("Encontrado: ");
+												System.out.println("Found: ");
 												System.out.println(categorie);
-												System.out.println("Selecciona que dato deseas cambiar de la category: \n"
-														+ "[1] Nombre \n"
-														+ "[2] edad minima \n"
-														+ "[3] Descripcion\n");
+												System.out.println("Select what data you whant to modify: \n"
+														+ "[1] Name \n"
+														+ "[2] Minimum Age \n"
+														+ "[3] Description\n");
 												int selection4 = scanner.nextInt();
 												clearScreen();
 												if (selection4==1) 
 												{
-													System.out.println("Dime nombre ");
+													System.out.println("Write the name: ");
 													String name1=scanner2.nextLine();
 													clearScreen();
 													categorie.setName(name1);
 												}
 												else if (selection4==2) 
 												{
-													System.out.println("Dime edad minima: ");
+													System.out.println("Write minimum age: ");
 													int year=scanner.nextInt();
 													clearScreen();
 													categorie.setMinAge(year);
 												}
 												else 
 												{
-													System.out.println("Dime descripcion: ");
+													System.out.println("Write description: ");
 													String descrip=scanner2.nextLine();
 													clearScreen();
 													categorie.setDescription(descrip);
@@ -2346,15 +2346,15 @@ public class Launcher
 								case 4:
 								{
 									int cont=0;
-									System.out.println("Selecciona el metodo de busqueda para borrar: \n"
-											+ "[1] Nombre \n"
-											+ "[2] edad minima \n"
-											+ "[3] Descripcion\n");
+									System.out.println("Select the search method to delete: \n"
+											+ "[1] Name \n"
+											+ "[2] Minimum age \n"
+											+ "[3] Description\n");
 									int selection1 = scanner.nextInt();
 									clearScreen();
 									if (selection1==1) 
 									{
-										System.out.println("Indicate the el nombre \n");
+										System.out.println("Indicate the name \n");
 										String name=scanner2.nextLine();
 										clearScreen();
 										System.out.println("Results: \n");
@@ -2386,7 +2386,7 @@ public class Launcher
 									}
 									else if (selection1==2) 
 									{
-										System.out.println("Indicate the la edad minima \n");
+										System.out.println("Indicate the minimum age \n");
 										int minAge=scanner.nextInt();
 										clearScreen();
 										System.out.println("Results: \n");
@@ -2418,7 +2418,7 @@ public class Launcher
 									}
 									else if (selection1==3) 
 									{
-										System.out.println("Indicate the la descripcion \n");
+										System.out.println("Indicate the description \n");
 										String year=scanner2.nextLine();
 										clearScreen();
 										System.out.println("Results: \n");
@@ -2713,17 +2713,17 @@ public class Launcher
 											System.out.println("Subtitles added : "+subtitlesCont);
 										}
 										clearScreen();
-										System.out.println("Selecciona la Duracion Total (Tiempo en minutos): ");
+										System.out.println("Select a total duration (in minutes): ");
 										double minutosTiempoDuracion=0;
 										minutosTiempoDuracion=scanner.nextDouble();
 
 										clearScreen();
-										System.out.println("Selecciona el anyo de creacion: ");
+										System.out.println("Select a creation year: ");
 										int anyoCreacion=9999;
 										anyoCreacion=scanner.nextInt();
 										
 										clearScreen();
-										System.out.println("Selecciona numero de capitulos: ");
+										System.out.println("Select a number of chapters: ");
 										int numeroCapitulos=0;
 										numeroCapitulos=scanner.nextInt();
 										
@@ -2748,22 +2748,22 @@ public class Launcher
 												+ "[1] Actors \n"
 												+ "[2] Directores \n"
 												+ "[3] Title \n"
-												+ "[4] Lenguaje Original \n"
-												+ "[5] Lenguaje Adaptado\n"
+												+ "[4] Original lenguaje \n"
+												+ "[5] Adapted Lenguaje\n"
 												+ "[6] Categories \n"
-												+ "[7] Duracion\n"
+												+ "[7] Duration\n"
 												+ "[8] Creation Year\n"
 												+ "[9] SubTitle\n"
-												+ "[10] Numero Capitulos\n"
-												+ "[11] Numero Temporadas\n"
-												+ "[12] Id de Serie\n");
+												+ "[10] Number of chapters\n"
+												+ "[11] Number of Seasons\n"
+												+ "[12] Id of the Serie\n");
 										int selection1 = scanner.nextInt();
 										clearScreen();
 										if (selection1==1) 
 										{
 											//---------Search By Actor (ID)------------
 											int seriesContResults=0;
-											System.out.println("Indicate the Id del actor \n");
+											System.out.println("Indicate the Id of the actor \n");
 											int actorId=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -2785,7 +2785,7 @@ public class Launcher
 										{
 											//---------Search By Director (ID)------------
 											int seriesContResults=0;
-											System.out.println("Indicate the Id del Director \n");
+											System.out.println("Indicate the Id of the Director \n");
 											int directorId=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -2807,7 +2807,7 @@ public class Launcher
 										{
 											//---------Search By Title (ID)------------
 											int seriesContResults=0;
-											System.out.println("Indicate the Title o parte del mismo: \n");
+											System.out.println("Indicate the Title or part of it: \n");
 											String titleSearch=scanner2.nextLine();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -2824,7 +2824,7 @@ public class Launcher
 										{
 											//---------Search By Original Language (ID)------------
 											int seriesContResults=0;
-											System.out.println("Indicate the Lenguage Original o parte del mismo: \n");
+											System.out.println("Indicate the original lenguaje or part of it: \n");
 											String origLanguageSearch=scanner2.nextLine();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -2842,7 +2842,7 @@ public class Launcher
 										{
 											//---------Search By Adapted Language (ID)------------
 											int seriesContResults=0;
-											System.out.println("Selecciona el Lenguaje adaptado: \n"
+											System.out.println("Select the adapted lenguaje: \n"
 													+ "[1] ES\n"
 													+ "[2] EN\n"
 													+ "[3] DE\n"
@@ -2919,7 +2919,7 @@ public class Launcher
 										{
 											//---------Search By Duration------------
 											int seriesContResults=0;
-											System.out.println("Indicate the Duracion total: \n");
+											System.out.println("Indicate the total duration: \n");
 											double durationTotalTime=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -2937,7 +2937,7 @@ public class Launcher
 										{
 											//---------Search By Creation Year------------
 											int seriesContResults=0;
-											System.out.println("Indicate the Duracion total: \n");
+											System.out.println("Indicate the total duration: \n");
 											int creationYear=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -2955,7 +2955,7 @@ public class Launcher
 										{
 											//---------Search By Subtitles------------
 											int seriesContResults=0;
-											System.out.println("Selecciona subTitle para la busqueda: \n"
+											System.out.println("Select suntitle for the search: \n"
 													+ "[1] ES\n"
 													+ "[2] EN\n"
 													+ "[3] DE\n"
@@ -3540,7 +3540,7 @@ public class Launcher
 											{
 												if(serie.getSerieId()==deleteSerieId) 
 												{
-													System.out.println("Serie finded: ("+serie.getTitle()+")\n"
+													System.out.println("Serie found: ("+serie.getTitle()+")\n"
 															+ "-Do you want to delete it ?\n"
 															+ "[1] Yes\n"
 															+ "[2] No..");
@@ -4015,7 +4015,7 @@ public class Launcher
 										{
 											//---------Search By Duration------------
 											int moviesContResults=0;
-											System.out.println("Indicate the Duracion total: \n");
+											System.out.println("Indicate the total duration: \n");
 											double durationTotalTime=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -4033,7 +4033,7 @@ public class Launcher
 										{
 											//---------Search By Creation Year------------
 											int moviesContResults=0;
-											System.out.println("Indicate the Duracion total: \n");
+											System.out.println("Indicate the total duration: \n");
 											int creationYear=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -4051,7 +4051,7 @@ public class Launcher
 										{
 											//---------Search By Subtitles------------
 											int moviesContResults=0;
-											System.out.println("Selecciona subTitle para la busqueda: \n"
+											System.out.println("Select a subtitle for the search: \n"
 													+ "[1] ES\n"
 													+ "[2] EN\n"
 													+ "[3] DE\n"
@@ -4110,7 +4110,7 @@ public class Launcher
 										{
 											//---------Search By movie ID------------
 											int moviesContResults=0;
-											System.out.println("Indicate the Id de la movie \n");
+											System.out.println("Indicate the Id of the movie \n");
 											int movieId=scanner.nextInt();
 											clearScreen();
 											System.out.println("Results: \n");
@@ -4129,7 +4129,7 @@ public class Launcher
 									case 3:
 									{
 										
-										System.out.println("Indicate the Id de movie para modificar: ");
+										System.out.println("Indicate the Id of the movie to modify: ");
 										int selectedMovieId=scanner.nextInt();
 										boolean positiveResult=false;
 										for(Movies movie : arrayMoviesGeneral) 
@@ -4137,20 +4137,20 @@ public class Launcher
 											if(movie.getMovieId()==selectedMovieId) 
 											{
 												positiveResult=true;
-												System.out.println("movie encontrada \n ("+movie.getTitle()+")");
-												System.out.println("Indique que desea modificar... \n"
+												System.out.println("Movie found \n ("+movie.getTitle()+")");
+												System.out.println("Indicate what you want to modify.. \n"
 														+ "[1] Actors \n"
-														+ "[2] Directores \n"
+														+ "[2] Directors \n"
 														+ "[3] Title \n"
-														+ "[4] Lenguaje Original \n"
-														+ "[5] Lenguaje Adaptado\n"
-														+ "[6] categorys \n"
-														+ "[7] Duracion\n"
+														+ "[4] Original Lenguaje \n"
+														+ "[5] Adapted Lenguaje\n"
+														+ "[6] Categories \n"
+														+ "[7] Duration\n"
 														+ "[8] Creation Year\n"
-														+ "[9] SubTitle\n"
-														+ "[10] Numero Capitulos\n"
-														+ "[11] Numero Temporadas\n"
-														+ "[12] Id de movie (No recomendable)\n");
+														+ "[9] Subtitle\n"
+														+ "[10] Number of Chapters\n"
+														+ "[11] Number of Seasons\n"
+														+ "[12] Id of the movie (Not recomended)\n");
 												int selectedOption=scanner.nextInt();
 												if(selectedOption==1) 
 												{
@@ -4161,7 +4161,7 @@ public class Launcher
 													Actors[] arrayOfActors= new Actors[0];
 													while(actorIdInsert>=0) 
 													{
-														System.out.println("Dime las Id de los nuevos Actors (-1 para terminar) (-2 Para cancelar): ");
+														System.out.println("Write the Ids of the new actors (-1 to finish)(-2 to cancel): ");
 														actorIdInsert=scanner.nextInt();
 														clearScreen();
 														if(actorIdInsert>=0) 
@@ -4179,7 +4179,7 @@ public class Launcher
 														else if(actorIdInsert==-2) 
 														{
 															cancelled=true;
-															System.out.println("Cancelado");
+															System.out.println("Cancelled");
 															break;
 														}
 														System.out.println("Actors found for add: "+actorCountResult);
@@ -4199,7 +4199,7 @@ public class Launcher
 													Directors[] arrayOfDirectors= new Directors[0];
 													while(directorIdInsert>=0) 
 													{
-														System.out.println("Dime las Id de los nuevos Directores (-1 para terminar) (-2 Para cancelar): ");
+														System.out.println("Write the Ids of the new Directors (-1 to finish)(-2 to cancel): ");
 														directorIdInsert=scanner.nextInt();
 														clearScreen();
 														if(directorIdInsert>=0) 
@@ -4217,7 +4217,7 @@ public class Launcher
 														else if(directorIdInsert==-2) 
 														{
 															cancelled=true;
-															System.out.println("Cancelado");
+															System.out.println("Cancelled");
 															break;
 														}
 														System.out.println("Directors found for add: "+directorCountResult);
