@@ -2011,7 +2011,7 @@ public class Launcher
 									if (selection1==1) 
 									{
 										//--DELETE-BY-TEXT--
-										System.out.println("Indicate the el texto \n");
+										System.out.println("Indicate the text \n");
 										String texto=scanner2.nextLine();
 										clearScreen();
 										System.out.println("Results: \n");
@@ -2019,7 +2019,7 @@ public class Launcher
 										{
 											if (recomendation.getRecomendations().contains(texto)) 
 											{
-												System.out.println("Borrada:\n"+recomendation+"\n");
+												System.out.println("Erased:\n"+recomendation+"\n");
 												System.out.println("Position: "+cont);
 												
 												for(int i=0;i<arrayRecomendationsGeneral.length;i++) 
@@ -2046,9 +2046,9 @@ public class Launcher
 									else if (selection1==2) 
 									{
 										//--DELETE-BY-TYPE--
-										System.out.println("Tipo de recomendacion:\n"
-												+ "[1] Positiva\n"
-												+ "[2] Negativa\n"
+										System.out.println("Type of recomendation:\n"
+												+ "[1] Positive\n"
+												+ "[2] Negative\n"
 												+ "[3] Neutral\n");
 										int recomendationType=scanner.nextInt();
 										RecomendationsType x;
@@ -2070,7 +2070,7 @@ public class Launcher
 										for (Recomendations recomendation:arrayRecomendationsGeneral) 
 										{
 											if (recomendation.getType().equals(x)) {
-												System.out.println("Borrada:\n"+recomendation+"\n");
+												System.out.println("Erased:\n"+recomendation+"\n");
 												System.out.println("Position: "+cont);
 												
 												for(int i=0;i<arrayRecomendationsGeneral.length;i++) 
