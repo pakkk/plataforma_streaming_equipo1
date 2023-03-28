@@ -180,15 +180,19 @@ public class Launcher
 							{
 								case 1:
 								{//--CREATE NEW DIRECTOR------
+									//--Director name
 									System.out.println("Tell me the name of the director");
 									String name=scanner2.nextLine();
 									clearScreen();
+									//Director Last name
 									System.out.println("Tell me the last name of the director");
 									String lastName=scanner2.nextLine();
 									clearScreen();
+									//Director Nationality
 									System.out.println("Tell me the nationality of the director");
 									String nationality=scanner2.nextLine();
 									clearScreen();
+									//Director Gender
 									System.out.println("Select the gender of the director: \n"
 											+ "[1] Man \n"
 											+ "[2] Woman \n"
@@ -208,10 +212,12 @@ public class Launcher
 									{
 										x=Genders.OTHER;
 									}
+									//Director year
 									System.out.println("Tell me the year of birth of the director:");
 									int year=scanner.nextInt();
 									clearScreen();
 									
+									//ADD the new director to general directors array.
 									arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length+1);
 									arrayDirectorsGeneral[arrayDirectorsGeneral.length-1]=new Directors(name, lastName, year, nationality, x,directorIdCont++);
 									System.out.println(arrayDirectorsGeneral[arrayDirectorsGeneral.length-1]);
@@ -231,7 +237,7 @@ public class Launcher
 									int selection1 = scanner.nextInt();
 									clearScreen();
 									if (selection1==1) 
-									{
+									{	//Search director by name
 										System.out.println("Indicate the name \n");
 										String name=scanner2.nextLine();
 										clearScreen();
@@ -245,7 +251,7 @@ public class Launcher
 										}
 									}
 									else if (selection1==2) 
-									{
+									{//Search director by last name / surname
 										System.out.println("Indicate the Surname \n");
 										String lastName=scanner2.nextLine();
 										clearScreen();
@@ -260,6 +266,7 @@ public class Launcher
 									}
 									else if (selection1==3) 
 									{
+										//Search director by year of birth
 										System.out.println("Indicates the year of birth \n");
 										int year=scanner.nextInt();
 										clearScreen();
@@ -274,6 +281,7 @@ public class Launcher
 									}
 									else if (selection1==4) 
 									{
+										//Search director by nationality
 										System.out.println("Indicate the nationality \n");
 										String nationality=scanner2.nextLine();
 										clearScreen();
@@ -288,6 +296,7 @@ public class Launcher
 									}
 									else 
 									{
+										//Search director by gender
 										System.out.println("Indicate the gender \n"
 												+ "[1] Man \n"
 												+ "[2] Woman \n"
@@ -332,7 +341,7 @@ public class Launcher
 									int selection1 = scanner.nextInt();
 									clearScreen();
 									if (selection1==1) 
-									{
+									{//Modify director by name
 										System.out.println("Indicate the name \n");
 										String name=scanner2.nextLine();
 										clearScreen();
@@ -406,7 +415,7 @@ public class Launcher
 										}
 									}
 									else if (selection1==2)
-									{
+									{//Modify director by last name
 										System.out.println("Indicate the last name \n");
 										String lastName=scanner2.nextLine();
 										clearScreen();
@@ -481,6 +490,7 @@ public class Launcher
 									}
 									else if (selection1==3) 
 									{
+										//Modify director by year of birth
 										System.out.println("Indicate the year of birth \n");
 										int nacimiento=scanner.nextInt();
 										clearScreen();
@@ -556,6 +566,7 @@ public class Launcher
 									}
 									else if (selection1==4) 
 									{
+										//Modify director by nationality
 										System.out.println("Indicate the nationality \n");
 										String nacionalidad=scanner2.nextLine();
 										clearScreen();
@@ -630,6 +641,7 @@ public class Launcher
 									}
 									else
 									{
+										//Modify director by gender
 										System.out.println("Indicate the gender \n"
 												+ "[1] Man \n"
 												+ "[2] Woman \n"
@@ -723,6 +735,7 @@ public class Launcher
 								}
 								case 4:
 								{
+									//----DELTE-DIRECTOR------
 									int cont=0;
 									System.out.println("Select the search method to delete: \n"
 											+ "[1] Name \n"
@@ -733,7 +746,8 @@ public class Launcher
 									int selection1 = scanner.nextInt();
 									clearScreen();
 									if (selection1==1) 
-									{
+									{	
+										//Delete director by name
 										System.out.println("Indicate the name: \n");
 										String name=scanner2.nextLine();
 										clearScreen();
@@ -766,6 +780,7 @@ public class Launcher
 									}
 									else if (selection1==2)
 									{
+										//Delete director by last name
 										System.out.println("Indicate the last name: \n");
 										String lastName=scanner2.nextLine();
 										clearScreen();
@@ -798,6 +813,7 @@ public class Launcher
 									}
 									else if (selection1==3) 
 									{
+										//Delete director by year of birth
 										System.out.println("Indicate the year of birth \n");
 										int year=scanner.nextInt();
 										clearScreen();
@@ -830,6 +846,7 @@ public class Launcher
 									}
 									else if (selection1==4) 
 									{
+										//Delete director by nationality
 										System.out.println("Indicate the nationality: \n");
 										String nationality=scanner2.nextLine();
 										clearScreen();
@@ -861,7 +878,8 @@ public class Launcher
 										cont=0;
 									}
 									else
-									{
+									{	
+										//Delete director by gender
 										System.out.println("Indicate the gender \n"
 												+ "[1] Man \n"
 												+ "[2] Woman \n"
@@ -908,13 +926,13 @@ public class Launcher
 										System.out.println(Arrays.toString(arrayDirectorsGeneral));
 										cont=0;
 									}
+									//----DELTE-DIRECTOR------
 								}
 									
 							}
 							break;
 							//----------DIRECTORS OPTIONS--------------
 						}
-						
 						
 						case 2:
 						{//----------ACTORS-OPTIONS--------------
@@ -924,8 +942,8 @@ public class Launcher
 							switch(selection) 
 							{
 								case 1:
-								{
-
+								{	
+									//-----CREATE-ACTOR-----
 									System.out.println("Tell me the name of actors");
 									String name=scanner2.nextLine();
 									clearScreen();
@@ -962,9 +980,11 @@ public class Launcher
 									arrayActorsGeneral[arrayActorsGeneral.length-1]=new Actors(name, apellido, nationality, x, year,actorIdCont++);
 									System.out.println(arrayActorsGeneral[arrayActorsGeneral.length-1]);
 									break;
+									//-----CREATE-ACTOR-----
 								}
 								case 2:
 								{
+									//-----SEARCH-ACTOR-----
 									clearScreen();
 									System.out.println("Select the search method: \n"
 											+ "[1] Name \n"
@@ -976,6 +996,7 @@ public class Launcher
 									clearScreen();
 									if (selection1==1) 
 									{
+										//Search Actor by name
 										System.out.println("Indicate the name \n");
 										String name=scanner2.nextLine();
 										clearScreen();
@@ -990,6 +1011,7 @@ public class Launcher
 									}
 									else if (selection1==2) 
 									{
+										//Search Actor by last name
 										System.out.println("Indicate the last name: \n");
 										String apellido=scanner2.nextLine();
 										clearScreen();
@@ -1004,6 +1026,7 @@ public class Launcher
 									}
 									else if (selection1==3) 
 									{
+										//Search Actor by year of birth
 										System.out.println("Indicate the year of birth: \n");
 										int year=scanner.nextInt();
 										clearScreen();
@@ -1018,6 +1041,7 @@ public class Launcher
 									}
 									else if (selection1==4) 
 									{
+										//Search Actor by nationality
 										System.out.println("Indicate the nationality \n");
 										String nationality=scanner2.nextLine();
 										clearScreen();
@@ -1032,6 +1056,7 @@ public class Launcher
 									}
 									else 
 									{
+										//Search Actor by gender
 										System.out.println("Indicate the gender \n"
 												+ "[1] Man \n"
 												+ "[2] Woman \n"
@@ -1061,9 +1086,11 @@ public class Launcher
 										}
 									}
 									break;
+									//-----SEARCH-ACTOR-----
 								}
 								case 3:
-								{
+								{ 
+									//-----MODIFY----ACTOR
 									clearScreen();
 									System.out.println("Select search method to modify the actor: \n"
 											+ "[1] Name \n"
@@ -1075,6 +1102,7 @@ public class Launcher
 									clearScreen();
 									if (selection1==1) 
 									{
+										//Modify Actor by name
 										System.out.println("Indicate the name: \n");
 										String name=scanner2.nextLine();
 										clearScreen();
@@ -1149,6 +1177,7 @@ public class Launcher
 									}
 									else if (selection1==2) 
 									{
+										//Modify Actor by last name
 										System.out.println("Indicate the last name: \n");
 										String apellido=scanner2.nextLine();
 										clearScreen();
@@ -1223,6 +1252,7 @@ public class Launcher
 									}
 									else if (selection1==3) 
 									{
+										//Modify Actor by year of birth
 										System.out.println("Tell me the year of birth \n");
 										int yearBirth=scanner.nextInt();
 										clearScreen();
@@ -1297,6 +1327,7 @@ public class Launcher
 									}
 									else if (selection1==4) 
 									{
+										//Modify Actor by nationality
 										System.out.println("Indicate the nationality \n");
 										String nationality=scanner2.nextLine();
 										clearScreen();
@@ -1371,6 +1402,7 @@ public class Launcher
 									}
 									else 
 									{
+										//Modify Actor by gender
 										System.out.println("Indicate the gender \n"
 												+ "[1] Man \n"
 												+ "[2] Woman \n"
@@ -1460,9 +1492,11 @@ public class Launcher
 										}
 									}
 									break;
+									//-----MODIFY----ACTOR
 								}
 								case 4:
 								{
+									//-----DELETE---ACTOR-----
 									int cont=0;
 									System.out.println("Select the search method to delete: \n"
 											+ "[1] Name \n"
@@ -1474,6 +1508,7 @@ public class Launcher
 									clearScreen();
 									if (selection1==1)
 									{
+										//Delete Actor by name
 										System.out.println("Indicate the name: \n");
 										String name=scanner2.nextLine();
 										clearScreen();
@@ -1506,6 +1541,7 @@ public class Launcher
 									}
 									else if (selection1==2) 
 									{
+										//Delete Actor by last name
 										System.out.println("Indicate the last name: \n");
 										String apellido=scanner2.nextLine();
 										clearScreen();
@@ -1537,6 +1573,7 @@ public class Launcher
 									}
 									else if (selection1==3)
 									{
+										//Delete Actor by year of birth
 										System.out.println("Indicate the year of birth: \n");
 										int year=scanner.nextInt();
 										clearScreen();
@@ -1568,6 +1605,7 @@ public class Launcher
 									}
 									else if (selection1==4) 
 									{
+										//Delete Actor by Nationality
 										System.out.println("Indicate the Nationality \n");
 										String nacionalidad=scanner2.nextLine();
 										clearScreen();
@@ -1600,6 +1638,7 @@ public class Launcher
 									}
 									else 
 									{
+										//Delete Actor by gender
 										System.out.println("Indicate the gender \n"
 												+ "[1] Man \n"
 												+ "[2] Woman \n"
@@ -1646,6 +1685,7 @@ public class Launcher
 										System.out.println(Arrays.toString(arrayActorsGeneral));
 										cont=0;
 									}
+									//-----DELETE---ACTOR-----
 								}
 									
 							}
