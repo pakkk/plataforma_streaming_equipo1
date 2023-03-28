@@ -92,9 +92,10 @@ public class Launcher
 		Subtitles subtitle4 = new Subtitles(AvaliableSubtitles.RU);
 		Subtitles subtitle5 = new Subtitles(AvaliableSubtitles.IT);
 		Subtitles subtitle6 = new Subtitles(AvaliableSubtitles.CH);
+		Subtitles subtitle7 = new Subtitles(AvaliableSubtitles.OTHER);
 
 		Subtitles[] arraySubtitles1 = {subtitle1,subtitle2};
-		Subtitles[] arraySubtitlesGeneral = {subtitle1,subtitle2,subtitle3,subtitle4,subtitle5,subtitle6};
+		Subtitles[] arraySubtitlesGeneral = {subtitle1,subtitle2,subtitle3,subtitle4,subtitle5,subtitle6,subtitle7};
 		//-----------------BASE OBJECTS-- SUBTITLES CLASS----------------------------		
 		
 		
@@ -765,10 +766,7 @@ public class Launcher
 													{
 														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
 													}
-													else 
-													{
-													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
-													}
+													
 												}
 												
 												arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
@@ -798,10 +796,7 @@ public class Launcher
 													{
 														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
 													}
-													else 
-													{
-													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
-													}
+													
 												}
 												
 												arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
@@ -831,10 +826,7 @@ public class Launcher
 													{
 														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
 													}
-													else 
-													{
-													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
-													}
+													
 												}
 												
 												arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
@@ -864,10 +856,7 @@ public class Launcher
 													{
 														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
 													}
-													else 
-													{
-													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
-													}
+													
 												}
 												
 												arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
@@ -913,10 +902,7 @@ public class Launcher
 													{
 														arrayDirectorsGeneral[i]=arrayDirectorsGeneral[arrayDirectorsGeneral.length-1];
 													}
-													else 
-													{
-													arrayDirectorsGeneral[i]=arrayDirectorsGeneral[i];
-													}
+													
 												}
 												
 												arrayDirectorsGeneral=Arrays.copyOf(arrayDirectorsGeneral, arrayDirectorsGeneral.length-1);
@@ -1526,10 +1512,7 @@ public class Launcher
 													{
 														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
 													}
-													else 
-													{
-													arrayActorsGeneral[i]=arrayActorsGeneral[i];
-													}
+													
 												}
 												
 												arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length-1);
@@ -1559,10 +1542,7 @@ public class Launcher
 													{
 														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
 													}
-													else 
-													{
-													arrayActorsGeneral[i]=arrayActorsGeneral[i];
-													}
+													
 												}
 												arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length-1);
 											}
@@ -1590,10 +1570,7 @@ public class Launcher
 													{
 														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
 													}
-													else
-													{
-													arrayActorsGeneral[i]=arrayActorsGeneral[i];
-													}
+													
 												}
 												
 												arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length-1);
@@ -1623,10 +1600,7 @@ public class Launcher
 													{
 														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
 													}
-													else
-													{
-													arrayActorsGeneral[i]=arrayActorsGeneral[i];
-													}
+													
 												}
 												
 												arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length-1);
@@ -1671,10 +1645,6 @@ public class Launcher
 													if(cont==i) 
 													{
 														arrayActorsGeneral[i]=arrayActorsGeneral[arrayActorsGeneral.length-1];
-													}
-													else 
-													{
-													arrayActorsGeneral[i]=arrayActorsGeneral[i];
 													}
 												}
 												
@@ -2068,10 +2038,7 @@ public class Launcher
 													{
 														arrayRecomendationsGeneral[i]=arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1];
 													}
-													else 
-													{
-														arrayRecomendationsGeneral[i]=arrayRecomendationsGeneral[i];
-													}
+													
 												}
 												
 												arrayRecomendationsGeneral=Arrays.copyOf(arrayRecomendationsGeneral, arrayRecomendationsGeneral.length-1);
@@ -2119,10 +2086,7 @@ public class Launcher
 													{
 														arrayRecomendationsGeneral[i]=arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1];
 													}
-													else 
-													{
-														arrayRecomendationsGeneral[i]=arrayRecomendationsGeneral[i];
-													}
+													
 												}
 												
 												arrayRecomendationsGeneral=Arrays.copyOf(arrayRecomendationsGeneral, arrayRecomendationsGeneral.length-1);
@@ -2207,29 +2171,61 @@ public class Launcher
 											}
 										}
 									}
-									else if (selection3==2) 
+									else if (selection3==2)
 									{
-										System.out.println("Indicate the type \n");
-										String TypeCategorie=scanner2.nextLine();
+										System.out.println("Indicate the type \n"
+												+ "[1] ACTION\n"
+												+ "[2] COMEDY\n"
+												+ "[3] TERROR\n"
+												+ "[4] SUSPENSE\n"
+												+ "[5] CHILDISH\n"
+												+ "[6] OTHER\n");
+										int typeCategorie=scanner.nextInt();
 										clearScreen();
 										System.out.println("Results: \n");
+										CategorieTypes typeOfCategory = CategorieTypes.OTHER;
+										if(typeCategorie==1) 
+										{
+											typeOfCategory=CategorieTypes.ACTION;
+										}
+										else if(typeCategorie==2) 
+										{
+											typeOfCategory=CategorieTypes.COMEDY;
+										}
+										else if(typeCategorie==3) 
+										{
+											typeOfCategory=CategorieTypes.TERROR;
+										} 
+										else if(typeCategorie==4) 
+										{
+											typeOfCategory=CategorieTypes.SUSPENSE;
+										} 
+										else if(typeCategorie==5) 
+										{
+											typeOfCategory=CategorieTypes.CHILDISH;
+										} 
+										else if(typeCategorie==6) 
+										{
+											typeOfCategory=CategorieTypes.OTHER;
+										} 
+										
 										for (Categorie categorie:arrayCategoriesGeneral) 
 										{
-											if (categorie.getName().equals(TypeCategorie)) 
+											if (categorie.getType().equals(typeOfCategory)) 
 											{
-												System.out.println(TypeCategorie);
+												System.out.println(categorie);
 											}
 										}
 									}
 									else if (selection3==3) 
 									{
 										System.out.println("Indicate the minimum age \n");
-										int MinAge=scanner.nextInt();
+										int minAge=scanner.nextInt();
 										clearScreen();
 										System.out.println("Results: \n");
 										for (Categorie categorie:arrayCategoriesGeneral) 
 										{
-											if (categorie.getMinAge()==(MinAge)) 
+											if (categorie.getMinAge()==(minAge)) 
 											{
 												System.out.println(categorie);
 											}
@@ -2405,10 +2401,7 @@ public class Launcher
 													{
 														arrayCategoriesGeneral[i]=arrayCategoriesGeneral[arrayCategoriesGeneral.length-1];
 													}
-													else 
-													{
-														arrayCategoriesGeneral[i]=arrayCategoriesGeneral[i];
-													}
+
 												}
 												
 												arrayCategoriesGeneral=Arrays.copyOf(arrayCategoriesGeneral, arrayCategoriesGeneral.length-1);
@@ -2437,10 +2430,7 @@ public class Launcher
 													{
 														arrayCategoriesGeneral[i]=arrayCategoriesGeneral[arrayCategoriesGeneral.length-1];
 													}
-													else 
-													{
-													arrayCategoriesGeneral[i]=arrayCategoriesGeneral[i];
-													}
+													
 												}
 												
 												arrayCategoriesGeneral=Arrays.copyOf(arrayCategoriesGeneral, arrayCategoriesGeneral.length-1);
@@ -2469,10 +2459,7 @@ public class Launcher
 													{
 														arrayCategoriesGeneral[i]=arrayCategoriesGeneral[arrayCategoriesGeneral.length-1];
 													}
-													else 
-													{
-													arrayCategoriesGeneral[i]=arrayCategoriesGeneral[i];
-													}
+													
 												}
 												
 												arrayCategoriesGeneral=Arrays.copyOf(arrayCategoriesGeneral, arrayCategoriesGeneral.length-1);
@@ -4240,9 +4227,7 @@ public class Launcher
 														+ "[7] Duration\n"
 														+ "[8] Creation Year\n"
 														+ "[9] Subtitle\n"
-														+ "[10] Number of Chapters\n"
-														+ "[11] Number of Seasons\n"
-														+ "[12] Id of the movie (Not recomended)\n");
+														+ "[10] Id of the movie (Not recomended)\n");
 												int selectedOption=scanner.nextInt();
 												if(selectedOption==1) 
 												{
@@ -4612,13 +4597,6 @@ public class Launcher
 												}
 												else if(selectedOption==10) 
 												{
-												}
-												else if(selectedOption==11) 
-												{
-
-												}
-												else if(selectedOption==12) 
-												{
 													System.out.println("Warning, changing an ID may endanger the system \n"
 															+ "*Change it only if you really know what you are doing...");
 													System.out.println("Indique nuevo ID de movie: (-2 para cancelar)");
@@ -4631,7 +4609,7 @@ public class Launcher
 													}
 													if(!cancelled) 
 													{
-														movie.setMovieId(newMovieId);;
+														movie.setMovieId(newMovieId);
 													}
 												}
 											}
@@ -4711,7 +4689,45 @@ public class Launcher
 							{
 								case 1:
 								{
-									Subtitles newSubtitle =new Subtitles(AvaliableSubtitles.OTHER);
+									System.out.println("Select the subtitle to create:\n"
+											+ "[1] ES\n"
+											+ "[2] EN\n"
+											+ "[3] DE\n"
+											+ "[4] RU\n"
+											+ "[5] IT\n"
+											+ "[6] CH\n"
+											+ "[7] OTHER");
+									int selectedSubtitle=scanner.nextInt();
+									AvaliableSubtitles subtitleToAdd=AvaliableSubtitles.OTHER;
+									if (selectedSubtitle==1) 
+									{
+										subtitleToAdd=AvaliableSubtitles.ES;
+									}
+									else if (selectedSubtitle==2) 
+									{
+										subtitleToAdd=AvaliableSubtitles.EN;
+									}
+									else if (selectedSubtitle==3) 
+									{
+										subtitleToAdd=AvaliableSubtitles.DE;
+									}
+									else if (selectedSubtitle==4) 
+									{
+										subtitleToAdd=AvaliableSubtitles.RU;
+									}
+									else if (selectedSubtitle==5) 
+									{
+										subtitleToAdd=AvaliableSubtitles.IT;
+									}
+									else if (selectedSubtitle==6) 
+									{
+										subtitleToAdd=AvaliableSubtitles.CH;
+									}
+									else if (selectedSubtitle==7) 
+									{
+										subtitleToAdd=AvaliableSubtitles.OTHER;
+									}
+									Subtitles newSubtitle =new Subtitles(subtitleToAdd);
 									arraySubtitlesGeneral=Arrays.copyOf(arraySubtitlesGeneral, arraySubtitlesGeneral.length+1);
 									arraySubtitlesGeneral[arraySubtitlesGeneral.length-1]=newSubtitle;
 									System.out.println(arraySubtitlesGeneral[arraySubtitlesGeneral.length-1]);
@@ -4729,10 +4745,11 @@ public class Launcher
 									clearScreen();
 									System.out.println("Select the subtitles you want to modify");
 									System.out.println(Arrays.toString(arraySubtitlesGeneral));
-									System.out.println("Use the numbers from 1 to the number of subtitles avaliable");
+									System.out.println("Use the numbers from 1 to "+arraySubtitlesGeneral.length+"\n");
 									int numSubtitles=scanner.nextInt();
 									numSubtitles--;
-									System.out.println("What subtitle you want to tranform it in");
+									System.out.println("What subtitle you want to tranform it in\n"
+											+ "[Numbers from 1 to 7]");
 									System.out.println("ES, EN, DE, RU, IT, CH, OTHER");
 									int selection = scanner.nextInt();
 									switch(selection)
@@ -4740,30 +4757,37 @@ public class Launcher
 										case 1:
 										{
 											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.ES);
+											break;
 										}
 										case 2:
 										{
 											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.EN);
+											break;
 										}
 										case 3:
 										{
 											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.DE);
+											break;
 										}
 										case 4:
 										{
 											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.RU);
+											break;
 										}
 										case 5:
 										{
 											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.IT);
+											break;
 										}
 										case 6:
 										{
 											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.CH);
+											break;
 										}
 										case 7:
 										{
 											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.OTHER);
+											break;
 										}
 									
 									}
@@ -4775,12 +4799,15 @@ public class Launcher
 									clearScreen();
 									System.out.println("Select the subtitles you want to delete");
 									System.out.println(Arrays.toString(arraySubtitlesGeneral));
-									System.out.println("Use the numbers from 1 to the number of subtitles avaliable");
+									
+									System.out.println("Use the numbers from 1 to "+arraySubtitlesGeneral.length+"\n");
 									int numSubtitles=scanner.nextInt();
 									if(numSubtitles<arraySubtitlesGeneral.length) 
 									{
 										numSubtitles--;
+										System.out.println("Subtitle to delete -> "+arraySubtitlesGeneral[numSubtitles]);
 										System.arraycopy(arraySubtitlesGeneral, numSubtitles+1, arraySubtitlesGeneral, numSubtitles, arraySubtitlesGeneral.length-(numSubtitles+1));
+										
 									}
 									arraySubtitlesGeneral=Arrays.copyOf(arraySubtitlesGeneral,arraySubtitlesGeneral.length-1);
 									System.out.println(Arrays.toString(arraySubtitlesGeneral));
@@ -4788,9 +4815,7 @@ public class Launcher
 								}
 									
 							}
-			
-						
-							
+		
 							break;
 						}
 						 //----------CATEGORIES-OPTIONS--------------
@@ -5704,7 +5729,7 @@ public class Launcher
 						System.out.println("Series and Movies: \n");
 						for (Series serie:arraySeriesGeneral) 
 						{
-							System.out.println("Title: "+serie.getTitle()+" |  Views : "+serie.getViews()+"");
+							System.out.println("Title: "+serie.getTitle()+" | Id: "+serie.getSerieId()+" |  Views : "+serie.getViews()+" | Type: "+serie.getType());
 						}
 						for (Movies movie:arrayMoviesGeneral) 
 						{
