@@ -5654,7 +5654,81 @@ public class Launcher
 				case 3:
 				{
 					//-----------VIEW SERIES OR MOVIES MENU------------
+					System.out.println("Select Option:\n"
+							+ "[1] View Series\n"
+							+ "[2] View Movies\n"
+							+ "[3] View Series and Movies\n");
+					int optionSelected = scanner.nextInt();
 					
+					if(optionSelected==1) 
+					{
+						//---VIEW--SERIES--SELECTED
+						System.out.println("Series: \n");
+						for (Series serie:arraySeriesGeneral) 
+						{
+							System.out.println("Title: "+serie.getTitle()+" | Id: "+serie.getSerieId()+" |  Views : "+serie.getViews()+" | Type: "+serie.getType());
+						}
+						System.out.println("Select ID for view:");
+						int idSelected = scanner.nextInt();
+						for (Series serie:arraySeriesGeneral) 
+						{
+							if(serie.getSerieId()==idSelected) 
+							{
+								System.out.println("Playing "+serie.getTitle());
+								serie.setViews(serie.getViews()+1);
+							}
+						}
+					}
+					else if(optionSelected==2) 
+					{
+						//---VIEW--MOVIES--SELECTED
+						System.out.println("Movies: \n");
+						for (Movies movie:arrayMoviesGeneral) 
+						{
+							System.out.println("Title: "+movie.getTitle()+" | Id: "+movie.getMovieId()+" |  Views : "+movie.getViews()+" | Type: "+movie.getType());
+						}
+						System.out.println("Select ID for view:");
+						int idSelected = scanner.nextInt();
+						for (Movies movie:arrayMoviesGeneral) 
+						{
+							if(movie.getMovieId()==idSelected) 
+							{
+								System.out.println("Playing "+movie.getTitle());
+								movie.setViews(movie.getViews()+1);
+							}
+						}
+					}
+					else if(optionSelected==3) 
+					{
+						//---VIEW--SERIES-AND-MOVIES--SELECTED
+						System.out.println("Series and Movies: \n");
+						for (Series serie:arraySeriesGeneral) 
+						{
+							System.out.println("Title: "+serie.getTitle()+" |  Views : "+serie.getViews()+"");
+						}
+						for (Movies movie:arrayMoviesGeneral) 
+						{
+							System.out.println("Title: "+movie.getTitle()+" | Id: "+movie.getMovieId()+" |  Views : "+movie.getViews()+" | Type: "+movie.getType());
+						}
+						System.out.println("Indicate title to view:");
+						String titleSelected = scanner2.nextLine();
+						for (Series serie:arraySeriesGeneral) 
+						{
+							if(serie.getTitle().equals(titleSelected)) 
+							{
+								System.out.println("Playing "+serie.getTitle());
+								serie.setViews(serie.getViews()+1);
+							}
+						}
+						for (Movies movie:arrayMoviesGeneral) 
+						{
+							if(movie.getTitle().equals(titleSelected)) 
+							{
+								System.out.println("Playing "+movie.getTitle());
+								movie.setViews(movie.getViews()+1);
+							}
+						}
+					}
 					break;
 				}
 				
