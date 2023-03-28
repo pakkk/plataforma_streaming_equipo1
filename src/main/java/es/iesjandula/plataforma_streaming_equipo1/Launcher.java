@@ -4654,25 +4654,95 @@ public class Launcher
 							//----------SUBTITLES-OPTIONS--------------
 							clearScreen();
 							IMenuSubtitles.subtitlesMenu();
-							int selected = scanner.nextInt();
-							if(selected==1) 
+							int selection2 = scanner.nextInt();
+							switch(selection2) 
 							{
-								//---SERIES SELECTED---
-								clearScreen();
-								IMenuSeries.seriesMenu();
-								
-								
+								case 1:
+								{
+									Subtitles newSubtitle =new Subtitles(AvaliableSubtitles.OTHER);
+									arraySubtitlesGeneral=Arrays.copyOf(arraySubtitlesGeneral, arraySubtitlesGeneral.length+1);
+									arraySubtitlesGeneral[arraySubtitlesGeneral.length-1]=newSubtitle;
+									System.out.println(arraySubtitlesGeneral[arraySubtitlesGeneral.length-1]);
+									break;
+								}
+								case 2:
+								{
+									clearScreen();
+									System.out.println("Avaliable Subtitles");
+									System.out.println(Arrays.toString(arraySubtitlesGeneral));
+									break;
+								}
+								case 3:
+								{
+									clearScreen();
+									System.out.println("Select the subtitles you want to modify");
+									System.out.println(Arrays.toString(arraySubtitlesGeneral));
+									System.out.println("Use the numbers from 1 to the number of subtitles avaliable");
+									int numSubtitles=scanner.nextInt();
+									numSubtitles--;
+									System.out.println("What subtitle you want to tranform it in");
+									System.out.println("ES, EN, DE, RU, IT, CH, OTHER");
+									int selection = scanner.nextInt();
+									switch(selection)
+									{
+										case 1:
+										{
+											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.ES);
+										}
+										case 2:
+										{
+											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.EN);
+										}
+										case 3:
+										{
+											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.DE);
+										}
+										case 4:
+										{
+											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.RU);
+										}
+										case 5:
+										{
+											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.IT);
+										}
+										case 6:
+										{
+											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.CH);
+										}
+										case 7:
+										{
+											arraySubtitlesGeneral[numSubtitles].setSubtitle(AvaliableSubtitles.OTHER);
+										}
+									
+									}
+									
+									break;
+								}
+								case 4:
+								{
+									clearScreen();
+									System.out.println("Select the subtitles you want to delete");
+									System.out.println(Arrays.toString(arraySubtitlesGeneral));
+									System.out.println("Use the numbers from 1 to the number of subtitles avaliable");
+									int numSubtitles=scanner.nextInt();
+									if(numSubtitles<arraySubtitlesGeneral.length) 
+									{
+										numSubtitles--;
+										System.arraycopy(arraySubtitlesGeneral, numSubtitles+1, arraySubtitlesGeneral, numSubtitles, arraySubtitlesGeneral.length-(numSubtitles+1));
+									}
+									arraySubtitlesGeneral=Arrays.copyOf(arraySubtitlesGeneral,arraySubtitlesGeneral.length-1);
+									System.out.println(Arrays.toString(arraySubtitlesGeneral));
+									break;
+								}
+									
 							}
-							else 
-							{
-								//---MOVIES SELECTED---
-								clearScreen();
-								IMenuMovies.moviesMenu();
-								
-								
-							}
+			
+						
+							
 							break;
 						}
+						 //----------CATEGORIES-OPTIONS--------------
+						
 						//----------SUBTITLES-OPTIONS--------------
 						
 						
