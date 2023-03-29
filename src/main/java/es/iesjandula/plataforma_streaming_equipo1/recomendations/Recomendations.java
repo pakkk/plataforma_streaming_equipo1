@@ -76,16 +76,5 @@ public class Recomendations
 	}
 
 
-	/* SETTERS AND GETTERS*/
-	
-	
-
-
-	
-	
-
-	
-	
-	
-	
+	/* SETTERS AND GETTERS*/	
 }

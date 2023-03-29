@@ -101,7 +101,8 @@ public class Audiovisuals
 	/**
 	 * @return the actors
 	 */
-	public Actors[] getActors() {
+	public Actors[] getActors() 
+	{
 		return this.actors;
 	}
 
@@ -109,7 +110,8 @@ public class Audiovisuals
 	/**
 	 * @param actors the actors to set
 	 */
-	public void setActors(Actors[] actors) {
+	public void setActors(Actors[] actors) 
+	{
 		this.actors = actors;
 	}
 

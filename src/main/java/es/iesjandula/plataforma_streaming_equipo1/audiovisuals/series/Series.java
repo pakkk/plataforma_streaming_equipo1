@@ -140,7 +140,4 @@ public class Series extends Audiovisuals
 	
 	
 	/* SETTERS AND GETTERS */
-	
-
-
 }

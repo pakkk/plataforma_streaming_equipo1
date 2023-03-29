@@ -342,7 +342,8 @@ public class Launcher
 									int selection1 = scanner.nextInt();
 									clearScreen();
 									if (selection1==1) 
-									{//Modify director by name
+									{
+										//Modify director by name
 										System.out.println("Indicate the name \n");
 										String name=scanner2.nextLine();
 										clearScreen();
@@ -416,7 +417,8 @@ public class Launcher
 										}
 									}
 									else if (selection1==2)
-									{//Modify director by last name
+									{
+										//Modify director by last name
 										System.out.println("Indicate the last name \n");
 										String lastName=scanner2.nextLine();
 										clearScreen();
@@ -921,7 +923,8 @@ public class Launcher
 						}
 						
 						case 2:
-						{//----------ACTORS-OPTIONS--------------
+						{
+							//----------ACTORS-OPTIONS--------------
 							clearScreen();
 							IMenuActors.actorMenu();
 							int selection = scanner.nextInt();
@@ -1665,7 +1668,8 @@ public class Launcher
 						}//----------ACTORS-OPTIONS--------------
 						
 						case 3:
-						{//----------RECOMENDATIONS-OPTIONS--------------
+						{
+							//----------RECOMENDATIONS-OPTIONS--------------
 							clearScreen();
 							IMenuRecommendations.recommendationMenu();
 							//String recommendations,RecomendationsType Type
@@ -3634,7 +3638,8 @@ public class Launcher
 								switch(selection) 
 								{
 									case 1:
-									{//--------movie--REGISTER------
+									{
+										//--------movie--REGISTER------
 										
 										System.out.println("Write the title of the movie"); 
 										String title="Undefined";
@@ -4059,8 +4064,10 @@ public class Launcher
 												System.out.println("Results: \n");
 												for (Movies movie:arrayMoviesGeneral) 
 												{
-													for(Categorie category : movie.getCateg()) {
-														if(category.getCategorieID()==categoryId) {
+													for(Categorie category : movie.getCateg()) 
+													{
+														if(category.getCategorieID()==categoryId) 
+														{
 															moviesContResults++;
 															System.out.println(movie);
 														}
@@ -4078,8 +4085,10 @@ public class Launcher
 												System.out.println("Results: \n");
 												for (Movies movie:arrayMoviesGeneral) 
 												{
-													for(Categorie category : movie.getCateg()) {
-														if(category.getName().contains(categoryName)) {
+													for(Categorie category : movie.getCateg()) 
+													{
+														if(category.getName().contains(categoryName)) 
+														{
 															moviesContResults++;
 															System.out.println(movie);
 														}
@@ -4881,8 +4890,10 @@ public class Launcher
 									for (Series serie:arraySeriesGeneral) 
 									{
 										
-										for(Categorie category : serie.getCateg()) {
-											if(category.getCategorieID()==categoryIdx) {
+										for(Categorie category : serie.getCateg()) 
+										{
+											if(category.getCategorieID()==categoryIdx) 
+											{
 												seriesContResults++;
 												System.out.println(serie);
 											}
@@ -4934,7 +4945,8 @@ public class Launcher
 								
 							}
 							else if(selectedOption==4) 
-							{//--------MOST-POPULARS TOP - POSITIVE RECOMENDATIONS----------
+							{
+								//--------MOST-POPULARS TOP - POSITIVE RECOMENDATIONS----------
 								System.out.println("Top Most popular Series:\n");
 								
 								int[] arrayOfPositiveRecomendations=new int[0];
@@ -5000,7 +5012,8 @@ public class Launcher
 								
 							}
 							else if(selectedOption==5) 
-							{//--------MOST-UN-POPULARS TOP - NEGATIVE RECOMENDATIONS----------
+							{
+								//--------MOST-UN-POPULARS TOP - NEGATIVE RECOMENDATIONS----------
 								System.out.println("Top Most popular Series:\n");
 								
 								int[] arrayOfNegativeRecomendations=new int[0];
