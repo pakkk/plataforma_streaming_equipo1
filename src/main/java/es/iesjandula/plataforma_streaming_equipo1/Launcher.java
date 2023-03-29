@@ -2297,7 +2297,7 @@ public class Launcher
 										System.out.println("Results: \n");
 										for (Categorie categorie:arrayCategoriesGeneral)
 										{
-											if (categorie.getName().equals(ageMin)) 
+											if (categorie.getMinAge()==(ageMin)) 
 											{
 												System.out.println("Found: ");
 												System.out.println(categorie);
@@ -2336,11 +2336,12 @@ public class Launcher
 									{
 										System.out.println("Indicate the description \n");
 										String desc=scanner2.nextLine();
+										desc=scanner2.nextLine();
 										clearScreen();
 										System.out.println("Results: \n");
 										for (Categorie categorie:arrayCategoriesGeneral)
 										{
-											if (categorie.getName().equals(desc)) 
+											if (categorie.getDescription().equals(desc)) 
 											{
 												System.out.println("Found: ");
 												System.out.println(categorie);
@@ -2447,12 +2448,12 @@ public class Launcher
 									else if (selection1==3) 
 									{
 										System.out.println("Indicate the description \n");
-										String year=scanner2.nextLine();
+										String desc=scanner2.nextLine();
 										clearScreen();
 										System.out.println("Results: \n");
 										for (Categorie categorie:arrayCategoriesGeneral) 
 										{
-											if (categorie.getName().equals(year)) 
+											if (categorie.getDescription().equals(desc)) 
 											{
 												System.out.println(categorie);
 												System.out.println("Position: "+cont);
