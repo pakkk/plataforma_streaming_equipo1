@@ -7,8 +7,6 @@ import es.iesjandula.plataforma_streaming_equipo1.IMenus.*;
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
 import es.iesjandula.plataforma_streaming_equipo1.adaptedlanguages.AdaptedLanguages;
 import es.iesjandula.plataforma_streaming_equipo1.adaptedlanguages.AvaliableAdaptedLanguages;
-import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.Audiovisuals;
-import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.Type;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.Movies;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.Series;
 import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
@@ -49,7 +47,7 @@ public class Launcher
 		Categorie category4 = new Categorie(CategorieTypes.SUSPENSE,categorieIdCont++);
 		Categorie category5 = new Categorie(CategorieTypes.CHILDISH,categorieIdCont++);
 		Categorie[] arrayCategories1 = {category1};
-		Categorie[] arrayCategoriesGeneral = {category1,category2,category3,category4};
+		Categorie[] arrayCategoriesGeneral = {category1,category2,category3,category4,category5};
 		//----------------BASE OBJECTS---CATEGORIE CLASS----------------------------
 		
 		
