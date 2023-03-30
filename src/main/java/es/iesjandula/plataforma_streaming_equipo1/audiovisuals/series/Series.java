@@ -33,14 +33,26 @@ public class Series extends Audiovisuals
 	/** Attribute - Recommendation */
 	private Recomendations recomendationsSerie[]=new Recomendations[0];
 	
-	/*
-	 * Constructor of the class , use the superClass constructor.
+	/**
 	 * 
+	 * @param actors the actors
+	 * @param directors the directors
+	 * @param categ the categories
+	 * @param tittle the title
+	 * @param originalLenguaje the orignal language
+	 * @param adaptedLenguajes the adapted languages
+	 * @param avaliableSubtitles the avaliable subtitles
+	 * @param duration the duration 
+	 * @param creationYear the creation year
+	 * @param nChapter the number of capitules
+	 * @param seasons the seasons
+	 * @param serieId the serie id
 	 */
 	public Series(Actors[] actors,Directors[] directors, Categorie[] categ, String tittle, String originalLenguaje,
 			AdaptedLanguages[] adaptedLenguajes, Subtitles[] avaliableSubtitles, double duration, int creationYear,int nChapter
 			,int seasons,int serieId) 
 	{
+		//Calls to pather constructor
 		super(Type.SERIE, directors, actors, categ, tittle, originalLenguaje, adaptedLenguajes, avaliableSubtitles, duration, creationYear);
 
 		this.nChapter=nChapter;
@@ -74,46 +86,57 @@ public class Series extends Audiovisuals
 		+ " Serie id: "+this.serieId+"\n";
 	}
 
-
-
 	/* SETTERS AND GETTERS */
 	
-	
-	public int getnChapter() 
-	{
-		//Get the number of capitules
-		return this.nChapter;
-	}
-
-	public void setnChapter(int nChapter) 
-	{
-		//Set the number of chapter
-		this.nChapter = nChapter;
-	}
-
-	public int getSeasons() 
-	{
-		//Get the seasons
-		return this.seasons;
-	}
-
-	public void setSeasons(int seasons) 
-	{
-		//Set the seasons
-		this.seasons = seasons;
-	}
-
-	public Recomendations[] getRecomendationsSerie() 
-	{
-		//Get the recommendations array
-		return this.recomendationsSerie;
-	}
-
+	/**
+	 * 
+	 * @param recomendationsSerie to set recomendation
+	 */
 	public void setRecomendationSerie(Recomendations recomendationsSerie) 
 	{
 		//Set recommendation 
 		this.recomendationsSerie=Arrays.copyOf(this.recomendationsSerie,this.recomendationsSerie.length+1);
 		this.recomendationsSerie[this.recomendationsSerie.length-1]=recomendationsSerie;
+	}
+
+
+	/**
+	 * @return the nChapter
+	 */
+	public int getnChapter() {
+		return nChapter;
+	}
+
+
+	/**
+	 * @param nChapter the nChapter to set
+	 */
+	public void setnChapter(int nChapter) {
+		this.nChapter = nChapter;
+	}
+
+
+	/**
+	 * @return the seasons
+	 */
+	public int getSeasons() {
+		return seasons;
+	}
+
+
+	/**
+	 * @param seasons the seasons to set
+	 */
+	public void setSeasons(int seasons) {
+		this.seasons = seasons;
+	}
+
+
+	/**
+	 * @return the recomendationsSerie
+	 */
+	public Recomendations[] getRecomendationsSerie() {
+		return recomendationsSerie;
 	}
 
 

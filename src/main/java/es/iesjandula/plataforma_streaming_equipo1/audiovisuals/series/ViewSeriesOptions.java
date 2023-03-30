@@ -3,11 +3,22 @@ package es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series;
 import java.util.Scanner;
 
 import es.iesjandula.plataforma_streaming_equipo1.animations.ViewAnimation;
-
+/**
+ * 
+ * @author David Martinez
+ *
+ */
 public interface ViewSeriesOptions 
 {
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param arraySeriesGeneral the series array general
+	 * @throws InterruptedException the possible exception
+	 */
 	public static void viewSeries(Scanner scanner,Series[] arraySeriesGeneral) throws InterruptedException 
 	{
+		//--VIEW--SERIES---
 		System.out.println("Series: \n");
 		for (Series serie:arraySeriesGeneral) 
 		{

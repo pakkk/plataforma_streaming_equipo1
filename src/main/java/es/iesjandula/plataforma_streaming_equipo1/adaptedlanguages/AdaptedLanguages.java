@@ -1,11 +1,16 @@
 package es.iesjandula.plataforma_streaming_equipo1.adaptedlanguages;
 
-public class AdaptedLanguages {
+public class AdaptedLanguages 
+{
 	
 	//Variables
+	/** Attribute - adaptedLang */
 	private AvaliableAdaptedLanguages adaptedLang;
 	
-	//Constructor
+	/**
+	 * 
+	 * @param adaptedLang the adapted type
+	 */
 	public AdaptedLanguages(AvaliableAdaptedLanguages adaptedLang) 
 	{
 		this.adaptedLang = adaptedLang;

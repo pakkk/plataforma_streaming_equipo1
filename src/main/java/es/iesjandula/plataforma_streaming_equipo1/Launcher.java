@@ -1,5 +1,6 @@
 package es.iesjandula.plataforma_streaming_equipo1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import es.iesjandula.plataforma_streaming_equipo1.IMenus.*;
 import es.iesjandula.plataforma_streaming_equipo1.actors.ActorOptions;
@@ -126,7 +127,7 @@ public class Launcher
 
 		AdaptedLanguages[] arrayAdaptedLanguages1 = {adaptLang1,adaptLang2};
 		AdaptedLanguages[] arrayAdaptedLanguagesGeneral = {adaptLang1,adaptLang2,adaptLang3,adaptLang4,adaptLang5,adaptLang6};
-		
+		System.out.println("Adapted languages "+Arrays.toString(arrayAdaptedLanguagesGeneral));
 		
 		//----------------BASE OBJECTS--MOVIES CLASS----------------------------
 		int movieIdCont=0;
@@ -148,8 +149,8 @@ public class Launcher
 		//----------------BASE OBJECTS--SERIES CLASS----------------------------
 		
 		
-		//ViewAnimation.loadingDataBase();
-		//ViewAnimation.mainTitle();
+		ViewAnimation.loadingDataBase();
+		ViewAnimation.mainTitle();
 		//-----------------------MENUS----------------------------------------
 		
 		//boolean for the main Loop
@@ -495,7 +496,7 @@ public class Launcher
 						else if(stadisticsSelection==3)
 						{
 							//---SERIRES--AND--MOVIES--STATISTICS--
-							SeriesMoviesStadisticsOptions.serieMovieStadistics(scanner, scanner2, arraySeriesGeneral, arrayMoviesGeneral);
+							SeriesMoviesStadisticsOptions.serieMovieStadistics(scanner, arraySeriesGeneral, arrayMoviesGeneral);
 						}
 					break;
 				}

@@ -38,12 +38,20 @@ public class Movies extends Audiovisuals
 	
 	
 	/* SETTERS AND GETTERS*/
+	/**
+	 * 
+	 * @return Recomendations array
+	 */
 	public Recomendations[] getRecomendationsMovies() 
 	{	
 		//Get recommendations
 		return this.recomendationsMovies;
 	}
 
+	/**
+	 * 
+	 * @param recomendationsMovies the recomendation
+	 */
 	public void setRecomendationMovies(Recomendations recomendationsMovies) 
 	{	
 		//Set Recommendation
@@ -51,7 +59,6 @@ public class Movies extends Audiovisuals
 		this.recomendationsMovies[this.recomendationsMovies.length-1]=recomendationsMovies;
 		
 	}
-	
 
 	/**
 	 * @return the movieId
@@ -80,10 +87,8 @@ public class Movies extends Audiovisuals
 	}
 	
 	
-	
 	/* SETTERS AND GETTERS*/
 
-	
 	
 	@Override
 	public String toString() 

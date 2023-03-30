@@ -12,6 +12,14 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
  */
 public interface DirectorOptions 
 {	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param scanner2 the scanner 2
+	 * @param arrayDirectorsGeneral array directors general
+	 * @param directorIdCont
+	 * @return
+	 */
 	public static Directors[] createDirector(Scanner scanner,Scanner scanner2,Directors[] arrayDirectorsGeneral,int directorIdCont) 
 	{
 		//--CREATE NEW DIRECTOR------
@@ -61,6 +69,12 @@ public interface DirectorOptions
 		//--CREATE NEW DIRECTOR------
 	}
 	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param scanner2 the scanner 2
+	 * @param arrayDirectorsGeneral the array of general directors
+	 */
 	public static void searchDirector(Scanner scanner,Scanner scanner2,Directors[] arrayDirectorsGeneral) 
 	{
 
@@ -165,6 +179,13 @@ public interface DirectorOptions
 		}
 	}
 	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param scanner2 the scanner 2
+	 * @param arrayDirectorsGeneral the array Directors general
+	 * @return directors array
+	 */
 	public static Directors[] modifyDirectors(Scanner scanner,Scanner scanner2,Directors[] arrayDirectorsGeneral) 
 	{
 
@@ -573,6 +594,13 @@ public interface DirectorOptions
 		return arrayDirectorsGeneral;
 	}
 	
+	/**
+	 *
+	 * @param scanner the scanner
+	 * @param scanner2 the scanner 2
+	 * @param arrayDirectorsGeneral the array of general directors
+	 * @return Directors array
+	 */
 	public static Directors[] deleteDirector(Scanner scanner,Scanner scanner2,Directors[] arrayDirectorsGeneral)
 	{
 
