@@ -29,6 +29,7 @@ import es.iesjandula.plataforma_streaming_equipo1.recomendations.RecomendationsT
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.AvaliableSubtitles;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.SubtitlesOptions;
+import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
 /*
  * The main class
@@ -36,13 +37,6 @@ import es.iesjandula.plataforma_streaming_equipo1.subtitles.SubtitlesOptions;
 
 public class Launcher
 {
-	public static void clearScreen() 
-	{	
-		//Method for clear the screen
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		
-	}
-	
 	public static void main(String[] args) 
 	{
 		//Scanner variables.
@@ -174,7 +168,7 @@ public class Launcher
 				case 1:
 				{
 					//-------------OPTIONS MENU CASE-------------
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					IGeneralsMenu.optionsGeneralMenu();
 					System.out.print("-> ");
 					//Getting the Main menu selection
@@ -185,7 +179,7 @@ public class Launcher
 						case 1:
 						{
 							//----------DIRECTORS OPTIONS--------------
-							clearScreen();
+							ScreenUtilities.clearScreen();
 							IMenuDirectors.directorMenu();
 							int selection = scanner.nextInt();
 							switch(selection) 
@@ -224,7 +218,7 @@ public class Launcher
 						case 2:
 						{
 							//----------ACTORS-OPTIONS--------------
-							clearScreen();
+							ScreenUtilities.clearScreen();
 							IMenuActors.actorMenu();
 							int selection = scanner.nextInt();
 							switch(selection) 
@@ -260,7 +254,7 @@ public class Launcher
 						case 3:
 						{
 							//----------RECOMENDATIONS-OPTIONS--------------
-							clearScreen();
+							ScreenUtilities.clearScreen();
 							IMenuRecommendations.recommendationMenu();
 							//String recommendations,RecomendationsType Type
 							
@@ -306,7 +300,7 @@ public class Launcher
 						case 4:
 						{
 							//----------CATEGORIES-OPTIONS--------------
-							clearScreen();
+							ScreenUtilities.clearScreen();
 							IMenuCategories.categoriesMenu();
 						 {
 							int selection2 = scanner.nextInt();
@@ -344,16 +338,16 @@ public class Launcher
 						case 5:
 						{
 							//----------MOVIES-SERIES-OPTIONS--------------
-							clearScreen();
+							ScreenUtilities.clearScreen();
 							IGeneralsMenu.selectMovieSerie();
 							int selected = scanner.nextInt();
 							if(selected==1) 
 							{
 								//---SERIES SELECTED OPTIONS---
-								clearScreen();
+								ScreenUtilities.clearScreen();
 								IMenuSeries.seriesMenu();
 								//----------SERIE OPTIONS--------------
-								clearScreen();
+								ScreenUtilities.clearScreen();
 								IMenuSeries.seriesMenu();
 								
 								int selection = scanner.nextInt();
@@ -390,7 +384,7 @@ public class Launcher
 							else 
 							{
 								//---MOVIES SELECTED OPTIONS---
-								clearScreen();
+								ScreenUtilities.clearScreen();
 								IMenuMovies.moviesMenu();
 								//----------MOVIE OPTIONS--------------
 								
@@ -430,7 +424,7 @@ public class Launcher
 						case 6:
 						{
 							//----------SUBTITLES-OPTIONS--------------
-							clearScreen();
+							ScreenUtilities.clearScreen();
 							IMenuSubtitles.subtitlesMenu();
 							int selection2 = scanner.nextInt();
 							switch(selection2) 

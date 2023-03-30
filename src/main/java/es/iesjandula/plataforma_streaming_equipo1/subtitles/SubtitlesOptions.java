@@ -3,15 +3,10 @@ package es.iesjandula.plataforma_streaming_equipo1.subtitles;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
+
 public class SubtitlesOptions 
 {
-	public static void clearScreen() 
-	{	
-		//Method for clear the screen
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		
-	}
-	
 	public static Subtitles[] createSubtitle(Scanner scanner,Subtitles[] arraySubtitlesGeneral) 
 	{
 		System.out.println("Select the subtitle to create:\n"
@@ -62,14 +57,14 @@ public class SubtitlesOptions
 	
 	public static void showSubtitles(Subtitles[] arraySubtitlesGeneral) 
 	{
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Avaliable Subtitles");
 		System.out.println(Arrays.toString(arraySubtitlesGeneral));
 	}
 	
 	public static Subtitles[] modifySubtitle(Scanner scanner,Subtitles[] arraySubtitlesGeneral) 
 	{
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the subtitles you want to modify");
 		System.out.println(Arrays.toString(arraySubtitlesGeneral));
 		System.out.println("Use the numbers from 1 to "+arraySubtitlesGeneral.length+"\n");
@@ -123,10 +118,9 @@ public class SubtitlesOptions
 		
 	}
 	
-	
 	public static Subtitles[] deleteSubtitle(Scanner scanner,Subtitles[] arraySubtitlesGeneral) 
 	{
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the subtitles you want to delete");
 		System.out.println(Arrays.toString(arraySubtitlesGeneral));
 		

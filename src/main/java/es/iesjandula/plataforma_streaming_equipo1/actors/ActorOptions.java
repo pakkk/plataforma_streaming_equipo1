@@ -4,33 +4,28 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
+import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
 public interface ActorOptions 
 {
-	public static void clearScreen() 
-	{	
-		//Method for clear the screen
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		
-	}
 	public static Actors[] createActor(Scanner scanner,Scanner scanner2,Actors[] arrayActorsGeneral,int actorIdCont) 
 	{
 		//-----CREATE-ACTOR-----
 		System.out.println("Tell me the name of actors");
 		String name=scanner2.nextLine();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Tell me the last name of actors");
 		String apellido=scanner2.nextLine();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Tell me the nationality of actors");
 		String nationality=scanner2.nextLine();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the gender of actors: \n"
 				+ "[1] Man \n"
 				+ "[2] Woman \n"
 				+ "[3] Other \n");
 		int gender = scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		Genders x=Genders.OTHER;
 		if (gender==1)
 		{
@@ -46,7 +41,7 @@ public interface ActorOptions
 		}
 		System.out.println("Tell me the year of birth of actors");
 		int year=scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		
 		arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length+1);
 		arrayActorsGeneral[arrayActorsGeneral.length-1]=new Actors(name, apellido, nationality, x, year,actorIdCont++);
@@ -57,7 +52,7 @@ public interface ActorOptions
 	
 	public static void searchActor(Scanner scanner,Scanner scanner2,Actors[] arrayActorsGeneral) 
 	{
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the search method: \n"
 				+ "[1] Name \n"
 				+ "[2] LastName \n"
@@ -65,13 +60,13 @@ public interface ActorOptions
 				+ "[4] Nationality \n"
 				+ "[5] Gender \n");
 		int selection1 = scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		if (selection1==1) 
 		{
 			//Search Actor by name
 			System.out.println("Indicate the name \n");
 			String name=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results : \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
@@ -86,7 +81,7 @@ public interface ActorOptions
 			//Search Actor by last name
 			System.out.println("Indicate the last name: \n");
 			String apellido=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results : \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
@@ -101,7 +96,7 @@ public interface ActorOptions
 			//Search Actor by year of birth
 			System.out.println("Indicate the year of birth: \n");
 			int year=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Actors actor:arrayActorsGeneral)
 			{
@@ -116,7 +111,7 @@ public interface ActorOptions
 			//Search Actor by nationality
 			System.out.println("Indicate the nationality \n");
 			String nationality=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results : \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
@@ -134,7 +129,7 @@ public interface ActorOptions
 					+ "[2] Woman \n"
 					+ "[3] Other \n");
 			int gender = scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			Genders x=Genders.OTHER;
 			if (gender==1) 
 			{
@@ -162,7 +157,7 @@ public interface ActorOptions
 	public static Actors[] modifyActor(Scanner scanner,Scanner scanner2,Actors[] arrayActorsGeneral) 
 	{
 		//-----MODIFY----ACTOR
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select search method to modify the actor: \n"
 				+ "[1] Name \n"
 				+ "[2] Last Name \n"
@@ -170,13 +165,13 @@ public interface ActorOptions
 				+ "[4] Nationality \n"
 				+ "[5] Gender \n");
 		int selection1 = scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		if (selection1==1) 
 		{
 			//Modify Actor by name
 			System.out.println("Indicate the name: \n");
 			String name=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
@@ -191,33 +186,33 @@ public interface ActorOptions
 							+ "[4] Nationality \n"
 							+ "[5] Gender \n");
 					int selection2 = scanner.nextInt();
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					if (selection2==1)
 					{
 						System.out.println("Tell me the name: ");
 						String name1=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setName(name1);
 					}
 					else if (selection2==2) 
 					{
 						System.out.println("Tell me the last name: ");
 						String lastName1=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setLastName(lastName1);
 					}
 					else if (selection2==3) 
 					{
 						System.out.println("Tell me the year of birth: ");
 						int year=scanner.nextInt();
-						clearScreen(); 
+						ScreenUtilities.clearScreen(); 
 						actor.setYear(year);
 					}
 					else if (selection2==4) 
 					{
 						System.out.println("Tell me the nationality: ");
 						String nationality=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setNationality(nationality);
 					}
 					else 
@@ -227,7 +222,7 @@ public interface ActorOptions
 								+ "[2] Woman \n"
 								+ "[3] Other \n");
 						int gender = scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						Genders x=Genders.OTHER;
 						if (gender==1)
 						{
@@ -251,7 +246,7 @@ public interface ActorOptions
 			//Modify Actor by last name
 			System.out.println("Indicate the last name: \n");
 			String apellido=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results : \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
@@ -266,33 +261,33 @@ public interface ActorOptions
 							+ "[4] Nationality \n"
 							+ "[5] Gender \n");
 					int selection2 = scanner.nextInt();
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					if (selection2==1)
 					{
 						System.out.println("Tell me the name: ");
 						String name1=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setName(name1);
 					}
 					else if (selection2==2)
 					{
 						System.out.println("Tell me the last name: ");
 						String lastName1=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setLastName(lastName1);
 					}
 					else if (selection2==3) 
 					{
 						System.out.println("Tell me the year of birth: ");
 						int year=scanner.nextInt(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setYear(year);
 					}
 					else if (selection2==4) 
 					{
 						System.out.println("Tell me the nationality ");
 						String nationality=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setNationality(nationality);
 					}
 					else 
@@ -302,7 +297,7 @@ public interface ActorOptions
 								+ "[2] Woman \n"
 								+ "[3] Other \n");
 						int gender = scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						Genders x=Genders.OTHER;
 						if (gender==1) 
 						{
@@ -326,7 +321,7 @@ public interface ActorOptions
 			//Modify Actor by year of birth
 			System.out.println("Tell me the year of birth \n");
 			int yearBirth=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results : \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
@@ -341,33 +336,33 @@ public interface ActorOptions
 							+ "[4] Nationality \n"
 							+ "[5] Gender \n");
 					int selection2 = scanner.nextInt();
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					if (selection2==1) 
 					{
 						System.out.println("Tell me the name: ");
 						String name1=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setName(name1);
 					}
 					else if (selection2==2) 
 					{
 						System.out.println("Tell me the last name: ");
 						String lastName1=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setLastName(lastName1);
 					}
 					else if (selection2==3)
 					{
 						System.out.println("Tell me the year of birth: ");
 						int year=scanner.nextInt();
-						clearScreen(); 
+						ScreenUtilities.clearScreen(); 
 						actor.setYear(year);
 					}
 					else if (selection2==4) 
 					{
 						System.out.println("Tell me the nationality: ");
 						String nationality=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setNationality(nationality);
 					}
 					else 
@@ -377,7 +372,7 @@ public interface ActorOptions
 								+ "[2] Woman \n"
 								+ "[3] Other \n");
 						int gender = scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						Genders x=Genders.OTHER;
 						if (gender==1) 
 						{
@@ -401,7 +396,7 @@ public interface ActorOptions
 			//Modify Actor by nationality
 			System.out.println("Indicate the nationality \n");
 			String nationality=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
@@ -416,33 +411,33 @@ public interface ActorOptions
 							+ "[4] Nationality \n"
 							+ "[5] Gender \n");
 					int selection2 = scanner.nextInt();
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					if (selection2==1) 
 					{
 						System.out.println("Tell me the name: ");
 						String name1=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setName(name1);
 					}
 					else if (selection2==2) 
 					{
 						System.out.println("Tell me the last name: ");
 						String lastName1=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setLastName(lastName1);
 					}
 					else if (selection2==3)
 					{
 						System.out.println("Tell me the year of birth: ");
 						int year=scanner.nextInt(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setYear(year);
 					}
 					else if (selection2==4) 
 					{
 						System.out.println("Tell me the nationality ");
 						String nationality1=scanner2.nextLine();
-						clearScreen(); 
+						ScreenUtilities.clearScreen(); 
 						actor.setNationality(nationality1);
 					}
 					else 
@@ -452,7 +447,7 @@ public interface ActorOptions
 								+ "[2] Woman \n"
 								+ "[3] Other \n");
 						int gender = scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						Genders x=Genders.OTHER;
 						if (gender==1)
 						{
@@ -479,7 +474,7 @@ public interface ActorOptions
 					+ "[2] Woman \n"
 					+ "[3] Other \n");
 			int gender = scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			Genders x=Genders.OTHER;
 			if (gender==1) 
 			{
@@ -507,33 +502,33 @@ public interface ActorOptions
 							+ "[4] Nationality \n"
 							+ "[5] Gender \n");
 					int selection2 = scanner.nextInt();
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					if (selection2==1) 
 					{
 						System.out.println("Tell me the name: ");
 						String name1=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setName(name1);
 					}
 					else if (selection2==2) 
 					{
 						System.out.println("Tell me the last name: ");
 						String lastName1=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setLastName(lastName1);
 					}
 					else if (selection2==3) 
 					{
 						System.out.println("Tell me the year of birth: ");
 						int year=scanner.nextInt(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setYear(year);
 					}
 					else if (selection2==4) 
 					{
 						System.out.println("Tell me the year of birth ");
 						String nationality=scanner2.nextLine(); 
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						actor.setNationality(nationality);
 					}
 					else 
@@ -543,7 +538,7 @@ public interface ActorOptions
 								+ "[2] Woman \n"
 								+ "[3] Other \n");
 						int gender1 = scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						Genders x1=Genders.OTHER;
 						if (gender1==1) 
 						{
@@ -577,13 +572,13 @@ public interface ActorOptions
 				+ "[4] Nationality \n"
 				+ "[5] Genero \n");
 		int selection1 = scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		if (selection1==1)
 		{
 			//Delete Actor by name
 			System.out.println("Indicate the name: \n");
 			String name=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
@@ -613,7 +608,7 @@ public interface ActorOptions
 			//Delete Actor by last name
 			System.out.println("Indicate the last name: \n");
 			String apellido=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
@@ -642,7 +637,7 @@ public interface ActorOptions
 			//Delete Actor by year of birth
 			System.out.println("Indicate the year of birth: \n");
 			int year=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Actors actor:arrayActorsGeneral)
 			{
@@ -671,7 +666,7 @@ public interface ActorOptions
 			//Delete Actor by Nationality
 			System.out.println("Indicate the Nationality \n");
 			String nacionalidad=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
@@ -704,7 +699,7 @@ public interface ActorOptions
 					+ "[2] Woman \n"
 					+ "[3] Other \n");
 			int gender = scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			Genders x=Genders.OTHER;
 			if (gender==1) 
 			{

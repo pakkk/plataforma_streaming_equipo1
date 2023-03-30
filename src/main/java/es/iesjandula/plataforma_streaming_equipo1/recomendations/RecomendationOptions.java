@@ -5,22 +5,17 @@ import java.util.Scanner;
 
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.Movies;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.Series;
+import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
 public interface RecomendationOptions 
 {
-	public static void clearScreen() 
-	{	
-		//Method for clear the screen
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		
-	}
 	public static Object[] createRecomendation(Scanner scanner,Scanner scanner2, Recomendations[] arrayRecomendationsGeneral,Movies[] arrayMoviesGeneral, Series[] arraySeriesGeneral) 
 	{
 
 		//-------------CREATE-RECOMENDATION-----------------
 		System.out.println("Texto de la Recomandacion:");
 		String texto=scanner2.nextLine();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Text of the recomemendation:\n"
 				+ "[1] Positive\n"
 				+ "[2] Negative\n"
@@ -40,7 +35,7 @@ public interface RecomendationOptions
 			x=RecomendationsType.NEUTRAL;
 		}
 
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		
 		arrayRecomendationsGeneral=Arrays.copyOf(arrayRecomendationsGeneral, arrayRecomendationsGeneral.length+1);
 		arrayRecomendationsGeneral[arrayRecomendationsGeneral.length-1]=new Recomendations(texto,x);
@@ -110,18 +105,18 @@ public interface RecomendationOptions
 	public static Recomendations[] modifyRecomendation(Scanner scanner,Scanner scanner2, Recomendations[] arrayRecomendationsGeneral) 
 	{
 		//-------------MODIFY-RECOMENDATION-----------------
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the search method to modify: \n"
 				+ "[1] Text \n"
 				+ "[2] Type (Positive,Negative,Neutral) \n");
 		int selection1 = scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		if (selection1==1) 
 		{
 			//--MODIFY-BY-TEXT--
 			System.out.println("Indicate the text \n");
 			String texto=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Recomendations recomendation:arrayRecomendationsGeneral) 
 			{
@@ -186,7 +181,7 @@ public interface RecomendationOptions
 				x=RecomendationsType.NEUTRAL;
 			}
 			
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Recomendations recomendation:arrayRecomendationsGeneral) 
 			{
@@ -238,19 +233,19 @@ public interface RecomendationOptions
 	{
 
 		//--DELETE---RECOMENDATIONS---
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the search method to delete: \n"
 				+ "[1] Text \n"
 				+ "[2] Type (Positive,Negative,Neutral) \n");
 		int selection1 = scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		int cont=0;
 		if (selection1==1) 
 		{
 			//--DELETE-BY-TEXT--
 			System.out.println("Indicate the text \n");
 			String texto=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Recomendations recomendation:arrayRecomendationsGeneral) 
 			{
@@ -346,7 +341,7 @@ public interface RecomendationOptions
 				x=RecomendationsType.NEUTRAL;
 			}
 			
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Recomendations recomendation:arrayRecomendationsGeneral) 
 			{
@@ -418,19 +413,19 @@ public interface RecomendationOptions
 	{
 
 		//-------------SEARCH-RECOMENDATIONS-----------------
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the search method: \n"
 				+ "[1] Text \n"
 				+ "[2] Type (Positive,Negative,Neutral) \n"
 				+ "[3] Serie or Movie ID\n");
 		int selection1 = scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		if (selection1==1) 
 		{
 			//--SARCH-BY-TEXT--
 			System.out.println("Indicate the text \n");
 			String text=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Recomendations recomendation:arrayRecomendationsGeneral) 
 			{
@@ -464,7 +459,7 @@ public interface RecomendationOptions
 				x=RecomendationsType.NEUTRAL;
 			}
 			
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Recomendations recomendation:arrayRecomendationsGeneral) 
 			{

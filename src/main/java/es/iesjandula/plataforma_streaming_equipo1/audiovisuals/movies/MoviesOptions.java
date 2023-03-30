@@ -10,16 +10,10 @@ import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
 import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.AvaliableSubtitles;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
+import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
 public interface MoviesOptions 
 {
-	public static void clearScreen() 
-	{	
-		//Method for clear the screen
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		
-	}
-	
 	public static Movies[] createMovie(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral,Directors[] arrayDirectorsGeneral,Actors[] arrayActorsGeneral,Categorie[] arrayCategoriesGeneral,Subtitles[] arraySubtitlesGeneral,int movieIdCont) 
 	{
 
@@ -28,7 +22,7 @@ public interface MoviesOptions
 		System.out.println("Write the title of the movie"); 
 		String title="Undefined";
 		title=scanner2.nextLine();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		
 		int directorIdInsert = 0;
 		int directorCountResult=0;
@@ -37,7 +31,7 @@ public interface MoviesOptions
 		{
 			System.out.println("Write the id of the Director/s (-1 to finish): ");
 			directorIdInsert=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			if(directorIdInsert>=0) 
 			{
 				for(Directors director:arrayDirectorsGeneral) 
@@ -53,7 +47,7 @@ public interface MoviesOptions
 			System.out.println("Directors finded to add: "+directorCountResult);
 		}
 		
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		int categoryIdInsert = 0;
 		int categoryCountResult = 0;
 		Categorie[] arrayOfCategories= new Categorie[0];
@@ -61,7 +55,7 @@ public interface MoviesOptions
 		{
 			System.out.println("Write the Id of the Categorie (-1 to cancel): ");
 			categoryIdInsert=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			
 			if(categoryIdInsert>=0) 
 			{
@@ -85,7 +79,7 @@ public interface MoviesOptions
 		{
 			System.out.println("Write the id of the actors (-1 to finish): ");
 			actorIdInsert=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			if(actorIdInsert>=0) 
 			{
 				for(Actors actor:arrayActorsGeneral) 
@@ -103,7 +97,7 @@ public interface MoviesOptions
 		
 		System.out.println("Write the Original lenguage: ");
 		String originalLenguage=scanner2.nextLine();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		
 		int adaptedLang=1;
 		int adaptedLangCont=0;
@@ -180,7 +174,7 @@ public interface MoviesOptions
 			System.out.println("Adapted Languages added: "+adaptedLangCont);
 		}
 		
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the Subtitles: ");
 		
 		int subTitle=2;
@@ -256,12 +250,12 @@ public interface MoviesOptions
 			}
 			System.out.println("Subtitles added : "+subtitlesCont);
 		}
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the total duration (Time in minutes): ");
 		double minutosTiempoDuracion=0;
 		minutosTiempoDuracion=scanner.nextDouble();
 
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the year of creation: ");
 		int anyoCreacion=9999;
 		anyoCreacion=scanner.nextInt();
@@ -276,7 +270,7 @@ public interface MoviesOptions
 	
 	public static void searchMovie(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral) 
 	{
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the search method: \n"
 				+ "[1] Actors \n"
 				+ "[2] Directors \n"
@@ -289,14 +283,14 @@ public interface MoviesOptions
 				+ "[9] Subtitle\n"
 				+ "[10] Id of the movie\n");
 		int selection1 = scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		if (selection1==1) 
 		{
 			//---------Search By Actor (ID)------------
 			int moviesContResults=0;
 			System.out.println("Indicate the Id of the actor \n");
 			int actorId=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Movies movie:arrayMoviesGeneral) 
 			{
@@ -318,7 +312,7 @@ public interface MoviesOptions
 			int moviesContResults=0;
 			System.out.println("Indicate the Id of the Director \n");
 			int directorId=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Movies movie:arrayMoviesGeneral) 
 			{
@@ -340,7 +334,7 @@ public interface MoviesOptions
 			int moviesContResults=0;
 			System.out.println("Indicate the Title or part of it: \n");
 			String titleSearch=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Movies movie:arrayMoviesGeneral) 
 			{
@@ -358,7 +352,7 @@ public interface MoviesOptions
 			int moviesContResults=0;
 			System.out.println("Indicate the Lenguage Original or part of it: \n");
 			String origLanguageSearch=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Movies movie:arrayMoviesGeneral) 
 			{
@@ -383,7 +377,7 @@ public interface MoviesOptions
 					+ "[6] CH\n"
 					+ "[Other] Other");
 			int adaptedLanguageSelectionSearch=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			AvaliableAdaptedLanguages adaptedSearch=null;
 			if(adaptedLanguageSelectionSearch==1) 
 			{
@@ -443,7 +437,7 @@ public interface MoviesOptions
 				//---------Search By Category (ID)-----------
 				System.out.println("Indicate the Id of the categorie \n");
 				int categoryId=scanner.nextInt();
-				clearScreen();
+				ScreenUtilities.clearScreen();
 				System.out.println("Results: \n");
 				for (Movies movie:arrayMoviesGeneral) 
 				{
@@ -464,7 +458,7 @@ public interface MoviesOptions
 				//---------Search By Name-----------
 				System.out.println("Indicate the Name of the categorie \n");
 				String categoryName=scanner2.nextLine();
-				clearScreen();
+				ScreenUtilities.clearScreen();
 				System.out.println("Results: \n");
 				for (Movies movie:arrayMoviesGeneral) 
 				{
@@ -488,7 +482,7 @@ public interface MoviesOptions
 			int moviesContResults=0;
 			System.out.println("Indicate the total duration: \n");
 			double durationTotalTime=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Movies movie:arrayMoviesGeneral) 
 			{
@@ -506,7 +500,7 @@ public interface MoviesOptions
 			int moviesContResults=0;
 			System.out.println("Indicate the total duration: \n");
 			int creationYear=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Movies movie:arrayMoviesGeneral) 
 			{
@@ -533,7 +527,7 @@ public interface MoviesOptions
 					+ "[Other] END...");
 			int subtitleSearch=scanner.nextInt();
 			AvaliableSubtitles subtitleToFind=null;
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			if(subtitleSearch==1) 
 			{
 				subtitleToFind=AvaliableSubtitles.ES;
@@ -583,7 +577,7 @@ public interface MoviesOptions
 			int moviesContResults=0;
 			System.out.println("Indicate the Id of the movie \n");
 			int movieId=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Movies movie:arrayMoviesGeneral) 
 			{
@@ -631,7 +625,7 @@ public interface MoviesOptions
 					{
 						System.out.println("Write the Ids of the new actors (-1 to finish)(-2 to cancel): ");
 						actorIdInsert=scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						if(actorIdInsert>=0) 
 						{
 							for(Actors actor:arrayActorsGeneral) 
@@ -669,7 +663,7 @@ public interface MoviesOptions
 					{
 						System.out.println("Write the Ids of the new Directors (-1 to finish)(-2 to cancel): ");
 						directorIdInsert=scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						if(directorIdInsert>=0) 
 						{
 							for(Directors director:arrayDirectorsGeneral) 
@@ -703,7 +697,7 @@ public interface MoviesOptions
 					System.out.println("Tell me the new Title of the movie (-2 to cancel)"); 
 					String title="Undefined-title";
 					title=scanner2.nextLine();
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					if(title.equals("-2")) 
 					{
 						cancelled=true;
@@ -722,7 +716,7 @@ public interface MoviesOptions
 					System.out.println("Tell me the new Original Language (-2 to cancel)"); 
 					String orignalLang="Undefined-Original-Lang";
 					orignalLang=scanner2.nextLine();
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					if(orignalLang.equals("-2")) 
 					{
 						cancelled=true;
@@ -827,7 +821,7 @@ public interface MoviesOptions
 				}
 				else if(selectedOption==6) 
 				{
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					boolean cancelled=false;
 					int categoryIdInsert = 0;
 					int categoryCountResult = 0;
@@ -836,7 +830,7 @@ public interface MoviesOptions
 					{
 						System.out.println("Write the Id of the Categorie (-1 to cancel): ");
 						categoryIdInsert=scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						
 						if(categoryIdInsert>=0) 
 						{
@@ -866,7 +860,7 @@ public interface MoviesOptions
 				else if(selectedOption==7) 
 				{
 					boolean cancelled=false;
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					System.out.println("Select the new total duration  (Time in minutes) (-2 to cacel): ");
 					double timeMinutesDuration=0;
 					timeMinutesDuration=scanner.nextDouble();
@@ -883,7 +877,7 @@ public interface MoviesOptions
 				else if(selectedOption==8) 
 				{
 					boolean cancelled=false;
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					System.out.println("Select the year of creation (-2 to cancel): ");
 					int yearCreation=9999;
 					yearCreation=scanner.nextInt();
@@ -899,7 +893,7 @@ public interface MoviesOptions
 				}
 				else if(selectedOption==9) 
 				{
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					System.out.println("Selecct the new subtitle: ");
 					boolean cancelled=false;
 					int subtitle=2;

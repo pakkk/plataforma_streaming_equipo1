@@ -10,15 +10,10 @@ import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
 import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.AvaliableSubtitles;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
+import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
 public interface SeriesOptions 
 {
-	public static void clearScreen() 
-	{	
-		//Method for clear the screen
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		
-	}
 	public static Series[] createSerie(Scanner scanner,Scanner scanner2,Series[] arraySeriesGeneral,Directors[] arrayDirectorsGeneral,Actors[] arrayActorsGeneral,Categorie[] arrayCategoriesGeneral,Subtitles[] arraySubtitlesGeneral,int serieIdCont) 
 	{
 
@@ -27,7 +22,7 @@ public interface SeriesOptions
 		System.out.println("Tell me the Title of the Series"); 
 		String title="Undefined";
 		title=scanner2.nextLine();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		
 		int directorIdInsert = 0;
 		int directorCountResult=0;
@@ -36,7 +31,7 @@ public interface SeriesOptions
 		{
 			System.out.println("Tell me the Id of the Directors (-1 to finish): ");
 			directorIdInsert=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			if(directorIdInsert>=0) 
 			{
 				for(Directors director:arrayDirectorsGeneral) 
@@ -52,7 +47,7 @@ public interface SeriesOptions
 			System.out.println("Directors found for add: "+directorCountResult);
 		}
 		
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		int categoryIdInsert = 0;
 		int categoryCountResult = 0;
 		Categorie[] arrayOfCategories= new Categorie[0];
@@ -60,7 +55,7 @@ public interface SeriesOptions
 		{
 			System.out.println("Write the Id of the Categorie (-1 to cancel): ");
 			categoryIdInsert=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			
 			if(categoryIdInsert>=0) 
 			{
@@ -84,7 +79,7 @@ public interface SeriesOptions
 		{
 			System.out.println("Tell me the Id of the Actors (-1 to finish): ");
 			actorIdInsert=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			if(actorIdInsert>=0) 
 			{
 				for(Actors actor:arrayActorsGeneral) 
@@ -102,7 +97,7 @@ public interface SeriesOptions
 		
 		System.out.println("Write the Original language: ");
 		String originalLenguage=scanner2.nextLine();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		
 		int adaptedLang=1;
 		int adaptedLangCont=0;
@@ -179,7 +174,7 @@ public interface SeriesOptions
 			System.out.println("Adapted Languages added: "+adaptedLangCont);
 		}
 		
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the Subtitles: ");
 		
 		int subTitle=2;
@@ -255,26 +250,26 @@ public interface SeriesOptions
 			}
 			System.out.println("Subtitles added : "+subtitlesCont);
 		}
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select a total duration (in minutes): ");
 		double minutosTiempoDuracion=0;
 		minutosTiempoDuracion=scanner.nextDouble();
 
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select a creation year: ");
 		int anyoCreacion=9999;
 		anyoCreacion=scanner.nextInt();
 		
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select a number of chapters: ");
 		int numeroCapitulos=0;
 		numeroCapitulos=scanner.nextInt();
 		
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select a number of seasons: ");
 		int numeroTemporadas=0;
 		numeroTemporadas=scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 
 		arraySeriesGeneral=Arrays.copyOf(arraySeriesGeneral, arraySeriesGeneral.length+1);
 		arraySeriesGeneral[arraySeriesGeneral.length-1]=new Series(arrayOfActors,arrayOfDirectors,arrayOfCategories,title,originalLenguage,adaptedLanguagesArray,subTitlesArray,minutosTiempoDuracion,anyoCreacion,numeroCapitulos,numeroTemporadas,serieIdCont++);
@@ -285,7 +280,7 @@ public interface SeriesOptions
 	
 	public static void searchSerie(Scanner scanner,Scanner scanner2,Series[] arraySeriesGeneral) 
 	{
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the search method: \n"
 				+ "[1] Actors \n"
 				+ "[2] Directores \n"
@@ -300,14 +295,14 @@ public interface SeriesOptions
 				+ "[11] Number of Seasons\n"
 				+ "[12] Id of the Serie\n");
 		int selection1 = scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		if (selection1==1) 
 		{
 			//---------Search By Actor (ID)------------
 			int seriesContResults=0;
 			System.out.println("Indicate the Id of the actor \n");
 			int actorId=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Series serie:arraySeriesGeneral) 
 			{
@@ -329,7 +324,7 @@ public interface SeriesOptions
 			int seriesContResults=0;
 			System.out.println("Indicate the Id of the Director \n");
 			int directorId=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Series serie:arraySeriesGeneral) 
 			{
@@ -351,7 +346,7 @@ public interface SeriesOptions
 			int seriesContResults=0;
 			System.out.println("Indicate the Title or part of it: \n");
 			String titleSearch=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Series serie:arraySeriesGeneral) 
 			{
@@ -368,7 +363,7 @@ public interface SeriesOptions
 			int seriesContResults=0;
 			System.out.println("Indicate the original lenguaje or part of it: \n");
 			String origLanguageSearch=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Series serie:arraySeriesGeneral) 
 			{
@@ -393,7 +388,7 @@ public interface SeriesOptions
 					+ "[6] CH\n"
 					+ "[Other] Other");
 			int adaptedLanguageSelectionSearch=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			AvaliableAdaptedLanguages adaptedSearch=null;
 			if(adaptedLanguageSelectionSearch==1) 
 			{
@@ -451,7 +446,7 @@ public interface SeriesOptions
 				//---------Search By Category (ID)-----------
 				System.out.println("Indicate the Id of the categorie \n");
 				int categoryId=scanner.nextInt();
-				clearScreen();
+				ScreenUtilities.clearScreen();
 				System.out.println("Results: \n");
 				for (Series serie:arraySeriesGeneral) 
 				{
@@ -470,7 +465,7 @@ public interface SeriesOptions
 				//---------Search By Name-----------
 				System.out.println("Indicate the Name of the categorie \n");
 				String categoryName=scanner2.nextLine();
-				clearScreen();
+				ScreenUtilities.clearScreen();
 				System.out.println("Results: \n");
 				for (Series serie:arraySeriesGeneral) 
 				{
@@ -492,7 +487,7 @@ public interface SeriesOptions
 			int seriesContResults=0;
 			System.out.println("Indicate the total duration: \n");
 			double durationTotalTime=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Series serie:arraySeriesGeneral) 
 			{
@@ -510,7 +505,7 @@ public interface SeriesOptions
 			int seriesContResults=0;
 			System.out.println("Indicate the total duration: \n");
 			int creationYear=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Series serie:arraySeriesGeneral) 
 			{
@@ -537,7 +532,7 @@ public interface SeriesOptions
 					+ "[Other] END...");
 			int subtitleSearch=scanner.nextInt();
 			AvaliableSubtitles subtitleToFind=null;
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			if(subtitleSearch==1) 
 			{
 				subtitleToFind=AvaliableSubtitles.ES;
@@ -587,7 +582,7 @@ public interface SeriesOptions
 			int seriesContResults=0;
 			System.out.println("Indicate the number of chapters \n");
 			int numberOfChapters=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Series serie:arraySeriesGeneral) 
 			{
@@ -605,7 +600,7 @@ public interface SeriesOptions
 			int seriesContResults=0;
 			System.out.println("Indicate the number of seasons \n");
 			int numberOfSeasons=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Series serie:arraySeriesGeneral) 
 			{
@@ -623,7 +618,7 @@ public interface SeriesOptions
 			int seriesContResults=0;
 			System.out.println("Indicate the Id de la Serie \n");
 			int serieId=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Series serie:arraySeriesGeneral) 
 			{
@@ -674,7 +669,7 @@ public interface SeriesOptions
 					{
 						System.out.println("Write the Id of the Actor (-1 to finish) (-2 to cancel): ");
 						actorIdInsert=scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						if(actorIdInsert>=0) 
 						{
 							for(Actors actor:arrayActorsGeneral) 
@@ -712,7 +707,7 @@ public interface SeriesOptions
 					{
 						System.out.println("Write the Id of the Director (-1 to finish) (-2 to cancel): ");
 						directorIdInsert=scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						if(directorIdInsert>=0) 
 						{
 							for(Directors director:arrayDirectorsGeneral) 
@@ -746,7 +741,7 @@ public interface SeriesOptions
 					System.out.println("Write the new tittle for the Serie (-2 to cancel)"); 
 					String title="Undefined-title";
 					title=scanner2.nextLine();
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					if(title.equals("-2")) 
 					{
 						cancelled=true;
@@ -765,7 +760,7 @@ public interface SeriesOptions
 					System.out.println("Write the new Original lenguage (-2 to cancel)"); 
 					String orignalLang="Undefined-Original-Lang";
 					orignalLang=scanner2.nextLine();
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					if(orignalLang.equals("-2")) 
 					{
 						cancelled=true;
@@ -870,7 +865,7 @@ public interface SeriesOptions
 				}
 				else if(selectedOption==6) 
 				{
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					boolean cancelled=false;
 					int categoryIdInsert = 0;
 					int categoryCountResult = 0;
@@ -879,7 +874,7 @@ public interface SeriesOptions
 					{
 						System.out.println("Write the Id of the Categorie (-1 to cancel): ");
 						categoryIdInsert=scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						
 						if(categoryIdInsert>=0) 
 						{
@@ -909,7 +904,7 @@ public interface SeriesOptions
 				else if(selectedOption==7) 
 				{
 					boolean cancelled=false;
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					System.out.println("Select the new total duration  (Time in minutes) (-2 to cacel): ");
 					double minutosTiempoDuracion=0;
 					minutosTiempoDuracion=scanner.nextDouble();
@@ -926,7 +921,7 @@ public interface SeriesOptions
 				else if(selectedOption==8) 
 				{
 					boolean cancelled=false;
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					System.out.println("Select the year of creation (-2 to cancel): ");
 					int anyoCreacion=9999;
 					anyoCreacion=scanner.nextInt();
@@ -942,7 +937,7 @@ public interface SeriesOptions
 				}
 				else if(selectedOption==9) 
 				{
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					System.out.println("Select the new Subtitles: ");
 					boolean cancelled=false;
 					int subTitle=2;
@@ -1031,7 +1026,7 @@ public interface SeriesOptions
 				}
 				else if(selectedOption==10) 
 				{
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					boolean cancelled=false;
 					System.out.println("Select a new number of chapters: (-2 to cancel) ");
 					int numeroCapitulos=0;
@@ -1049,7 +1044,7 @@ public interface SeriesOptions
 				else if(selectedOption==11) 
 				{
 					boolean cancelled=false;
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					System.out.println("Select a number of seasons: ");
 					int numeroTemporadas=0;
 					numeroTemporadas=scanner.nextInt();

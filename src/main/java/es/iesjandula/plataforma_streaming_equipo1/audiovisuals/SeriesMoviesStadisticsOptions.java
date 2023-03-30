@@ -9,21 +9,15 @@ import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.Series;
 import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.RecomendationsType;
+import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
 public interface SeriesMoviesStadisticsOptions 
 {
-	public static void clearScreen() 
-	{	
-		//Method for clear the screen
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		
-	}
-	
 	public static void serieMovieStadistics(Scanner scanner,Scanner scanner2,Series[] arraySeriesGeneral,Movies[] arrayMoviesGeneral) 
 	{
 
 		//--MOVIE--AND SERIES---STADISTICS---------------
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select option:\n"
 				+ "[1] Number Of Total Series and Movies\n"
 				+ "[2] Information Of Sereis and Movies , by Categorys\n"
@@ -36,7 +30,7 @@ public interface SeriesMoviesStadisticsOptions
 		if(selectedOption==1) 
 		{
 			//--MOVIE--AND SERIES---NUMBERS---------------
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Total Series in the System : "+arraySeriesGeneral.length);
 			System.out.println("Total Movies in the System : "+arrayMoviesGeneral.length);
 			System.out.println("Sub-Total : "+(arraySeriesGeneral.length+arrayMoviesGeneral.length)+"");
@@ -59,7 +53,7 @@ public interface SeriesMoviesStadisticsOptions
 				}
 			}
 			
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results : \n");
 			for(int categoryIdx: arrayOfCategoriesId) 
 			{
@@ -117,7 +111,7 @@ public interface SeriesMoviesStadisticsOptions
 				}
 			}
 			
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results : \n");
 			for(int actorIdx: arrayOfActorsId) 
 			{

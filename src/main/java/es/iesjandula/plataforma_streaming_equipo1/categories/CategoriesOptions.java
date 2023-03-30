@@ -3,15 +3,10 @@ package es.iesjandula.plataforma_streaming_equipo1.categories;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
+
 public class CategoriesOptions 
 {
-	public static void clearScreen() 
-	{	
-		//Method for clear the screen
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		
-	}
-	
 	public static Categorie[] createCategory(Scanner scanner,Scanner scanner2,Categorie[] arrayCategoriesGeneral,int categorieIdCont) 
 	{
 		CategorieTypes x= CategorieTypes.OTHER;
@@ -19,7 +14,7 @@ public class CategoriesOptions
 		System.out.println("Write the name of the categorie");
 		String nameCategorie=scanner2.nextLine();
 		last.setName(nameCategorie);
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		
 		System.out.println("The new categories are considered of type other!\n"
 				+ "Remember that the default categories types are:\n"
@@ -28,12 +23,12 @@ public class CategoriesOptions
 		System.out.println("Write a basic description for Category "+nameCategorie);
 		String description=scanner2.nextLine();
 		
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		last.setDescription(description);
 		System.out.println("Introduce minimum age");
 		int minAge = scanner.nextInt();
 		
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		last.setMinAge(minAge);
 		
 		arrayCategoriesGeneral=Arrays.copyOf(arrayCategoriesGeneral, arrayCategoriesGeneral.length+1);
@@ -45,18 +40,18 @@ public class CategoriesOptions
 	
 	public static void searchCategory(Scanner scanner,Scanner scanner2,Categorie[] arrayCategoriesGeneral) 
 	{
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select the search method: \n"
 				+ "[1] Name \n"
 				+ "[2] Type \n"
 				+ "[3] Minimum age \n");
 		int selection3 = scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		if (selection3==1) 
 		{
 			System.out.println("Indicate the name \n");
 			String name=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Categorie categorie:arrayCategoriesGeneral) 
 			{
@@ -76,7 +71,7 @@ public class CategoriesOptions
 					+ "[5] CHILDISH\n"
 					+ "[6] OTHER\n");
 			int typeCategorie=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			CategorieTypes typeOfCategory = CategorieTypes.OTHER;
 			if(typeCategorie==1) 
@@ -116,7 +111,7 @@ public class CategoriesOptions
 		{
 			System.out.println("Indicate the minimum age \n");
 			int minAge=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Categorie categorie:arrayCategoriesGeneral) 
 			{
@@ -130,18 +125,18 @@ public class CategoriesOptions
 	
 	public static Categorie[] modifyCategory(Scanner scanner,Scanner scanner2,Categorie[] arrayCategoriesGeneral) 
 	{
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select search method to modify the category: \n"
 				+ "[1] Name \n"
 				+ "[2] Min age \n"
 				+ "[3] Description\n");
 		int selection1 = scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		if (selection1==1)
 		{
 			System.out.println("Indicate the name \n");
 			String name=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Categorie categorie:arrayCategoriesGeneral) 
 			{
@@ -154,12 +149,12 @@ public class CategoriesOptions
 							+ "[2] Minimum age \n"
 							+ "[3] Description\n");
 					int selection4 = scanner.nextInt();
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					if (selection4==1) 
 					{
 						System.out.println("Write name ");
 						String name1=scanner2.nextLine();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						categorie.setName(name1);
 					
 					}
@@ -167,14 +162,14 @@ public class CategoriesOptions
 					{
 						System.out.println("Write minimum age: ");
 						int year=scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						categorie.setMinAge(year);
 					}
 					else
 					{
 						System.out.println("Write description: ");
 						String desc=scanner2.nextLine();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						categorie.setDescription(desc);
 					}
 				}
@@ -184,7 +179,7 @@ public class CategoriesOptions
 		{
 			System.out.println("Indicate the minimum age \n");
 			int ageMin=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Categorie categorie:arrayCategoriesGeneral)
 			{
@@ -197,26 +192,26 @@ public class CategoriesOptions
 							+ "[2] Minimum age \n"
 							+ "[3] Description\n");
 					int selection4 = scanner.nextInt();
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					if (selection4==1) 
 					{
 						System.out.println("Write the name ");
 						String name1=scanner2.nextLine();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						categorie.setName(name1);
 					}
 					else if (selection4==2) 
 					{
 						System.out.println("Write the minimum age: ");
 						int year=scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						categorie.setMinAge(year);
 					}
 					else
 					{
 						System.out.println("Write the descripcion: ");
 						String desc=scanner2.nextLine();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						categorie.setDescription(desc);
 					}
 					
@@ -228,7 +223,7 @@ public class CategoriesOptions
 			System.out.println("Indicate the description \n");
 			String desc=scanner2.nextLine();
 			desc=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Categorie categorie:arrayCategoriesGeneral)
 			{
@@ -241,26 +236,26 @@ public class CategoriesOptions
 							+ "[2] Minimum Age \n"
 							+ "[3] Description\n");
 					int selection4 = scanner.nextInt();
-					clearScreen();
+					ScreenUtilities.clearScreen();
 					if (selection4==1) 
 					{
 						System.out.println("Write the name: ");
 						String name1=scanner2.nextLine();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						categorie.setName(name1);
 					}
 					else if (selection4==2) 
 					{
 						System.out.println("Write minimum age: ");
 						int year=scanner.nextInt();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						categorie.setMinAge(year);
 					}
 					else 
 					{
 						System.out.println("Write description: ");
 						String descrip=scanner2.nextLine();
-						clearScreen();
+						ScreenUtilities.clearScreen();
 						categorie.setDescription(descrip);
 					}
 					
@@ -280,12 +275,12 @@ public class CategoriesOptions
 				+ "[2] Minimum age \n"
 				+ "[3] Description\n");
 		int selection1 = scanner.nextInt();
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		if (selection1==1) 
 		{
 			System.out.println("Indicate the name \n");
 			String name=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Categorie categorie:arrayCategoriesGeneral) 
 			{
@@ -314,7 +309,7 @@ public class CategoriesOptions
 		{
 			System.out.println("Indicate the minimum age \n");
 			int minAge=scanner.nextInt();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Categorie categorie:arrayCategoriesGeneral) 
 			{
@@ -343,7 +338,7 @@ public class CategoriesOptions
 		{
 			System.out.println("Indicate the description \n");
 			String desc=scanner2.nextLine();
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Categorie categorie:arrayCategoriesGeneral) 
 			{
