@@ -456,7 +456,7 @@ public interface ViewAnimation
 				+ "      | || |              Cooperators:             | || |\r\n"
 				+ "      ( () )               Luis David              ( () )\r\n"
 				+ "       \\  /              Pablo Serrano              \\  /\r\n"
-				+ "        \\/              Antonio Aceriano             \\/");
+				+ "        \\/              Antonio Arcediano            \\/");
 		Thread.sleep(1000);
 		ScreenUtilities.clearScreen();
 		System.out.println(""
@@ -482,7 +482,7 @@ public interface ViewAnimation
 				+ "      | || |              Cooperators:             | || |\r\n"
 				+ "      ( () )               Luis David              ( () )\r\n"
 				+ "       \\  /              Pablo Serrano              \\  /\r\n"
-				+ "        \\/              Antonio Aceriano             \\/\n"
+				+ "        \\/              Antonio Arcediano            \\/\n"
 				+ "                          Juan Miguel                    \n");
 		Thread.sleep(500);
 		ScreenUtilities.clearScreen();
@@ -509,7 +509,7 @@ public interface ViewAnimation
 				+ "      | || |              Cooperators:             | || |\r\n"
 				+ "      ( () )               Luis David              ( () )\r\n"
 				+ "       \\  /              Pablo Serrano              \\  /\r\n"
-				+ "        \\/              Antonio Aceriano             \\/\n"
+				+ "        \\/              Antonio Arcediano            \\/\n"
 				+ "                          Juan Miguel                    \n");
 		Thread.sleep(1300);
 		ScreenUtilities.clearScreen();
@@ -536,7 +536,7 @@ public interface ViewAnimation
 				+ "      | || |              Cooperators:             | || |\r\n"
 				+ "      ( () )               Luis David              ( () )\r\n"
 				+ "       \\  /              Pablo Serrano              \\  /\r\n"
-				+ "        \\/              Antonio Aceriano             \\/\n"
+				+ "        \\/              Antonio Arcediano            \\/\n"
 				+ "                          Juan Miguel                    \n");
 		Thread.sleep(3000);
 		ScreenUtilities.clearScreen();
