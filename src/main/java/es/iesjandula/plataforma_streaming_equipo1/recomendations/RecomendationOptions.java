@@ -7,6 +7,9 @@ import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.Movies;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.Series;
 import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
+/**
+ * @author David Martinez
+ */
 public interface RecomendationOptions 
 {
 	public static Object[] createRecomendation(Scanner scanner,Scanner scanner2, Recomendations[] arrayRecomendationsGeneral,Movies[] arrayMoviesGeneral, Series[] arraySeriesGeneral) 

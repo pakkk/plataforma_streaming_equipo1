@@ -1,19 +1,36 @@
 package es.iesjandula.plataforma_streaming_equipo1.directors;
 
 import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
-
+/**
+ * 
+ * @author Antonio
+ *
+ */
 public class Directors 
 {
-	//Variables
-	private String name, lastName, nationality;
-	
+	/** Attribute - name */
+	private String name;
+	/** Attribute - lastName */
+	private String lastName;
+	/** Attribute - nationality */
+	private String nationality;
+	/** Attribute - gender */
 	private Genders gender;
-	
+	/** Attribute - year */
     private int year;
-    
+    /** Attribute - directorId */
     private int directorId;
     
-    //Constructor
+    /**
+     * Constructor
+     * 
+     * @param name with thew name
+     * @param lastName with the lastName
+     * @param year with the year
+     * @param nationality with the nationality
+     * @param gender with the gender
+     * @param directorId with the id
+     */
     public Directors(String name, String lastName, int year, String nationality, Genders gender ,int directorId)
     {
         this.name=name; //Name of director

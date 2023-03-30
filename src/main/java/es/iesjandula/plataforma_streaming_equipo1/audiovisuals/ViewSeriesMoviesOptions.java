@@ -5,7 +5,11 @@ import java.util.Scanner;
 import es.iesjandula.plataforma_streaming_equipo1.animations.ViewAnimation;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.Movies;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.Series;
-
+/**
+ * 
+ * @author David Martinez
+ *
+ */
 public interface ViewSeriesMoviesOptions 
 {
 	public static void viewSeriesMovies(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral,Series[] arraySeriesGeneral) throws InterruptedException 

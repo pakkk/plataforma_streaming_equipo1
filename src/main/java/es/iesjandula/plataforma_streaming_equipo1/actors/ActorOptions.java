@@ -6,6 +6,11 @@ import java.util.Scanner;
 import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
 import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
+/**
+ * 
+ * @author Luis David
+ *
+ */
 public interface ActorOptions 
 {
 	public static Actors[] createActor(Scanner scanner,Scanner scanner2,Actors[] arrayActorsGeneral,int actorIdCont) 

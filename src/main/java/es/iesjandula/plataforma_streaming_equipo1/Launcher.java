@@ -148,8 +148,8 @@ public class Launcher
 		//----------------BASE OBJECTS--SERIES CLASS----------------------------
 		
 		
-		ViewAnimation.loadingDataBase();
-		ViewAnimation.mainTitle();
+		//ViewAnimation.loadingDataBase();
+		//ViewAnimation.mainTitle();
 		//-----------------------MENUS----------------------------------------
 		
 		//boolean for the main Loop
@@ -503,7 +503,7 @@ public class Launcher
 				{
 					//-----------VIEW SERIES OR MOVIES MENU------------
 					ScreenUtilities.clearScreen();
-					ViewAnimation.viewsTtitle();
+					ViewAnimation.viewsTitle();
 					System.out.println("Select Option:\n"
 							+ "[1] View Series\n"
 							+ "[2] View Movies\n"

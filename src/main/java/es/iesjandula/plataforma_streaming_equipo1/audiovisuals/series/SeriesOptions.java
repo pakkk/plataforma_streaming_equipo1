@@ -12,6 +12,11 @@ import es.iesjandula.plataforma_streaming_equipo1.subtitles.AvaliableSubtitles;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
+/**
+ * 
+ * @author David Martinez
+ *
+ */
 public interface SeriesOptions 
 {
 	public static Series[] createSerie(Scanner scanner,Scanner scanner2,Series[] arraySeriesGeneral,Directors[] arrayDirectorsGeneral,Actors[] arrayActorsGeneral,Categorie[] arrayCategoriesGeneral,Subtitles[] arraySubtitlesGeneral,int serieIdCont) 

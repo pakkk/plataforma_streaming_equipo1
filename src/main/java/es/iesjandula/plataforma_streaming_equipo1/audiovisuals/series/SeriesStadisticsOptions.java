@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
 import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
+import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.RecomendationsType;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.AvaliableSubtitles;
@@ -22,12 +23,13 @@ public interface SeriesStadisticsOptions
 				+ "[3] Information Of Serie , by Actors\n"
 				+ "[4] View the Most Popular Series (Positive Recomendations on TOP)\n"
 				+ "[5] View the Most Unpopular Series (Negative Recomendations on TOP)\n"
-				+ "[6] Information Of Serie by Subtitles\n");
+				+ "[6] Information Of Serie by Subtitles\n"
+				+ "[7] Information Of Serie, by Directors\n");
 		int selectedOption=0;
 		selectedOption=scanner.nextInt();
 		if(selectedOption==1) 
 		{
-			//----NUMBER OF SERIES SELECTED-------
+			//----TOTAL OF SERIES-------
 			System.out.println("Total Series in the System : "+arraySeriesGeneral.length);
 		}
 		else if(selectedOption==2) 
@@ -77,7 +79,7 @@ public interface SeriesStadisticsOptions
 			int actorId=0;
 			while(actorId>=0) 
 			{
-				System.out.println("Indicate the las Ids de los/as Actors (-1 para terminar)\n");
+				System.out.println("Indicate the Ids of Actors (-1 to finish)\n");
 				actorId=scanner.nextInt();
 				if(actorId>=0) 
 				{
@@ -236,6 +238,47 @@ public interface SeriesStadisticsOptions
 				}
 			}
 			
+		}
+		else if(selectedOption==7) 
+		{
+			//---------SERIES BY DIRECTORS IDS------------
+			int seriesContResults=0;
+			int[] arrayOfDirectorsId=new int[0];
+			int directorId=0;
+			while(directorId>=0) 
+			{
+				System.out.println("Indicate the Ids of Directors (-1 to finish)\n");
+				directorId=scanner.nextInt();
+				if(directorId>=0) 
+				{
+					arrayOfDirectorsId=Arrays.copyOf(arrayOfDirectorsId, arrayOfDirectorsId.length+1);
+					arrayOfDirectorsId[arrayOfDirectorsId.length-1]=directorId;
+				}
+			}
+			
+			ScreenUtilities.clearScreen();
+			System.out.println("Resultados : \n");
+			boolean exist=false;
+			for(int directorIdx: arrayOfDirectorsId) 
+			{
+				exist=false;
+				for (Series serie:arraySeriesGeneral) 
+				{
+					
+					for(Directors director : serie.getDirectors()) 
+					{
+						if(director.getDirectorId()==directorIdx) 
+						{
+							seriesContResults++;
+							exist=true;
+							System.out.println(serie);
+						}
+						
+					}
+				}
+				System.out.println("-------Were found: "+seriesContResults+" Series with director id:"+directorIdx+"-------\n");	
+				seriesContResults=0;//Reset for next Id
+			}
 		}
 	}
 }

@@ -1,6 +1,7 @@
 package es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies;
 
 import java.util.Arrays;
+
 import java.util.Scanner;
 
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
@@ -11,7 +12,11 @@ import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.AvaliableSubtitles;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
-
+/**
+ * 
+ * @author David Martinez
+ *
+ */
 public interface MoviesOptions 
 {
 	public static Movies[] createMovie(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral,Directors[] arrayDirectorsGeneral,Actors[] arrayActorsGeneral,Categorie[] arrayCategoriesGeneral,Subtitles[] arraySubtitlesGeneral,int movieIdCont) 

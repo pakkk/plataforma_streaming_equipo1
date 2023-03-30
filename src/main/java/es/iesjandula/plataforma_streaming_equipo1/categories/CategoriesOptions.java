@@ -4,7 +4,11 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
-
+/**
+ * 
+ * @author Pablo Serrano
+ *
+ */
 public class CategoriesOptions 
 {
 	public static Categorie[] createCategory(Scanner scanner,Scanner scanner2,Categorie[] arrayCategoriesGeneral,int categorieIdCont) 

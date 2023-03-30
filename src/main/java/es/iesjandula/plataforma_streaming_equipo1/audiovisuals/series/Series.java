@@ -1,4 +1,9 @@
 package es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series;
+
+/**
+ * @author David Martinez
+ */
+
 /*
  * Class Series
  * Stores the Series

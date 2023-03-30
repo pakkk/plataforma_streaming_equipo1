@@ -6,12 +6,18 @@ import java.util.Scanner;
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.Series;
 import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
+import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.RecomendationsType;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.AvaliableSubtitles;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
+/**
+ * 
+ * @author David Martinez
+ *
+ */
 public interface MoviesStadisticsOptions 
 {
 	public static void movieStadistics(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral) 
@@ -22,11 +28,14 @@ public interface MoviesStadisticsOptions
 				+ "[2] Information Of Movie , by Category\n"
 				+ "[4] View the Most Popular Movies (Positive Recomendations on TOP)\n"
 				+ "[5] View the Most Unpopular Movies (Negative Recomendations on TOP)\n"
-				+ "[6] Information Of Serie by Subtitles\n");
+				+ "[6] Information Of Movie by Subtitles\n"
+				+ "[7] Information Of Movie, by Directors\n");
 		int selectedOption=0;
 		selectedOption=scanner.nextInt();
+		
 		if(selectedOption==1) 
-		{
+		{//---TOTAL OF MOVIES----
+			
 			ScreenUtilities.clearScreen();
 			System.out.println("Total Movies in the System : "+arrayMoviesGeneral.length);
 		}
@@ -236,6 +245,47 @@ public interface MoviesStadisticsOptions
 				}
 			}
 			
+		}
+		else if(selectedOption==7) 
+		{
+			//---------MOVIES BY DIRECTORS IDS------------
+			int moviesContResults=0;
+			int[] arrayOfDirectorsId=new int[0];
+			int directorId=0;
+			while(directorId>=0) 
+			{
+				System.out.println("Indicate the Ids of Directors (-1 to finish)\n");
+				directorId=scanner.nextInt();
+				if(directorId>=0) 
+				{
+					arrayOfDirectorsId=Arrays.copyOf(arrayOfDirectorsId, arrayOfDirectorsId.length+1);
+					arrayOfDirectorsId[arrayOfDirectorsId.length-1]=directorId;
+				}
+			}
+			
+			ScreenUtilities.clearScreen();
+			System.out.println("Resultados : \n");
+			boolean exist=false;
+			for(int directorIdx: arrayOfDirectorsId) 
+			{
+				exist=false;
+				for (Movies movie:arrayMoviesGeneral) 
+				{
+					
+					for(Directors director : movie.getDirectors()) 
+					{
+						if(director.getDirectorId()==directorIdx) 
+						{
+							moviesContResults++;
+							exist=true;
+							System.out.println(movie);
+						}
+						
+					}
+				}
+				System.out.println("-------Were found: "+moviesContResults+" Series with director id:"+directorIdx+"-------\n");	
+				moviesContResults=0;//Reset for next Id
+			}
 		}
 	}
 }

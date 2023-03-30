@@ -3,7 +3,9 @@ package es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies;
 import java.util.Scanner;
 
 import es.iesjandula.plataforma_streaming_equipo1.animations.ViewAnimation;
-
+/**
+ * @author David Martinez
+ */
 public interface ViewMoviesOptions 
 {
 	public static void viewMovies(Scanner scanner,Movies[] arrayMoviesGeneral) throws InterruptedException 

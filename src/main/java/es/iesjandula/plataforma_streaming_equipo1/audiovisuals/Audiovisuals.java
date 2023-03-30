@@ -49,9 +49,18 @@ public class Audiovisuals
 	protected int views;
 	
 	/**
-	 * Constructor of the class
+	 * Constructor
 	 * 
-	 * @param type with the Audiovisuals
+	 * @param type with the type
+	 * @param directors with the directors
+	 * @param actores with the actors
+	 * @param categ with the categories
+	 * @param title with the title
+	 * @param originalLanguage with the original language
+	 * @param adaptedLanguages with the adapted languages
+	 * @param avaliableSubtitles with the avaliables subtitles
+	 * @param duration with the duration time
+	 * @param creationYear with the creation year
 	 */
 	public Audiovisuals(Type type,Directors[] directors, Actors[] actores, Categorie[] categ, String title, String originalLanguage,
 			AdaptedLanguages[] adaptedLanguages, Subtitles[] avaliableSubtitles, Double duration, int creationYear) 

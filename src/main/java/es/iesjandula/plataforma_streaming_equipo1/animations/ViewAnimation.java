@@ -1,10 +1,18 @@
 package es.iesjandula.plataforma_streaming_equipo1.animations;
 
 import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
-
+/**
+ * 
+ * @author David Martinez
+ *
+ */
 public interface ViewAnimation
 {
 
+	/**
+	 * 
+	 * @throws InterruptedException possible exception
+	 */
 	public static void playingSerieMovie() throws InterruptedException 
 	{
 		
@@ -534,6 +542,10 @@ public interface ViewAnimation
 		ScreenUtilities.clearScreen();
 	}
 	
+	/**
+	 * 
+	 * @throws InterruptedException possible exception
+	 */
 	public static void loadingDataBase() throws InterruptedException 
 	{
 		int porcentaje=0;
@@ -586,6 +598,10 @@ public interface ViewAnimation
 		}
 	}
 	
+	/**
+	 * 
+	 * @throws InterruptedException possible exception
+	 */
 	public static void mainTitle() throws InterruptedException 
 	{
 		System.out.println("  ___ _____ ___ ___   _   __  __ ___ _  _  ___   ___ _      _ _____ _   ___ ___  ___ __  __       _ \r\n"
@@ -601,9 +617,12 @@ public interface ViewAnimation
 		Thread.sleep(3000);
 	}
 	
+	/**
+	 * 
+	 * @throws InterruptedException possible exception
+	 */
 	public static void mainTitleShowOnly() throws InterruptedException 
 	{
-		ScreenUtilities.clearScreen();
 		System.out.println("  ___ _____ ___ ___   _   __  __ ___ _  _  ___   ___ _      _ _____ _   ___ ___  ___ __  __       _ \r\n"
 				+ " / __|_   _| _ \\ __| /_\\ |  \\/  |_ _| \\| |/ __| | _ \\ |    /_\\_   _/_\\ | __/ _ \\| _ \\  \\/  | __ _/ |\r\n"
 				+ " \\__ \\ | | |   / _| / _ \\| |\\/| || || .` | (_ | |  _/ |__ / _ \\| |/ _ \\| _| (_) |   / |\\/| | \\ V / |\r\n"
@@ -612,6 +631,9 @@ public interface ViewAnimation
 		System.out.println("Main menu...");
 	}
 	
+	/**
+	 * For options title
+	 */
 	public static void optionsTitle() 
 	{
 		System.out.println("   ___  ___ _____ ___ ___  _  _ ___ \r\n"
@@ -621,6 +643,9 @@ public interface ViewAnimation
 				+ "                                    ");
 	}
 	
+	/**
+	 * For Stadistics Title
+	 */
 	public static void stadisticsTitle() 
 	{
 		System.out.println("  ___ _____ _   ___ ___ ___ _____ ___ ___ ___ \r\n"
@@ -630,7 +655,10 @@ public interface ViewAnimation
 				+ "                                              ");
 	}
 	
-	public static void viewsTtitle() 
+	/**
+	 * For viewsTitle
+	 */
+	public static void viewsTitle() 
 	{
 		System.out.println(" __   _____ _____      _____ \r\n"
 				+ " \\ \\ / /_ _| __\\ \\    / / __|\r\n"

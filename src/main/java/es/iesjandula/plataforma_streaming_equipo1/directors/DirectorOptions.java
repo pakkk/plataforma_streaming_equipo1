@@ -5,7 +5,11 @@ import java.util.Scanner;
 
 import es.iesjandula.plataforma_streaming_equipo1.genders.Genders;
 import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
-
+/**
+ * 
+ * @author Antonio
+ *
+ */
 public interface DirectorOptions 
 {	
 	public static Directors[] createDirector(Scanner scanner,Scanner scanner2,Directors[] arrayDirectorsGeneral,int directorIdCont) 

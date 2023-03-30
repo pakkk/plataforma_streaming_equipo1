@@ -1,6 +1,12 @@
 package es.iesjandula.plataforma_streaming_equipo1.categories;
+
+/**
+ * 
+ * @author David Martinez
+ *
+ */
+
 /*
- * @athor Pablo
  * Class Categories
  * Stores the categories
  */
@@ -131,7 +137,13 @@ public class Categorie
 	
 	/* SETTERS AND GETTERS */
 
+	
 	//-----VALIDATION-METHOD-----
+	
+	/**
+	 * 
+	 * @param type with the type of CategorieTypes
+	 */
 	public void validateCategorieType(CategorieTypes type) 
 	//Validate the type of categorie enum type , and set the default attributes.
 	{

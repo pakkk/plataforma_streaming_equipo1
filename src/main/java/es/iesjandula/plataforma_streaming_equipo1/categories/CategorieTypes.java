@@ -1,5 +1,10 @@
 package es.iesjandula.plataforma_streaming_equipo1.categories;
 
+/**
+ * 
+ * @author David Martinez
+ *
+ */
 public enum CategorieTypes
 {
 	/*Enum CategoriesTypes
