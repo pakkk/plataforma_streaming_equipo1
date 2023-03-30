@@ -1018,13 +1018,12 @@ public class Launcher
 							}
 							else if(selectedOption==4) 
 							{
-								//--------MOST-POPULARS TOP - POSITIVE RECOMENDATIONS----------
-								System.out.println("Top Most popular Series:\n");
+								//--------POPULAR TOP - POSITIVE RECOMENDATIONS----------
+								System.out.println("Top popular Series:\n");
 								
-								int[] arrayOfPositiveRecomendations=new int[0];
 								int positiveRecomendationsCont=0;
 								
-								//---------GETTING THE CUANTITIE OF POSITIVE RECOMENDATIONS--------------
+								//---------GETTING THE CUANTITIE OF POSITIVE RECOMENDATIONS BY SERIE--------------
 								for(Series serie:arraySeriesGeneral) 
 								{
 									for(Recomendations recomendation:serie.getRecomendationsSerie()) 
@@ -1035,63 +1034,21 @@ public class Launcher
 										}
 										
 									}
-									arrayOfPositiveRecomendations=Arrays.copyOf(arrayOfPositiveRecomendations, arrayOfPositiveRecomendations.length+1);
-									arrayOfPositiveRecomendations[arrayOfPositiveRecomendations.length-1]=positiveRecomendationsCont;
+									if(positiveRecomendationsCont>0) 
+									{
+										System.out.println(serie.getTitle()+" POSITIVES --> "+positiveRecomendationsCont);
+									}
 									positiveRecomendationsCont=0;
 								}
-								
-								//----VIEW THE SERIES (THE TOP IS TE MOST POPULAR BY POSITIVE RECOMENDATIONS)------
-								//Sort the array.
-								Arrays.sort(arrayOfPositiveRecomendations);
-								
-								//Start on the final of the array , becuase it is sorted.
-								//Every puntuation of the array search the same puntuation on the posible series.
-								int[] lastIds= {-1};
-								
-								boolean exists=false;
-								
-								for (int i =arrayOfPositiveRecomendations.length-1;i>=0;i--) 
-								{
-									int cuantitie=arrayOfPositiveRecomendations[i];
-									for(Series serie:arraySeriesGeneral) 
-									{
-										for(Recomendations recomendation:serie.getRecomendationsSerie()) 
-										{
-											if(recomendation.getType().equals(RecomendationsType.POSITIVE)) 
-											{
-												positiveRecomendationsCont++;
-											}
-										}
-										for(int id : lastIds) 
-										{
-											if(id==serie.getSerieId()) 
-											{
-												exists=true;
-											}
-										}
-										if(!exists & positiveRecomendationsCont==cuantitie)//Is equals to the cuantitie?
-										{
-											lastIds=Arrays.copyOf(lastIds, lastIds.length+1);
-											lastIds[lastIds.length-1]=serie.getSerieId();
-											
-											System.out.println(serie.getTitle()+" POSITIVES-> "+cuantitie);//Print the serie
-										}
-										positiveRecomendationsCont=0;//Reset cont
-										
-									}	
-								}
-								
-								
 							}
 							else if(selectedOption==5) 
 							{
-								//--------MOST-UN-POPULARS TOP - NEGATIVE RECOMENDATIONS----------
-								System.out.println("Top Most popular Series:\n");
+								//-------UN-POPULAR TOP - NEGATIVE RECOMENDATIONS----------
+								System.out.println("Top Unpopular Series:\n");
 								
-								int[] arrayOfNegativeRecomendations=new int[0];
 								int negativeRecomendationsCont=0;
 								
-								//---------GETTING THE CUANTITIE OF NEGATIVE RECOMENDATIONS--------------
+								//---------GETTING THE CUANTITIE OF NEGATIVE RECOMENDATIONS BY SERIE--------------
 								for(Series serie:arraySeriesGeneral) 
 								{
 									for(Recomendations recomendation:serie.getRecomendationsSerie()) 
@@ -1102,53 +1059,12 @@ public class Launcher
 										}
 										
 									}
-									arrayOfNegativeRecomendations=Arrays.copyOf(arrayOfNegativeRecomendations, arrayOfNegativeRecomendations.length+1);
-									arrayOfNegativeRecomendations[arrayOfNegativeRecomendations.length-1]=negativeRecomendationsCont;
+									if(negativeRecomendationsCont>0) 
+									{
+										System.out.println(serie.getTitle()+" NEGATIVES --> "+negativeRecomendationsCont);
+									}
 									negativeRecomendationsCont=0;
 								}
-								
-								//----VIEW THE SERIES (THE TOP IS TE MOST UN-POPULAR BY NEGATIVE RECOMENDATIONS)------
-								//Sort the array.
-								Arrays.sort(arrayOfNegativeRecomendations);
-								
-								//Start on the final of the array , becuase it is sorted.
-								//Every puntuation of the array search the same puntuation on the posible series.
-								int[] lastIds= {-1};
-								
-								boolean exists=false;
-								
-								for (int i =arrayOfNegativeRecomendations.length-1;i>=0;i--) 
-								{
-									int cuantitie=arrayOfNegativeRecomendations[i];
-									for(Series serie:arraySeriesGeneral) 
-									{
-										for(Recomendations recomendation:serie.getRecomendationsSerie()) 
-										{
-											if(recomendation.getType().equals(RecomendationsType.NEGATIVE)) 
-											{
-												negativeRecomendationsCont++;
-											}
-										}
-										for(int id : lastIds) 
-										{
-											if(id==serie.getSerieId()) 
-											{
-												exists=true;
-											}
-										}
-										if(!exists & negativeRecomendationsCont==cuantitie)//Is equals to the cuantitie?
-										{
-											lastIds=Arrays.copyOf(lastIds, lastIds.length+1);
-											lastIds[lastIds.length-1]=serie.getSerieId();
-											
-											System.out.println(serie.getTitle()+" NEGATIVES-> "+cuantitie);//Print the serie
-										}
-										negativeRecomendationsCont=0;//Reset cont
-										
-									}	
-								}
-								
-								
 							}
 						}
 						else if(stadisticsSelection==2)
@@ -1250,12 +1166,11 @@ public class Launcher
 							else if(selectedOption==4) 
 							{
 								//--------MOST-POPULARS TOP - POSITIVE RECOMENDATIONS----------
-								System.out.println("Top Most popular Movies:\n");
+								System.out.println("Top popular Movies:\n");
 								
-								int[] arrayOfPositiveRecomendations=new int[0];
 								int positiveRecomendationsCont=0;
 								
-								//---------GETTING THE CUANTITIE OF POSITIVE RECOMENDATIONS--------------
+								//---------GETTING THE CUANTITIE OF POSITIVE RECOMENDATIONS BY SERIE--------------
 								for(Movies movie:arrayMoviesGeneral) 
 								{
 									for(Recomendations recomendation:movie.getRecomendationsMovies()) 
@@ -1266,119 +1181,35 @@ public class Launcher
 										}
 										
 									}
-									arrayOfPositiveRecomendations=Arrays.copyOf(arrayOfPositiveRecomendations, arrayOfPositiveRecomendations.length+1);
-									arrayOfPositiveRecomendations[arrayOfPositiveRecomendations.length-1]=positiveRecomendationsCont;
+									if(positiveRecomendationsCont>0) 
+									{
+										System.out.println(movie.getTitle()+" POSITIVES --> "+positiveRecomendationsCont);
+									}
 									positiveRecomendationsCont=0;
 								}
-								
-								//----VIEW THE SERIES (THE TOP IS TE MOST POPULAR BY POSITIVE RECOMENDATIONS)------
-								//Sort the array.
-								Arrays.sort(arrayOfPositiveRecomendations);
-								
-								//Start on the final of the array , becuase it is sorted.
-								//Every puntuation of the array search the same puntuation on the posible series.
-								int[] lastIds= {-1};
-								
-								boolean exists=false;
-								
-								for (int i =arrayOfPositiveRecomendations.length-1;i>=0;i--) 
-								{
-									int cuantitie=arrayOfPositiveRecomendations[i];
-									for(Movies movie:arrayMoviesGeneral) 
-									{
-										for(Recomendations recomendation:movie.getRecomendationsMovies()) 
-										{
-											if(recomendation.getType().equals(RecomendationsType.POSITIVE)) 
-											{
-												positiveRecomendationsCont++;
-											}
-										}
-										for(int id : lastIds) 
-										{
-											if(id==movie.getMovieId()) 
-											{
-												exists=true;
-											}
-										}
-										if(!exists & positiveRecomendationsCont==cuantitie)//Is equals to the cuantitie?
-										{
-											lastIds=Arrays.copyOf(lastIds, lastIds.length+1);
-											lastIds[lastIds.length-1]=movie.getMovieId();
-											
-											System.out.println(movie.getTitle()+" POSITIVES-> "+cuantitie);//Print the serie
-										}
-										positiveRecomendationsCont=0;//Reset cont
-										
-									}	
-								}
-								
-								
 							}
 							else if(selectedOption==5) 
 							{
 								//--------MOST-UN-POPULARS TOP - NEGATIVE RECOMENDATIONS----------
 								System.out.println("Top Most Unpopular Series:\n");
-								
-								int[] arrayOfNegativeRecomendations=new int[0];
 								int negativeRecomendationsCont=0;
 								
-								//---------GETTING THE CUANTITIE OF NEGATIVE RECOMENDATIONS--------------
+								//---------GETTING THE CUANTITIE OF POSITIVE RECOMENDATIONS BY SERIE--------------
 								for(Movies movie:arrayMoviesGeneral) 
 								{
 									for(Recomendations recomendation:movie.getRecomendationsMovies()) 
 									{
 										if(recomendation.getType().equals(RecomendationsType.NEGATIVE)) 
 										{
-								
-											
 											negativeRecomendationsCont++;
 										}
 										
 									}
-									arrayOfNegativeRecomendations=Arrays.copyOf(arrayOfNegativeRecomendations, arrayOfNegativeRecomendations.length+1);
-									arrayOfNegativeRecomendations[arrayOfNegativeRecomendations.length-1]=negativeRecomendationsCont;
-									negativeRecomendationsCont=0;
-								}
-								
-								//----VIEW THE SERIES (THE TOP IS TE MOST UN-POPULAR BY NEGATIVE RECOMENDATIONS)------
-								//Sort the array.
-								Arrays.sort(arrayOfNegativeRecomendations);
-								
-								//Start on the final of the array , becuase it is sorted.
-								//Every puntuation of the array search the same puntuation on the posible series.
-								int[] lastIds= {-1};
-								
-								boolean exists=false;
-								
-								for (int i =arrayOfNegativeRecomendations.length-1;i>=0;i--) 
-								{
-									int cuantitie=arrayOfNegativeRecomendations[i];
-									for(Movies movie:arrayMoviesGeneral) 
+									if(negativeRecomendationsCont>0) 
 									{
-										for(Recomendations recomendation:movie.getRecomendationsMovies()) 
-										{
-											if(recomendation.getType().equals(RecomendationsType.NEGATIVE)) 
-											{
-												negativeRecomendationsCont++;
-											}
-										}
-										for(int id : lastIds) 
-										{
-											if(id==movie.getMovieId()) 
-											{
-												exists=true;
-											}
-										}
-										if(!exists & negativeRecomendationsCont==cuantitie)//Is equals to the cuantitie?
-										{
-											lastIds=Arrays.copyOf(lastIds, lastIds.length+1);
-											lastIds[lastIds.length-1]=movie.getMovieId();
-											
-											System.out.println(movie.getTitle()+" NEGATIVES-> "+cuantitie);//Print the serie
-										}
-										negativeRecomendationsCont=0;//Reset cont
-										
-									}	
+										System.out.println(movie.getTitle()+" NEGATIVES --> "+negativeRecomendationsCont);
+									}
+									negativeRecomendationsCont=0;
 								}
 							}
 							
@@ -1522,13 +1353,11 @@ public class Launcher
 							}
 							else if(selectedOption==4) 
 							{
-								//--------MOST-POPULARS MOVIES AND SERIES TOP - POSITIVE RECOMENDATIONS----------
-								System.out.println("Top Most popular Movies and Series:\n");
+								//--------POPULARS MOVIES AND SERIES TOP - POSITIVE RECOMENDATIONS----------
+								System.out.println("Top popular Movies and Series:\n");
 								
-								int[] arrayOfPositiveRecomendations=new int[0];
 								int positiveRecomendationsCont=0;
 								
-								//---------GETTING THE CUANTITIE OF POSITIVE RECOMENDATIONS--------------
 								for(Movies movie:arrayMoviesGeneral) 
 								{
 									for(Recomendations recomendation:movie.getRecomendationsMovies()) 
@@ -1539,8 +1368,10 @@ public class Launcher
 										}
 										
 									}
-									arrayOfPositiveRecomendations=Arrays.copyOf(arrayOfPositiveRecomendations, arrayOfPositiveRecomendations.length+1);
-									arrayOfPositiveRecomendations[arrayOfPositiveRecomendations.length-1]=positiveRecomendationsCont;
+									if(positiveRecomendationsCont>0) 
+									{
+										System.out.println(movie.getTitle()+" POSITVE --> "+positiveRecomendationsCont+" | Type :"+movie.getType());
+									}
 									positiveRecomendationsCont=0;
 								}
 								
@@ -1554,100 +1385,21 @@ public class Launcher
 										}
 										
 									}
-									arrayOfPositiveRecomendations=Arrays.copyOf(arrayOfPositiveRecomendations, arrayOfPositiveRecomendations.length+1);
-									arrayOfPositiveRecomendations[arrayOfPositiveRecomendations.length-1]=positiveRecomendationsCont;
+									if(positiveRecomendationsCont>0) 
+									{
+										System.out.println(serie.getTitle()+" POSITVE --> "+positiveRecomendationsCont+" | Type :"+serie.getType());
+									}
 									positiveRecomendationsCont=0;
 								}
-								
-								//----VIEW THE MOVIES (THE TOP IS TE MOST POPULAR BY POSITIVE RECOMENDATIONS)------
-								//Sort the array.
-								Arrays.sort(arrayOfPositiveRecomendations);
-								
-								//Start on the final of the array , becuase it is sorted.
-								//Every puntuation of the array search the same puntuation on the posible series.
-								System.out.println("Movies: ");
-								int[] lastIds= {-1};
-								
-								boolean exists=false;
-								
-								for (int i =arrayOfPositiveRecomendations.length-1;i>=0;i--) 
-								{
-									int cuantitie=arrayOfPositiveRecomendations[i];
-									for(Movies movie:arrayMoviesGeneral) 
-									{
-										for(Recomendations recomendation:movie.getRecomendationsMovies()) 
-										{
-											if(recomendation.getType().equals(RecomendationsType.POSITIVE)) 
-											{
-												positiveRecomendationsCont++;
-											}
-										}
-										for(int id : lastIds) 
-										{
-											if(id==movie.getMovieId()) 
-											{
-												exists=true;
-											}
-										}
-										if(!exists & positiveRecomendationsCont==cuantitie)//Is equals to the cuantitie?
-										{
-											lastIds=Arrays.copyOf(lastIds, lastIds.length+1);
-											lastIds[lastIds.length-1]=movie.getMovieId();
-											
-											System.out.println(movie.getTitle()+" POSITIVES-> "+cuantitie);//Print the serie
-										}
-										positiveRecomendationsCont=0;//Reset cont
-										
-									}	
-								}
-								System.out.println("Series: ");
-								int[] lastIds2= {-1};
-								lastIds=lastIds2;
-								
-								exists=false;
-								
-								for (int i =arrayOfPositiveRecomendations.length-1;i>=0;i--) 
-								{
-									int cuantitie=arrayOfPositiveRecomendations[i];
-									for(Series serie:arraySeriesGeneral) 
-									{
-										for(Recomendations recomendation:serie.getRecomendationsSerie()) 
-										{
-											if(recomendation.getType().equals(RecomendationsType.POSITIVE)) 
-											{
-												positiveRecomendationsCont++;
-											}
-										}
-										for(int id : lastIds) 
-										{
-											if(id==serie.getSerieId()) 
-											{
-												exists=true;
-											}
-										}
-										if(!exists & positiveRecomendationsCont==cuantitie)//Is equals to the cuantitie?
-										{
-											lastIds=Arrays.copyOf(lastIds, lastIds.length+1);
-											lastIds[lastIds.length-1]=serie.getSerieId();
-											
-											System.out.println(serie.getTitle()+" POSITIVES-> "+cuantitie);//Print the serie
-										}
-										positiveRecomendationsCont=0;//Reset cont
-										
-									}	
-								}
-								
-								
 							}
 							else if(selectedOption==5) 
 							{
-								//--------MOST-UN-POPULARS MOVIES AND SERIES TOP - POSITIVE RECOMENDATIONS----------
-								System.out.println("Top Most Unpopular Movies and Series:\n");
+
+								//--------UN-POPULARS MOVIES AND SERIES TOP - POSITIVE RECOMENDATIONS----------
+								System.out.println("Top Unpopular Movies and Series:\n");
 								
-								int[] arrayOfNegativeRecomendations=new int[0];
 								int negativeRecomendationsCont=0;
 								
-								//---------GETTING THE CUANTITIE OF POSITIVE RECOMENDATIONS--------------
 								for(Movies movie:arrayMoviesGeneral) 
 								{
 									for(Recomendations recomendation:movie.getRecomendationsMovies()) 
@@ -1658,8 +1410,10 @@ public class Launcher
 										}
 										
 									}
-									arrayOfNegativeRecomendations=Arrays.copyOf(arrayOfNegativeRecomendations, arrayOfNegativeRecomendations.length+1);
-									arrayOfNegativeRecomendations[arrayOfNegativeRecomendations.length-1]=negativeRecomendationsCont;
+									if(negativeRecomendationsCont>0) 
+									{
+										System.out.println(movie.getTitle()+" NEGATIVE --> "+negativeRecomendationsCont+" | Type :"+movie.getType());
+									}
 									negativeRecomendationsCont=0;
 								}
 								
@@ -1673,90 +1427,12 @@ public class Launcher
 										}
 										
 									}
-									arrayOfNegativeRecomendations=Arrays.copyOf(arrayOfNegativeRecomendations, arrayOfNegativeRecomendations.length+1);
-									arrayOfNegativeRecomendations[arrayOfNegativeRecomendations.length-1]=negativeRecomendationsCont;
+									if(negativeRecomendationsCont>0) 
+									{
+										System.out.println(serie.getTitle()+" NEGATIVE --> "+negativeRecomendationsCont+" | Type :"+serie.getType());
+									}
 									negativeRecomendationsCont=0;
 								}
-								
-								//----VIEW THE MOVIES (THE TOP IS TE MOST POPULAR BY POSITIVE RECOMENDATIONS)------
-								//Sort the array.
-								Arrays.sort(arrayOfNegativeRecomendations);
-								
-								//Start on the final of the array , becuase it is sorted.
-								//Every puntuation of the array search the same puntuation on the posible series.
-								System.out.println("Movies: ");
-								int[] lastIds= {-1};
-								
-								boolean exists=false;
-								
-								for (int i =arrayOfNegativeRecomendations.length-1;i>=0;i--) 
-								{
-									int cuantitie=arrayOfNegativeRecomendations[i];
-									for(Movies movie:arrayMoviesGeneral) 
-									{
-										for(Recomendations recomendation:movie.getRecomendationsMovies()) 
-										{
-											if(recomendation.getType().equals(RecomendationsType.NEGATIVE)) 
-											{
-												negativeRecomendationsCont++;
-											}
-										}
-										for(int id : lastIds) 
-										{
-											if(id==movie.getMovieId()) 
-											{
-												exists=true;
-											}
-										}
-										if(!exists & negativeRecomendationsCont==cuantitie)//Is equals to the cuantitie?
-										{
-											lastIds=Arrays.copyOf(lastIds, lastIds.length+1);
-											lastIds[lastIds.length-1]=movie.getMovieId();
-											
-											System.out.println(movie.getTitle()+" NEGATIVES-> "+cuantitie);//Print the serie
-										}
-										negativeRecomendationsCont=0;//Reset cont
-										
-									}	
-								}
-								System.out.println("Series: ");
-								int[] lastIds2= {-1};
-								lastIds=lastIds2;
-								
-								exists=false;
-								
-								for (int i =arrayOfNegativeRecomendations.length-1;i>=0;i--) 
-								{
-									int cuantitie=arrayOfNegativeRecomendations[i];
-									for(Series serie:arraySeriesGeneral) 
-									{
-										for(Recomendations recomendation:serie.getRecomendationsSerie()) 
-										{
-											if(recomendation.getType().equals(RecomendationsType.NEGATIVE)) 
-											{
-												negativeRecomendationsCont++;
-											}
-										}
-										for(int id : lastIds) 
-										{
-											if(id==serie.getSerieId()) 
-											{
-												exists=true;
-											}
-										}
-										if(!exists & negativeRecomendationsCont==cuantitie)//Is equals to the cuantitie?
-										{
-											lastIds=Arrays.copyOf(lastIds, lastIds.length+1);
-											lastIds[lastIds.length-1]=serie.getSerieId();
-											
-											System.out.println(serie.getTitle()+" NEGATIVES-> "+cuantitie);//Print the serie
-										}
-										negativeRecomendationsCont=0;//Reset cont
-										
-									}	
-								}
-								
-								
 							}
 						}
 					break;
