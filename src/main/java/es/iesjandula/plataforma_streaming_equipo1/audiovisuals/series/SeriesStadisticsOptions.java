@@ -14,6 +14,136 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
 public interface SeriesStadisticsOptions 
 {
+	public static void serieByNegatives(Series[] arraySeriesGeneral) 
+	{
+		System.out.println("Top Unpopular Series:\n");
+		
+		int negativeRecomendationsCont=0;
+		
+		//---------GETTING THE CUANTITIE OF NEGATIVE RECOMENDATIONS BY SERIE--------------
+		for(Series serie:arraySeriesGeneral) 
+		{
+			for(Recomendations recomendation:serie.getRecomendationsSerie()) 
+			{
+				if(recomendation.getType().equals(RecomendationsType.NEGATIVE)) 
+				{
+					negativeRecomendationsCont++;
+				}
+				
+			}
+			if(negativeRecomendationsCont>0) 
+			{
+				System.out.println(serie.getTitle()+" NEGATIVES --> "+negativeRecomendationsCont);
+			}
+			negativeRecomendationsCont=0;
+		}
+	}
+	public static void serieByPositives(Series[] arraySeriesGeneral) 
+	{
+		System.out.println("Top popular Series:\n");
+		
+		int positiveRecomendationsCont=0;
+		
+		//---------GETTING THE CUANTITIE OF POSITIVE RECOMENDATIONS BY SERIE--------------
+		for(Series serie:arraySeriesGeneral) 
+		{
+			for(Recomendations recomendation:serie.getRecomendationsSerie()) 
+			{
+				if(recomendation.getType().equals(RecomendationsType.POSITIVE)) 
+				{
+					positiveRecomendationsCont++;
+				}
+				
+			}
+			if(positiveRecomendationsCont>0) 
+			{
+				System.out.println(serie.getTitle()+" POSITIVES --> "+positiveRecomendationsCont);
+			}
+			positiveRecomendationsCont=0;
+		}
+	}
+	public static void serieByActors(Scanner scanner,Series[] arraySeriesGeneral) 
+	{
+		int seriesContResults=0;
+		int[] arrayOfActorsId=new int[0];
+		int actorId=0;
+		while(actorId>=0) 
+		{
+			System.out.println("Indicate the Ids of Actors (-1 to finish)\n");
+			actorId=scanner.nextInt();
+			if(actorId>=0) 
+			{
+				arrayOfActorsId=Arrays.copyOf(arrayOfActorsId, arrayOfActorsId.length+1);
+				arrayOfActorsId[arrayOfActorsId.length-1]=actorId;
+			}
+		}
+		
+		ScreenUtilities.clearScreen();
+		System.out.println("Results: \n");
+		for(int actorIdx: arrayOfActorsId) 
+		{
+			for (Series serie:arraySeriesGeneral) 
+			{
+				
+				for(Actors actor : serie.getActors()) 
+				{
+					if(actor.getActorId()==actorIdx) 
+					{
+						seriesContResults++;
+						System.out.println(serie);
+					}
+					
+				}
+			}
+			System.out.println("-------Were found: "+seriesContResults+" Series with actor id:"+actorIdx+"-------\n");	
+			seriesContResults=0;//Reset for next Id
+		}
+		
+	}
+	public static void serieByCategories(Scanner scanner,Series[] arraySeriesGeneral) 
+	{
+		int seriesContResults=0;
+		int[] arrayOfCategoriesId=new int[0];
+		int categoryId=0;
+		while(categoryId>=0) 
+		{
+			System.out.println("Indicates the Ids of the Category (Gender) (-1 to finish)\n");
+			categoryId=scanner.nextInt();
+			if(categoryId>=0) 
+			{
+			arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
+			arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
+			}
+		}
+		
+		ScreenUtilities.clearScreen();
+		System.out.println("Results : \n");
+		for(int categoryIdx: arrayOfCategoriesId) 
+		{
+			for (Series serie:arraySeriesGeneral) 
+			{
+				
+				for(Categorie category : serie.getCateg()) 
+				{
+					if(category.getCategorieID()==categoryIdx) 
+					{
+						seriesContResults++;
+						System.out.println(serie);
+					}
+					
+				}
+			}
+			System.out.println("-------Were found: "+seriesContResults+" Series with category id:"+categoryIdx+"-------\n");	
+			seriesContResults=0;//Reset for next Id
+		}
+	}
+	
+	/***
+	 * 
+	 * @param scanner the scanner
+	 * @param scanner2 the scanner 2
+	 * @param arraySeriesGeneral the array series general
+	 */
 	public static void serieStadistics(Scanner scanner,Scanner scanner2,Series[] arraySeriesGeneral) 
 	{
 		ScreenUtilities.clearScreen();
@@ -35,130 +165,23 @@ public interface SeriesStadisticsOptions
 		else if(selectedOption==2) 
 		{
 			//---------SERIES BY CATEGORY IDS------------
-			int seriesContResults=0;
-			int[] arrayOfCategoriesId=new int[0];
-			int categoryId=0;
-			while(categoryId>=0) 
-			{
-				System.out.println("Indicates the Ids of the Category (Gender) (-1 to finish)\n");
-				categoryId=scanner.nextInt();
-				if(categoryId>=0) 
-				{
-				arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
-				arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
-				}
-			}
-			
-			ScreenUtilities.clearScreen();
-			System.out.println("Results : \n");
-			for(int categoryIdx: arrayOfCategoriesId) 
-			{
-				for (Series serie:arraySeriesGeneral) 
-				{
-					
-					for(Categorie category : serie.getCateg()) 
-					{
-						if(category.getCategorieID()==categoryIdx) 
-						{
-							seriesContResults++;
-							System.out.println(serie);
-						}
-						
-					}
-				}
-				System.out.println("-------Were found: "+seriesContResults+" Series with category id:"+categoryIdx+"-------\n");	
-				seriesContResults=0;//Reset for next Id
-			}
+			serieByCategories(scanner, arraySeriesGeneral);
 			
 		}
 		else if(selectedOption==3) 
 		{
 			//---------SERIES BY ACTORS IDS------------ J
-			int seriesContResults=0;
-			int[] arrayOfActorsId=new int[0];
-			int actorId=0;
-			while(actorId>=0) 
-			{
-				System.out.println("Indicate the Ids of Actors (-1 to finish)\n");
-				actorId=scanner.nextInt();
-				if(actorId>=0) 
-				{
-					arrayOfActorsId=Arrays.copyOf(arrayOfActorsId, arrayOfActorsId.length+1);
-					arrayOfActorsId[arrayOfActorsId.length-1]=actorId;
-				}
-			}
-			
-			ScreenUtilities.clearScreen();
-			System.out.println("Results: \n");
-			for(int actorIdx: arrayOfActorsId) 
-			{
-				for (Series serie:arraySeriesGeneral) 
-				{
-					
-					for(Actors actor : serie.getActors()) 
-					{
-						if(actor.getActorId()==actorIdx) 
-						{
-							seriesContResults++;
-							System.out.println(serie);
-						}
-						
-					}
-				}
-				System.out.println("-------Were found: "+seriesContResults+" Series with actor id:"+actorIdx+"-------\n");	
-				seriesContResults=0;//Reset for next Id
-			}
-			
+			serieByActors(scanner, arraySeriesGeneral);
 		}
 		else if(selectedOption==4) 
 		{
 			//--------POPULAR TOP - POSITIVE RECOMENDATIONS----------
-			System.out.println("Top popular Series:\n");
-			
-			int positiveRecomendationsCont=0;
-			
-			//---------GETTING THE CUANTITIE OF POSITIVE RECOMENDATIONS BY SERIE--------------
-			for(Series serie:arraySeriesGeneral) 
-			{
-				for(Recomendations recomendation:serie.getRecomendationsSerie()) 
-				{
-					if(recomendation.getType().equals(RecomendationsType.POSITIVE)) 
-					{
-						positiveRecomendationsCont++;
-					}
-					
-				}
-				if(positiveRecomendationsCont>0) 
-				{
-					System.out.println(serie.getTitle()+" POSITIVES --> "+positiveRecomendationsCont);
-				}
-				positiveRecomendationsCont=0;
-			}
+			serieByPositives(arraySeriesGeneral);
 		}
 		else if(selectedOption==5) 
 		{
 			//-------UN-POPULAR TOP - NEGATIVE RECOMENDATIONS----------
-			System.out.println("Top Unpopular Series:\n");
-			
-			int negativeRecomendationsCont=0;
-			
-			//---------GETTING THE CUANTITIE OF NEGATIVE RECOMENDATIONS BY SERIE--------------
-			for(Series serie:arraySeriesGeneral) 
-			{
-				for(Recomendations recomendation:serie.getRecomendationsSerie()) 
-				{
-					if(recomendation.getType().equals(RecomendationsType.NEGATIVE)) 
-					{
-						negativeRecomendationsCont++;
-					}
-					
-				}
-				if(negativeRecomendationsCont>0) 
-				{
-					System.out.println(serie.getTitle()+" NEGATIVES --> "+negativeRecomendationsCont);
-				}
-				negativeRecomendationsCont=0;
-			}
+			serieByNegatives(arraySeriesGeneral);
 		}
 		else if(selectedOption==6) 
 		{

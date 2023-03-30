@@ -19,171 +19,13 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
  */
 public interface SeriesOptions 
 {
-	public static Series[] createSerie(Scanner scanner,Scanner scanner2,Series[] arraySeriesGeneral,Directors[] arrayDirectorsGeneral,Actors[] arrayActorsGeneral,Categorie[] arrayCategoriesGeneral,Subtitles[] arraySubtitlesGeneral,int serieIdCont) 
+	/**
+	 * 
+	 * @param scanner the sacnner
+	 * @return Subtitles Array
+	 */
+	public static Subtitles[] createSubtitlesSerie(Scanner scanner) 
 	{
-
-		//--------SERIE--REGISTER------
-		
-		System.out.println("Tell me the Title of the Series"); 
-		String title="Undefined";
-		title=scanner2.nextLine();
-		ScreenUtilities.clearScreen();
-		
-		int directorIdInsert = 0;
-		int directorCountResult=0;
-		Directors[] arrayOfDirectors= new Directors[0];
-		while(directorIdInsert>=0) 
-		{
-			System.out.println("Directors added: "+Arrays.toString(arrayOfDirectors));
-			System.out.println("Tell me the Id of the Directors (-1 to finish): ");
-			directorIdInsert=scanner.nextInt();
-			ScreenUtilities.clearScreen();
-			if(directorIdInsert>=0) 
-			{
-				for(Directors director:arrayDirectorsGeneral) 
-				{
-					if(director.getDirectorId()==directorIdInsert) 
-					{
-						directorCountResult++;
-						arrayOfDirectors=Arrays.copyOf(arrayOfDirectors,arrayOfDirectors.length+1);
-						arrayOfDirectors[arrayOfDirectors.length-1]=director;
-					}
-				}
-			}
-			System.out.println("Directors found for add: "+directorCountResult);
-		}
-		
-		ScreenUtilities.clearScreen();
-		int categoryIdInsert = 0;
-		int categoryCountResult = 0;
-		Categorie[] arrayOfCategories= new Categorie[0];
-		while(categoryIdInsert>=0) 
-		{
-			System.out.println("Categories added: "+Arrays.toString(arrayOfCategories));
-			System.out.println("Write the Id of the Categorie (-1 to cancel): ");
-			categoryIdInsert=scanner.nextInt();
-			ScreenUtilities.clearScreen();
-			
-			if(categoryIdInsert>=0) 
-			{
-				for(Categorie category:arrayCategoriesGeneral) 
-				{
-					if(category.getCategorieID()==categoryIdInsert) 
-					{
-						categoryCountResult++;
-						arrayOfCategories=Arrays.copyOf(arrayOfCategories,arrayOfCategories.length+1);
-						arrayOfCategories[arrayOfCategories.length-1]=category;
-					}
-				}
-			}
-			System.out.println("Categorie finded to add: "+categoryCountResult);
-		}
-		
-		int actorIdInsert = 0;
-		int actorCountResult = 0;
-		Actors[] arrayOfActors= new Actors[0];
-		while(actorIdInsert>=0) 
-		{
-			System.out.println("Actors added: "+Arrays.toString(arrayOfActors));
-			System.out.println("Tell me the Id of the Actors (-1 to finish): ");
-			actorIdInsert=scanner.nextInt();
-			ScreenUtilities.clearScreen();
-			if(actorIdInsert>=0) 
-			{
-				for(Actors actor:arrayActorsGeneral) 
-				{
-					if(actor.getActorId()==actorIdInsert) 
-					{
-						actorCountResult++;
-						arrayOfActors=Arrays.copyOf(arrayOfActors,arrayOfActors.length+1);
-						arrayOfActors[arrayOfActors.length-1]=actor;
-					}
-				}
-			}
-			System.out.println("Actors found for add: "+actorCountResult);
-		}
-		
-		System.out.println("Write the Original language: ");
-		String originalLenguage=scanner2.nextLine();
-		ScreenUtilities.clearScreen();
-		
-		int adaptedLang=1;
-		int adaptedLangCont=0;
-		AdaptedLanguages[] adaptedLanguagesArray= new AdaptedLanguages[0];
-		
-		while(adaptedLang>=1&adaptedLang<=7) 
-		{
-			ScreenUtilities.clearScreen();
-			System.out.println("Selected adapted languages: "+Arrays.toString(adaptedLanguagesArray));
-			System.out.println("Select the adapted languages: \n"
-					+ "[1] ES\n"
-					+ "[2] EN\n"
-					+ "[3] DE\n"
-					+ "[4] RU\n"
-					+ "[5] IT\n"
-					+ "[6] CH\n"
-					+ "[7] OTHER\n"
-					+ "[Other] END...");
-			adaptedLang=scanner.nextInt();
-			switch(adaptedLang) 
-			{
-				case 1:
-				{
-					adaptedLangCont++;
-					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
-					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.ES);
-					break;
-				}
-				case 2:
-				{
-					adaptedLangCont++;
-					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
-					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.EN);
-					break;
-				}
-				case 3:
-				{
-					adaptedLangCont++;
-					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
-					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.DE);
-					break;
-				}
-				case 4:
-				{
-					adaptedLangCont++;
-					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
-					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.RU);
-					break;
-				}
-				case 5:
-				{
-					adaptedLangCont++;
-					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
-					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.IT);
-					break;
-				}
-				case 6:
-				{
-					adaptedLangCont++;
-					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
-					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.CH);
-					break;
-				}
-				case 7:
-				{
-					adaptedLangCont++;
-					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
-					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.OTHER);
-					break;
-				}
-				default:
-				{
-					break;
-				}
-			}
-			System.out.println("Adapted Languages added: "+adaptedLangCont);
-		}
-		
 		ScreenUtilities.clearScreen();
 		System.out.println("Select the Subtitles: ");
 		
@@ -262,27 +104,273 @@ public interface SeriesOptions
 			}
 			System.out.println("Subtitles added : "+subtitlesCont);
 		}
+		return subTitlesArray;
+	}
+	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @return AdaptedLanguages array
+	 */
+	public static AdaptedLanguages[] createAdaptedLanguagesSerie(Scanner scanner) 
+	{
+		int adaptedLang=1;
+		int adaptedLangCont=0;
+		AdaptedLanguages[] adaptedLanguagesArray= new AdaptedLanguages[0];
+		
+		while(adaptedLang>=1&adaptedLang<=7) 
+		{
+			ScreenUtilities.clearScreen();
+			System.out.println("Selected adapted languages: "+Arrays.toString(adaptedLanguagesArray));
+			System.out.println("Select the adapted languages: \n"
+					+ "[1] ES\n"
+					+ "[2] EN\n"
+					+ "[3] DE\n"
+					+ "[4] RU\n"
+					+ "[5] IT\n"
+					+ "[6] CH\n"
+					+ "[7] OTHER\n"
+					+ "[Other] END...");
+			adaptedLang=scanner.nextInt();
+			switch(adaptedLang) 
+			{
+				case 1:
+				{
+					adaptedLangCont++;
+					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.ES);
+					break;
+				}
+				case 2:
+				{
+					adaptedLangCont++;
+					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.EN);
+					break;
+				}
+				case 3:
+				{
+					adaptedLangCont++;
+					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.DE);
+					break;
+				}
+				case 4:
+				{
+					adaptedLangCont++;
+					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.RU);
+					break;
+				}
+				case 5:
+				{
+					adaptedLangCont++;
+					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.IT);
+					break;
+				}
+				case 6:
+				{
+					adaptedLangCont++;
+					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.CH);
+					break;
+				}
+				case 7:
+				{
+					adaptedLangCont++;
+					adaptedLanguagesArray=Arrays.copyOf(adaptedLanguagesArray, adaptedLanguagesArray.length+1);
+					adaptedLanguagesArray[adaptedLanguagesArray.length-1]=new AdaptedLanguages(AvaliableAdaptedLanguages.OTHER);
+					break;
+				}
+				default:
+				{
+					break;
+				}
+			}
+			System.out.println("Adapted Languages added: "+adaptedLangCont);
+		}
+		return adaptedLanguagesArray;
+	}
+	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param arrayActorsGeneral array of actors
+	 * @return Actors array
+	 */
+	public static Actors[] createActorsSerie(Scanner scanner,Actors[] arrayActorsGeneral) 
+	{
+		int actorIdInsert = 0;
+		int actorCountResult = 0;
+		Actors[] arrayOfActors= new Actors[0];
+		while(actorIdInsert>=0) 
+		{
+			System.out.println("Actors added: "+Arrays.toString(arrayOfActors));
+			System.out.println("Tell me the Id of the Actors (-1 to finish): ");
+			actorIdInsert=scanner.nextInt();
+			ScreenUtilities.clearScreen();
+			if(actorIdInsert>=0) 
+			{
+				for(Actors actor:arrayActorsGeneral) 
+				{
+					if(actor.getActorId()==actorIdInsert) 
+					{
+						actorCountResult++;
+						arrayOfActors=Arrays.copyOf(arrayOfActors,arrayOfActors.length+1);
+						arrayOfActors[arrayOfActors.length-1]=actor;
+					}
+				}
+			}
+			System.out.println("Actors found for add: "+actorCountResult);
+		}
+		return arrayOfActors;
+	}
+	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param arrayCategoriesGeneral array of categories general
+	 * @return Categorie Array
+	 */
+	public static Categorie[] createCategoriesSerie(Scanner scanner,Categorie[] arrayCategoriesGeneral) 
+	{
+		ScreenUtilities.clearScreen();
+		int categoryIdInsert = 0;
+		int categoryCountResult = 0;
+		Categorie[] arrayOfCategories= new Categorie[0];
+		while(categoryIdInsert>=0) 
+		{
+			System.out.println("Categories added: "+Arrays.toString(arrayOfCategories));
+			System.out.println("Write the Id of the Categorie (-1 to cancel): ");
+			categoryIdInsert=scanner.nextInt();
+			ScreenUtilities.clearScreen();
+			
+			if(categoryIdInsert>=0) 
+			{
+				for(Categorie category:arrayCategoriesGeneral) 
+				{
+					if(category.getCategorieID()==categoryIdInsert) 
+					{
+						categoryCountResult++;
+						arrayOfCategories=Arrays.copyOf(arrayOfCategories,arrayOfCategories.length+1);
+						arrayOfCategories[arrayOfCategories.length-1]=category;
+					}
+				}
+			}
+			System.out.println("Categorie finded to add: "+categoryCountResult);
+		}
+		return arrayOfCategories;
+	}
+	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param arrayDirectorsGeneral array of directors general
+	 * @return Directors Array
+	 */
+	public static Directors[] createDirectorsSerie(Scanner scanner, Directors[] arrayDirectorsGeneral) 
+	{
+		int directorIdInsert = 0;
+		int directorCountResult=0;
+		Directors[] arrayOfDirectors= new Directors[0];
+		while(directorIdInsert>=0) 
+		{
+			System.out.println("Directors added: "+Arrays.toString(arrayOfDirectors));
+			System.out.println("Tell me the Id of the Directors (-1 to finish): ");
+			directorIdInsert=scanner.nextInt();
+			ScreenUtilities.clearScreen();
+			if(directorIdInsert>=0) 
+			{
+				for(Directors director:arrayDirectorsGeneral) 
+				{
+					if(director.getDirectorId()==directorIdInsert) 
+					{
+						directorCountResult++;
+						arrayOfDirectors=Arrays.copyOf(arrayOfDirectors,arrayOfDirectors.length+1);
+						arrayOfDirectors[arrayOfDirectors.length-1]=director;
+					}
+				}
+			}
+			System.out.println("Directors found for add: "+directorCountResult);
+		}
+		return arrayOfDirectors;
+	}
+	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param scanner2 the scanner2
+	 * @param arraySeriesGeneral series general array
+	 * @param arrayDirectorsGeneral directors general array
+	 * @param arrayActorsGeneral actors general array
+	 * @param arrayCategoriesGeneral categories general array
+	 * @param arraySubtitlesGeneral subtitles general array
+	 * @param serieIdCont serie id cont
+	 * @return Series Array
+	 */
+	public static Series[] createSerie(Scanner scanner,Scanner scanner2,Series[] arraySeriesGeneral,Directors[] arrayDirectorsGeneral,Actors[] arrayActorsGeneral,Categorie[] arrayCategoriesGeneral,Subtitles[] arraySubtitlesGeneral,int serieIdCont) 
+	{
+
+		//--------SERIE--REGISTER------
+		
+		System.out.println("Tell me the Title of the Series"); 
+		String title="Undefined";
+		title=scanner2.nextLine();
+		ScreenUtilities.clearScreen();
+		
+		//--DIRECTOR TO NEW SERIE---
+		Directors[] arrayOfDirectors = createDirectorsSerie(scanner, arrayDirectorsGeneral);
+		
+		
+		//--CATEGORIES TO NEW SERIE---
+		Categorie[] arrayOfCategories= createCategoriesSerie(scanner, arrayCategoriesGeneral);
+		
+		
+		//---ACTORS TO NEW SERIE---
+		Actors[] arrayOfActors = createActorsSerie(scanner, arrayActorsGeneral);
+		
+		
+		//--ORIGINAL--LANGUAGE TO NEW SERIE---
+		System.out.println("Write the Original language: ");
+		String originalLenguage=scanner2.nextLine();
+		ScreenUtilities.clearScreen();
+		
+		
+		//---ADAPTED LANGUAGES--TO NEW SERIE----
+		AdaptedLanguages[] adaptedLanguagesArray = createAdaptedLanguagesSerie(scanner);
+		
+		
+		//--SUBTITLES-TO NEW SERIE----
+		Subtitles[] subTitlesArray= createSubtitlesSerie(scanner);
+		
+		
+		//--TOTAL DURATION TO NEW SERIE----
 		ScreenUtilities.clearScreen();
 		System.out.println("Select a total duration (in minutes): ");
 		double minutosTiempoDuracion=0;
 		minutosTiempoDuracion=scanner.nextDouble();
-
+		
+		//---CREATION YEAR TO NEW SERIE----
 		ScreenUtilities.clearScreen();
 		System.out.println("Select a creation year: ");
 		int anyoCreacion=9999;
 		anyoCreacion=scanner.nextInt();
 		
+		//--NUMBER OF CAPITULES TO NEW SERIE----
 		ScreenUtilities.clearScreen();
 		System.out.println("Select a number of chapters: ");
 		int numeroCapitulos=0;
 		numeroCapitulos=scanner.nextInt();
 		
+		//--NUMBER OF SEASONS TO NEW SERIE----
 		ScreenUtilities.clearScreen();
 		System.out.println("Select a number of seasons: ");
 		int numeroTemporadas=0;
 		numeroTemporadas=scanner.nextInt();
 		ScreenUtilities.clearScreen();
-
+		
+		//--ADD THE SERIE TO GENERAL SERIES ARRAY---
 		arraySeriesGeneral=Arrays.copyOf(arraySeriesGeneral, arraySeriesGeneral.length+1);
 		arraySeriesGeneral[arraySeriesGeneral.length-1]=new Series(arrayOfActors,arrayOfDirectors,arrayOfCategories,title,originalLenguage,adaptedLanguagesArray,subTitlesArray,minutosTiempoDuracion,anyoCreacion,numeroCapitulos,numeroTemporadas,serieIdCont++);
 		System.out.println(arraySeriesGeneral[arraySeriesGeneral.length-1]);
@@ -290,6 +378,12 @@ public interface SeriesOptions
 		return arraySeriesGeneral;
 	}
 	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param scanner2 the scanner 2
+	 * @param arraySeriesGeneral array series general
+	 */
 	public static void searchSerie(Scanner scanner,Scanner scanner2,Series[] arraySeriesGeneral) 
 	{
 		ScreenUtilities.clearScreen();
@@ -644,6 +738,17 @@ public interface SeriesOptions
 		}
 	}
 	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param scanner2 the scanner2
+	 * @param arraySeriesGeneral Series general array
+	 * @param arrayDirectorsGeneral directors general array
+	 * @param arrayActorsGeneral actors general array
+	 * @param arrayCategoriesGeneral categories general array
+	 * @param serieIdCont serie id cont
+	 * @return
+	 */
 	public static Series[] modifySerie(Scanner scanner,Scanner scanner2,Series[] arraySeriesGeneral,Directors[] arrayDirectorsGeneral,Actors[] arrayActorsGeneral,Categorie[] arrayCategoriesGeneral,int serieIdCont) 
 	{
 
@@ -1101,6 +1206,12 @@ public interface SeriesOptions
 		return arraySeriesGeneral;
 	}
 	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param arraySeriesGeneral array series general
+	 * @return
+	 */
 	public static Series[] deleteSerie(Scanner scanner,Series[] arraySeriesGeneral) 
 	{
 

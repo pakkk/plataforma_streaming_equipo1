@@ -19,24 +19,28 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
  */
 public interface MoviesOptions 
 {
-	public static Movies[] createMovie(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral,Directors[] arrayDirectorsGeneral,Actors[] arrayActorsGeneral,Categorie[] arrayCategoriesGeneral,Subtitles[] arraySubtitlesGeneral,int movieIdCont) 
-	{
-
-		//--------movie--REGISTER------
-		
-		System.out.println("Write the title of the movie"); 
-		String title="Undefined";
-		title=scanner2.nextLine();
-		ScreenUtilities.clearScreen();
-		
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param arrayDirectorsGeneral array Directors general
+	 * @param arrayActorsGeneral array Actors general
+	 * @param arrayCategoriesGeneral array Categories General
+	 * @param arraySubtitlesGeneral array Subtitles General
+	 * @param movieIdCont movie id
+	 * @return Directors array
+	 */
+	public static Directors[] createMovieDirectors(Scanner scanner,Directors[] arrayDirectorsGeneral,Actors[] arrayActorsGeneral,Categorie[] arrayCategoriesGeneral,Subtitles[] arraySubtitlesGeneral,int movieIdCont) 
+	{	//---DIRECTORS--TO NEW MOVIE--
 		int directorIdInsert = 0;
 		int directorCountResult=0;
 		Directors[] arrayOfDirectors= new Directors[0];
+		
 		while(directorIdInsert>=0) 
 		{
 			System.out.println("Directors added: "+Arrays.toString(arrayOfDirectors));
 			System.out.println("Write the id of the Director/s (-1 to finish): ");
 			directorIdInsert=scanner.nextInt();
+			
 			ScreenUtilities.clearScreen();
 			if(directorIdInsert>=0) 
 			{
@@ -52,61 +56,108 @@ public interface MoviesOptions
 			}
 			System.out.println("Directors finded to add: "+directorCountResult);
 		}
-		
+		return arrayOfDirectors;
+				
+	}
+	
+	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @return array of Subtitles
+	 */
+	public static Subtitles[] createSubtitlesMovie(Scanner scanner) 
+	{
 		ScreenUtilities.clearScreen();
-		int categoryIdInsert = 0;
-		int categoryCountResult = 0;
-		Categorie[] arrayOfCategories= new Categorie[0];
-		while(categoryIdInsert>=0) 
+		System.out.println("Select the Subtitles: ");
+		
+		int subTitle=2;
+		int subtitlesCont=0;
+		Subtitles[] subTitlesArray= new Subtitles[0];
+		
+		while(subTitle>=1&subTitle<=7) 
 		{
-			System.out.println("Categories added: "+Arrays.toString(arrayOfCategories));
-			System.out.println("Write the Id of the Categorie (-1 to cancel): ");
-			categoryIdInsert=scanner.nextInt();
 			ScreenUtilities.clearScreen();
-			
-			if(categoryIdInsert>=0) 
-			{
-				for(Categorie category:arrayCategoriesGeneral) 
+			System.out.println("Subtitles added: "+Arrays.toString(subTitlesArray));
+			System.out.println("Select the subtitles to add: \n"
+					+ "[1] ES\n"
+					+ "[2] EN\n"
+					+ "[3] DE\n"
+					+ "[4] RU\n"
+					+ "[5] IT\n"
+					+ "[6] CH\n"
+					+ "[7] OTHER\n"
+					+ "[Other] END...");
+			subTitle=scanner.nextInt();
+			switch(subTitle) 
 				{
-					if(category.getCategorieID()==categoryIdInsert) 
-					{
-						categoryCountResult++;
-						arrayOfCategories=Arrays.copyOf(arrayOfCategories,arrayOfCategories.length+1);
-						arrayOfCategories[arrayOfCategories.length-1]=category;
-					}
+				case 1:
+				{
+					subtitlesCont++;
+					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.ES);
+					break;
+				}
+				case 2:
+				{
+					subtitlesCont++;
+					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.EN);
+					break;
+				}
+				case 3:
+				{
+					subtitlesCont++;
+					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.DE);
+					break;
+				}
+				case 4:
+				{
+					subtitlesCont++;
+					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.RU);
+					break;
+				}
+				case 5:
+				{
+					subtitlesCont++;
+					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.IT);
+					break;
+				}
+				case 6:
+				{
+					subtitlesCont++;
+					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.CH);
+					break;
+				}
+				case 7:
+				{
+					subtitlesCont++;
+					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
+					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
+					break;
+				}
+				default:
+				{
+					break;
 				}
 			}
-			System.out.println("Categorie finded to add: "+categoryCountResult);
+			System.out.println("Subtitles added : "+subtitlesCont);
 		}
-		
-		int actorIdInsert = 0;
-		int actorCountResult = 0;
-		Actors[] arrayOfActors= new Actors[0];
-		while(actorIdInsert>=0) 
-		{
-			System.out.println("Actors added: "+Arrays.toString(arrayOfActors));
-			System.out.println("Write the id of the actors (-1 to finish): ");
-			actorIdInsert=scanner.nextInt();
-			ScreenUtilities.clearScreen();
-			if(actorIdInsert>=0) 
-			{
-				for(Actors actor:arrayActorsGeneral) 
-				{
-					if(actor.getActorId()==actorIdInsert) 
-					{
-						actorCountResult++;
-						arrayOfActors=Arrays.copyOf(arrayOfActors,arrayOfActors.length+1);
-						arrayOfActors[arrayOfActors.length-1]=actor;
-					}
-				}
-			}
-			System.out.println("Actors finded to add: "+actorCountResult);
-		}
-		
-		System.out.println("Write the Original lenguage: ");
-		String originalLenguage=scanner2.nextLine();
-		ScreenUtilities.clearScreen();
-		
+		return subTitlesArray;
+	}
+	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @return Adapted Languages array
+	 */
+	public static AdaptedLanguages[] createAdaptedLanguagesMovie(Scanner scanner)
+	{	
+		//---ADPATEDS LANGUAGES TO NEW MOVIE----
 		int adaptedLang=1;
 		int adaptedLangCont=0;
 		AdaptedLanguages[] adaptedLanguagesArray= new AdaptedLanguages[0];
@@ -183,96 +234,140 @@ public interface MoviesOptions
 			}
 			System.out.println("Adapted Languages added: "+adaptedLangCont);
 		}
+		return adaptedLanguagesArray;
+	}
+	
+	/**
+	 * 
+	 * @param scanner the sacanner
+	 * @param arrayActorsGeneral array of actors general
+	 * @return array of Actors
+	 */
+	public static Actors[] createActorsMovie(Scanner scanner,Actors[] arrayActorsGeneral) 
+	{
+		//--ACTORS--TO NEW MOVIE---
+		int actorIdInsert = 0;
+		int actorCountResult = 0;
+		Actors[] arrayOfActors= new Actors[0];
 		
-		ScreenUtilities.clearScreen();
-		System.out.println("Select the Subtitles: ");
-		
-		int subTitle=2;
-		int subtitlesCont=0;
-		Subtitles[] subTitlesArray= new Subtitles[0];
-		while(subTitle>=1&subTitle<=7) 
+		while(actorIdInsert>=0) 
 		{
+			System.out.println("Actors added: "+Arrays.toString(arrayOfActors));
+			System.out.println("Write the id of the actors (-1 to finish): ");
+			actorIdInsert=scanner.nextInt();
 			ScreenUtilities.clearScreen();
-			System.out.println("Subtitles added: "+Arrays.toString(subTitlesArray));
-			System.out.println("Select the subtitles to add: \n"
-					+ "[1] ES\n"
-					+ "[2] EN\n"
-					+ "[3] DE\n"
-					+ "[4] RU\n"
-					+ "[5] IT\n"
-					+ "[6] CH\n"
-					+ "[7] OTHER\n"
-					+ "[Other] END...");
-			subTitle=scanner.nextInt();
-			switch(subTitle) 
+			if(actorIdInsert>=0) 
+			{
+				for(Actors actor:arrayActorsGeneral) 
 				{
-				case 1:
-				{
-					subtitlesCont++;
-					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
-					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.ES);
-					break;
-				}
-				case 2:
-				{
-					subtitlesCont++;
-					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
-					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.EN);
-					break;
-				}
-				case 3:
-				{
-					subtitlesCont++;
-					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
-					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.DE);
-					break;
-				}
-				case 4:
-				{
-					subtitlesCont++;
-					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
-					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.RU);
-					break;
-				}
-				case 5:
-				{
-					subtitlesCont++;
-					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
-					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.IT);
-					break;
-				}
-				case 6:
-				{
-					subtitlesCont++;
-					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
-					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.CH);
-					break;
-				}
-				case 7:
-				{
-					subtitlesCont++;
-					subTitlesArray=Arrays.copyOf(subTitlesArray, subTitlesArray.length+1);
-					subTitlesArray[subTitlesArray.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
-					break;
-				}
-				default:
-				{
-					break;
+					if(actor.getActorId()==actorIdInsert) 
+					{
+						actorCountResult++;
+						arrayOfActors=Arrays.copyOf(arrayOfActors,arrayOfActors.length+1);
+						arrayOfActors[arrayOfActors.length-1]=actor;
+					}
 				}
 			}
-			System.out.println("Subtitles added : "+subtitlesCont);
+			System.out.println("Actors finded to add: "+actorCountResult);
 		}
+		return arrayOfActors;
+	}
+	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param arrayCategoriesGeneral array Categories General
+	 * @return array of Categorie
+	 */
+	public static Categorie[] createCategoriesMovie(Scanner scanner,Categorie[] arrayCategoriesGeneral) 
+	{
+		//---CATEGORIES--TO NEW MOVIE--
+		int categoryIdInsert = 0;
+		int categoryCountResult = 0;
+		
+		Categorie[] arrayOfCategories= new Categorie[0];
+		
+		while(categoryIdInsert>=0) 
+		{
+			System.out.println("Categories added: "+Arrays.toString(arrayOfCategories));
+			System.out.println("Write the Id of the Categorie (-1 to cancel): ");
+			categoryIdInsert=scanner.nextInt();
+			ScreenUtilities.clearScreen();
+			
+			if(categoryIdInsert>=0) 
+			{
+				for(Categorie category:arrayCategoriesGeneral) 
+				{
+					if(category.getCategorieID()==categoryIdInsert) 
+					{
+						categoryCountResult++;
+						arrayOfCategories=Arrays.copyOf(arrayOfCategories,arrayOfCategories.length+1);
+						arrayOfCategories[arrayOfCategories.length-1]=category;
+					}
+				}
+			}
+			System.out.println("Categorie finded to add: "+categoryCountResult);
+		}
+		return arrayOfCategories;
+	}
+	
+	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param scanner2 the scanner2
+	 * @param arrayMoviesGeneral array movies general
+	 * @param arrayDirectorsGeneral array directors general
+	 * @param arrayActorsGeneral array actors general
+	 * @param arrayCategoriesGeneral array categories general
+	 * @param arraySubtitlesGeneral array subtitles general
+	 * @param movieIdCont movieID cont
+	 * @return
+	 */
+	public static Movies[] createMovie(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral,Directors[] arrayDirectorsGeneral,Actors[] arrayActorsGeneral,Categorie[] arrayCategoriesGeneral,Subtitles[] arraySubtitlesGeneral,int movieIdCont) 
+	{
+
+		//--------MOVIE--REGISTER------
+		
+		System.out.println("Write the title of the movie"); 
+		String title="Undefined";
+		title=scanner2.nextLine();
+		ScreenUtilities.clearScreen();
+		
+		//---DIRECTORS--TO NEW MOVIE--
+		Directors[] arrayOfDirectors=createMovieDirectors(scanner2, arrayDirectorsGeneral, arrayActorsGeneral, arrayCategoriesGeneral, arraySubtitlesGeneral, movieIdCont);
+	
+		//---CATEGORIES--TO NEW MOVIE--
+		ScreenUtilities.clearScreen();
+		Categorie[] arrayOfCategories=createCategoriesMovie(scanner2, arrayCategoriesGeneral);
+		
+		//--ACTORS--TO NEW MOVIE---
+		Actors[] arrayOfActors=createActorsMovie(scanner2, arrayActorsGeneral);
+				
+		//--ORIGINAL--LANGUAGE---
+		System.out.println("Write the Original lenguage: ");
+		String originalLenguage=scanner2.nextLine();
+		ScreenUtilities.clearScreen();
+		
+		//---ADPATEDS LANGUAGES TO NEW MOVIE----
+		AdaptedLanguages[] adaptedLanguagesArray=createAdaptedLanguagesMovie(scanner);
+		
+		//--SUBTITLES TO NEW MOVIE---
+		Subtitles[] subTitlesArray =createSubtitlesMovie(scanner);
+		
+		//---DURATION TO NEW MOVIE----
 		ScreenUtilities.clearScreen();
 		System.out.println("Select the total duration (Time in minutes): ");
 		double minutosTiempoDuracion=0;
 		minutosTiempoDuracion=scanner.nextDouble();
-
+		
+		//---CREATION YEAR TO NEW MOVIE---
 		ScreenUtilities.clearScreen();
 		System.out.println("Select the year of creation: ");
 		int anyoCreacion=9999;
 		anyoCreacion=scanner.nextInt();
 		
-
+		//--ADD-THE NEW MOVIE----
 		arrayMoviesGeneral=Arrays.copyOf(arrayMoviesGeneral, arrayMoviesGeneral.length+1);
 		arrayMoviesGeneral[arrayMoviesGeneral.length-1]=new Movies(arrayOfActors,arrayOfDirectors,arrayOfCategories,title,originalLenguage,adaptedLanguagesArray,subTitlesArray,minutosTiempoDuracion,anyoCreacion,movieIdCont++);
 		System.out.println(arrayMoviesGeneral[arrayMoviesGeneral.length-1]);
@@ -280,6 +375,12 @@ public interface MoviesOptions
 		return arrayMoviesGeneral;
 	}
 	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param scanner2 the scanner2
+	 * @param arrayMoviesGeneral array movies general
+	 */
 	public static void searchMovie(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral) 
 	{
 		ScreenUtilities.clearScreen();
@@ -302,6 +403,7 @@ public interface MoviesOptions
 			int moviesContResults=0;
 			System.out.println("Indicate the Id of the actor \n");
 			int actorId=scanner.nextInt();
+			
 			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Movies movie:arrayMoviesGeneral) 
@@ -324,8 +426,10 @@ public interface MoviesOptions
 			int moviesContResults=0;
 			System.out.println("Indicate the Id of the Director \n");
 			int directorId=scanner.nextInt();
+			
 			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
+			
 			for (Movies movie:arrayMoviesGeneral) 
 			{
 				for(Directors director : movie.getDirectors()) 
@@ -347,7 +451,9 @@ public interface MoviesOptions
 			System.out.println("Indicate the Title or part of it: \n");
 			String titleSearch=scanner2.nextLine();
 			ScreenUtilities.clearScreen();
+			
 			System.out.println("Results: \n");
+			
 			for (Movies movie:arrayMoviesGeneral) 
 			{
 				if(movie.getTitle().contains(titleSearch)) 
@@ -364,8 +470,10 @@ public interface MoviesOptions
 			int moviesContResults=0;
 			System.out.println("Indicate the Lenguage Original or part of it: \n");
 			String origLanguageSearch=scanner2.nextLine();
+			
 			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
+			
 			for (Movies movie:arrayMoviesGeneral) 
 			{
 				if(movie.getOriginalLanguage().contains(origLanguageSearch)) 
@@ -380,6 +488,7 @@ public interface MoviesOptions
 		{
 			//---------Search By Adapted Language (ID)------------
 			int moviesContResults=0;
+			
 			System.out.println("Select the Adapted Lenguaje: \n"
 					+ "[1] ES\n"
 					+ "[2] EN\n"
@@ -390,6 +499,7 @@ public interface MoviesOptions
 					+ "[Other] Other");
 			int adaptedLanguageSelectionSearch=scanner.nextInt();
 			ScreenUtilities.clearScreen();
+			
 			AvaliableAdaptedLanguages adaptedSearch=null;
 			if(adaptedLanguageSelectionSearch==1) 
 			{
@@ -420,6 +530,7 @@ public interface MoviesOptions
 				adaptedSearch=AvaliableAdaptedLanguages.OTHER;
 			}
 			System.out.println("Results: \n");
+			
 			for (Movies movie:arrayMoviesGeneral) 
 			{
 				for(AdaptedLanguages adapted : movie.getAdaptedLanguages()) 
@@ -494,6 +605,7 @@ public interface MoviesOptions
 			int moviesContResults=0;
 			System.out.println("Indicate the total duration: \n");
 			double durationTotalTime=scanner.nextInt();
+			
 			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Movies movie:arrayMoviesGeneral) 
@@ -512,6 +624,7 @@ public interface MoviesOptions
 			int moviesContResults=0;
 			System.out.println("Indicate the total duration: \n");
 			int creationYear=scanner.nextInt();
+			
 			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Movies movie:arrayMoviesGeneral) 
@@ -538,6 +651,7 @@ public interface MoviesOptions
 					+ "[7] OTHER\n"
 					+ "[Other] END...");
 			int subtitleSearch=scanner.nextInt();
+			
 			AvaliableSubtitles subtitleToFind=null;
 			ScreenUtilities.clearScreen();
 			if(subtitleSearch==1) 
@@ -569,6 +683,7 @@ public interface MoviesOptions
 				subtitleToFind=AvaliableSubtitles.OTHER;
 			}
 			System.out.println("Results: \n");
+			
 			for (Movies movie:arrayMoviesGeneral) 
 			{
 				for(Subtitles subtitle : movie.getAvaliableSubtitles()) 
@@ -603,6 +718,17 @@ public interface MoviesOptions
 		}
 	}
 	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param scanner2 the scanner 2
+	 * @param arrayMoviesGeneral array movies general
+	 * @param arrayDirectorsGeneral array directors general
+	 * @param arrayActorsGeneral array actors general
+	 * @param arrayCategoriesGeneral array categories general
+	 * @param movieIdCont movie id
+	 * @return Movies array
+	 */
 	public static Movies[] modifyMovie(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral,Directors[] arrayDirectorsGeneral,Actors[] arrayActorsGeneral,Categorie[] arrayCategoriesGeneral,int movieIdCont) 
 	{
 		System.out.println("Indicate the Id of the movie to modify: ");
@@ -1023,6 +1149,13 @@ public interface MoviesOptions
 		return arrayMoviesGeneral;
 	}
 	
+	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param arrayMoviesGeneral array of movies general
+	 * @return Movies array
+	 */
 	public static Movies[] deleteMovie(Scanner scanner,Movies[] arrayMoviesGeneral) 
 	{
 
@@ -1071,5 +1204,5 @@ public interface MoviesOptions
 		}
 		return arrayMoviesGeneral;
 	}
-	
+
 }

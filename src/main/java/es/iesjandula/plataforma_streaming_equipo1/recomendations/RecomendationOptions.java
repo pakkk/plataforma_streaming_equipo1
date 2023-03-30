@@ -12,6 +12,15 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
  */
 public interface RecomendationOptions 
 {
+	/**
+	 * 
+	 * @param scanner 
+	 * @param scanner2
+	 * @param arrayRecomendationsGeneral the romendations array
+	 * @param arrayMoviesGeneral the movies array
+	 * @param arraySeriesGeneral the series array
+	 * @return Object array
+	 */
 	public static Object[] createRecomendation(Scanner scanner,Scanner scanner2, Recomendations[] arrayRecomendationsGeneral,Movies[] arrayMoviesGeneral, Series[] arraySeriesGeneral) 
 	{
 
@@ -105,6 +114,14 @@ public interface RecomendationOptions
 		//-------------ADD-RECOMENDATION-TO-SERIE-MOVIE------------------
 	}
 	
+	
+	/**
+	 * 
+	 * @param scanner the scanner
+	 * @param scanner2 the scanner 2
+	 * @param arrayRecomendationsGeneral the array of recomendations
+	 * @return Recomendations array
+	 */
 	public static Recomendations[] modifyRecomendation(Scanner scanner,Scanner scanner2, Recomendations[] arrayRecomendationsGeneral) 
 	{
 		//-------------MODIFY-RECOMENDATION-----------------
@@ -231,7 +248,16 @@ public interface RecomendationOptions
 		//--MODIFY-BY-TYPE--
 	}
 
-	
+
+	/**
+	 * 
+	 * @param scanner 
+	 * @param scanner2
+	 * @param arrayRecomendationsGeneral the romendations array
+	 * @param arrayMoviesGeneral the movies array
+	 * @param arraySeriesGeneral the series array
+	 * @return Object array
+	 */
 	public static Object[] deleteRecomendation(Scanner scanner,Scanner scanner2, Recomendations[] arrayRecomendationsGeneral,Movies[] arrayMoviesGeneral,Series[] arraySeriesGeneral) 
 	{
 
@@ -412,6 +438,17 @@ public interface RecomendationOptions
 		return objects;
 		
 	}
+	
+	
+	/**
+	 * 
+	 * @param scanner 
+	 * @param scanner2
+	 * @param arrayRecomendationsGeneral the romendations array
+	 * @param arrayMoviesGeneral the movies array
+	 * @param arraySeriesGeneral the series array
+	 * 
+	 */
 	public static void searchRecomendation(Scanner scanner,Scanner scanner2, Recomendations[] arrayRecomendationsGeneral,Movies[] arrayMoviesGeneral, Series[] arraySeriesGeneral) 
 	{
 
