@@ -10,7 +10,7 @@ public class Categorie
 	/** Attribute - Type */
 	private CategorieTypes type;
 	
-	/** Attribute - acategorie ID */
+	/** Attribute - categorieID */
 	private int categorieID;
 	
 	/** Attribute - name */

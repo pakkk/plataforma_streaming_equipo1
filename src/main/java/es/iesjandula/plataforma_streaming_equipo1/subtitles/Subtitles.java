@@ -1,12 +1,20 @@
 package es.iesjandula.plataforma_streaming_equipo1.subtitles;
-
+/**
+ * @LuisDavidCastillo
+ * 
+ * Class for the creation and use of subtitles
+ */
 public class Subtitles 
 {
 	
-	//Variables
+	/**
+	 * Variables
+	 */
 	private AvaliableSubtitles subtitle;
 	
-	//Constructor
+	/**
+	 * Constructor
+	 */
 	public Subtitles(AvaliableSubtitles subtitle) 
 	{
 		this.subtitle = subtitle;
@@ -23,7 +31,7 @@ public class Subtitles
 
 
 	/**
-	 * @param subtitle the subtitle to set
+	 * @param set the subtitle
 	 */
 	public void setSubtitle(AvaliableSubtitles subtitle) 
 	{
@@ -31,7 +39,9 @@ public class Subtitles
 	}
 
 	
-	//toString method to print subtitles
+	/**
+	 * toString method to print subtitles
+	 */
 	@Override
 	public String toString() 
 	{

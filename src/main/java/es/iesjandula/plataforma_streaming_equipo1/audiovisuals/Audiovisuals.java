@@ -7,26 +7,52 @@ import es.iesjandula.plataforma_streaming_equipo1.adaptedlanguages.AdaptedLangua
 import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
 import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
-/*
- * Audiovisuals class , store the audiovisuals
+/**
+ * @LuisDavidCastillo
+ * 
+ * Audiovisuals class , store and use the audiovisuals
  */
 public class Audiovisuals 
 {
 
-	//Variables
+	/** Variable - type */
 	protected Type type;
+	
+	/** Variable - directors */
 	protected Directors[] directors= new Directors[0];
+	
+	/** Variable - actors */
 	protected Actors[] actors= new Actors[0]; 
+	
+	/** Variable - categ */
 	protected Categorie[] categ = new Categorie[0];
+	
+	/** Variable - title */
 	protected String title;
+	
+	/** Variable - originalLanguage */
 	protected String originalLanguage;
+	
+	/** Variable - adaptedLanguages */
 	protected AdaptedLanguages[] adaptedLanguages = new AdaptedLanguages[0];
+	
+	/** Variable - avaliableSubtitles */
 	protected Subtitles[] avaliableSubtitles = new Subtitles[0];
+	
+	/** Variable - duration */
 	protected Double duration;
+	
+	/** Variable - creationYear */
 	protected int creationYear;
+	
+	/** Variable - views */
 	protected int views;
 	
-	//Constructor
+	/**
+	 * Constructor of the class
+	 * 
+	 * @param type with the Audiovisuals
+	 */
 	public Audiovisuals(Type type,Directors[] directors, Actors[] actores, Categorie[] categ, String title, String originalLanguage,
 			AdaptedLanguages[] adaptedLanguages, Subtitles[] avaliableSubtitles, Double duration, int creationYear) 
 	{
@@ -44,21 +70,23 @@ public class Audiovisuals
 	}
 
 
-	//ToString for print all attributes
+	/**
+	 * toString to print all attributes
+	 */
 	@Override
 	public String toString() 
 	{
-		return "Audiovisuals [type=" + type + ", actores=" + Arrays.toString(actors) + ", categ="
-				+ Arrays.toString(categ) + ", title=" + title + ", originalLanguage=" + originalLanguage
-				+ ", adaptedLanguages=" + Arrays.toString(adaptedLanguages) + ", avaliableSubtitles="
-				+ Arrays.toString(avaliableSubtitles) + ", duration=" + duration + ", creationYear=" + creationYear
-				+ "]"+Arrays.toString(directors)+" views: "+views;
+		return "Audiovisuals [type=" + this.type + ", actores=" + Arrays.toString(this.actors) + ", categ="
+				+ Arrays.toString(this.categ) + ", title=" + this.title + ", originalLanguage=" + this.originalLanguage
+				+ ", adaptedLanguages=" + Arrays.toString(this.adaptedLanguages) + ", avaliableSubtitles="
+				+ Arrays.toString(this.avaliableSubtitles) + ", duration=" + this.duration + ", creationYear=" + this.creationYear
+				+ "]"+Arrays.toString(this.directors)+" views: "+this.views;
 	}
-
-	
-	//Getters and setters
 	
 	/**
+	 * Getters and setters
+	 *
+	 *
 	 * @return the type
 	 */
 	public Type getType() 
@@ -67,7 +95,7 @@ public class Audiovisuals
 	}
 
 	/**
-	 * @param type the type to set
+	 * @param set the type
 	 */
 	public void setType(Type type) 
 	{
@@ -83,19 +111,11 @@ public class Audiovisuals
 	}
 
 	/**
-	 * @param directors the directors to set
+	 * @param set the directors
 	 */
 	public void setDirectors(Directors[] directors) 
 	{
 		this.directors = directors;
-	}
-
-	/**
-	 * @return the actors
-	 */
-	public Actors[] getActores() 
-	{
-		return this.actors;
 	}
 
 	/**
@@ -106,15 +126,13 @@ public class Audiovisuals
 		return this.actors;
 	}
 
-
 	/**
-	 * @param actors the actors to set
+	 * @param set the actors
 	 */
 	public void setActors(Actors[] actors) 
 	{
 		this.actors = actors;
 	}
-
 
 	/**
 	 * @return the categ
@@ -125,7 +143,7 @@ public class Audiovisuals
 	}
 
 	/**
-	 * @param categ the categ to set
+	 * @param set the categ
 	 */
 	public void setCateg(Categorie[] categ) 
 	{
@@ -141,7 +159,7 @@ public class Audiovisuals
 	}
 
 	/**
-	 * @param title the title to set
+	 * @param set the title
 	 */
 	public void setTitle(String title) 
 	{
@@ -157,7 +175,7 @@ public class Audiovisuals
 	}
 
 	/**
-	 * @param originalLanguage the originalLanguage to set
+	 * @param set the originalLanguage
 	 */
 	public void setOriginalLanguage(String originalLanguage) 
 	{
@@ -173,7 +191,7 @@ public class Audiovisuals
 	}
 
 	/**
-	 * @param adaptedLanguages the adaptedLanguages to set
+	 * @param set the adaptedLanguages
 	 */
 	public void setAdaptedLanguages(AdaptedLanguages[] adaptedLanguages) 
 	{
@@ -189,7 +207,7 @@ public class Audiovisuals
 	}
 
 	/**
-	 * @param avaliableSubtitles the avaliableSubtitles to set
+	 * @param set the avaliableSubtitles
 	 */
 	public void setAvaliableSubtitles(Subtitles[] avaliableSubtitles) 
 	{
@@ -205,7 +223,7 @@ public class Audiovisuals
 	}
 
 	/**
-	 * @param duration the duration to set
+	 * @param set the duration
 	 */
 	public void setDuration(Double duration) 
 	{
@@ -221,7 +239,7 @@ public class Audiovisuals
 	}
 
 	/**
-	 * @param creationYear the creationYear to set
+	 * @param set the creationYear
 	 */
 	public void setCreationYear(int creationYear) 
 	{
@@ -237,7 +255,7 @@ public class Audiovisuals
 	}
 
 	/**
-	 * @param views the views to set
+	 * @param set the views
 	 */
 	public void setViews(int views) 
 	{
