@@ -29,6 +29,7 @@ public interface SeriesOptions
 		Directors[] arrayOfDirectors= new Directors[0];
 		while(directorIdInsert>=0) 
 		{
+			System.out.println("Directors added: "+Arrays.toString(arrayOfDirectors));
 			System.out.println("Tell me the Id of the Directors (-1 to finish): ");
 			directorIdInsert=scanner.nextInt();
 			ScreenUtilities.clearScreen();
@@ -53,6 +54,7 @@ public interface SeriesOptions
 		Categorie[] arrayOfCategories= new Categorie[0];
 		while(categoryIdInsert>=0) 
 		{
+			System.out.println("Categories added: "+Arrays.toString(arrayOfCategories));
 			System.out.println("Write the Id of the Categorie (-1 to cancel): ");
 			categoryIdInsert=scanner.nextInt();
 			ScreenUtilities.clearScreen();
@@ -77,6 +79,7 @@ public interface SeriesOptions
 		Actors[] arrayOfActors= new Actors[0];
 		while(actorIdInsert>=0) 
 		{
+			System.out.println("Actors added: "+Arrays.toString(arrayOfActors));
 			System.out.println("Tell me the Id of the Actors (-1 to finish): ");
 			actorIdInsert=scanner.nextInt();
 			ScreenUtilities.clearScreen();
@@ -105,6 +108,8 @@ public interface SeriesOptions
 		
 		while(adaptedLang>=1&adaptedLang<=7) 
 		{
+			ScreenUtilities.clearScreen();
+			System.out.println("Selected adapted languages: "+Arrays.toString(adaptedLanguagesArray));
 			System.out.println("Select the adapted languages: \n"
 					+ "[1] ES\n"
 					+ "[2] EN\n"
@@ -182,6 +187,8 @@ public interface SeriesOptions
 		Subtitles[] subTitlesArray= new Subtitles[0];
 		while(subTitle>=1&subTitle<=7) 
 		{
+			ScreenUtilities.clearScreen();
+			System.out.println("Selected subtitles: "+Arrays.toString(subTitlesArray));
 			System.out.println("Select subtitle to add: \n"
 					+ "[1] ES\n"
 					+ "[2] EN\n"

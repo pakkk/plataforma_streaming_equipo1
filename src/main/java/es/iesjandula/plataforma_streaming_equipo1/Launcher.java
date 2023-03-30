@@ -1,6 +1,5 @@
 package es.iesjandula.plataforma_streaming_equipo1;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import es.iesjandula.plataforma_streaming_equipo1.IMenus.*;
 import es.iesjandula.plataforma_streaming_equipo1.actors.ActorOptions;
@@ -32,12 +31,12 @@ import es.iesjandula.plataforma_streaming_equipo1.subtitles.SubtitlesOptions;
 import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
 /*
- * The main class
+ * The main class , store the project core.
  */
 
 public class Launcher
 {
-	public static void main(String[] args) 
+	public static void main(String[] args) throws InterruptedException 
 	{
 		//Scanner variables.
 		//sc , used for all type of data except String.

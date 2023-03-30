@@ -2,12 +2,13 @@ package es.iesjandula.plataforma_streaming_equipo1.audiovisuals;
 
 import java.util.Scanner;
 
+import es.iesjandula.plataforma_streaming_equipo1.animations.ViewAnimation;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.Movies;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.Series;
 
 public interface ViewSeriesMoviesOptions 
 {
-	public static void viewSeriesMovies(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral,Series[] arraySeriesGeneral) 
+	public static void viewSeriesMovies(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral,Series[] arraySeriesGeneral) throws InterruptedException 
 	{
 		System.out.println("Series and Movies: \n");
 		for (Series serie:arraySeriesGeneral) 
@@ -25,6 +26,7 @@ public interface ViewSeriesMoviesOptions
 			if(serie.getTitle().equals(titleSelected)) 
 			{
 				System.out.println("Playing "+serie.getTitle());
+				ViewAnimation.playingSerieMovie();
 				serie.setViews(serie.getViews()+1);
 			}
 		}
@@ -32,6 +34,7 @@ public interface ViewSeriesMoviesOptions
 		{
 			if(movie.getTitle().equals(titleSelected)) 
 			{
+				ViewAnimation.playingSerieMovie();
 				System.out.println("Playing "+movie.getTitle());
 				movie.setViews(movie.getViews()+1);
 			}

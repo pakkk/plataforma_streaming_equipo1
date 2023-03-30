@@ -29,6 +29,7 @@ public interface MoviesOptions
 		Directors[] arrayOfDirectors= new Directors[0];
 		while(directorIdInsert>=0) 
 		{
+			System.out.println("Directors added: "+Arrays.toString(arrayOfDirectors));
 			System.out.println("Write the id of the Director/s (-1 to finish): ");
 			directorIdInsert=scanner.nextInt();
 			ScreenUtilities.clearScreen();
@@ -53,6 +54,7 @@ public interface MoviesOptions
 		Categorie[] arrayOfCategories= new Categorie[0];
 		while(categoryIdInsert>=0) 
 		{
+			System.out.println("Categories added: "+Arrays.toString(arrayOfCategories));
 			System.out.println("Write the Id of the Categorie (-1 to cancel): ");
 			categoryIdInsert=scanner.nextInt();
 			ScreenUtilities.clearScreen();
@@ -77,6 +79,7 @@ public interface MoviesOptions
 		Actors[] arrayOfActors= new Actors[0];
 		while(actorIdInsert>=0) 
 		{
+			System.out.println("Actors added: "+Arrays.toString(arrayOfActors));
 			System.out.println("Write the id of the actors (-1 to finish): ");
 			actorIdInsert=scanner.nextInt();
 			ScreenUtilities.clearScreen();
@@ -105,6 +108,8 @@ public interface MoviesOptions
 		
 		while(adaptedLang>=1&adaptedLang<=7) 
 		{
+			ScreenUtilities.clearScreen();
+			System.out.println("Adapted lenguages added: "+Arrays.toString(adaptedLanguagesArray));
 			System.out.println("Select the Adapted lenguages: \n"
 					+ "[1] ES\n"
 					+ "[2] EN\n"
@@ -182,6 +187,8 @@ public interface MoviesOptions
 		Subtitles[] subTitlesArray= new Subtitles[0];
 		while(subTitle>=1&subTitle<=7) 
 		{
+			ScreenUtilities.clearScreen();
+			System.out.println("Subtitles added: "+Arrays.toString(subTitlesArray));
 			System.out.println("Select the subtitles to add: \n"
 					+ "[1] ES\n"
 					+ "[2] EN\n"

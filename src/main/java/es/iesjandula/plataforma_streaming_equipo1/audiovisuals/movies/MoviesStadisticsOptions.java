@@ -4,33 +4,30 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
+import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.Series;
 import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.RecomendationsType;
+import es.iesjandula.plataforma_streaming_equipo1.subtitles.AvaliableSubtitles;
+import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
+import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
 public interface MoviesStadisticsOptions 
 {
-	public static void clearScreen() 
-	{	
-		//Method for clear the screen
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		
-	}
-	
 	public static void movieStadistics(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral) 
 	{
-		clearScreen();
+		ScreenUtilities.clearScreen();
 		System.out.println("Select option:\n"
 				+ "[1] Number Of Movies\n"
 				+ "[2] Information Of Movie , by Category\n"
 				+ "[4] View the Most Popular Movies (Positive Recomendations on TOP)\n"
 				+ "[5] View the Most Unpopular Movies (Negative Recomendations on TOP)\n"
-				+ "[6] Coming son...");
+				+ "[6] Information Of Serie by Subtitles\n");
 		int selectedOption=0;
 		selectedOption=scanner.nextInt();
 		if(selectedOption==1) 
 		{
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Total Movies in the System : "+arrayMoviesGeneral.length);
 		}
 		else if(selectedOption==2) 
@@ -50,7 +47,7 @@ public interface MoviesStadisticsOptions
 				}
 			}
 			
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results : \n");
 			
 			for(int categoryIdx: arrayOfCategoriesId) 
@@ -90,7 +87,7 @@ public interface MoviesStadisticsOptions
 				}
 			}
 			
-			clearScreen();
+			ScreenUtilities.clearScreen();
 			System.out.println("Results : \n");
 			for(int actorIdx: arrayOfActorsId) 
 			{
@@ -160,6 +157,85 @@ public interface MoviesStadisticsOptions
 				}
 				negativeRecomendationsCont=0;
 			}
+		}
+		else if(selectedOption==6) 
+		{
+			//--SERIES--BY--SUBTITLES---
+			int subtitleSelected=1;
+			Subtitles[] totalSubtitles = new Subtitles[0];
+			
+			while(subtitleSelected>0) 
+			{
+				ScreenUtilities.clearScreen();
+				System.out.println("Selected subtitles-> "+Arrays.toString(totalSubtitles));
+				System.out.println("Select the subtitles: (-1 to finish)\n"
+						+ "[1] ES\n"
+						+ "[2] EN\n"
+						+ "[3] DE\n"
+						+ "[4] RU\n"
+						+ "[5] IT\n"
+						+ "[6] CH\n"
+						+ "[7] OTHER");
+				subtitleSelected = scanner.nextInt();
+				
+				if(subtitleSelected==1) 
+				{
+					totalSubtitles=Arrays.copyOf(totalSubtitles, totalSubtitles.length+1);
+					totalSubtitles[totalSubtitles.length-1]=new Subtitles(AvaliableSubtitles.ES);
+				}
+				else if(subtitleSelected==2) 
+				{
+					totalSubtitles=Arrays.copyOf(totalSubtitles, totalSubtitles.length+1);
+					totalSubtitles[totalSubtitles.length-1]=new Subtitles(AvaliableSubtitles.EN);
+				}
+				else if(subtitleSelected==3) 
+				{
+					totalSubtitles=Arrays.copyOf(totalSubtitles, totalSubtitles.length+1);
+					totalSubtitles[totalSubtitles.length-1]=new Subtitles(AvaliableSubtitles.DE);
+				}
+				else if(subtitleSelected==4) 
+				{
+					totalSubtitles=Arrays.copyOf(totalSubtitles, totalSubtitles.length+1);
+					totalSubtitles[totalSubtitles.length-1]=new Subtitles(AvaliableSubtitles.RU);
+				}
+				else if(subtitleSelected==5) 
+				{
+					totalSubtitles=Arrays.copyOf(totalSubtitles, totalSubtitles.length+1);
+					totalSubtitles[totalSubtitles.length-1]=new Subtitles(AvaliableSubtitles.IT);
+				}
+				else if(subtitleSelected==6) 
+				{
+					totalSubtitles=Arrays.copyOf(totalSubtitles, totalSubtitles.length+1);
+					totalSubtitles[totalSubtitles.length-1]=new Subtitles(AvaliableSubtitles.CH);
+				}
+				else if(subtitleSelected==7) 
+				{
+					totalSubtitles=Arrays.copyOf(totalSubtitles, totalSubtitles.length+1);
+					totalSubtitles[totalSubtitles.length-1]=new Subtitles(AvaliableSubtitles.OTHER);
+				}
+			}
+			
+			for(Movies movie : arrayMoviesGeneral) 
+			{
+				boolean exists=false;
+				for(Subtitles subtitle:movie.getAvaliableSubtitles()) 
+				{
+					for(Subtitles subtitle2 : totalSubtitles) 
+					{
+						if(subtitle.getSubtitle().equals(subtitle2.getSubtitle())) 
+						{
+							exists=true;
+						}
+					}
+					
+				}
+				if(exists) 
+				{
+					System.out.println("Movie : "+movie.getTitle()+" id: "+movie.getMovieId()+"\n"
+							+ "Subtitles: "+Arrays.toString(movie.getAvaliableSubtitles())+"");
+				}
+			}
+			
 		}
 	}
 }
