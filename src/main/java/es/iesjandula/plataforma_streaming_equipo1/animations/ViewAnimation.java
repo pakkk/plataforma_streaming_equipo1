@@ -534,4 +534,109 @@ public interface ViewAnimation
 		ScreenUtilities.clearScreen();
 	}
 	
+	public static void loadingDataBase() throws InterruptedException 
+	{
+		int porcentaje=0;
+		for (int i = 1;i<=8;i++) 
+		{
+			if(i==2) 
+			{porcentaje=25;
+			}
+			if(i==5) 
+			{
+				porcentaje=75;
+			}
+			if(i==8) 
+			{
+				porcentaje=100;
+			}
+			ScreenUtilities.clearScreen();
+			System.out.println("Loading DATA BASE.   Please wait ("+porcentaje+"% -).");
+			Thread.sleep(250);
+			
+			ScreenUtilities.clearScreen();
+			System.out.println("Loading DATA BASE..  Please wait ("+porcentaje+"% \\)..");
+			Thread.sleep(250);
+
+
+			ScreenUtilities.clearScreen();
+			System.out.println("Loading DATA BASE... Please wait ("+porcentaje+"% |)...");
+			Thread.sleep(250);
+			
+			ScreenUtilities.clearScreen();
+			System.out.println("Loading DATA BASE.   Please wait ("+porcentaje+"% /)....");
+			Thread.sleep(250);
+			
+			ScreenUtilities.clearScreen();
+			System.out.println("Loading DATA BASE..  Please wait ("+porcentaje+"% -).....");
+			Thread.sleep(250);
+			
+			ScreenUtilities.clearScreen();
+			System.out.println("Loading DATA BASE... Please wait ("+porcentaje+"% \\)......");
+			Thread.sleep(250);
+			
+			ScreenUtilities.clearScreen();
+			System.out.println("Loading DATA BASE.   Please wait ("+porcentaje+"% |).");
+			Thread.sleep(250);
+			
+			if(i==8) {
+				System.out.println("           DATA-LOAD-DONE !!");
+				Thread.sleep(3000);
+			}
+		}
+	}
+	
+	public static void mainTitle() throws InterruptedException 
+	{
+		System.out.println("  ___ _____ ___ ___   _   __  __ ___ _  _  ___   ___ _      _ _____ _   ___ ___  ___ __  __       _ \r\n"
+				+ " / __|_   _| _ \\ __| /_\\ |  \\/  |_ _| \\| |/ __| | _ \\ |    /_\\_   _/_\\ | __/ _ \\| _ \\  \\/  | __ _/ |\r\n"
+				+ " \\__ \\ | | |   / _| / _ \\| |\\/| || || .` | (_ | |  _/ |__ / _ \\| |/ _ \\| _| (_) |   / |\\/| | \\ V / |\r\n"
+				+ " |___/ |_| |_|_\\___/_/ \\_\\_|  |_|___|_|\\_|\\___| |_| |____/_/ \\_\\_/_/ \\_\\_| \\___/|_|_\\_|  |_|  \\_/|_|\r\n"
+				+ "                                                                                                    ");
+		Thread.sleep(1000);
+		System.out.print(" BY -> ");
+		Thread.sleep(800);
+		System.out.print(" TEAM 1");
+		System.out.println(" - JAVA EDITION");
+		Thread.sleep(3000);
+	}
+	
+	public static void mainTitleShowOnly() throws InterruptedException 
+	{
+		ScreenUtilities.clearScreen();
+		System.out.println("  ___ _____ ___ ___   _   __  __ ___ _  _  ___   ___ _      _ _____ _   ___ ___  ___ __  __       _ \r\n"
+				+ " / __|_   _| _ \\ __| /_\\ |  \\/  |_ _| \\| |/ __| | _ \\ |    /_\\_   _/_\\ | __/ _ \\| _ \\  \\/  | __ _/ |\r\n"
+				+ " \\__ \\ | | |   / _| / _ \\| |\\/| || || .` | (_ | |  _/ |__ / _ \\| |/ _ \\| _| (_) |   / |\\/| | \\ V / |\r\n"
+				+ " |___/ |_| |_|_\\___/_/ \\_\\_|  |_|___|_|\\_|\\___| |_| |____/_/ \\_\\_/_/ \\_\\_| \\___/|_|_\\_|  |_|  \\_/|_|\r\n"
+				+ "                                                                                                    ");
+		System.out.println("Main menu...");
+	}
+	
+	public static void optionsTitle() 
+	{
+		System.out.println("   ___  ___ _____ ___ ___  _  _ ___ \r\n"
+				+ "  / _ \\| _ \\_   _|_ _/ _ \\| \\| / __|\r\n"
+				+ " | (_) |  _/ | |  | | (_) | .` \\__ \\\r\n"
+				+ "  \\___/|_|   |_| |___\\___/|_|\\_|___/\r\n"
+				+ "                                    ");
+	}
+	
+	public static void stadisticsTitle() 
+	{
+		System.out.println("  ___ _____ _   ___ ___ ___ _____ ___ ___ ___ \r\n"
+				+ " / __|_   _/_\\ |   \\_ _/ __|_   _|_ _/ __/ __|\r\n"
+				+ " \\__ \\ | |/ _ \\| |) | |\\__ \\ | |  | | (__\\__ \\\r\n"
+				+ " |___/ |_/_/ \\_\\___/___|___/ |_| |___\\___|___/\r\n"
+				+ "                                              ");
+	}
+	
+	public static void viewsTtitle() 
+	{
+		System.out.println(" __   _____ _____      _____ \r\n"
+				+ " \\ \\ / /_ _| __\\ \\    / / __|\r\n"
+				+ "  \\ V / | || _| \\ \\/\\/ /\\__ \\\r\n"
+				+ "   \\_/ |___|___| \\_/\\_/ |___/\r\n"
+				+ "                             ");
+	}
+	
 }

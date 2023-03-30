@@ -6,6 +6,7 @@ import es.iesjandula.plataforma_streaming_equipo1.actors.ActorOptions;
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
 import es.iesjandula.plataforma_streaming_equipo1.adaptedlanguages.AdaptedLanguages;
 import es.iesjandula.plataforma_streaming_equipo1.adaptedlanguages.AvaliableAdaptedLanguages;
+import es.iesjandula.plataforma_streaming_equipo1.animations.ViewAnimation;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.SeriesMoviesStadisticsOptions;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.ViewSeriesMoviesOptions;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.Movies;
@@ -147,7 +148,8 @@ public class Launcher
 		//----------------BASE OBJECTS--SERIES CLASS----------------------------
 		
 		
-		
+		ViewAnimation.loadingDataBase();
+		ViewAnimation.mainTitle();
 		//-----------------------MENUS----------------------------------------
 		
 		//boolean for the main Loop
@@ -156,6 +158,7 @@ public class Launcher
 		//------MAIN--LOOP-------
 		while(isRunning)
 		{
+			ViewAnimation.mainTitleShowOnly();
 			int firstSelection;
 			IGeneralsMenu.generalMenu();
 			System.out.print("-> ");
@@ -168,8 +171,10 @@ public class Launcher
 				{
 					//-------------OPTIONS MENU CASE-------------
 					ScreenUtilities.clearScreen();
+					ViewAnimation.optionsTitle();
 					IGeneralsMenu.optionsGeneralMenu();
 					System.out.print("-> ");
+					
 					//Getting the Main menu selection
 					int optionSelection = scanner.nextInt();
 					
@@ -471,6 +476,8 @@ public class Launcher
 				case 2:
 				{
 					//---------INFORMATIONS AND STADISTICS MENU-------
+					ScreenUtilities.clearScreen();
+					ViewAnimation.stadisticsTitle();
 					IMenuStadistics.stadisticsMenu();
 					int stadisticsSelection = scanner.nextInt();
 					
@@ -495,6 +502,8 @@ public class Launcher
 				case 3:
 				{
 					//-----------VIEW SERIES OR MOVIES MENU------------
+					ScreenUtilities.clearScreen();
+					ViewAnimation.viewsTtitle();
 					System.out.println("Select Option:\n"
 							+ "[1] View Series\n"
 							+ "[2] View Movies\n"
