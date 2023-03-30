@@ -7,10 +7,16 @@ import es.iesjandula.plataforma_streaming_equipo1.actors.ActorOptions;
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
 import es.iesjandula.plataforma_streaming_equipo1.adaptedlanguages.AdaptedLanguages;
 import es.iesjandula.plataforma_streaming_equipo1.adaptedlanguages.AvaliableAdaptedLanguages;
+import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.SeriesMoviesStadisticsOptions;
+import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.ViewSeriesMoviesOptions;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.Movies;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.MoviesOptions;
+import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.MoviesStadisticsOptions;
+import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.ViewMoviesOptions;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.Series;
 import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.SeriesOptions;
+import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.SeriesStadisticsOptions;
+import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.ViewSeriesOptions;
 import es.iesjandula.plataforma_streaming_equipo1.categories.Categorie;
 import es.iesjandula.plataforma_streaming_equipo1.categories.CategorieTypes;
 import es.iesjandula.plataforma_streaming_equipo1.directors.DirectorOptions;
@@ -34,6 +40,8 @@ public class Launcher
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		
 	}
+	
+	
 	public static void main(String[] args) 
 	{
 		//Scanner variables.
@@ -923,517 +931,18 @@ public class Launcher
 						if (stadisticsSelection==1) 
 						{
 							//--SERIE---STADISTICS---------------
-							clearScreen();
-							System.out.println("Select option:\n"
-									+ "[1] Number Of Series\n"
-									+ "[2] Information Of Serie , by Category\n"
-									+ "[3] Information Of Serie , by Actors\n"
-									+ "[4] View the Most Popular Series (Positive Recomendations on TOP)\n"
-									+ "[5] View the Most Unpopular Series (Negative Recomendations on TOP)\n"
-									+ "[6] Coming son...");
-							int selectedOption=0;
-							selectedOption=scanner.nextInt();
-							if(selectedOption==1) 
-							{
-								//----NUMBER OF SERIES SELECTED-------
-								System.out.println("Total Series in the System : "+arraySeriesGeneral.length);
-							}
-							else if(selectedOption==2) 
-							{
-								//---------SERIES BY CATEGORY IDS------------
-								int seriesContResults=0;
-								int[] arrayOfCategoriesId=new int[0];
-								int categoryId=0;
-								while(categoryId>=0) 
-								{
-									System.out.println("Indicates the Ids of the Category (Gender) (-1 to finish)\n");
-									categoryId=scanner.nextInt();
-									if(categoryId>=0) 
-									{
-									arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
-									arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
-									}
-								}
-								
-								clearScreen();
-								System.out.println("Results : \n");
-								for(int categoryIdx: arrayOfCategoriesId) 
-								{
-									for (Series serie:arraySeriesGeneral) 
-									{
-										
-										for(Categorie category : serie.getCateg()) 
-										{
-											if(category.getCategorieID()==categoryIdx) 
-											{
-												seriesContResults++;
-												System.out.println(serie);
-											}
-											
-										}
-									}
-									System.out.println("-------Were found: "+seriesContResults+" Series with category id:"+categoryIdx+"-------\n");	
-									seriesContResults=0;//Reset for next Id
-								}
-								
-							}
-							else if(selectedOption==3) 
-							{
-								//---------SERIES BY ACTORS IDS------------ J
-								int seriesContResults=0;
-								int[] arrayOfActorsId=new int[0];
-								int actorId=0;
-								while(actorId>=0) 
-								{
-									System.out.println("Indicate the las Ids de los/as Actors (-1 para terminar)\n");
-									actorId=scanner.nextInt();
-									if(actorId>=0) 
-									{
-										arrayOfActorsId=Arrays.copyOf(arrayOfActorsId, arrayOfActorsId.length+1);
-										arrayOfActorsId[arrayOfActorsId.length-1]=actorId;
-									}
-								}
-								
-								clearScreen();
-								System.out.println("Results: \n");
-								for(int actorIdx: arrayOfActorsId) 
-								{
-									for (Series serie:arraySeriesGeneral) 
-									{
-										
-										for(Actors actor : serie.getActors()) 
-										{
-											if(actor.getActorId()==actorIdx) 
-											{
-												seriesContResults++;
-												System.out.println(serie);
-											}
-											
-										}
-									}
-									System.out.println("-------Were found: "+seriesContResults+" Series with actor id:"+actorIdx+"-------\n");	
-									seriesContResults=0;//Reset for next Id
-								}
-								
-							}
-							else if(selectedOption==4) 
-							{
-								//--------POPULAR TOP - POSITIVE RECOMENDATIONS----------
-								System.out.println("Top popular Series:\n");
-								
-								int positiveRecomendationsCont=0;
-								
-								//---------GETTING THE CUANTITIE OF POSITIVE RECOMENDATIONS BY SERIE--------------
-								for(Series serie:arraySeriesGeneral) 
-								{
-									for(Recomendations recomendation:serie.getRecomendationsSerie()) 
-									{
-										if(recomendation.getType().equals(RecomendationsType.POSITIVE)) 
-										{
-											positiveRecomendationsCont++;
-										}
-										
-									}
-									if(positiveRecomendationsCont>0) 
-									{
-										System.out.println(serie.getTitle()+" POSITIVES --> "+positiveRecomendationsCont);
-									}
-									positiveRecomendationsCont=0;
-								}
-							}
-							else if(selectedOption==5) 
-							{
-								//-------UN-POPULAR TOP - NEGATIVE RECOMENDATIONS----------
-								System.out.println("Top Unpopular Series:\n");
-								
-								int negativeRecomendationsCont=0;
-								
-								//---------GETTING THE CUANTITIE OF NEGATIVE RECOMENDATIONS BY SERIE--------------
-								for(Series serie:arraySeriesGeneral) 
-								{
-									for(Recomendations recomendation:serie.getRecomendationsSerie()) 
-									{
-										if(recomendation.getType().equals(RecomendationsType.NEGATIVE)) 
-										{
-											negativeRecomendationsCont++;
-										}
-										
-									}
-									if(negativeRecomendationsCont>0) 
-									{
-										System.out.println(serie.getTitle()+" NEGATIVES --> "+negativeRecomendationsCont);
-									}
-									negativeRecomendationsCont=0;
-								}
-							}
+							SeriesStadisticsOptions.serieStadistics(scanner, scanner2, arraySeriesGeneral);
 						}
 						else if(stadisticsSelection==2)
 						{
 							//--MOVIE---STADISTICS---------------
-							clearScreen();
-							System.out.println("Select option:\n"
-									+ "[1] Number Of Movies\n"
-									+ "[2] Information Of Movie , by Category\n"
-									+ "[4] View the Most Popular Movies (Positive Recomendations on TOP)\n"
-									+ "[5] View the Most Unpopular Movies (Negative Recomendations on TOP)\n"
-									+ "[6] Coming son...");
-							int selectedOption=0;
-							selectedOption=scanner.nextInt();
-							if(selectedOption==1) 
-							{
-								clearScreen();
-								System.out.println("Total Movies in the System : "+arrayMoviesGeneral.length);
-							}
-							else if(selectedOption==2) 
-							{
-								//---------MOVIES BY CATEGORY IDS------------
-								int moviesContResults=0;
-								int[] arrayOfCategoriesId=new int[0];
-								int categoryId=0;
-								while(categoryId>=0) 
-								{
-									System.out.println("Indicates the Ids of the Category (Gender) (-1 to finish)\n");
-									categoryId=scanner.nextInt();
-									if(categoryId>=0) 
-									{
-										arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
-										arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
-									}
-								}
-								
-								clearScreen();
-								System.out.println("Results : \n");
-								
-								for(int categoryIdx: arrayOfCategoriesId) 
-								{
-									for (Movies movie:arrayMoviesGeneral) 
-									{
-										
-										for(Categorie category : movie.getCateg()) 
-										{
-											if(category.getCategorieID()==categoryIdx)
-											{
-												moviesContResults++;
-												System.out.println(movie);
-											}
-											
-										}
-									}
-									System.out.println("-------Were found: "+moviesContResults+" Movies with category id:"+categoryIdx+"-------\n");	
-									moviesContResults=0;//Reset for next Id
-								}
-								
-							}
-							else if(selectedOption==3) 
-							{
-								//---------MOVIES BY ACTORS IDS------------
-								int moviesContResults=0;
-								int[] arrayOfActorsId=new int[0];
-								int actorId=0;
-								while(actorId>=0) 
-								{
-									System.out.println("Indicate the Ids of the Actors (-1 to finish)\n");
-									actorId=scanner.nextInt();
-									if(actorId>=0) 
-									{
-										arrayOfActorsId=Arrays.copyOf(arrayOfActorsId, arrayOfActorsId.length+1);
-										arrayOfActorsId[arrayOfActorsId.length-1]=actorId;
-									}
-								}
-								
-								clearScreen();
-								System.out.println("Results : \n");
-								for(int actorIdx: arrayOfActorsId) 
-								{
-									for (Movies movie:arrayMoviesGeneral) 
-									{
-										
-										for(Actors actor : movie.getActors()) 
-										{
-											if(actor.getActorId()==actorIdx) 
-											{
-												moviesContResults++;
-												System.out.println(movie);
-											}
-											
-										}
-									}
-									System.out.println("-------Were found: "+moviesContResults+" Movies with the actor id:"+actorIdx+"-------\n");	
-									moviesContResults=0;//Reset for next Id
-								}
-								
-							}
-							else if(selectedOption==4) 
-							{
-								//--------MOST-POPULARS TOP - POSITIVE RECOMENDATIONS----------
-								System.out.println("Top popular Movies:\n");
-								
-								int positiveRecomendationsCont=0;
-								
-								//---------GETTING THE CUANTITIE OF POSITIVE RECOMENDATIONS BY SERIE--------------
-								for(Movies movie:arrayMoviesGeneral) 
-								{
-									for(Recomendations recomendation:movie.getRecomendationsMovies()) 
-									{
-										if(recomendation.getType().equals(RecomendationsType.POSITIVE)) 
-										{
-											positiveRecomendationsCont++;
-										}
-										
-									}
-									if(positiveRecomendationsCont>0) 
-									{
-										System.out.println(movie.getTitle()+" POSITIVES --> "+positiveRecomendationsCont);
-									}
-									positiveRecomendationsCont=0;
-								}
-							}
-							else if(selectedOption==5) 
-							{
-								//--------MOST-UN-POPULARS TOP - NEGATIVE RECOMENDATIONS----------
-								System.out.println("Top Most Unpopular Series:\n");
-								int negativeRecomendationsCont=0;
-								
-								//---------GETTING THE CUANTITIE OF POSITIVE RECOMENDATIONS BY SERIE--------------
-								for(Movies movie:arrayMoviesGeneral) 
-								{
-									for(Recomendations recomendation:movie.getRecomendationsMovies()) 
-									{
-										if(recomendation.getType().equals(RecomendationsType.NEGATIVE)) 
-										{
-											negativeRecomendationsCont++;
-										}
-										
-									}
-									if(negativeRecomendationsCont>0) 
-									{
-										System.out.println(movie.getTitle()+" NEGATIVES --> "+negativeRecomendationsCont);
-									}
-									negativeRecomendationsCont=0;
-								}
-							}
+							MoviesStadisticsOptions.movieStadistics(scanner, scanner2, arrayMoviesGeneral);
 							
 						}
 						else if(stadisticsSelection==3)
 						{
-							//--MOVIE--AND SERIES---STADISTICS---------------
-							clearScreen();
-							System.out.println("Select option:\n"
-									+ "[1] Number Of Total Series and Movies\n"
-									+ "[2] Information Of Sereis and Movies , by Categorys\n"
-									+ "[4] View the Most Popular Movies and Series (Positive Recomendations on TOP)\n"
-									+ "[5] View the Most Unpopular Movies and Series (Negative Recomendations on TOP)\n"
-									+ "[6] Coming son...");
-							int selectedOption=0;
-							selectedOption=scanner.nextInt();
-							
-							if(selectedOption==1) 
-							{
-								//--MOVIE--AND SERIES---NUMBERS---------------
-								clearScreen();
-								System.out.println("Total Series in the System : "+arraySeriesGeneral.length);
-								System.out.println("Total Movies in the System : "+arrayMoviesGeneral.length);
-								System.out.println("Sub-Total : "+(arraySeriesGeneral.length+arrayMoviesGeneral.length)+"");
-							//--MOVIE--AND SERIES---NUMBERS---------------
-							}
-							else if(selectedOption==2) 
-							{
-								//---------SERIES AND MOVIES BY CATEGORY IDS------------
-								int seriesContResults=0;
-								int[] arrayOfCategoriesId=new int[0];
-								int categoryId=0;
-								while(categoryId>=0) 
-								{
-									System.out.println("Indicates the Ids of the Category (Gender) (-1 to finish)\n");
-									categoryId=scanner.nextInt();
-									if(categoryId>=0) 
-									{
-									arrayOfCategoriesId=Arrays.copyOf(arrayOfCategoriesId, arrayOfCategoriesId.length+1);
-									arrayOfCategoriesId[arrayOfCategoriesId.length-1]=categoryId;
-									}
-								}
-								
-								clearScreen();
-								System.out.println("Results : \n");
-								for(int categoryIdx: arrayOfCategoriesId) 
-								{
-									for (Series serie:arraySeriesGeneral) 
-									{
-										
-										for(Categorie category : serie.getCateg()) 
-										{
-											if(category.getCategorieID()==categoryIdx) 
-											{
-												seriesContResults++;
-												System.out.println(serie);
-											}
-											
-										}
-									}
-									System.out.println("-------Were found: "+seriesContResults+" Series with category id: "+categoryIdx+"-------\n");	
-									seriesContResults=0;//Reset for next Id
-								}
-								int moviesContResults=0;
-								for(int categoryIdx: arrayOfCategoriesId) 
-								{
-									for (Movies movie:arrayMoviesGeneral) 
-									{
-										
-										for(Categorie category : movie.getCateg()) 
-										{
-											if(category.getCategorieID()==categoryIdx) 
-											{
-												moviesContResults++;
-												System.out.println(movie);
-											}
-											
-										}
-									}
-									System.out.println("-------Were found: "+moviesContResults+" Movies with category id:"+categoryIdx+"-------\n");	
-									moviesContResults=0;//Reset for next Id
-								}
-								//---------SERIES AND MOVIES BY CATEGORY IDS------------
-							}
-							else if(selectedOption==3) 
-							{
-								//---------SERIES AND MOVIES BY ACTORS IDS------------
-								int seriesContResults=0;
-								int[] arrayOfActorsId=new int[0];
-								int actorId=0;
-								while(actorId>=0) 
-								{
-									System.out.println(" Indicates the Ids of the Category (Gender) (-1 to finish)\n");
-									actorId=scanner.nextInt();
-									if(actorId>=0) 
-									{
-										arrayOfActorsId=Arrays.copyOf(arrayOfActorsId, arrayOfActorsId.length+1);
-										arrayOfActorsId[arrayOfActorsId.length-1]=actorId;
-									}
-								}
-								
-								clearScreen();
-								System.out.println("Results : \n");
-								for(int actorIdx: arrayOfActorsId) 
-								{
-									for (Series serie:arraySeriesGeneral) 
-									{
-										
-										for(Actors actor : serie.getActors()) 
-										{
-											if(actor.getActorId()==actorIdx) 
-											{
-												seriesContResults++;
-												System.out.println(serie);
-											}
-											
-										}
-									}
-									System.out.println("-------Were found: "+seriesContResults+" Movies with actor id: "+actorIdx+"-------\n");	
-									seriesContResults=0;//Reset for next Id
-								}
-								int moviesContResults=0;
-								System.out.println("Results : \n");
-								for(int actorIdx: arrayOfActorsId) 
-								{
-									for (Movies movie:arrayMoviesGeneral) 
-									{
-										
-										for(Actors actor : movie.getActors()) {
-											if(actor.getActorId()==actorIdx) {
-												moviesContResults++;
-												System.out.println(movie);
-											}
-											
-										}
-									}
-									System.out.println("-------Were found: "+moviesContResults+" Movies with actor id: "+actorIdx+"--------\n");	
-									moviesContResults=0;//Reset for next Id
-								}
-								//---------SERIES AND MOVIES BY ACTORS IDS------------
-							}
-							else if(selectedOption==4) 
-							{
-								//--------POPULARS MOVIES AND SERIES TOP - POSITIVE RECOMENDATIONS----------
-								System.out.println("Top popular Movies and Series:\n");
-								
-								int positiveRecomendationsCont=0;
-								
-								for(Movies movie:arrayMoviesGeneral) 
-								{
-									for(Recomendations recomendation:movie.getRecomendationsMovies()) 
-									{
-										if(recomendation.getType().equals(RecomendationsType.POSITIVE)) 
-										{
-											positiveRecomendationsCont++;
-										}
-										
-									}
-									if(positiveRecomendationsCont>0) 
-									{
-										System.out.println(movie.getTitle()+" POSITVE --> "+positiveRecomendationsCont+" | Type :"+movie.getType());
-									}
-									positiveRecomendationsCont=0;
-								}
-								
-								for(Series serie:arraySeriesGeneral) 
-								{
-									for(Recomendations recomendation:serie.getRecomendationsSerie()) 
-									{
-										if(recomendation.getType().equals(RecomendationsType.POSITIVE)) 
-										{
-											positiveRecomendationsCont++;
-										}
-										
-									}
-									if(positiveRecomendationsCont>0) 
-									{
-										System.out.println(serie.getTitle()+" POSITVE --> "+positiveRecomendationsCont+" | Type :"+serie.getType());
-									}
-									positiveRecomendationsCont=0;
-								}
-							}
-							else if(selectedOption==5) 
-							{
-
-								//--------UN-POPULARS MOVIES AND SERIES TOP - POSITIVE RECOMENDATIONS----------
-								System.out.println("Top Unpopular Movies and Series:\n");
-								
-								int negativeRecomendationsCont=0;
-								
-								for(Movies movie:arrayMoviesGeneral) 
-								{
-									for(Recomendations recomendation:movie.getRecomendationsMovies()) 
-									{
-										if(recomendation.getType().equals(RecomendationsType.NEGATIVE)) 
-										{
-											negativeRecomendationsCont++;
-										}
-										
-									}
-									if(negativeRecomendationsCont>0) 
-									{
-										System.out.println(movie.getTitle()+" NEGATIVE --> "+negativeRecomendationsCont+" | Type :"+movie.getType());
-									}
-									negativeRecomendationsCont=0;
-								}
-								
-								for(Series serie:arraySeriesGeneral) 
-								{
-									for(Recomendations recomendation:serie.getRecomendationsSerie()) 
-									{
-										if(recomendation.getType().equals(RecomendationsType.NEGATIVE)) 
-										{
-											negativeRecomendationsCont++;
-										}
-										
-									}
-									if(negativeRecomendationsCont>0) 
-									{
-										System.out.println(serie.getTitle()+" NEGATIVE --> "+negativeRecomendationsCont+" | Type :"+serie.getType());
-									}
-									negativeRecomendationsCont=0;
-								}
-							}
+							//---SERIRES--AND--MOVIES--STATISTICS--
+							SeriesMoviesStadisticsOptions.serieMovieStadistics(scanner, scanner2, arraySeriesGeneral, arrayMoviesGeneral);
 						}
 					break;
 				}
@@ -1449,71 +958,18 @@ public class Launcher
 					if(optionSelected==1) 
 					{
 						//---VIEW--SERIES--SELECTED
-						System.out.println("Series: \n");
-						for (Series serie:arraySeriesGeneral) 
-						{
-							System.out.println("Title: "+serie.getTitle()+" | Id: "+serie.getSerieId()+" |  Views : "+serie.getViews()+" | Type: "+serie.getType());
-						}
-						System.out.println("Select ID for view:");
-						int idSelected = scanner.nextInt();
-						for (Series serie:arraySeriesGeneral) 
-						{
-							if(serie.getSerieId()==idSelected) 
-							{
-								System.out.println("Playing "+serie.getTitle());
-								serie.setViews(serie.getViews()+1);
-							}
-						}
+						ViewSeriesOptions.viewSeries(scanner2, arraySeriesGeneral);
+						
 					}
 					else if(optionSelected==2) 
 					{
 						//---VIEW--MOVIES--SELECTED
-						System.out.println("Movies: \n");
-						for (Movies movie:arrayMoviesGeneral) 
-						{
-							System.out.println("Title: "+movie.getTitle()+" | Id: "+movie.getMovieId()+" |  Views : "+movie.getViews()+" | Type: "+movie.getType());
-						}
-						System.out.println("Select ID for view:");
-						int idSelected = scanner.nextInt();
-						for (Movies movie:arrayMoviesGeneral) 
-						{
-							if(movie.getMovieId()==idSelected) 
-							{
-								System.out.println("Playing "+movie.getTitle());
-								movie.setViews(movie.getViews()+1);
-							}
-						}
+						ViewMoviesOptions.viewMovies(scanner2, arrayMoviesGeneral);
 					}
 					else if(optionSelected==3) 
 					{
 						//---VIEW--SERIES-AND-MOVIES--SELECTED
-						System.out.println("Series and Movies: \n");
-						for (Series serie:arraySeriesGeneral) 
-						{
-							System.out.println("Title: "+serie.getTitle()+" | Id: "+serie.getSerieId()+" |  Views : "+serie.getViews()+" | Type: "+serie.getType());
-						}
-						for (Movies movie:arrayMoviesGeneral) 
-						{
-							System.out.println("Title: "+movie.getTitle()+" | Id: "+movie.getMovieId()+" |  Views : "+movie.getViews()+" | Type: "+movie.getType());
-						}
-						System.out.println("Indicate title to view:");
-						String titleSelected = scanner2.nextLine();
-						for (Series serie:arraySeriesGeneral) 
-						{
-							if(serie.getTitle().equals(titleSelected)) 
-							{
-								System.out.println("Playing "+serie.getTitle());
-								serie.setViews(serie.getViews()+1);
-							}
-						}
-						for (Movies movie:arrayMoviesGeneral) 
-						{
-							if(movie.getTitle().equals(titleSelected)) 
-							{
-								System.out.println("Playing "+movie.getTitle());
-								movie.setViews(movie.getViews()+1);
-							}
-						}
+						ViewSeriesMoviesOptions.viewSeriesMovies(scanner, scanner2, arrayMoviesGeneral, arraySeriesGeneral);
 					}
 					break;
 				}
