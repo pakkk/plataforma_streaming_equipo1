@@ -11,6 +11,7 @@ import es.iesjandula.plataforma_streaming_equipo1.directors.Directors;
 import es.iesjandula.plataforma_streaming_equipo1.recomendations.Recomendations;
 import es.iesjandula.plataforma_streaming_equipo1.subtitles.Subtitles;
 /*
+ * @author Pablo Serrano
  * Movies class , store the movies
  */
 public class Movies extends Audiovisuals

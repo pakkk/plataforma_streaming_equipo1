@@ -1,5 +1,6 @@
 package es.iesjandula.plataforma_streaming_equipo1.recomendations;
 /*
+ * @author Pablo
  * Class recomendations
  * Stores the recomendations
  */

@@ -1,5 +1,6 @@
 package es.iesjandula.plataforma_streaming_equipo1.categories;
 /*
+ * @athor Pablo
  * Class Categories
  * Stores the categories
  */

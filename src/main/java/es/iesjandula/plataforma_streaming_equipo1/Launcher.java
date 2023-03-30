@@ -272,6 +272,7 @@ public class Launcher
 							{
 								case 1:
 								{
+									
 									//-------------CREATE-RECOMENDATION-----------------
 									Object[] objects=RecomendationOptions.createRecomendation(scanner, scanner2, arrayRecomendationsGeneral, arrayMoviesGeneral, arraySeriesGeneral);
 									arrayRecomendationsGeneral=(Recomendations[])objects[0];
