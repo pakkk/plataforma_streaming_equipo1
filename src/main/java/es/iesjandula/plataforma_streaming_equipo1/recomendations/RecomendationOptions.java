@@ -23,7 +23,6 @@ public interface RecomendationOptions
 	 */
 	public static Object[] createRecomendation(Scanner scanner,Scanner scanner2, Recomendations[] arrayRecomendationsGeneral,Movies[] arrayMoviesGeneral, Series[] arraySeriesGeneral) 
 	{
-
 		//-------------CREATE-RECOMENDATION-----------------
 		System.out.println("Texto de la Recomandacion:");
 		String texto=scanner2.nextLine();

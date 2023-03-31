@@ -1,6 +1,6 @@
 package es.iesjandula.plataforma_streaming_equipo1.subtitles;
 /**
- * @LuisDavidCastillo
+ * @author LuisDavidCastillo
  * 
  * Class for the creation and use of subtitles
  */
@@ -11,9 +11,11 @@ public class Subtitles
 	 * Variables
 	 */
 	private AvaliableSubtitles subtitle;
-	
+
 	/**
 	 * Constructor
+	 * 
+	 * @param subtitle THE SUBTITLE
 	 */
 	public Subtitles(AvaliableSubtitles subtitle) 
 	{

@@ -89,11 +89,14 @@ public class Movies extends Audiovisuals
 	
 	/* SETTERS AND GETTERS*/
 
-	
+	/**
+	 * toString method for print attributes
+	 * @return return , the return
+	 */
 	@Override
 	public String toString() 
 	{	
-		//toString method for print attributes
+		
 		return "movies [Movies=" +this.type +" "+Arrays.toString(this.actors)+" "
 		+""+Arrays.toString(this.categ)+" "+this.title+" "+this.originalLanguage +" "+Arrays.toString(this.adaptedLanguages)+" "
 		+ ""+Arrays.toString(this.avaliableSubtitles)+" "+ this.duration+" "+this.creationYear+"]"+" "+Arrays.toString(this.directors)+""

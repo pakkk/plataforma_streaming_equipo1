@@ -62,7 +62,9 @@ public class Series extends Audiovisuals
 	}
 	
 	
-	//toString method for print the attributes
+	/**
+	 * toString method for print the attributes
+	 */
 	@Override
 	public String toString() 
 	{

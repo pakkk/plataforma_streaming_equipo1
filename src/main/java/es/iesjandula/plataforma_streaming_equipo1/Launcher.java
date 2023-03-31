@@ -514,13 +514,13 @@ public class Launcher
 					if(optionSelected==1) 
 					{
 						//---VIEW--SERIES--SELECTED
-						ViewSeriesOptions.viewSeries(scanner2, arraySeriesGeneral);
+						ViewSeriesOptions.viewSeries(scanner, arraySeriesGeneral);
 						
 					}
 					else if(optionSelected==2) 
 					{
 						//---VIEW--MOVIES--SELECTED
-						ViewMoviesOptions.viewMovies(scanner2, arrayMoviesGeneral);
+						ViewMoviesOptions.viewMovies(scanner, arrayMoviesGeneral);
 					}
 					else if(optionSelected==3) 
 					{

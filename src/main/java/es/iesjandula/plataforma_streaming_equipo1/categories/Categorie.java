@@ -3,13 +3,10 @@ package es.iesjandula.plataforma_streaming_equipo1.categories;
 /**
  * 
  * @author David Martinez
- *
- */
-
-/*
  * Class Categories
  * Stores the categories
  */
+
 
 public class Categorie 
 {
@@ -41,8 +38,9 @@ public class Categorie
 		validateCategorieType(this.type);
 	}
 	
-	/* ToString method , for print the Category (object)*/
-	
+	/**
+	 * ToString method , for print the Category (object)
+	 * */
 	@Override
 	public String toString() {
 		return "Categorie type:" + this.type + "\n"

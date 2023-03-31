@@ -11,6 +11,14 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
  */
 public class CategoriesOptions 
 {
+	/**
+	 * 
+	 * @param scanner
+	 * @param scanner2
+	 * @param arrayCategoriesGeneral
+	 * @param categorieIdCont
+	 * @return
+	 */
 	public static Categorie[] createCategory(Scanner scanner,Scanner scanner2,Categorie[] arrayCategoriesGeneral,int categorieIdCont) 
 	{
 		CategorieTypes x= CategorieTypes.OTHER;
@@ -42,6 +50,12 @@ public class CategoriesOptions
 		return arrayCategoriesGeneral;
 	}
 	
+	/**
+	 * 
+	 * @param scanner
+	 * @param scanner2
+	 * @param arrayCategoriesGeneral
+	 */
 	public static void searchCategory(Scanner scanner,Scanner scanner2,Categorie[] arrayCategoriesGeneral) 
 	{
 		ScreenUtilities.clearScreen();
@@ -126,7 +140,13 @@ public class CategoriesOptions
 			}
 		}
 	}
-	
+	/**
+	 * 
+	 * @param scanner
+	 * @param scanner2
+	 * @param arrayCategoriesGeneral
+	 * @return
+	 */
 	public static Categorie[] modifyCategory(Scanner scanner,Scanner scanner2,Categorie[] arrayCategoriesGeneral) 
 	{
 		ScreenUtilities.clearScreen();
@@ -270,7 +290,13 @@ public class CategoriesOptions
 	}
 	
 	
-	
+	/**
+	 * 
+	 * @param scanner
+	 * @param scanner2
+	 * @param arrayCategoriesGeneral
+	 * @return
+	 */
 	public static Categorie[] deleteCategory(Scanner scanner,Scanner scanner2,Categorie[] arrayCategoriesGeneral) 
 	{
 		int cont=0;

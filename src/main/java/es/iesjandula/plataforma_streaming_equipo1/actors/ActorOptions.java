@@ -13,11 +13,19 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
  */
 public interface ActorOptions 
 {
+	/**
+	 * 
+	 * @param scanner
+	 * @param scanner2
+	 * @param arrayActorsGeneral
+	 * @param actorIdCont
+	 * @return
+	 */
 	public static Actors[] createActor(Scanner scanner,Scanner scanner2,Actors[] arrayActorsGeneral,int actorIdCont) 
 	{
 		//-----CREATE-ACTOR-----
 		System.out.println("Tell me the name of actors");
-		String name=scanner2.nextLine();
+		String name=scanner2.next();
 		ScreenUtilities.clearScreen();
 		System.out.println("Tell me the last name of actors");
 		String apellido=scanner2.nextLine();
@@ -158,7 +166,13 @@ public interface ActorOptions
 			}
 		}
 	}
-	
+	/**
+	 * 
+	 * @param scanner
+	 * @param scanner2
+	 * @param arrayActorsGeneral
+	 * @return
+	 */
 	public static Actors[] modifyActor(Scanner scanner,Scanner scanner2,Actors[] arrayActorsGeneral) 
 	{
 		//-----MODIFY----ACTOR
@@ -564,7 +578,13 @@ public interface ActorOptions
 		}
 		return arrayActorsGeneral;
 	}
-	
+	/**
+	 * 
+	 * @param scanner
+	 * @param scanner2
+	 * @param arrayActorsGeneral
+	 * @return
+	 */
 	public static Actors[] deleteActor(Scanner scanner,Scanner scanner2,Actors[] arrayActorsGeneral) 
 	{
 

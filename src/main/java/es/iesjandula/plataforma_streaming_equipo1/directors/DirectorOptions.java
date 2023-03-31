@@ -25,7 +25,7 @@ public interface DirectorOptions
 		//--CREATE NEW DIRECTOR------
 		//--Director name
 		System.out.println("Tell me the name of the director");
-		String name=scanner2.nextLine();
+		String name=scanner2.next();
 		ScreenUtilities.clearScreen();
 		//Director Last name
 		System.out.println("Tell me the last name of the director");

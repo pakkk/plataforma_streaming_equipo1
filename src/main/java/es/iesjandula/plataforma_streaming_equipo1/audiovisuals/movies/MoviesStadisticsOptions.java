@@ -49,33 +49,33 @@ public interface MoviesStadisticsOptions
 		else if(selectedOption==2) 
 		{
 			//---------MOVIES BY CATEGORY IDS------------
-			movieByCategories(scanner, arrayMoviesGeneral);
+			MoviesStadisticsOptions.movieByCategories(scanner, arrayMoviesGeneral);
 			
 		}
 		else if(selectedOption==3) 
 		{
 			//---------MOVIES BY ACTORS IDS------------ J
-			movieByActors(scanner, arrayMoviesGeneral);
+			MoviesStadisticsOptions.movieByActors(scanner, arrayMoviesGeneral);
 		}
 		else if(selectedOption==4) 
 		{
 			//--------POPULAR TOP - POSITIVE RECOMENDATIONS----------
-			movieByPositives(arrayMoviesGeneral);
+			MoviesStadisticsOptions.movieByPositives(arrayMoviesGeneral);
 		}
 		else if(selectedOption==5) 
 		{
 			//-------UN-POPULAR TOP - NEGATIVE RECOMENDATIONS----------
-			movieByNegatives(arrayMoviesGeneral);
+			MoviesStadisticsOptions.movieByNegatives(arrayMoviesGeneral);
 		}
 		else if(selectedOption==6) 
 		{
 			//--MOVIES--BY--SUBTITLES---
-			movieBySubtitles(arrayMoviesGeneral, scanner);
+			MoviesStadisticsOptions.movieBySubtitles(arrayMoviesGeneral, scanner);
 		}
 		else if(selectedOption==7) 
 		{
 			//---------MOVIES BY DIRECTORS IDS------------
-			movieByDirectors(scanner, arrayMoviesGeneral);
+			MoviesStadisticsOptions.movieByDirectors(scanner, arrayMoviesGeneral);
 		}
 	}
 	

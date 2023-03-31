@@ -11,6 +11,12 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
  */
 public class SubtitlesOptions 
 {
+	/**
+	 * 
+	 * @param scanner
+	 * @param arraySubtitlesGeneral
+	 * @return
+	 */
 	public static Subtitles[] createSubtitle(Scanner scanner,Subtitles[] arraySubtitlesGeneral) 
 	{
 		System.out.println("Select the subtitle to create:\n"
@@ -59,6 +65,10 @@ public class SubtitlesOptions
 		return arraySubtitlesGeneral;
 	}
 	
+	/**
+	 * 
+	 * @param arraySubtitlesGeneral
+	 */
 	public static void showSubtitles(Subtitles[] arraySubtitlesGeneral) 
 	{
 		ScreenUtilities.clearScreen();
@@ -66,6 +76,12 @@ public class SubtitlesOptions
 		System.out.println(Arrays.toString(arraySubtitlesGeneral));
 	}
 	
+	/**
+	 * 
+	 * @param scanner
+	 * @param arraySubtitlesGeneral
+	 * @return
+	 */
 	public static Subtitles[] modifySubtitle(Scanner scanner,Subtitles[] arraySubtitlesGeneral) 
 	{
 		ScreenUtilities.clearScreen();
@@ -121,7 +137,12 @@ public class SubtitlesOptions
 		return arraySubtitlesGeneral;
 		
 	}
-	
+	/**
+	 * 
+	 * @param scanner
+	 * @param arraySubtitlesGeneral
+	 * @return
+	 */
 	public static Subtitles[] deleteSubtitle(Scanner scanner,Subtitles[] arraySubtitlesGeneral) 
 	{
 		ScreenUtilities.clearScreen();
