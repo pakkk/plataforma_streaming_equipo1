@@ -615,6 +615,7 @@ public interface ViewAnimation
 		System.out.print(" TEAM 1");
 		System.out.println(" - JAVA EDITION");
 		Thread.sleep(3000);
+		ScreenUtilities.clearScreen();
 	}
 	
 	/**
