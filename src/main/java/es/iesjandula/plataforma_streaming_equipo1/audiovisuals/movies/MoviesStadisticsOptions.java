@@ -80,7 +80,7 @@ public interface MoviesStadisticsOptions
 	}
 	
 	/**
-	 * -
+	 * 
 	 * @param scanner the scanner
 	 * @param arrayMoviesGeneral array movies general
 	 */
