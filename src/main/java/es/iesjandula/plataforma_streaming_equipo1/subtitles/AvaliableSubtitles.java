@@ -1,6 +1,6 @@
 package es.iesjandula.plataforma_streaming_equipo1.subtitles;
-/*
- * @LuisDavidCastillo
+/**
+ * @author LuisDavidCastillo
  * 
  * Enum of the avaliable subtitles
  */
