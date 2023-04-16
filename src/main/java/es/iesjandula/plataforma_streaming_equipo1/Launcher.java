@@ -2,7 +2,15 @@ package es.iesjandula.plataforma_streaming_equipo1;
 
 import java.util.Arrays;
 import java.util.Scanner;
-import es.iesjandula.plataforma_streaming_equipo1.IMenus.*;
+import es.iesjandula.plataforma_streaming_equipo1.IMenus.IGeneralsMenu;
+import es.iesjandula.plataforma_streaming_equipo1.IMenus.IMenuActors;
+import es.iesjandula.plataforma_streaming_equipo1.IMenus.IMenuCategories;
+import es.iesjandula.plataforma_streaming_equipo1.IMenus.IMenuDirectors;
+import es.iesjandula.plataforma_streaming_equipo1.IMenus.IMenuMovies;
+import es.iesjandula.plataforma_streaming_equipo1.IMenus.IMenuSubtitles;
+import es.iesjandula.plataforma_streaming_equipo1.IMenus.IMenuSeries;
+import es.iesjandula.plataforma_streaming_equipo1.IMenus.IMenuRecommendations;
+import es.iesjandula.plataforma_streaming_equipo1.IMenus.IMenuStadistics;
 import es.iesjandula.plataforma_streaming_equipo1.actors.ActorOptions;
 import es.iesjandula.plataforma_streaming_equipo1.actors.Actors;
 import es.iesjandula.plataforma_streaming_equipo1.adaptedlanguages.AdaptedLanguages;
@@ -160,11 +168,10 @@ public class Launcher
 		while(isRunning)
 		{
 			ViewAnimation.mainTitleShowOnly();
-			int firstSelection;
 			IGeneralsMenu.generalMenu();
 			System.out.print("-> ");
 			//Principal selection
-			firstSelection = scanner.nextInt();
+			int firstSelection=scanner.nextInt();
 			
 			switch(firstSelection) 
 			{
