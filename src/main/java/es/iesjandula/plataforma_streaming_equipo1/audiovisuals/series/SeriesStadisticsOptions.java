@@ -79,7 +79,7 @@ public interface SeriesStadisticsOptions
 	}
 	
 	/**
-	 * -
+	 * 
 	 * @param scanner the scanner
 	 * @param arraySeriesGeneral array series general
 	 */
