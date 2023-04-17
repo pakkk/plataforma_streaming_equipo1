@@ -80,7 +80,7 @@ public class Audiovisuals
 
 
 	/**
-	 * toString to print all attributes
+	 * @return to print all attributes
 	 */
 	@Override
 	public String toString() 

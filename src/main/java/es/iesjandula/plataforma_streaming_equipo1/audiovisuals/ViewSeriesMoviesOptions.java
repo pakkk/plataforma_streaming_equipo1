@@ -1,17 +1,32 @@
 package es.iesjandula.plataforma_streaming_equipo1.audiovisuals;
-
-import java.util.Scanner;
-
-import es.iesjandula.plataforma_streaming_equipo1.animations.ViewAnimation;
-import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.Movies;
-import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.Series;
 /**
  * 
  * @author David Martinez
  *
  */
+import java.util.Scanner;
+
+import es.iesjandula.plataforma_streaming_equipo1.animations.ViewAnimation;
+import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.movies.Movies;
+import es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series.Series;
+
+
+/**
+ * 
+ *  Interface for view series or movies
+ *
+ */
+
 public interface ViewSeriesMoviesOptions 
 {
+	/**
+	 * Method static 
+	 * @param Scanner for read String
+	 * @param Scanner for read number
+	 * @param Arrays the movies 
+	 * @param Arrray the series
+	 *
+	 */
 	public static void viewSeriesMovies(Scanner scanner,Scanner scanner2,Movies[] arrayMoviesGeneral,Series[] arraySeriesGeneral) throws InterruptedException 
 	{
 		System.out.println("Series and Movies: \n");
