@@ -1,10 +1,16 @@
 package es.iesjandula.plataforma_streaming_equipo1.IMenus;
-
+/**
+*
+* @author ???
+*/
 public interface IMenuDirectors 
 {
 	public static void directorMenu() 
 	{
-		//Menu text display
+		/**
+		*Menu text display
+		*/
+		
 		System.out.println("\n"
 				+ "Directors Menu:\n"
 				+ "[1] Add a director\n"

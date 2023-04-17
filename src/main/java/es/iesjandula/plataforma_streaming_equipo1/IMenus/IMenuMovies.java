@@ -1,10 +1,17 @@
 package es.iesjandula.plataforma_streaming_equipo1.IMenus;
-
+/**
+*
+* @author ???
+*/
 public interface IMenuMovies 
 {
 	public static void moviesMenu() 
 	{
-		//Menu text display
+		/**
+		*Menu text display
+		* 
+		*/
+		
 		System.out.println("\n"
 				+ "Movie Menu:\n"
 				+ "[1] Add a movie\n"
