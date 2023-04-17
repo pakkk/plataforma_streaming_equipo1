@@ -2,10 +2,12 @@ package es.iesjandula.plataforma_streaming_equipo1.audiovisuals.series;
 
 /**
  * @author David Martinez
+
  */
 
-/*
- * Class Series
+/* 
+ * Class Series 
+ * Content all the tributes and methods of the series 
  * Stores the Series
  */
 import java.util.Arrays;
@@ -34,7 +36,7 @@ public class Series extends Audiovisuals
 	private Recomendations recomendationsSerie[]=new Recomendations[0];
 	
 	/**
-	 * 
+	 * Constructor
 	 * @param actors the actors
 	 * @param directors the directors
 	 * @param categ the categories
@@ -47,6 +49,7 @@ public class Series extends Audiovisuals
 	 * @param nChapter the number of capitules
 	 * @param seasons the seasons
 	 * @param serieId the serie id
+	 * 
 	 */
 	public Series(Actors[] actors,Directors[] directors, Categorie[] categ, String tittle, String originalLenguaje,
 			AdaptedLanguages[] adaptedLenguajes, Subtitles[] avaliableSubtitles, double duration, int creationYear,int nChapter

@@ -19,11 +19,12 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
  *@author Luis David
  *@author Antonio
  *@author Juan Miguel
+ *this interface implements the method for the movies stadistic options
  */
 public interface MoviesStadisticsOptions 
 {
 	/***
-	 * 
+	 * this method in a menu for select the stadistic
 	 * @param scanner the scanner
 	 * @param scanner2 the scanner 2
 	 * @param arrayMoviesGeneral the array movies general
@@ -80,7 +81,7 @@ public interface MoviesStadisticsOptions
 	}
 	
 	/**
-	 * 
+	 * this method show the stadistics by director
 	 * @param scanner the scanner
 	 * @param arrayMoviesGeneral array movies general
 	 */
@@ -124,7 +125,7 @@ public interface MoviesStadisticsOptions
 	}
 	
 	/**
-	 * 
+	 * this method show the stadistics by subtitles
 	 * @param arrayMoviesGeneral array movies general
 	 * @param scanner
 	 */
@@ -209,7 +210,7 @@ public interface MoviesStadisticsOptions
 	
 	
 	/**
-	 * 
+	 * this method show the stadistics by opinion negative
 	 * @param arrayMoviesGeneral array movies general
 	 */
 	public static void movieByNegatives(Movies[] arrayMoviesGeneral) 
@@ -238,7 +239,7 @@ public interface MoviesStadisticsOptions
 	}
 	
 	/**
-	 * 
+	 * this method show the stadistics by opinion positive
 	 * @param arrayMoviesGeneral array movies general
 	 */
 	public static void movieByPositives(Movies[] arrayMoviesGeneral) 
@@ -267,6 +268,7 @@ public interface MoviesStadisticsOptions
 	}
 	
 	/** 
+	 * this method show the stadistics by actor
 	 * @param scanner the scanner
 	 * @param arrayMoviesGeneral array movies general
 	 */
@@ -310,7 +312,7 @@ public interface MoviesStadisticsOptions
 	}
 	
 	/**
-	 * 
+	 * this method show the stadistics by categorie
 	 * @param scanner the scanner
 	 * @param arrayMoviesGeneral array movies general
 	 */

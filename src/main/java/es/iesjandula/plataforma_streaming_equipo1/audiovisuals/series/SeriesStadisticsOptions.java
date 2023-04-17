@@ -18,6 +18,7 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
  *@author Luis David
  *@author Antonio
  *@author Juan Miguel
+ *this interface content all the series options 
  */
 public interface SeriesStadisticsOptions 
 {
@@ -48,38 +49,38 @@ public interface SeriesStadisticsOptions
 		else if(selectedOption==2) 
 		{
 			//---------SERIES BY CATEGORY IDS------------
-			serieByCategories(scanner, arraySeriesGeneral);
+			SeriesStadisticsOptions.serieByCategories(scanner, arraySeriesGeneral);
 			
 		}
 		else if(selectedOption==3) 
 		{
 			//---------SERIES BY ACTORS IDS------------ J
-			serieByActors(scanner, arraySeriesGeneral);
+			SeriesStadisticsOptions.serieByActors(scanner, arraySeriesGeneral);
 		}
 		else if(selectedOption==4) 
 		{
 			//--------POPULAR TOP - POSITIVE RECOMENDATIONS----------
-			serieByPositives(arraySeriesGeneral);
+			SeriesStadisticsOptions.serieByPositives(arraySeriesGeneral);
 		}
 		else if(selectedOption==5) 
 		{
 			//-------UN-POPULAR TOP - NEGATIVE RECOMENDATIONS----------
-			serieByNegatives(arraySeriesGeneral);
+			SeriesStadisticsOptions.serieByNegatives(arraySeriesGeneral);
 		}
 		else if(selectedOption==6) 
 		{
 			//--SERIES--BY--SUBTITLES---
-			serieBySubtitles(arraySeriesGeneral, scanner);
+			SeriesStadisticsOptions.serieBySubtitles(arraySeriesGeneral, scanner);
 		}
 		else if(selectedOption==7) 
 		{
 			//---------SERIES BY DIRECTORS IDS------------
-			serieByDirectors(scanner, arraySeriesGeneral);
+			SeriesStadisticsOptions.serieByDirectors(scanner, arraySeriesGeneral);
 		}
 	}
 	
 	/**
-	 * 
+	 * Series information search by Director
 	 * @param scanner the scanner
 	 * @param arraySeriesGeneral array series general
 	 */
@@ -123,7 +124,7 @@ public interface SeriesStadisticsOptions
 	}
 	
 	/**
-	 * 
+	 * Series information search by Subtitles
 	 * @param arraySeriesGeneral array series general
 	 * @param scanner
 	 */
@@ -208,7 +209,7 @@ public interface SeriesStadisticsOptions
 	
 	
 	/**
-	 * 
+	 * Series information search by Negatives
 	 * @param arraySeriesGeneral array series general
 	 */
 	public static void serieByNegatives(Series[] arraySeriesGeneral) 
@@ -237,7 +238,7 @@ public interface SeriesStadisticsOptions
 	}
 	
 	/**
-	 * 
+	 * Series information search by Positives
 	 * @param arraySeriesGeneral array series general
 	 */
 	public static void serieByPositives(Series[] arraySeriesGeneral) 
@@ -266,7 +267,7 @@ public interface SeriesStadisticsOptions
 	}
 	
 	/**
-	 * 
+	 * Series information search by Actors
 	 * @param scanner the scanner
 	 * @param arraySeriesGeneral array series general
 	 */
@@ -310,7 +311,7 @@ public interface SeriesStadisticsOptions
 	}
 	
 	/**
-	 * 
+	 * Series information search by Categories
 	 * @param scanner the scanner
 	 * @param arraySeriesGeneral array series general
 	 */

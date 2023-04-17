@@ -15,12 +15,12 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 /**
  * 
  * @author David Martinez
- *
+ * this interface ad all the series options
  */
 public interface SeriesOptions 
 {
 	/**
-	 * 
+	 * Create subtitles for the series 
 	 * @param scanner the sacnner
 	 * @return Subtitles Array
 	 */
@@ -108,7 +108,7 @@ public interface SeriesOptions
 	}
 	
 	/**
-	 * 
+	 * Create an adapted language for the series
 	 * @param scanner the scanner
 	 * @return AdaptedLanguages array
 	 */
@@ -194,7 +194,7 @@ public interface SeriesOptions
 	}
 	
 	/**
-	 * 
+	 * Create an Actor for the series 
 	 * @param scanner the scanner
 	 * @param arrayActorsGeneral array of actors
 	 * @return Actors array
@@ -228,7 +228,7 @@ public interface SeriesOptions
 	}
 	
 	/**
-	 * 
+	 * Create a Category for the series 
 	 * @param scanner the scanner
 	 * @param arrayCategoriesGeneral array of categories general
 	 * @return Categorie Array
@@ -264,7 +264,7 @@ public interface SeriesOptions
 	}
 	
 	/**
-	 * 
+	 * Create a Director for the series 
 	 * @param scanner the scanner
 	 * @param arrayDirectorsGeneral array of directors general
 	 * @return Directors Array
@@ -298,7 +298,7 @@ public interface SeriesOptions
 	}
 	
 	/**
-	 * 
+	 * Create a new serie 
 	 * @param scanner the scanner
 	 * @param scanner2 the scanner2
 	 * @param arraySeriesGeneral series general array
@@ -320,15 +320,15 @@ public interface SeriesOptions
 		ScreenUtilities.clearScreen();
 		
 		//--DIRECTOR TO NEW SERIE---
-		Directors[] arrayOfDirectors = createDirectorsSerie(scanner, arrayDirectorsGeneral);
+		Directors[] arrayOfDirectors = SeriesOptions.createDirectorsSerie(scanner, arrayDirectorsGeneral);
 		
 		
 		//--CATEGORIES TO NEW SERIE---
-		Categorie[] arrayOfCategories= createCategoriesSerie(scanner, arrayCategoriesGeneral);
+		Categorie[] arrayOfCategories= SeriesOptions.createCategoriesSerie(scanner, arrayCategoriesGeneral);
 		
 		
 		//---ACTORS TO NEW SERIE---
-		Actors[] arrayOfActors = createActorsSerie(scanner, arrayActorsGeneral);
+		Actors[] arrayOfActors = SeriesOptions.createActorsSerie(scanner, arrayActorsGeneral);
 		
 		
 		//--ORIGINAL--LANGUAGE TO NEW SERIE---
@@ -338,11 +338,11 @@ public interface SeriesOptions
 		
 		
 		//---ADAPTED LANGUAGES--TO NEW SERIE----
-		AdaptedLanguages[] adaptedLanguagesArray = createAdaptedLanguagesSerie(scanner);
+		AdaptedLanguages[] adaptedLanguagesArray = SeriesOptions.createAdaptedLanguagesSerie(scanner);
 		
 		
 		//--SUBTITLES-TO NEW SERIE----
-		Subtitles[] subTitlesArray= createSubtitlesSerie(scanner);
+		Subtitles[] subTitlesArray= SeriesOptions.createSubtitlesSerie(scanner);
 		
 		
 		//--TOTAL DURATION TO NEW SERIE----
@@ -379,7 +379,7 @@ public interface SeriesOptions
 	}
 	
 	/**
-	 * 
+	 * this  method search a serie of the arrays of series
 	 * @param scanner the scanner
 	 * @param scanner2 the scanner 2
 	 * @param arraySeriesGeneral array series general
@@ -739,7 +739,7 @@ public interface SeriesOptions
 	}
 	
 	/**
-	 * 
+	 * this method modify all the diferents series of the arrays  
 	 * @param scanner the scanner
 	 * @param scanner2 the scanner2
 	 * @param arraySeriesGeneral Series general array
@@ -1207,7 +1207,7 @@ public interface SeriesOptions
 	}
 	
 	/**
-	 * 
+	 * this methods delete a selected serie of the array by a atribute
 	 * @param scanner the scanner
 	 * @param arraySeriesGeneral array series general
 	 * @return

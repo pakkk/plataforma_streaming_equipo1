@@ -13,6 +13,7 @@ public interface ViewMoviesOptions
 	 * @param scanner the scanner
 	 * @param arrayMoviesGeneral the array of movies general
 	 * @throws InterruptedException possible exception
+	 * this interface show the options to view a movie
 	 */
 	public static void viewMovies(Scanner scanner,Movies[] arrayMoviesGeneral) throws InterruptedException 
 	{	

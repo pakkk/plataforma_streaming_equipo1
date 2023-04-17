@@ -11,7 +11,7 @@ import es.iesjandula.plataforma_streaming_equipo1.animations.ViewAnimation;
 public interface ViewSeriesOptions 
 {
 	/**
-	 * 
+	 * this interface implements the methods used to view the movie 
 	 * @param scanner the scanner
 	 * @param arraySeriesGeneral the series array general
 	 * @throws InterruptedException the possible exception

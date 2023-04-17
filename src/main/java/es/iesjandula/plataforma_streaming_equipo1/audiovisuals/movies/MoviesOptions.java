@@ -15,12 +15,12 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 /**
  * 
  * @author David Martinez
- *
+ * this interface have the methods for the movie options
  */
 public interface MoviesOptions 
 {
 	/**
-	 * 
+	 * this method create a new movie director
 	 * @param scanner the scanner
 	 * @param arrayDirectorsGeneral array Directors general
 	 * @param arrayActorsGeneral array Actors general
@@ -62,7 +62,7 @@ public interface MoviesOptions
 	
 	
 	/**
-	 * 
+	 * this method create a new movie subtitle
 	 * @param scanner the scanner
 	 * @return array of Subtitles
 	 */
@@ -151,7 +151,7 @@ public interface MoviesOptions
 	}
 	
 	/**
-	 * 
+	 * this method create a new movie language
 	 * @param scanner the scanner
 	 * @return Adapted Languages array
 	 */
@@ -238,7 +238,7 @@ public interface MoviesOptions
 	}
 	
 	/**
-	 * 
+	 * this method create a new movie Actor
 	 * @param scanner the sacanner
 	 * @param arrayActorsGeneral array of actors general
 	 * @return array of Actors
@@ -274,7 +274,7 @@ public interface MoviesOptions
 	}
 	
 	/**
-	 * 
+	 * this method create a new movie Categorie
 	 * @param scanner the scanner
 	 * @param arrayCategoriesGeneral array Categories General
 	 * @return array of Categorie
@@ -313,7 +313,7 @@ public interface MoviesOptions
 	
 	
 	/**
-	 * 
+	 * this method create a new movie 
 	 * @param scanner the scanner
 	 * @param scanner2 the scanner2
 	 * @param arrayMoviesGeneral array movies general
@@ -335,14 +335,14 @@ public interface MoviesOptions
 		ScreenUtilities.clearScreen();
 		
 		//---DIRECTORS--TO NEW MOVIE--
-		Directors[] arrayOfDirectors=createMovieDirectors(scanner2, arrayDirectorsGeneral, arrayActorsGeneral, arrayCategoriesGeneral, arraySubtitlesGeneral, movieIdCont);
+		Directors[] arrayOfDirectors=MoviesOptions.createMovieDirectors(scanner2, arrayDirectorsGeneral, arrayActorsGeneral, arrayCategoriesGeneral, arraySubtitlesGeneral, movieIdCont);
 	
 		//---CATEGORIES--TO NEW MOVIE--
 		ScreenUtilities.clearScreen();
-		Categorie[] arrayOfCategories=createCategoriesMovie(scanner2, arrayCategoriesGeneral);
+		Categorie[] arrayOfCategories=MoviesOptions.createCategoriesMovie(scanner2, arrayCategoriesGeneral);
 		
 		//--ACTORS--TO NEW MOVIE---
-		Actors[] arrayOfActors=createActorsMovie(scanner2, arrayActorsGeneral);
+		Actors[] arrayOfActors=MoviesOptions.createActorsMovie(scanner2, arrayActorsGeneral);
 				
 		//--ORIGINAL--LANGUAGE---
 		System.out.println("Write the Original lenguage: ");
@@ -350,10 +350,10 @@ public interface MoviesOptions
 		ScreenUtilities.clearScreen();
 		
 		//---ADPATEDS LANGUAGES TO NEW MOVIE----
-		AdaptedLanguages[] adaptedLanguagesArray=createAdaptedLanguagesMovie(scanner);
+		AdaptedLanguages[] adaptedLanguagesArray=MoviesOptions.createAdaptedLanguagesMovie(scanner);
 		
 		//--SUBTITLES TO NEW MOVIE---
-		Subtitles[] subTitlesArray =createSubtitlesMovie(scanner);
+		Subtitles[] subTitlesArray =MoviesOptions.createSubtitlesMovie(scanner);
 		
 		//---DURATION TO NEW MOVIE----
 		ScreenUtilities.clearScreen();
@@ -376,7 +376,7 @@ public interface MoviesOptions
 	}
 	
 	/**
-	 * 
+	 * this method search by movie
 	 * @param scanner the scanner
 	 * @param scanner2 the scanner2
 	 * @param arrayMoviesGeneral array movies general
@@ -719,7 +719,7 @@ public interface MoviesOptions
 	}
 	
 	/**
-	 * 
+	 * this method modify movies by all attributes
 	 * @param scanner the scanner
 	 * @param scanner2 the scanner 2
 	 * @param arrayMoviesGeneral array movies general
@@ -1151,7 +1151,7 @@ public interface MoviesOptions
 	
 	
 	/**
-	 * 
+	 * this method delete movie by attribute
 	 * @param scanner the scanner
 	 * @param arrayMoviesGeneral array of movies general
 	 * @return Movies array
