@@ -1,10 +1,16 @@
 package es.iesjandula.plataforma_streaming_equipo1.IMenus;
-
+/**
+*
+* @author ???
+*/
 public interface IMenuSubtitles
 {
 	public static void subtitlesMenu() 
 	{
-		//Menu text display
+		/**
+		*Menu text display
+		*/
+		
 		System.out.println("\n"
 				+"Subtitle Menu:\n"
 				+"[1] Add a subtitle\n"

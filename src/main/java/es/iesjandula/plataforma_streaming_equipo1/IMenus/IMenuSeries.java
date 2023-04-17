@@ -1,10 +1,19 @@
 package es.iesjandula.plataforma_streaming_equipo1.IMenus;
+/**
+*
+* @author ???
+*/
 
 public interface IMenuSeries 
 {
 	public static void seriesMenu() 
 	{
-		//Menu text display
+		/**
+		*Menu text display
+		* 
+		*/
+
+		
 		System.out.println("\n"
 				+"Series Menu:\n"
 				+"[1] Register a Series\n"

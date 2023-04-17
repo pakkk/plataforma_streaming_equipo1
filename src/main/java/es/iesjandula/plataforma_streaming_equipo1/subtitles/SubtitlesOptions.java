@@ -6,7 +6,7 @@ import java.util.Scanner;
 import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 /**
  * 
- * @author Luis David
+ * @author LuisDavidCastillo
  *
  */
 public class SubtitlesOptions 

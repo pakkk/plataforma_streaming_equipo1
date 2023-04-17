@@ -8,7 +8,7 @@ import es.iesjandula.plataforma_streaming_equipo1.utilities.ScreenUtilities;
 
 /**
  * 
- * @author Luis David
+ * @author LuisDavidCastillo
  *
  */
 public interface ActorOptions 
@@ -28,7 +28,7 @@ public interface ActorOptions
 		String name=scanner2.next();
 		ScreenUtilities.clearScreen();
 		System.out.println("Tell me the last name of actors");
-		String apellido=scanner2.nextLine();
+		String lastName=scanner2.nextLine();
 		ScreenUtilities.clearScreen();
 		System.out.println("Tell me the nationality of actors");
 		String nationality=scanner2.nextLine();
@@ -57,7 +57,7 @@ public interface ActorOptions
 		ScreenUtilities.clearScreen();
 		
 		arrayActorsGeneral=Arrays.copyOf(arrayActorsGeneral, arrayActorsGeneral.length+1);
-		arrayActorsGeneral[arrayActorsGeneral.length-1]=new Actors(name, apellido, nationality, x, year,actorIdCont++);
+		arrayActorsGeneral[arrayActorsGeneral.length-1]=new Actors(name, lastName, nationality, x, year,actorIdCont++);
 		System.out.println(arrayActorsGeneral[arrayActorsGeneral.length-1]);
 		
 		return arrayActorsGeneral;
@@ -93,12 +93,12 @@ public interface ActorOptions
 		{
 			//Search Actor by last name
 			System.out.println("Indicate the last name: \n");
-			String apellido=scanner2.nextLine();
+			String lastName=scanner2.nextLine();
 			ScreenUtilities.clearScreen();
 			System.out.println("Results : \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
-				if (actor.getLastName().equals(apellido)) 
+				if (actor.getLastName().equals(lastName)) 
 				{
 					System.out.println(actor);
 				}
@@ -264,12 +264,12 @@ public interface ActorOptions
 		{
 			//Modify Actor by last name
 			System.out.println("Indicate the last name: \n");
-			String apellido=scanner2.nextLine();
+			String lastName=scanner2.nextLine();
 			ScreenUtilities.clearScreen();
 			System.out.println("Results : \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
-				if (actor.getLastName().equals(apellido)) 
+				if (actor.getLastName().equals(lastName)) 
 				{
 					System.out.println("Found: ");
 					System.out.println(actor);
@@ -632,12 +632,12 @@ public interface ActorOptions
 		{
 			//Delete Actor by last name
 			System.out.println("Indicate the last name: \n");
-			String apellido=scanner2.nextLine();
+			String lastName=scanner2.nextLine();
 			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
-				if (actor.getLastName().equals(apellido)) 
+				if (actor.getLastName().equals(lastName)) 
 				{
 					System.out.println(actor);
 					System.out.println("Position: "+cont);
@@ -690,12 +690,12 @@ public interface ActorOptions
 		{
 			//Delete Actor by Nationality
 			System.out.println("Indicate the Nationality \n");
-			String nacionalidad=scanner2.nextLine();
+			String nationalityToDelete=scanner2.nextLine();
 			ScreenUtilities.clearScreen();
 			System.out.println("Results: \n");
 			for (Actors actor:arrayActorsGeneral) 
 			{
-				if (actor.getNationality().equals(nacionalidad)) 
+				if (actor.getNationality().equals(nationalityToDelete)) 
 				{
 					System.out.println(actor);
 					System.out.println("Position: "+cont);

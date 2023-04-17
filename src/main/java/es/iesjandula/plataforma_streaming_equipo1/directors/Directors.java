@@ -42,7 +42,10 @@ public class Directors
     }  
     
 
-    //toString method , for print the attributes
+    /**
+	 * @return 
+	 * Representation String of the value of the class attributes
+	 */
 	@Override
 	public String toString() 
 	{
@@ -163,6 +166,8 @@ public class Directors
 	{
 		this.directorId = directorId;
 	}
+	
+	
 	
      
 }

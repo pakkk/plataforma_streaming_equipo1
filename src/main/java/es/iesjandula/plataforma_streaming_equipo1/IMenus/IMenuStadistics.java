@@ -1,10 +1,19 @@
 package es.iesjandula.plataforma_streaming_equipo1.IMenus;
+/**
+*
+* @author ???
+*/
 
 public interface IMenuStadistics
 {
 
 	public static void stadisticsMenu() 
 	{
+		/**
+		*
+		* menu text display
+		*/
+
 		
 		System.out.println("\n"
 				+"Series Menu:\n"
